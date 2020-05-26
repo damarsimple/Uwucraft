@@ -1,9 +1,9 @@
 # UWUCRAFT-OOP
 Learning Object Oriented PHP
 
-webchats + skinsystem + user update + playerlist + leaderboard + query coded in PHP HTML Javascript
+webchats + skinsystem + user update + playerlist + leaderboard + query coded in PHP HTML Javascript'
 
-Plan to do  :
+Plan to do  :   Security Improvement
                 Better UI Responsiveness
                 Better Styling
                 Games Area 
