@@ -1,0 +1,61 @@
+.grid-container {
+
+    display: grid;
+    grid-template-columns: 0.5fr 1.8fr 0.5fr;
+    grid-template-rows: 0.3fr 1.7fr;
+    gap: 1px 1px;
+    grid-template-areas: ". . ." ". table .";
+}
+
+.table {
+    grid-area: table;
+    margin-top: 2rem;
+}
+thead a{
+    text-decoration: none;
+    color: white;
+}
+thead a:hover{
+    text-decoration: none;
+    color: white;
+}
+tbody a{
+    color :black;
+    text-decoration: none;
+}
+tbody a:hover{
+    text-decoration: none;
+}
+.grid-playerdata {
+    text-align: center;
+    border: 2px solid coral;
+    margin-top: 6rem;
+    margin-left: 12rem;
+    margin-right: 12rem;
+    display: grid;
+    grid-template-columns: 0.2fr 1.8fr 0.23fr;
+    grid-template-rows: 0.2fr 0.4fr 2.4fr;
+    gap: 1px 1px;
+    grid-template-areas: ". . ." ". photo-username ." ". info .";
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "userdata userstats";
+    grid-area: info;
+}
+
+.userdata { grid-area: userdata; }
+
+.userstats { grid-area: userstats; }
+
+.photo-username {
+    grid-area: photo-username;
+    margin-left: 3.5rem;
+    margin-bottom: 5rem;
+    text-align: left;
+    font-size: 3rem;
+}

@@ -1,6 +1,7 @@
 <?php
-include '../config/autoload.php';
-include '../config/session.php';
+include '../controller/autoload.php';
+include '../controller/session.php';
+$session->checkSession("index"); // do not  allow access page after session inisiated
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,7 +11,7 @@ include '../config/session.php';
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-    <title>Signin Template for Bootstrap</title>
+    <title>Login | <?= $website['title'] ?></title>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -18,20 +19,20 @@ include '../config/session.php';
 </head>
 <body class="text-center">
     <form action="login.php" method="post" class="form-signin">
-        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
-        <label for="inputEmail" class="sr-only">Username</label>
-        <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <img class="mb-4" src="<?= $website['brand']?>" alt="Logo" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal"><?= $translate['Login']?></h1>
+        <label for="inputEmail" class="sr-only"><?= $translate['Username']?></label>
+        <input type="text" name="username" id="inputEmail" class="form-control" placeholder="<?= $translate['Username']?>" required autofocus>
+        <label for="inputPassword" class="sr-only"><?= $translate['Password']?></label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="<?= $translate['Password']?>" required>
         <div class="checkbox mb-3">
             <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me"> <?= $translate['Remember_me']?>
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Sign in</button>
-        <a class="btn btn-lg btn-primary btn-block" href="../index.php">Back to home</a>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+        <button class="btn btn-lg btn-primary btn-block" name="login" type="submit"><?= $translate['Login']?></button>
+        <a class="btn btn-lg btn-primary btn-block" href="../users/register.php"><?= $translate['Register']?></a>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </form>
 </body>
 </html>

@@ -1,22 +1,22 @@
 <?php
 
-include '../config/autoload.php';
-include '../config/shop.php';
+include '../controller/autoload.php';
+include '../controller/shop.php';
 
 
-
-
-//Initialize Variables
+// Initialize Variables
 $players = "dazzle";
 $item = "";
 $amounts = "";
-$time = time() * 1000;
 $uuid = $buydb->giveUUID($crack, $players);
 $ip = $_SERVER['REMOTE_ADDR'];
 $price = "";
 $b = True;
-//Take Input
-if($b = True){
+
+
+
+// Take Input
+if($b = True){// if isset post
     $item = "diamond";
     $amounts = "100";
     $price = $buydb->getPrice($item) * $amounts; //getPrice Functions to get price and get total price as well
@@ -26,7 +26,7 @@ if($b = True){
         //run thefunctions
         $buy->buyItem($players, $item, $amounts, $price);
         // Save to logs
-        $buydb->savePlayerLogs($time, $players ,$uuid , $item, $amounts, $ip);
+        $buydb->savePlayerLogs($players ,$uuid , $item, $amounts, $ip);
         echo "Payment Succes Price : $price";
     }else{
         // check user input / input cannot be 0 cuz it will give 64 instead lmao
@@ -36,8 +36,5 @@ if($b = True){
             echo "You do not have enough balance !";
         }
     }
-
-
-
 }
 ?>

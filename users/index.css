@@ -1,0 +1,248 @@
+
+body{
+    background-color: black; /* delete later please*/
+}
+
+.button {
+    margin-left: 65%;
+}
+.button:hover {
+    box-sizing: border-box;
+    box-shadow: red;
+    background-color: azure;
+
+}
+.search{
+    font-size: 10px;
+}
+#search{
+    box-sizing: 10px;
+}
+.search input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* main grid system */
+.grid-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "dashboard card-data";
+}
+/* grid */
+.dashboard {
+    grid-area: dashboard;
+    padding-top: 5rem !important;
+    margin-right: 1rem !important;
+}
+
+.card-data {
+    grid-area: card-data;
+    padding-top: 5rem !important;
+    margin-right: 1rem !important;
+}
+/* main news content */
+.news {
+    margin-left: 2rem;
+    /* border: 1px solid green; */
+}
+.dashbutton{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.news-content{
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: white;
+    border: 2.5px solid cornflowerblue;
+    border-radius: 10px;
+}
+.news-content .author{
+    color: gray;
+    font-size: smaller;
+    padding: 10px;
+}
+.news-content .title{
+    border: 1px solid cornflowerblue;
+    background-color: whitesmoke;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+.news-content .isi{
+    padding: 10px;
+    font-size: medium;
+}
+.news-box{
+    border: 1px solid cornflowerblue;
+    margin-bottom: 1rem;
+}
+/* button dashboard*/
+.dashnav{
+    background-color: whitesmoke;
+    border: 0px solid white;
+    border-radius: 5px;
+    padding: 20px;
+    color: black;
+    text-decoration: none;
+}
+.dashnav:hover{
+    background-color: wheat;
+}
+/* begin player card data */
+.playerdata{
+    margin-top: 4.6rem;
+    margin-bottom: 0px !important;
+        }
+        .grid-playerdata {
+            display: grid;
+            grid-template-columns: 0.1fr 3.2fr 0.1fr;
+            grid-template-rows: 0.2fr 0.1fr 0.1fr 0.1fr 0.1fr;
+            gap: 1px 1px;
+            grid-template-areas: ". profile ." ". kill-rank ." ". dead-rank-money ." ". games-money ." ". level-bar .";
+            text-align: center;
+            background-color: white;
+            border: 2.5px solid cornflowerblue;
+            border-radius: 10px;
+        }
+
+        .profile {
+            display: grid;
+            grid-template-columns: 0.2fr 0.2fr 2.6fr;
+            grid-template-rows: 0.2fr 1.3fr 1.5fr;
+            gap: 1px 1px;
+            grid-template-areas: ". . ." ". photo-profile username" ". . hunger-health";
+            grid-area: profile;
+        }
+
+        .username {
+            grid-area: username;
+            text-align: left !important;
+            padding-top: 0.5rem;
+        }
+
+        .photo-profile { grid-area: photo-profile; }
+
+        .hunger-health {
+            grid-area: hunger-health;
+            text-align: left !important;
+        }
+
+        .kill-rank {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: "kill rank";
+            grid-area: kill-rank;
+        }
+
+        .kill { grid-area: kill; }
+
+        .rank { grid-area: rank; }
+
+        .dead-rank-money {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: "dead rank-money";
+            grid-area: dead-rank-money;
+        }
+
+        .dead { grid-area: dead; }
+
+        .rank-money { grid-area: rank-money; }
+
+        .games-money {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: "games money";
+            grid-area: games-money;
+        }
+
+        .games { grid-area: games; }
+
+        .money { grid-area: money; }
+
+        .level-bar {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1.2fr 0.8fr;
+            gap: 1px 1px;
+            grid-template-areas: "level" "bar";
+            grid-area: level-bar;
+        }
+
+        .level { grid-area: level; }
+
+        .bar { grid-area: bar; }
+/* begin query server card*/
+.queryserver{
+    margin-top: 1rem;
+}
+
+    .grid-query {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2.6fr 0.5fr 0.5fr 0.5fr;
+        gap: 1px 1px;
+        grid-template-areas: "servername-ip" "gamemode-playerlist" "version-checkonline" "motd";
+        text-align: center;
+        background-color: white;
+        padding-top: 1rem;
+        border: 2.5px solid cornflowerblue;
+        border-radius: 10px;
+    }
+    
+    .gamemode-playerlist {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 1px 1px;
+        grid-template-areas: "gamemode playerlist";
+        grid-area: gamemode-playerlist;
+    }
+    
+    .gamemode { grid-area: gamemode; }
+    
+    .playerlist { grid-area: playerlist; }
+    
+    .version-checkonline {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 1px 1px;
+        grid-template-areas: "version checkonline";
+        grid-area: version-checkonline;
+    }
+    
+    .version { grid-area: version; }
+    
+    .checkonline { grid-area: checkonline; }
+    
+    .motd { grid-area: motd; }
+    
+    .servername-ip {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1px 1px;
+        grid-template-areas: "servername" "ip";
+        grid-area: servername-ip;
+    }
+    
+    .ip { grid-area: ip; }
+    
+    .servername { grid-area: servername; }

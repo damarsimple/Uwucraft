@@ -1,6 +1,7 @@
 <?php
-include '../config/autoload.php';
-include '../config/session.php';
+include '../controller/autoload.php';
+include '../controller/session.php';
+$session->checkSession("index"); // do not  allow access page after session inisiated
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,20 +18,24 @@ include '../config/session.php';
     <link href="../css/register.css" rel="stylesheet">
 </head>
 <body class="text-center">
-    <form action="register.php" method="post" class="form-signin">
-        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
-        <label for="inputEmail" class="sr-only">Username</label>
-        <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
-        <label for="inputEmail" class="sr-only">Username</label>
-        <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <label for="inputPassword" class="sr-only">Confirm Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
-        <button class="btn btn-lg btn-primary btn-block" name="register" type="submit">Sign in</button>
-        <a class="btn btn-lg btn-primary btn-block" href="../index.php">Back to home</a>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    <form action="register.php" method="POST" class="form-signin">
+        <img class="mb-4" src="<?= $website['brand']?>" alt="logo" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal"><?= $translate['Register']?></h1>
+        <div class="alert-danger">
+            <p><?= $error[0] ?></p> <!-- array message -->
+        </div>
+        <label for="inputEmail" class="sr-only"><?= $translate['Username']?></label>
+        <input type="text" name="username" id="inputEmail" class="form-control" placeholder="<?= $translate['Username']?>" required autofocus>
+        <label for="inputEmail" class="sr-only"><?= $translate['Email']?></label>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="<?= $translate['Email']?>" required autofocus>
+        <label for="inputPassword" class="sr-only"><?= $translate['Password']?></label>
+        <input type="password" name="password_1" id="inputPassword" class="form-control" placeholder="<?= $translate['Password']?>" required>
+        <label for="inputPassword" class="sr-only"><?= $translate['Confirm_Password']?></label>
+        <input type="password" name="password_2" id="inputPassword" class="form-control" placeholder="<?= $translate['Confirm_Password']?>" required>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" name="register" type="submit"><?= $translate['Register']?></button>
+        <a class="btn btn-lg btn-primary btn-block" href="../users/login.php"><?= $translate['Login']?></a>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </form>
 </body>
 </html>
