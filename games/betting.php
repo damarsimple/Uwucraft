@@ -3,9 +3,9 @@
 include '../controller/autoload.php';
 include '../controller/shop.php';
 
-$crack = True;
+
 $players = "dazzle";
-$b = $buydb->giveUUID($crack, $players);
+$b = $buydb->giveUUID($players);
 
 $balance = $buydb->detectPlayerBalance($b);
 $bet = 110200;

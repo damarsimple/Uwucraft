@@ -1,41 +1,28 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand logo-site" href="index.php">
-        <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Uwucraft
-    </a>
-    <form class="navbar-brand" method="GET" action="search.php">
-        <input type="text" name="search" id="search" placeholder="Search">
-        <button class="navbar-brand search" name="search" type="submit">Search</button>
-    </form>
-    <a class="navbar-brand" href="index.php"><img src='http://framework.uwucraft.lan/users/skin/resources/server/skinRender.php?vr=0&hr=0&headOnly=true&ratio=4&user=<?= $_SESSION['username']?>' width="30" height="30" class="d-inline-block align-top" alt=""> <?= $_SESSION['username']?></a>
-    <a class="navbar-brand" href="index.php">Home</a>
-    <a class="navbar-brand" href="../shop/">Shop</a>
-    <a class="navbar-brand" href="../stats/leaderboard.php">Leaderboard</a>
-    <a class="navbar-brand" href="../stats/listplayer.php">List Player</a>
-    <a class="navbar-brand" href="index.php?logout='1'">Logout</a>
-</nav> -->
-
-<!--
-    https://grid.layoutit.com/?id=mRETZQd /playerdata grid
--->
-<!-- https://grid.layoutit.com/?id=HI4IcLT / leaderboard grid-->
-<?php include '../controller/autoload.php';
+<?php
+include '../controller/autoload.php';
 include '../controller/query.php';
-include '../controller/session.php';?>
+include '../controller/session.php';
+//for login users only
+if($_SESSION['username'] == null){
+    header("location: ../users/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link href="index.css" rel="stylesheet">
+
     <?php include('../includes/include.php')?>
+    <link href="index.css" rel="stylesheet">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?= $pageTitle['Home']?></title>
 </head>
 <body>
-<div class="container">
-  <div class="row">
-    <div class="col">
-    <div class="news">
+    <?php include("../includes/navbar.php"); ?>
+        <div class="grid-container">
+        <!-- This is Homepage news section -->
+            <div class="dashboard">
+                <div class="news">
                         <div class="dashbutton">
                         <a class="dashnav" href=""><?= $language['Home']?></a><a class="dashnav" href=""><?= $language['Update']?></a><a  class="dashnav" href=""><?= $language['Log']?></a>
                         </div>
@@ -51,10 +38,10 @@ include '../controller/session.php';?>
                     </div>
                 </div>
             </div>
-    </div>
-    <div class="col">2</div>
-    <div class="w-100"></div>
-    <div class="col"><div class="grid-playerdata">
+            <!-- this is the end of news section-->
+            <div class="card-data">
+                <div class="playerdata">
+                <div class="grid-playerdata">
                     <div class="profile">
                         <div class="username">
                             <h1> <?= $_SESSION['username']?></h1>
@@ -98,18 +85,53 @@ include '../controller/session.php';?>
                     </div>
                     <div class="level-bar">
                         <div class="level">
-                        <p><?= $language['Level']?> : <?= $sessionData['health']?></p>
-                        <div class="progress">
-                            <div aria-valuenow="60" style="width: 1%;" aria-valuemin="0"aria-valuemax="100" role="progressbar" class="progress-bar">
-                            </div>
+                        <p><?= $language['Level']?> : <?= $sessionData['level']?></p>
                         </div>
                         <div class="bar">
+                            <div class="progress">
+                                <?= "<div aria-valuenow='60' style='width: ".intval($sessionData['experience']/1*100)."%;' aria-valuemin='0'aria-valuemax='100' role='progressbar' class='progress-bar'>" ?>
+                                </div>
                         </div><p><?= intval($sessionData['experience']/1*100) ?>%</p>
                         </div>
                     </div>
-                    </div></div>
-    <div class="col">4</div>
-</div>
-</div>
+                    </div>
+                <div class="queryserver">
+                <div class="grid-query">
+                    <div class="gamemode-playerlist">
+                        <div class="gamemode">
+                        <p><?= $language['Gamemode']?> : <?= $queryData['gametype']?></p>
+                        </div>
+                        <div class="playerlist">
+                        <p><?= $language['Player']?> : <?= $queryData['players']?>/<?= $queryData['maxplayers'] ?> </p>
+                        </div>
+                    </div>
+                    <div class="version-checkonline">
+                        <div class="version">
+                        <p><?= $language['Version']?> : <?= $queryData['version'] ?></p>
+                        </div>
+                        <div class="checkonline">
+                        <p><?= $check?></p>
+                        </div>
+                    </div>
+                    <div class="motd">
+                        <p><?= $language['MOTD'] ?></p>
+                    </div>
+                    <div class="servername-ip">
+                        <div class="ip">
+                        <?php if ($queryData['online']) :?>
+                        <p><?= $language['IP']?> : <?= $minecraftServer['ip'] ?>:<?= $minecraftServer['port'] ?></p>
+                        <?php else :?>
+                        <p><?= $language['IP']?> : <?= $language['Offline']?></p>
+                        <?php  endif?>
+                        </div>
+                        <div class="servername">
+                        <p><?= $queryData['servername'] ?></p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+<?php include("../includes/footer.php")?>
+
 </body>
 </html>
