@@ -18,7 +18,7 @@ class MinecraftQuery
 	private $Players;
 	private $Info;
 
-	public function Connect( $Ip, $Port = 25565, $Timeout = 1, $ResolveSRV = true )
+	public function Connect( $Ip, $Port = 25565, $Timeout = 3, $ResolveSRV = true )
 	{
 		if( !is_int( $Timeout ) || $Timeout < 0 )
 		{
@@ -52,7 +52,7 @@ class MinecraftQuery
 		}
 	}
 
-	public function ConnectBedrock( $Ip, $Port = 19132, $Timeout = 1, $ResolveSRV = true )
+	public function ConnectBedrock( $Ip, $Port = 19132, $Timeout = 3, $ResolveSRV = true )
 	{
 		if( !is_int( $Timeout ) || $Timeout < 0 )
 		{

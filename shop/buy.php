@@ -8,7 +8,7 @@ include '../controller/shop.php';
 $players = "dazzle";
 $item = "";
 $amounts = "";
-$uuid = $buydb->giveUUID($players);
+$uuid = $buydb->giveUUID($crack, $players);
 $ip = $_SERVER['REMOTE_ADDR'];
 $price = "";
 $b = True;

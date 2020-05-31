@@ -12,21 +12,9 @@ function itemicon($item){
     $path = "../img/textures/item/$item";
     $ext = ".png";
     $return = $path . $ext;
-    //find item icon replace space with underscore
-    return strtolower(str_replace(" ", "_",$return));
+    return $return;
 }
-function myException($exception) {
-    if(DEVELEOPMENT){
-        echo "<b>Exception:</b> " . $exception->getMessage();
-    }else{
-        echo "<b>Something Wrongs Please Contact Webadmin</b> ";
-    }
-    
-}
-
-set_exception_handler('myException');
 session_start();
-
 //AUTOLOAD MUST BE FIRST TO INCLUDED PLEASE
 
 

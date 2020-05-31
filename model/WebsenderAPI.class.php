@@ -2,7 +2,7 @@
 
 class WebsenderAPI{
 
-	public $timeout = 0;
+	public $timeout = 30;
 
 	var $host;
 	var $password;

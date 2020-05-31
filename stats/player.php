@@ -7,7 +7,7 @@ include '../controller/stats.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include('../includes/include.php')?>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="grid-server.css">
     <title>Document</title>
 </head>
@@ -18,22 +18,22 @@ include '../controller/stats.php';
         <div class="userdata">
         <p>Rank : <?= $stats['rank']?></p>
         <p>Rank Money : <?= $stats['rank_money']?></p>
-        <p>Money : <?= $language['Currency_Symbol']?> <?= number_format($stats['money']/1) ?></p>
+        <p>Money : $<?= $stats['money']?></p>
         <p>Level : <?= $stats['level']?></p>
         <p>Experience : <?= intval($stats['experience']/1*100)?>%</p>
         <p>Health :
-            <?php for ($i=0; $i < $stats['health'] / 2; $i++) : ?>
+            <?php $x = 0; while($x < $stats['health'] / 2) : $x++ ?>
             <img src="../img/textures/gui/health.png" alt="health">
-            <?php endfor ?>
+            <?php endwhile ?>
         </p>
         <p>Hunger :
-            <?php for ($i=0; $i < $stats['hunger'] / 2; $i++) :?>
+            <?php $x = 0; while($x < $stats['hunger'] / 2) : $x++ ?>
             <img src="../img/textures/gui/hunger.png" alt="hunger">
-            <?php endfor ?>
+            <?php endwhile ?>
         </p>
         <p>Saturation : <?= $stats['saturation']?></p>
         <p>Exhaustion : <?= intval($stats['exhaustion']/1*100)?>%</p>
-        <p>Currently Playing : <?= $check ?></p>
+        <p>Currently Playing : <?= $db->returnCheckOfflineOnlineStrings($stats['isLogged'])?></p>
         <p>Coordinate : <a href="../shop/index.php?addtocart=item&playercoordinate=<?= $pname?>">PURCHASE THIS INFO</a></p>
         <p>UUID : <a href="../shop/index.php?addtocart=item&UUID=<?= $pname?>">PURCHASE THIS INFO</a></p>
         </div>
@@ -52,6 +52,5 @@ include '../controller/stats.php';
 <img src="<?= $skins['HEAD'].$pname ?>" width="65" height="65" alt="userphoto"><span class="sr-only">(current)</span> <?= $pname ?>
 </div>
 </div>
-<?php include('../includes/footer.php')?>
 </body>
 </html>
