@@ -1,6 +1,6 @@
 <?php
 
-$translate = ([
+$language = [
     //start translation
     //Register Login Sections
     "Register" => "Daftar",
@@ -55,5 +55,5 @@ $translate = ([
     "Nickname" => "Nickname",
     "Top_Players_by" => "Pemain teratas berdasarkan",
     //END OF SECTIONS
-]);
+];
 

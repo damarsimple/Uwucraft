@@ -1,0 +1,110 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    margin: 5rem;
+    gap: 1px 1px;
+    grid-template-areas: "type item";
+}
+
+.item {
+    grid-area: item;
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin: 1rem;
+    padding-bottom: 0px;
+}
+.grid-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 2.4fr 0.2fr;
+    gap: 1px 1px;
+    grid-template-areas: "navbar-item" "content-item" "paging";
+}
+
+    .paging {
+        grid-area: paging;
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid red;
+    }
+
+    .navbar-item{
+        grid-area: navbar-item;
+        border: 2px solid aqua;
+        border-radius: 10px;
+        background-color: snow;
+        padding: 2rem;
+        text-align: center;
+    }
+
+.grid-item-box {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "item-icon item-description item-action";
+    padding: 2rem;
+    border: 1px solid aquamarine;
+    margin: 1rem;
+    background-color: aliceblue;
+
+}
+
+    .item-icon { grid-area: item-icon; }
+    .item-description { grid-area: item-description; }
+    .item-action { grid-area: item-action; }
+
+
+    .type {
+        grid-area: type;
+    }
+
+    .grid-categories {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 2.6fr 0.1fr;
+        gap: 1px 1px;
+        grid-template-areas: "categories" "categories-value" ".";
+        border: 2px solid blue;
+        border-radius: 10px;
+        margin: 1rem;
+    }
+
+    .categories {
+        grid-area: categories;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .categories-value { grid-area: categories-value; }
+
+    .grid-purchased {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 2.6fr 0.1fr;
+        gap: 1px 1px;
+        grid-template-areas: "purchased" "purchased-value" ".";
+        border: 2px solid blue;
+        border-radius: 10px;
+        margin: 1rem;
+    }
+
+    .purchased {
+        grid-area: purchased;
+        text-align: center;
+    }
+
+    .purchased-value {
+        grid-area: purchased-value;
+        padding: 10px;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    .purchased-value .name
+    {
+        text-align: left;
+    }
+    .purchased-value .counter
+    {
+        text-align: right;
+    }

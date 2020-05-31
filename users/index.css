@@ -1,7 +1,5 @@
 
-body{
-    background-color: black; /* delete later please*/
-}
+
 
 .button {
     margin-left: 65%;
@@ -50,10 +48,7 @@ body{
     margin-right: 1rem !important;
 }
 /* main news content */
-.news {
-    margin-left: 2rem;
-    /* border: 1px solid green; */
-}
+
 .dashbutton{
     padding-top: 30px;
     padding-bottom: 20px;
