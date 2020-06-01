@@ -33,4 +33,12 @@ if(isset($_POST['cart'])){
     $buydb->addCart($_SESSION['username'],$item,$amount);
 }
 
+if(isset($_GET['item']))
+{
+    $productGet = $_GET['item'];
+    $product = $buydb->itemWhere($productGet);
+}else{
+    $productGet = "Diamond"; //fallback
+    $product = $buydb->itemWhere($productGet);
+}
 ?>
