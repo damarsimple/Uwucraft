@@ -30,6 +30,8 @@ if(empty($empty)){
     $queryData['version'] = $language['Offline'];
     $queryData['plugins'] = $language['Offline'];
     $queryData['software'] = $language['Offline'];
+    $queryData['ip'] = $minecraftServer['hostname'];
+    $queryData['port'] = $minecraftServer['qport'];
 }else{
     $queryData = [
         "online" => True,
@@ -43,6 +45,8 @@ if(empty($empty)){
         "string_current_players" => implode('<br>', $Query->GetPlayers()),//convert to string i guess?
         "plugins" => $Query->GetInfo()['Plugins'],//Array
         "software" =>  $Query->GetInfo()['Software'],//String
+        "ip" =>  $minecraftServer['hostname'],//String
+        "port" =>  $minecraftServer['port'],//String
     ];
 }
 

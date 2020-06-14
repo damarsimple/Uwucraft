@@ -2,7 +2,6 @@
 include '../controller/autoload.php';
 include '../controller/shop.php';
 
-// It takes 2 seconds to load this page need explanation posibly Database query?
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,13 +16,13 @@ include '../controller/shop.php';
 <?php include('../includes/navbar.php')?>
     <!--Main layout-->
     <main>
-        <div class="container">
+        <div class="container" style="margin-top: 6rem;">
 
         <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
 
             <!-- Navbar brand -->
-            <span class="navbar-brand">Categories:</span>
+            <span class="navbar-brand">Categories</span>
 
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -42,13 +41,13 @@ include '../controller/shop.php';
                 </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Shirts</a>
+                <a class="nav-link" href="#">MISC</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Sport wears</a>
+                <a class="nav-link" href="#">FOOD</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Outwears</a>
+                <a class="nav-link" href="#">ARMOR</a>
                 </li>
 
             </ul>
@@ -67,355 +66,29 @@ include '../controller/shop.php';
 
         <!--Section: Products v.3-->
         <section class="text-center mb-4">
-
-            <!--Grid row-->
-            <div class="row wow fadeIn">
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4">
-
-                <!--Card-->
+        <div class="row row-cols-1 row-cols-md-3"> <!-- first row -->
+        <?php foreach($itemIndex as $row) :?>
+            <div class="col mb-4"> <!-- foreach from here-->
+            <a class="card-link" href="product.php?item=<?= $row['name']?>">
                 <div class="card">
-
-                <!--Card image-->
-                <div class="view overlay">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top"
-                    alt="">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
+                    <img src="<?= itemicon($row['name'])?>" class="card-img-top"  alt="<?= $row['name']?>">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $row['name']?></h5>
+                        <p class="text-info"><?= $language['Currency_Symbol']?><?= $row['price']?></p>
+                        <p class="text-muted"><?= $row['type']?></p>
+                        <p class="card-text"><?= $row['description']?></p>
+            </a>
+                            <form class="d-flex justify-content-center mb-1">
+                            <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+                            <button class="btn btn-primary btn-md my-0 p" type="submit"><?= $language['Add_to_Cart']?>
+                            <i class="fas fa-shopping-cart ml-1"></i>
+                            </button>
+                            </form>
+                    </div>
                 </div>
-                <!--Card image-->
-
-                <!--Card content-->
-                <div class="card-body text-center">
-                    <!--Category & Title-->
-                    <a href="" class="grey-text">
-                    <h5>Shirt</h5>
-                    </a>
-                    <h5>
-                    <strong>
-                        <a href="" class="dark-grey-text">Denim shirt
-                        <span class="badge badge-pill danger-color">NEW</span>
-                        </a>
-                    </strong>
-                    </h5>
-
-                    <h4 class="font-weight-bold blue-text">
-                    <strong>120$</strong>
-                    </h4>
-
-                </div>
-                <!--Card content-->
-
-                </div>
-                <!--Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                <!--Card image-->
-                <div class="view overlay">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg" class="card-img-top"
-                    alt="">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <!--Card image-->
-
-                <!--Card content-->
-                <div class="card-body text-center">
-                    <!--Category & Title-->
-                    <a href="" class="grey-text">
-                    <h5>Sport wear</h5>
-                    </a>
-                    <h5>
-                    <strong>
-                        <a href="" class="dark-grey-text">Sweatshirt</a>
-                    </strong>
-                    </h5>
-
-                    <h4 class="font-weight-bold blue-text">
-                    <strong>139$</strong>
-                    </h4>
-
-                </div>
-                <!--Card content-->
-
-                </div>
-                <!--Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                <!--Card image-->
-                <div class="view overlay">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg" class="card-img-top"
-                    alt="">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <!--Card image-->
-
-                <!--Card content-->
-                <div class="card-body text-center">
-                    <!--Category & Title-->
-                    <a href="" class="grey-text">
-                    <h5>Sport wear</h5>
-                    </a>
-                    <h5>
-                    <strong>
-                        <a href="" class="dark-grey-text">Grey blouse
-                        <span class="badge badge-pill primary-color">bestseller</span>
-                        </a>
-                    </strong>
-                    </h5>
-
-                    <h4 class="font-weight-bold blue-text">
-                    <strong>99$</strong>
-                    </h4>
-
-                </div>
-                <!--Card content-->
-
-                </div>
-                <!--Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Fourth column-->
-            <div class="col-lg-3 col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                <!--Card image-->
-                <div class="view overlay">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg" class="card-img-top"
-                    alt="">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <!--Card image-->
-
-                <!--Card content-->
-                <div class="card-body text-center">
-                    <!--Category & Title-->
-                    <a href="" class="grey-text">
-                    <h5>Outwear</h5>
-                    </a>
-                    <h5>
-                    <strong>
-                        <a href="" class="dark-grey-text">Black jacket</a>
-                    </strong>
-                    </h5>
-
-                    <h4 class="font-weight-bold blue-text">
-                    <strong>219$</strong>
-                    </h4>
-
-                </div>
-                <!--Card content-->
-
-                </div>
-                <!--Card-->
-
-            </div>
-            <!--Fourth column-->
-
-            </div>
-            <!--Grid row-->
-
-            <!--Grid row-->
-            <div class="row wow fadeIn">
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                <!--Card image-->
-                <div class="view overlay">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg" class="card-img-top"
-                    alt="">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <!--Card image-->
-
-                <!--Card content-->
-                <div class="card-body text-center">
-                    <!--Category & Title-->
-                    <a href="" class="grey-text">
-                    <h5>Shirt</h5>
-                    </a>
-                    <h5>
-                    <strong>
-                        <a href="" class="dark-grey-text">Denim shirt
-                        <span class="badge badge-pill danger-color">NEW</span>
-                        </a>
-                    </strong>
-                    </h5>
-
-                    <h4 class="font-weight-bold blue-text">
-                    <strong>120$</strong>
-                    </h4>
-
-                </div>
-                <!--Card content-->
-
-                </div>
-                <!--Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                <!--Card image-->
-                <div class="view overlay">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg" class="card-img-top"
-                    alt="">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <!--Card image-->
-
-                <!--Card content-->
-                <div class="card-body text-center">
-                    <!--Category & Title-->
-                    <a href="" class="grey-text">
-                    <h5>Sport wear</h5>
-                    </a>
-                    <h5>
-                    <strong>
-                        <a href="" class="dark-grey-text">Sweatshirt</a>
-                    </strong>
-                    </h5>
-
-                    <h4 class="font-weight-bold blue-text">
-                    <strong>139$</strong>
-                    </h4>
-
-                </div>
-                <!--Card content-->
-
-                </div>
-                <!--Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                <!--Card image-->
-                <div class="view overlay">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg" class="card-img-top"
-                    alt="">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <!--Card image-->
-
-                <!--Card content-->
-                <div class="card-body text-center">
-                    <!--Category & Title-->
-                    <a href="" class="grey-text">
-                    <h5>Sport wear</h5>
-                    </a>
-                    <h5>
-                    <strong>
-                        <a href="" class="dark-grey-text">Grey blouse
-                        <span class="badge badge-pill primary-color">bestseller</span>
-                        </a>
-                    </strong>
-                    </h5>
-
-                    <h4 class="font-weight-bold blue-text">
-                    <strong>99$</strong>
-                    </h4>
-
-                </div>
-                <!--Card content-->
-
-                </div>
-                <!--Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Fourth column-->
-            <div class="col-lg-3 col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                <!--Card image-->
-                <div class="view overlay">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top"
-                    alt="">
-                    <a>
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-                <!--Card image-->
-
-                <!--Card content-->
-                <div class="card-body text-center">
-                    <!--Category & Title-->
-                    <a href="" class="grey-text">
-                    <h5>Outwear</h5>
-                    </a>
-                    <h5>
-                    <strong>
-                        <a href="" class="dark-grey-text">Black jacket</a>
-                    </strong>
-                    </h5>
-
-                    <h4 class="font-weight-bold blue-text">
-                    <strong>219$</strong>
-                    </h4>
-
-                </div>
-                <!--Card content-->
-
-                </div>
-                <!--Card-->
-
-            </div>
-            <!--Fourth column-->
-
-            </div>
-            <!--Grid row-->
-
+            </div><!-- end foreach this row-->
+            <?php endforeach?>
+        </div>
         </section>
         <!--Section: Products v.3-->
 
@@ -427,7 +100,7 @@ include '../controller/shop.php';
             <li class="page-item disabled">
                 <a class="page-link" href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only"><?= $language['Previous']?></span>
                 </a>
             </li>
 
@@ -452,7 +125,7 @@ include '../controller/shop.php';
             <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only"><?= $language['Previous']?></span>
                 </a>
             </li>
             </ul>

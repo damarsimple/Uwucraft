@@ -21,7 +21,6 @@ function myException($exception) {
     }else{
         echo "<b>Something Wrongs Please Contact Webadmin</b> ";
     }
-    
 }
 
 set_exception_handler('myException');
@@ -30,5 +29,14 @@ session_start();
 //AUTOLOAD MUST BE FIRST TO INCLUDED PLEASE
 
 
+//Sorting String
+// $str = "LLEKJQJJEEEKKI"; //find recursive
+// $b = str_split($str);
+// $arr = [];
 
+// for($i=0;$i<count($b);$i++)
+// {
+//     @$arr[$b[$i]]++;//ACCIDENTAL FOUND LMAO it does trigger error tho
+// }
 
+// var_dump($arr);

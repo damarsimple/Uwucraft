@@ -42,68 +42,60 @@ if($_SESSION['username'] == null){
                                     <div class="photo-profile">
                                     <img src="<?= $skins['HEAD'].$_SESSION['username']?>" width="65" height="65" alt="userphoto">
                                     </div>
-                                    <div class="hunger-health">
-                                    <?php for($i=0; $i < $sessionData['health'] / 2; $i++) :?>
-                                        <img src="../img/textures/gui/health.png" alt="health">
-                                        <?php endfor ?>
-                                        <br>
-                                        <?php for($i=0; $i < $sessionData['hunger'] / 2; $i++) :?>
-                                        <img src="../img/textures/gui/hunger.png" alt="health">
-                                        <?php endfor ?>
+                                    <div id="health" class="hunger-health">
                                     </div>
                                 </div>
                                 <div class="kill-rank">
                                     <div class="kill">
-                                    <p><?= $language['Kills']?> : <?= $sessionData['Kills']?></p>
+                                    <p id="kills"><?= $language['Kills']?> : </p>
                                     </div>
                                     <div class="rank">
-                                    <p><?= $language['Rank']?> : <?= $sessionData['rank']?></p>
+                                    <p id="rank"><?= $language['Rank']?> : </p>
                                     </div>
                                 </div>
                                 <div class="dead-rank-money">
                                     <div class="dead">
-                                    <p><?= $language['Deaths']?> : <?= $sessionData['Deaths']?></p>
+                                    <p id="deaths"><?= $language['Deaths']?> : </p>
                                     </div>
                                     <div class="rank-money">
-                                    <p><?= $language['Rank_Money']?> : <?= $sessionData['rank_money']?></p>
+                                    <p id="rank_money"><?= $language['Rank_Money']?> : </p>
                                     </div>
                                 </div>
                                 <div class="games-money">
                                     <div class="games">
-                                    <p><?= $language['Games']?> : <?= $sessionData['Games']?></p>
+                                    <p id="games"><?= $language['Games']?> : </p>
                                     </div>
                                     <div class="money">
-                                    <p><?= $language['Money']?> : <?= $language['Currency_Symbol']?> <?= number_format($sessionData['money']/1) ?></p>
+                                    <p id="money"><?= $language['Money']?> : <?= $language['Currency_Symbol']?> </p>
                                     </div>
                                 </div>
                                 <div class="level-bar">
                                     <div class="level">
-                                    <p><?= $language['Level']?> : <?= $sessionData['level']?></p>
+                                    <p id="level"><?= $language['Level']?> : </p>
                                     </div>
                                     <div class="bar">
                                         <div class="progress">
-                                            <?= "<div aria-valuenow='60' style='width: ".intval($sessionData['experience']/1*100)."%;' aria-valuemin='0'aria-valuemax='100' role='progressbar' class='progress-bar'>" ?>
+                                        <div id="bar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
-                                    </div><p><?= intval($sessionData['experience']/1*100) ?>%</p>
+                                    </div><p id="experience"></p>
                                     </div>
-                                </div>
         </div> <!-- playerdata-->
         <br>
         <div class="grid-query">
                                                     <div class="gamemode-playerlist">
                                                         <div class="gamemode">
-                                                        <p><?= $language['Gamemode']?> : <?= $queryData['gametype']?></p>
+                                                        <p id="gamemode"><?= $language['Gamemode']?> : </p>
                                                         </div>
                                                         <div class="playerlist">
-                                                        <p><?= $language['Player']?> : <?= $queryData['players']?>/<?= $queryData['maxplayers'] ?> </p>
+                                                        <p id="player"><?= $language['Player']?> :  </p>
                                                         </div>
                                                     </div>
                                                     <div class="version-checkonline">
                                                         <div class="version">
-                                                        <p><?= $language['Version']?> : <?= $queryData['version'] ?></p>
+                                                        <p id="version"><?= $language['Version']?> : </p>
                                                         </div>
                                                         <div class="checkonline">
-                                                        <p><?= $check?></p>
+                                                        <p id="check"></p>
                                                         </div>
                                                     </div>
                                                     <div class="motd">
@@ -111,14 +103,10 @@ if($_SESSION['username'] == null){
                                                     </div>
                                                     <div class="servername-ip">
                                                         <div class="ip">
-                                                        <?php if ($queryData['online']) :?>
-                                                        <p><?= $language['IP']?> : <?= $minecraftServer['ip'] ?>:<?= $minecraftServer['port'] ?></p>
-                                                        <?php else :?>
-                                                        <p><?= $language['IP']?> : <?= $language['Offline']?></p>
-                                                        <?php  endif?>
+                                                        <p id="ip"><?= $language['IP']?> : </p>
                                                         </div>
                                                         <div class="servername">
-                                                        <p><?= $queryData['servername'] ?></p>
+                                                        <p id="servername"></p>
                                                         </div>
                                                     </div>
         </div><!-- Query -->
@@ -126,110 +114,99 @@ if($_SESSION['username'] == null){
 </div>
 </div>
 <?php include("../includes/footer.php")?>
+<script>
+//VANILLA JS VERSION
+    //Player API
+    var PlayerData = new XMLHttpRequest();
+    PlayerData.open('GET', '../api/player.php?username=<?= $_SESSION['username']?>');
+    PlayerData.onload = function() {
+        switch(this.status)
+        {
+            case 200:
+            // SUCCESS !
+            var data = JSON.parse(this.response);
+            document.getElementById("kills").append(data.data.Kills);
+            document.getElementById("deaths").append(data.data.Deaths);
+            document.getElementById("games").append(data.data.Games);
+            document.getElementById("rank").append(data.data.rank);
+            document.getElementById("rank_money").append(data.data.rank_money);
+            document.getElementById("money").append(data.data.money/1);
+            document.getElementById("level").append(data.data.level);
+            document.getElementById("level-bar").getComputedStyle(data.data.Kills);
+            document.getElementById("kills").append(data.data.Kills);
+            break;
+            case 400:
+            // No INPUT !
+            var data = JSON.parse(this.response);
+            console.log(data);
+            break;
+            case 404:
+            // NOT FOUND !
+            var data = JSON.parse(this.response);
+            console.log(data);
+            break;
+        }
+    };
 
+    PlayerData.onerror = function() {
+  // There was a connection error of some sort
+};
+PlayerData.send();
+
+
+// // JQUERY VERSION
+//     $.get( "../api/player.php?username=<?= $_SESSION['username']?>", function( data ) {
+//     $( "#kills" )
+//     .append(data.data.Kills)
+//     $( "#deaths" )
+//     .append(data.data.Deaths)
+//     $( "#rank" )
+//     .append(data.data.rank)
+//     $( "#rank_money" )
+//     .append(data.data.rank_money)
+//     $( "#games" )
+//     .append(data.data.Games)
+//     $( "#level" )
+//     .append(data.data.level)
+//     $( "#bar" )
+//     .css({
+//         "width": Math.round(data.data.experience/1*100) + "%",
+//     })
+//     $( "#money" )
+//     .append(data.data.money/1)
+//     $( "#experience" )
+//     .append(Math.round(data.data.experience/1*100) + "%")
+//     for(i = 0; i < data.data.health/2; i++)
+//     {
+//     $( "#health" ).append("<img src='../img/textures/gui/health.png'>")
+//     }
+//     $( "#health" ).append("<br>") //separator
+//     for(i = 0; i < data.data.hunger/2; i++)
+//     {
+//     $( "#health" ).append("<img src='../img/textures/gui/hunger.png'>")
+//     }
+// }, "json" );
+//     //Server Query API
+//     $.get( "../api/query.php", function( data ) {
+//     $( "#gamemode" )
+//     .append(data.data.gametype)
+//     $( "#player" )
+//     .append(data.data.players + " / " + data.data.maxplayers)
+//     $( "#version" )
+//     .append(data.data.gametype)
+//     if(data.data.online)
+//     {
+//         $( "#check" )
+//         .append("Online")
+//     }else{
+//         $( "#check" )
+//         .append("Offline")
+//     }
+//     $( "#ip" )
+//     .append(data.data.ip + ":" + data.data.port)
+//     $( "#servername" )
+//     .append(data.data.servername)
+// },"json");
+</script>
 </body>
 </html>
-<!--
-    <div class="col-xs-12 col-md-9 col-xl-8">
-    <div class="news-content">
-                            <h1><?= $language['Announcement']?></h1>
-                            <?php foreach($news as $row) : ?>
-                                <div class='news-box'>
-                                <h2 class="title"><?= $row['title'] ?></h2>
-                                <p class="author"><?= $language['By']?> : <?= $row['author'] ?> <?= gmdate("d/m/Y",$row['date']);?> <?= $language['At']?> <?= gmdate("H:i",$row['date']);?></p>
-                                <p class="isi"><?= $row['value'] ?></p>
-                                </div>
-                                <?php endforeach ?>
-                                </div>
-</div>
--->
-<!--
-<div class="grid-query">
-                                                    <div class="gamemode-playerlist">
-                                                        <div class="gamemode">
-                                                        <p><?= $language['Gamemode']?> : <?= $queryData['gametype']?></p>
-                                                        </div>
-                                                        <div class="playerlist">
-                                                        <p><?= $language['Player']?> : <?= $queryData['players']?>/<?= $queryData['maxplayers'] ?> </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="version-checkonline">
-                                                        <div class="version">
-                                                        <p><?= $language['Version']?> : <?= $queryData['version'] ?></p>
-                                                        </div>
-                                                        <div class="checkonline">
-                                                        <p><?= $check?></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="motd">
-                                                        <p><?= $language['MOTD'] ?></p>
-                                                    </div>
-                                                    <div class="servername-ip">
-                                                        <div class="ip">
-                                                        <?php if ($queryData['online']) :?>
-                                                        <p><?= $language['IP']?> : <?= $minecraftServer['ip'] ?>:<?= $minecraftServer['port'] ?></p>
-                                                        <?php else :?>
-                                                        <p><?= $language['IP']?> : <?= $language['Offline']?></p>
-                                                        <?php  endif?>
-                                                        </div>
-                                                        <div class="servername">
-                                                        <p><?= $queryData['servername'] ?></p>
-                                                        </div>
-                                                    </div>
-                                                    </div>
--->
-
-<!-- <div class="grid-playerdata">
-                                <div class="profile">
-                                    <div class="username">
-                                        <h1> <?= $_SESSION['username']?></h1>
-                                    </div>
-                                    <div class="photo-profile">
-                                    <img src="<?= $skins['HEAD'].$_SESSION['username']?>" width="65" height="65" alt="userphoto">
-                                    </div>
-                                    <div class="hunger-health">
-                                    <?php for($i=0; $i < $sessionData['health'] / 2; $i++) :?>
-                                        <img src="../img/textures/gui/health.png" alt="health">
-                                        <?php endfor ?>
-                                        <br>
-                                        <?php for($i=0; $i < $sessionData['hunger'] / 2; $i++) :?>
-                                        <img src="../img/textures/gui/hunger.png" alt="health">
-                                        <?php endfor ?>
-                                    </div>
-                                </div>
-                                <div class="kill-rank">
-                                    <div class="kill">
-                                    <p><?= $language['Kills']?> : <?= $sessionData['Kills']?></p>
-                                    </div>
-                                    <div class="rank">
-                                    <p><?= $language['Rank']?> : <?= $sessionData['rank']?></p>
-                                    </div>
-                                </div>
-                                <div class="dead-rank-money">
-                                    <div class="dead">
-                                    <p><?= $language['Deaths']?> : <?= $sessionData['Deaths']?></p>
-                                    </div>
-                                    <div class="rank-money">
-                                    <p><?= $language['Rank_Money']?> : <?= $sessionData['rank_money']?></p>
-                                    </div>
-                                </div>
-                                <div class="games-money">
-                                    <div class="games">
-                                    <p><?= $language['Games']?> : <?= $sessionData['Games']?></p>
-                                    </div>
-                                    <div class="money">
-                                    <p><?= $language['Money']?> : <?= $language['Currency_Symbol']?> <?= number_format($sessionData['money']/1) ?></p>
-                                    </div>
-                                </div>
-                                <div class="level-bar">
-                                    <div class="level">
-                                    <p><?= $language['Level']?> : <?= $sessionData['level']?></p>
-                                    </div>
-                                    <div class="bar">
-                                        <div class="progress">
-                                            <?= "<div aria-valuenow='60' style='width: ".intval($sessionData['experience']/1*100)."%;' aria-valuemin='0'aria-valuemax='100' role='progressbar' class='progress-bar'>" ?>
-                                            </div>
-                                    </div><p><?= intval($sessionData['experience']/1*100) ?>%</p>
-                                    </div>
-                                </div>
-    </div>-->

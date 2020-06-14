@@ -4,7 +4,7 @@
 $times = microtime(true); //for execution times lookup
 //Global Config
 $website = [
-    "title" => "Damar Server",
+    "title" => "UWUCRAFT",
     "icon" => "../favicon.png",
     "brand" => "../favicon.png",
     "sessionNames" => "DOGESESSION",//UPPERCASE
@@ -14,7 +14,7 @@ $settings = [
     "lang" => "en",//Languange refer to lang folder
     "serviceFee" => 2,//In percent
     "Tax" => 2,//In Percent
-    "DEVELEOPMENT" => True, //Develeopment give more detailed info / set to true if you want more info /set to false tohide info
+    "DEVELEOPMENT" => True, //Develeopment give more detailed info in crash / set to true if you want more info /set to false tohide info
 ];
 $cdn = "placholder";
 $api = "placholder";
@@ -71,7 +71,7 @@ $tablesdb = [
 ];
 //Skinsrestorer
 //Do you use Skinsrestorer?
-$skinsrestorer = False;
+$skinsrestorer = True;
 //if not please add to else blocks your skins API e.g Minotar
 if($skinsrestorer){
     //used for leaderboard and many more

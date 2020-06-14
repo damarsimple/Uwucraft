@@ -36,7 +36,6 @@ $language = [
     "Home" => "Home",
     "Shop" => "Shop",
     "Notifications" => "Notifications",
-    "Leaderboard" => "Leaderboard",
     "Server" => "Server",
     "Logout" => "Logout",
     "Search" => "Search",
@@ -60,8 +59,9 @@ $language = [
     "Offline" => "Offline",
     "MOTD" => "Onii - Chan no Bakaa!",
     //END OF SECTIONS
-    //Stats Sections
+    //Server Sections
     "Stats" => "Stats",
+    "Server" => "Server",
     "Top" => "Top",
     "Players" => "Players",
     "by" => "by",
@@ -79,6 +79,10 @@ $language = [
     "Top_Players_by" => "Top Players by",
     //END OF SECTIONS
     //Shop Sections
+    "Market" => "Market",
+    "Search" => "Search",
+    "Checkout" => "Checkout",
+    "Payment" => "Payment",
     "Item_Name" => "Items",
     "Item_ID" => "Items ID",
     "Quantity" => "Quantity",
@@ -103,5 +107,27 @@ $language = [
     "Payment_Button" => "Continue to Payment",
     "Clear" => "Clear",
     //END OF SECTIONS
+    //Games Sections
+    "Games" => "Games",
+    "Betting" => "Betting",
+    "Quiz" => "Quiz",
+    "Poker" => "Poker",
+    "Chess" => "Chess",
+    "Jan_Ken_Pon" => "Jan Ken Pon",
+    //END OF SECTIONS
+    //Server Sections
+    "Player_Lookup" => "Player Lookup",
+    "MVP_Player" => "MVP",
+    "Dynmap" => "Dynmap",
+    "Banned_Player" => "Banned Player",
+    "Leaderboard" => "Leaderboard",
+    "Status" => "Server Status",
+    //END OF SECTIONS
+    //Footer Sections
+    "Privacy" => "Privacy",
+    "Terms" => "Terms",
+    "About" => "About",
+    "Support" => "Support",
+
 ];
 
