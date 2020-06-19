@@ -252,7 +252,7 @@
                                         <h1> <?= $_SESSION['username']?></h1>
                                     </div>
                                     <div class="photo-profile">
-                                    <img src="<?= "PLACEHOLDER".$_SESSION['username']?>" width="65" height="65" alt="userphoto">
+                                    <img id="photoprofile" src="" width="65" height="65" alt="userphoto">
                                     </div>
                                     <div id="health" class="hunger-health">
                                     </div>
@@ -328,6 +328,7 @@
 
 <script>
 //VANILLA JS VERSION
+
     //Player API
     var PlayerData = new XMLHttpRequest();
     PlayerData.open('GET', '../api/player/<?= $_SESSION['username']?>/easy');
@@ -345,8 +346,7 @@
             document.getElementById("rank_money").append(response.data[0].rank_money);
             document.getElementById("money").append(response.data[0].money/1);
             document.getElementById("level").append(response.data[0].level);
-            document.getElementById("bar").style.width = response.data[0].experience + "%";//getComputedStyle(response.data[0].health);
-            document.getElementById("kills").append(response.data[0].Kills);
+            document.getElementById("bar").style.width = response.data[0].experience + "%";
             break;
             case 400:
             // No INPUT !
@@ -365,59 +365,43 @@
   // There was a connection error of some sort
 };
 PlayerData.send();
+    //Server Query
+    var QueryData = new XMLHttpRequest();
+    QueryData.open('GET', '../api/server');
+    QueryData.onload = function() {
+        switch(this.status)
+        {
+            case 200:
+            // SUCCESS !
+            var response = JSON.parse(this.response);
+            //console.log(response.data[0].experience);
+            document.getElementById("gamemode").append(response.data.GameType);
+            document.getElementById("player").append(response.data.Players + "/" + response.data.MaxPlayers);
+            document.getElementById("version").append(response.data.Version);
+            document.getElementById("ip").append(response.data.HostIp + ":" + response.data.HostPort);
+            document.getElementById("servername").append(response.data.HostName);
+            break;
+            case 400:
+            // No INPUT !
+            var data = JSON.parse(this.response);
+            console.log(data);
+            break;
+            case 404:
+            // NOT FOUND !
+            var data = 'Offline';
+            document.getElementById("gamemode").append(data);
+            document.getElementById("player").append(data);
+            document.getElementById("version").append(data);
+            document.getElementById("ip").append(data);
+            document.getElementById("servername").append(data);
+            console.log();
+            break;
+        }
+    };
 
+    QueryData.onerror = function() {
+  // There was a connection error of some sort
+};
+QueryData.send();
 
-// // JQUERY VERSION
-//     $.get( "../api/player.php?username=<?= $_SESSION['username']?>", function( data ) {
-//     $( "#kills" )
-//     .append(data.data.Kills)
-//     $( "#deaths" )
-//     .append(data.data.Deaths)
-//     $( "#rank" )
-//     .append(data.data.rank)
-//     $( "#rank_money" )
-//     .append(data.data.rank_money)
-//     $( "#games" )
-//     .append(data.data.Games)
-//     $( "#level" )
-//     .append(data.data.level)
-//     $( "#bar" )
-//     .css({
-//         "width": Math.round(data.data.experience/1*100) + "%",
-//     })
-//     $( "#money" )
-//     .append(data.data.money/1)
-//     $( "#experience" )
-//     .append(Math.round(data.data.experience/1*100) + "%")
-//     for(i = 0; i < data.data.health/2; i++)
-//     {
-//     $( "#health" ).append("<img src='../img/textures/gui/health.png'>")
-//     }
-//     $( "#health" ).append("<br>") //separator
-//     for(i = 0; i < data.data.hunger/2; i++)
-//     {
-//     $( "#health" ).append("<img src='../img/textures/gui/hunger.png'>")
-//     }
-// }, "json" );
-//     //Server Query API
-//     $.get( "../api/query.php", function( data ) {
-//     $( "#gamemode" )
-//     .append(data.data.gametype)
-//     $( "#player" )
-//     .append(data.data.players + " / " + data.data.maxplayers)
-//     $( "#version" )
-//     .append(data.data.gametype)
-//     if(data.data.online)
-//     {
-//         $( "#check" )
-//         .append("Online")
-//     }else{
-//         $( "#check" )
-//         .append("Offline")
-//     }
-//     $( "#ip" )
-//     .append(data.data.ip + ":" + data.data.port)
-//     $( "#servername" )
-//     .append(data.data.servername)
-// },"json");
 </script>

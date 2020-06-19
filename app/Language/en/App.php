@@ -32,7 +32,8 @@ return [
     "Confirm_Password" => "Confirm Password",
     "Remember_me" => "Remember me",
     //END OF SECTIONS
-    //users index sections
+    //Nav sections
+    "Account" => "Account",
     "Home" => "Home",
     "Shop" => "Shop",
     "Notifications" => "Notifications",

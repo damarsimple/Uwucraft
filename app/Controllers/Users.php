@@ -121,10 +121,14 @@ class Users extends BaseController
 
     public function log()
     {
-        echo "b";
+        echo view('template/header');
+        echo view('users/index');
+        echo view('template/footer');
     }
     public function update()
     {
-        echo "b";
+        echo view('template/header');
+        echo view('users/update');
+        echo view('template/footer');
     }
 }

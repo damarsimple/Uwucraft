@@ -63,6 +63,22 @@ class Api extends ResourceController
                 ];
             break;
 
+            case 'image':
+                $result = $this->apiModel->imageFinder($input,$mode);
+                $data = $result;
+                return $data;
+            break;
+
+            case 'shop':
+                $result = $this->apiModel->shopPagination($input,$mode); //Mode = Limit Data Per Page default is 10
+                $data =
+                [
+                    'status'     => $result['status'],
+                    'code'   => $result['code'],
+                    'data' => $result['data'],
+                ];
+            break;
+
             default:
             $data =
             [
@@ -72,7 +88,6 @@ class Api extends ResourceController
             ];
             break;
         }
-
         return $this->respond($data, $data['code']);
     }
 

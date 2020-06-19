@@ -11,18 +11,19 @@
     <script src="../js/search.js"></script>
     <link href="../css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/autocomplete.css">
 </head>
 <body style="margin-top: 6rem;">
 <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <a class="navbar-brand" href="../">
-        <img src="<?= "../favicon.ico" ?>" width="30" height="30" class="d-inline-block align-top" alt=""><?= "A" ?></a>
+        <img src="../favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  href="../users/index"><?= lang('App.Home')?><span class="sr-only">(current)</span>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  href="../users/index"><?= lang('App.Account')?><span class="sr-only">(current)</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="../users/index"><?= lang("App.Home")?></a>
@@ -71,7 +72,7 @@
             </li>
             <li class="nav-item active">
             </li>
-            <a class="nav-link" href="index"><img src="<?= "A"//$skins('HEAD').$_SESSION('username')?>" width="30" height="30" alt=""> <?= "a"//$_SESSION['username'] ?><span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index"><img src="" id="navphoto" width="30" height="30" alt=""> <?= $_SESSION['username'] ?><span class="sr-only">(current)</span></a>
             <?php if(isset($_SESSION['cartcount'])) : ?>
             <li class="nav-item active">
             <a class="nav-link" href="../shop/checkout">
@@ -99,12 +100,61 @@
             </li>
             <?php endif ?>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
-            <input id="search" class="form-control mr-sm-2" type="text" placeholder="<?= lang('App.Search')?>" aria-label="Search">
-            <style>
-            </style>
+            <form autocomplete="off" class="form-inline mt-2 mt-md-0">
+            <!--Make sure the form has the autocomplete function switched off:-->
+            <div class="autocomplete">
+            <input id="myInput" class="form-control mr-sm-2" type="text" placeholder="<?= lang('App.Search')?>" aria-label="Search">
+            </div>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><?= lang('App.Search')?></button>
             </form>
             </ul>
             </nav>
-<script src="../js/js.js"></script>
+<script src="../js/navbar.js"></script>
+<script>
+    changePhoto(document.getElementById("navphoto"),"https://minotar.net/avatar/<?=$_SESSION['username']?> ");
+    var inp = document.getElementById('myInput');
+    //GET SEARCH DATA
+    inp.addEventListener("keydown", function(e) {
+    var parent = this;
+    var parsed = ['Initializing', 'Finding', 'And Start !'];
+    var status;
+    var link = "../api/search/" + this.value
+    //MAN I PROBABLY NEVER GONNA UNDERSTAND JS
+    var Search = new XMLHttpRequest();
+    Search.open( 'GET', link );
+    Search.onload = function() {
+        switch(this.status)
+        {
+            // SUCCESS !
+            case 200:
+            var pars = [];
+            var response = JSON.parse(this.response);
+            for (i = 0; i < response.data.length; i++) {
+                // parent.parsed.push(parent.response.data.name + "\t" + parent.response.data.type);
+                pars.push(response.data[i].name + "\t | \t" + response.data[i].type);
+            }
+            parent.parsed = pars;
+            parent.status = true;
+            break;
+            // NOT FOUND !
+            case 404:
+            var pars = [];
+            pars.push("NOT FOUND");
+            parent.parsed = pars;
+            parent.status = false;
+            break;
+        }
+    };
+    Search.onerror = function() {
+  // There was a connection error of some sort
+};
+Search.send();
+    if(!parent.status)
+    {
+        //PLACEHOLDER VALUE SO CONSOLE DONT GO CRAZY
+        parent.parsed = ['NOT FOUND'];
+    }
+    autocomplete(document.getElementById("myInput"), parent.parsed);
+});
+
+</script>
