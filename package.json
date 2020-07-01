@@ -20,14 +20,18 @@
         "popper.js": "^1.12",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
-        "resolve-url-loader": "^2.3.1",
-        "sass": "^1.20.1",
+        "resolve-url-loader": "^3.1.0",
+        "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
-        "@popperjs/core": "^2.4.2",
         "@tippyjs/react": "^4.0.5",
+        "laravel-echo": "^1.8.0",
         "react-icons": "^3.10.0",
-        "tippy.js": "^6.2.3"
+        "react-js-pagination": "^3.0.3",
+        "react-responsive-carousel": "^3.2.9",
+        "react-toastify": "^6.0.6",
+        "reactjs-popup": "^1.5.0",
+        "socket.io-client": "^2.3.0"
     }
 }

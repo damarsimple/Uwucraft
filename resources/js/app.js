@@ -12,9 +12,8 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-//require('./components/Example');
-//require('./components/Landing/LandingCount');
-/** I prefer this than that  */
-import LandingCount from './components/Landing/LandingCount'
-
-
+require('./components/Landing/LandingCount')
+require('./components/Ui/Notification')
+require('./components/Shop/ShopProfile')
+require('./components/Shop/ShopCarousel')
+require('./components/Shop/ShopProduct')

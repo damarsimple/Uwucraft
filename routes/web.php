@@ -14,12 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('welcome');
+});
+Route::get('/fire', function () {
+    event(new \App\Events\TestEvent());
+    return 'ok';
 });
 
-Route::get('users/', 'UsersController@index');
-Route::get('users/b', 'UsersController@index');
-Route::get('/articles/{ArticlesId}', 'ArticlesController@show');
+Route::get('/shop', function()
+{
+    return view('shop');
+});
 
 Auth::routes();
 
