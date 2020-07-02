@@ -10,6 +10,7 @@ return array(
     'App\\Events\\GameEvent' => $baseDir . '/app/Events/GameEvent.php',
     'App\\Events\\TestEvent' => $baseDir . '/app/Events/TestEvent.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\Api\\AuthController' => $baseDir . '/app/Http/Controllers/Api/AuthController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',

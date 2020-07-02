@@ -4,7 +4,7 @@ import "./Shop.css";
 import { ShopProductItem } from "./ShopProductItem";
 import axios from "axios";
 import Pagination from "react-js-pagination";
-import { ShopProductModal } from "./shopProductModal";
+import { ShopProductModal } from "./ShopProductModal";
 class ShopProduct extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +19,7 @@ class ShopProduct extends Component {
         };
     }
     componentDidMount() {
-        axios.get(window.location.protocol+'//'+window.location.hostname + ':' +window.location.port +'/api/items').then(res => {
+        axios.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/items').then(res => {
             const currentPage = res.data.current_page;
             const nextPage = res.data.next_page_url;
             const lastPage = res.data.last_page_url;
@@ -37,46 +37,45 @@ class ShopProduct extends Component {
         });
     }
     setProduct(pageNumber) {
-        axios.get(window.location.protocol+'//'+window.location.hostname + ':' +window.location.port +'/api/items?page='+ pageNumber).then(res => {
+        axios.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/items?page=' + pageNumber).then(res => {
             const products = res.data.data;
             const currentPage = res.data.current_page;
             this.setState({ products });
             this.setState({ currentPage });
-            this.setState({activePage: pageNumber});
+            this.setState({ activePage: pageNumber });
         });
     }
-    getImg(img)
-    {
-        console.log(window.location.protocol+'//'+window.location.hostname + ':' +window.location.port +'/api/image/item/' + img);
-        return window.location.protocol+'//'+window.location.hostname + ':' +window.location.port +'/api/image/item/' + img;
+    getImg(img) {
+        console.log(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/image/item/' + img);
+        return window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/image/item/' + img;
     }
     render() {
         return (
             <div>
-            <div className="container-fluid">
-                <div className="row">
-                    {this.state.products.map(product => (
-                        <ShopProductItem
-                            key={product.id}
-                            name={product.name}
-                            price={"$" + product.price}
-                            seller={product.seller}
-                            modal=<ShopProductModal />
-                            img = { this.getImg(product.minecraft_item_shorthand)}
-                        />
-                    ))}
+                <div className="container-fluid">
+                    <div className="row">
+                        {this.state.products.map(product => (
+                            <ShopProductItem
+                                key={product.id}
+                                name={product.name}
+                                price={"$" + product.price}
+                                seller={product.seller}
+                                modal={<ShopProductModal />}
+                                img={this.getImg(product.minecraft_item_shorthand)}
+                            />
+                        ))}
+                    </div>
                 </div>
-                </div>
-                    <Pagination
-                        itemClass="page-item"
-                        linkClass="page-link"
-                        hideNavigation
-                        activePage={this.state.currentPage}
-                        itemsCountPerPage={this.state.perpage}
-                        totalItemsCount={this.state.total}
-                        pageRangeDisplayed={5}
-                        onChange={this.setProduct.bind(this)}
-                    />
+                <Pagination
+                    itemClass="page-item"
+                    linkClass="page-link"
+                    hideNavigation
+                    activePage={this.state.currentPage}
+                    itemsCountPerPage={this.state.perpage}
+                    totalItemsCount={this.state.total}
+                    pageRangeDisplayed={5}
+                    onChange={this.setProduct.bind(this)}
+                />
             </div>
         );
     }

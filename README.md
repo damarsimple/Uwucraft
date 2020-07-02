@@ -22,14 +22,27 @@ phpredis is not officaly supported in windows installing it into wsl its hard fo
 After that instal AuthMe,Vault,EssentialsX,Websender and Uwucraft Plugin to your server
 and trigger plugin create table
 
+if .env file not 
+- cp .env.example .env
+- php artisan config:cache
+- php artisan passport:install
+- php artisan key:generate
+
+then change file .env to
+- DB TO YOUR NEED
+- BROADCAST_DRIVER = redis
+- CACHE_DRIVER = redis
+- QUEUE_CONECTION = redis
 then run php artisan migrate to add necessary column to table
 then run php artisan db:seed --class=itemsdata if you want to add dummy items
 
 then run this command
-php artisan serve
-redis-server
-php artisan queue:work
-laravel-echo-server start
+- npm install
+- npm run watch
+- php artisan serve // to start test server 
+- redis-server
+- php artisan queue:work
+- laravel-echo-server start
 
 ## Game Server Dependency
 
