@@ -23,6 +23,7 @@ use App\Http\Controllers\ItemImgController;
 
 /** API LOGIN ROUTES */
 Route::post('/login', 'Api\LoginController@login');
+Route::middleware('auth:api')->get('all', 'Api\UserDataController@index');
 /** Image Item API */
 Route::get('image/item/{itemname}', 'ItemImgController@get_img');
 /** Player API  */
@@ -74,3 +75,6 @@ Route::get('game/{data}', function ($data)
     return 'adding' . $data;
 });
 
+/** Sends data to chats room  */
+Route::get('chats/send', 'ChatsController@send');
+Route::post('chats/send/{to}/{data}', 'ChatsController@send');
