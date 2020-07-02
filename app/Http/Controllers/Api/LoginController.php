@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\v1;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -19,5 +19,9 @@ class LoginController extends Controller
         {
             return response(['message' => 'Invalid Login Credentials']);
         }
-    }   
+
+        $accessToken = Auth::user()->createToken('authToken')->accessToken;
+
+        return response(['user' => Auth::user(), 'access_token' => $accessToken]);
+    }
 }

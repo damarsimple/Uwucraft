@@ -16,13 +16,13 @@ use App\Http\Controllers\ItemImgController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); */
 
 
 /** API LOGIN ROUTES */
-Route::post('/login', 'Api\AuthController@login');
+Route::post('/login', 'Api\LoginController@login');
 /** Image Item API */
 Route::get('image/item/{itemname}', 'ItemImgController@get_img');
 /** Player API  */
