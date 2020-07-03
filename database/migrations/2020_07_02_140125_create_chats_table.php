@@ -27,6 +27,11 @@ class CreateChatsTable extends Migration
             $table->string('messages'); //Store Message
             $table->timestamps();
         });
+        Schema::create('chatssubscribes', function (Blueprint $table) {
+            $table->id();
+            $table->json('chatssubscribe');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -38,5 +43,6 @@ class CreateChatsTable extends Migration
     {
         Schema::dropIfExists('chatsroom');
         Schema::dropIfExists('chatsmessage');
+        Schema::dropIfExists('chatssubscribes');
     }
 }
