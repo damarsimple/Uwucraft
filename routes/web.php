@@ -28,6 +28,5 @@ Route::get('/shop', function()
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/c', 'ChatsController@index');
 
 

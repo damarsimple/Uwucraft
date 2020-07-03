@@ -23,7 +23,6 @@ use App\Http\Controllers\ItemImgController;
 
 /** API LOGIN ROUTES */
 Route::post('/login', 'Api\LoginController@login');
-Route::middleware('auth:api')->get('all', 'Api\UserDataController@index');
 /** Image Item API */
 Route::get('image/item/{itemname}', 'ItemImgController@get_img');
 /** Player API  */
@@ -36,7 +35,6 @@ Route::get('player/{username}', function($username)
     return PlayerData::find($username);
 });
 /** END OF LINE */
-
 // Items API //
 Route::get('items/all', function()
 {
@@ -76,5 +74,16 @@ Route::get('game/{data}', function ($data)
 });
 
 /** Sends data to chats room  */
-Route::get('chats/send', 'ChatsController@send');
-Route::post('chats/send/{to}/{data}', 'ChatsController@send');
+Route::get('/chats/room/{roomid}', 'ChatsController@getRoomData');
+Route::get('/chats/message/{id}', 'ChatsController@getMessagedata');
+Route::get('chats/subscribe/{id}', 'ChatsController@getSubscribedRoom');
+
+Route::put('/chats/message/{id}', 'ChatsController@EditRoom');
+Route::put('/chats/message/{id}', 'ChatsController@EditMessage');
+Route::put('/chats/subcribe/{id}', 'ChatsController@EditRoom'); //accept room to subscribe
+
+Route::delete('/chats/message/{id}', 'ChatsController@DeleteMessage');
+Route::delete('/chats/room/{id}', 'ChatsController@DeleteRoom');
+
+Route::post('/chats/subscribe' , 'ChatsController@addChatsSubscribe'); //accept sender +
+Route::post('/chats/message' , 'ChatsController@addMessage'); //accept room id + sender + content
