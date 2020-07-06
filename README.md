@@ -13,16 +13,15 @@ DB Connection, Broadcast Driver,Cache Driver, Queue Conecntion, Redis host passw
 
 and change laravel-echo-server.json authost to your need
 
-dont forget to change REDIS_CLIENT enviroment variable from phpredis to predis
-
-phpredis is not officaly supported in windows installing it into wsl its hard for me
+dont forget to change REDIS_CLIENT enviroment variable from phpredis to predis if you in windows
+phpredis is not officaly supported in windows if you on windows change below in database.php
 
 'client' => env('REDIS_CLIENT', 'predis'),
 
 After that instal AuthMe,Vault,EssentialsX,Websender and Uwucraft Plugin to your server
 and trigger plugin create table
 
-if .env file not 
+if .env file not exists
 - cp .env.example .env
 - php artisan config:cache
 - php artisan passport:install
@@ -37,9 +36,12 @@ then run php artisan migrate to add necessary column to table
 then run php artisan db:seed --class=itemsdata if you want to add dummy items
 
 then run this command
+- composer install
 - npm install
+- npm install -g laravel-echo-server //notification component add sudo if you on linux
 - npm run watch
 - php artisan serve // to start test server 
+- php artisan passport:install
 - redis-server
 - php artisan queue:work
 - laravel-echo-server start

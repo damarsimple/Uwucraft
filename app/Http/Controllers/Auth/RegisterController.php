@@ -66,7 +66,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $uuid = new UUID;
         return User::create([
             'username' => $data['username'],
             'realname' => $data['username'],
@@ -76,7 +75,6 @@ class RegisterController extends Controller
             'regdate' => time(),
             'regip' => request()->ip(),
             'ip' => request()->ip(),
-            'UUID' => $uuid->getUUID($data['username']),
         ]);
     }
 }

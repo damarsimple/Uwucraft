@@ -580,7 +580,9 @@ class ComposerStaticInitcf528b434209aae1b1a66e73d89414b8
     );
 
     public static $classMap = array (
-        'App\\Chats' => __DIR__ . '/../..' . '/app/Chats.php',
+        'App\\ChatsMessage' => __DIR__ . '/../..' . '/app/ChatsMessage.php',
+        'App\\ChatsRoom' => __DIR__ . '/../..' . '/app/ChatsRoom.php',
+        'App\\ChatsSubscribe' => __DIR__ . '/../..' . '/app/ChatsSubscribe.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\GameEvent' => __DIR__ . '/../..' . '/app/Events/GameEvent.php',
         'App\\Events\\TestEvent' => __DIR__ . '/../..' . '/app/Events/TestEvent.php',
@@ -597,6 +599,7 @@ class ComposerStaticInitcf528b434209aae1b1a66e73d89414b8
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ItemImgController' => __DIR__ . '/../..' . '/app/Http/Controllers/ItemImgController.php',
         'App\\Http\\Controllers\\ShopController' => __DIR__ . '/../..' . '/app/Http/Controllers/ShopController.php',
+        'App\\Http\\Controllers\\T' => __DIR__ . '/../..' . '/app/Http/Controllers/T.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

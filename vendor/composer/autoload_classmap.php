@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Chats' => $baseDir . '/app/Chats.php',
+    'App\\ChatsMessage' => $baseDir . '/app/ChatsMessage.php',
+    'App\\ChatsRoom' => $baseDir . '/app/ChatsRoom.php',
+    'App\\ChatsSubscribe' => $baseDir . '/app/ChatsSubscribe.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\GameEvent' => $baseDir . '/app/Events/GameEvent.php',
     'App\\Events\\TestEvent' => $baseDir . '/app/Events/TestEvent.php',
@@ -23,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\ItemImgController' => $baseDir . '/app/Http/Controllers/ItemImgController.php',
     'App\\Http\\Controllers\\ShopController' => $baseDir . '/app/Http/Controllers/ShopController.php',
+    'App\\Http\\Controllers\\T' => $baseDir . '/app/Http/Controllers/T.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
