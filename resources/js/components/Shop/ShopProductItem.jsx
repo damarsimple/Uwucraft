@@ -31,7 +31,6 @@ export function ShopProductItem(props) {
                                     }
                                     type="button"
                                     className="btn btn-primary"
-                                    preventDefault
                                 >
                                     Add to cart
                                 </button>
@@ -60,8 +59,6 @@ function postCart(itemid, amount , name)
             item: itemid,
             amount: amount,
     });
-        console.log('👉 Returned data:', response , itemid, amount);
-
         toast.info( '🛒 ' + 'Added ' + name + ' To Carts !', {
             position: "bottom-left",
             autoClose: 5000,

@@ -39,3 +39,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+axios.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/token').then(response => {
+        window.token = response.data;
+        console.log(window.token);
+    });

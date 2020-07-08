@@ -46,7 +46,6 @@ class ShopProduct extends Component {
         });
     }
     getImg(img) {
-        console.log(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/image/item/' + img);
         return window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/image/item/' + img;
     }
     render() {

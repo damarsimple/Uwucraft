@@ -14,6 +14,7 @@ require('./bootstrap');
 
 require('./components/Landing/LandingCount')
 require('./components/Ui/Notification')
+
 require('./components/Shop/ShopProfile')
 require('./components/Shop/ShopCarousel')
 require('./components/Shop/ShopProduct')

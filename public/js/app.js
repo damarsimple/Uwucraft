@@ -73665,6 +73665,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: true
 // });
 
+axios.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/token').then(function (response) {
+  window.token = response.data;
+  console.log(window.token);
+});
+
 /***/ }),
 
 /***/ "./resources/js/components/Landing/LandingCount.jsx":
@@ -74118,7 +74123,6 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
   }, {
     key: "getImg",
     value: function getImg(img) {
-      console.log(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/image/item/' + img);
       return window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/image/item/' + img;
     }
   }, {
@@ -74218,8 +74222,7 @@ function ShopProductItem(props) {
       return postCart(props.itemid, 1, props.name);
     },
     type: "button",
-    className: "btn btn-primary",
-    preventDefault: true
+    className: "btn btn-primary"
   }, "Add to cart"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.seller), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74235,7 +74238,6 @@ function postCart(itemid, amount, name) {
       item: itemid,
       amount: amount
     });
-    console.log('👉 Returned data:', response, itemid, amount);
     react_toastify__WEBPACK_IMPORTED_MODULE_4__["toast"].info('🛒 ' + 'Added ' + name + ' To Carts !', {
       position: "bottom-left",
       autoClose: 5000,

@@ -35,7 +35,8 @@ This Method return API Tokens from current authenticated users
 The idea here is create a method to fetch api tokens for use throghout the app
 i dont know better idea than this 
 */
-Route::get('test', function()
+Route::get('token', function()
 {
-    return response(['user' => Auth::user()]);
+    $accessToken = Auth::user()->createToken('authToken')->accessToken;
+    return response(['token' => $accessToken]);
 })->middleware('auth');
