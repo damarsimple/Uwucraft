@@ -37,6 +37,7 @@ i dont know better idea than this
 */
 Route::get('token', function()
 {
+    //this will have its own function to get and create or retrieve
     $accessToken = Auth::user()->createToken('authToken')->accessToken;
     return response(['token' => $accessToken]);
 })->middleware('auth');

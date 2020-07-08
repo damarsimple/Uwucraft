@@ -47,7 +47,6 @@ class ShopProduct extends Component {
         axios.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/token').then(res => {
             const token = res.data.token;
             this.setState({ token });
-            console.log(token);
         });
     }
     setProduct(pageNumber) {

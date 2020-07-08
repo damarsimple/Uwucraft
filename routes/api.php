@@ -91,3 +91,5 @@ Route::post('/chats/subscribe' , 'ChatsController@addChatsSubscribe'); //accept 
 Route::post('/chats/message' , 'ChatsController@addMessage'); //accept room id + sender + content
 
 Route::post('/shop', 'ShopController@addItemCart');
+
+Route::get('/test/{username}' , 'ShopController@getMoney');

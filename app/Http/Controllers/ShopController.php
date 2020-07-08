@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Library\WebsenderAPI;
 use App\Itemsdata;
@@ -11,6 +12,8 @@ use App\UsersCart;
 use App\PlayerData;
 use app\UsersTransactionHistory;
 
+
+/** Revamp to user Auth Facades */
 class ShopController extends Controller
 {
     public $hosts = '';
@@ -131,6 +134,7 @@ class ShopController extends Controller
     public static function getMoney($username)
     {
         //Get Player money from model
+        return Auth::user();
         return PlayerData::findOrFail($username)['money'];
     }
     public static function getPrice($item)

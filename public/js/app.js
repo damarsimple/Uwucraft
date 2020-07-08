@@ -74124,8 +74124,6 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
         _this3.setState({
           token: token
         });
-
-        console.log(token);
       });
     }
   }, {
