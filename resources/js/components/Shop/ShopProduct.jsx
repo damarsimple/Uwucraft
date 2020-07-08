@@ -67,6 +67,7 @@ class ShopProduct extends Component {
                         ))}
                     </div>
                 </div>
+                { 'will make it to infinite scrolling instead of pagination'}
                 <Pagination
                     itemClass="page-item"
                     linkClass="page-link"

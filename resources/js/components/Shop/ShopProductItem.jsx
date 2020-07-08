@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Popup from "reactjs-popup";
 import "./Shop.css";
 import axios from "axios";
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export function ShopProductItem(props) {
     return (
         <div className="col-md-3 shadow-sm p-3 mb-5 bg-white rounded">
@@ -21,13 +24,14 @@ export function ShopProductItem(props) {
                     </Popup>
                     <div className="button-head">
                         <div className="product-action-2">
-                            <a title="Add to cart" href="#">
+                            <a title="Add to cart">
                                 <button
                                     onClick={
-                                        () => postCart(props.itemid, 1)
+                                        () => postCart(props.itemid, 1, props.name)
                                     }
                                     type="button"
                                     className="btn btn-primary"
+                                    preventDefault
                                 >
                                     Add to cart
                                 </button>
@@ -46,7 +50,7 @@ export function ShopProductItem(props) {
         </div>
     );
 }
-function postCart(itemid, amount)
+function postCart(itemid, amount , name)
 {
     try {
         //ADD OAUTH TOKEN LATER ON
@@ -57,6 +61,16 @@ function postCart(itemid, amount)
             amount: amount,
     });
         console.log('👉 Returned data:', response , itemid, amount);
+
+        toast.info( '🛒 ' + 'Added ' + name + ' To Carts !', {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
       } catch (e) {
         console.log(`😱 Axios request failed: ${e}`);
       }

@@ -74140,7 +74140,7 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
           itemid: product.id,
           img: _this4.getImg(product.minecraft_item_shorthand)
         });
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_js_pagination__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      }))), 'will make it to infinite scrolling instead of pagination', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_js_pagination__WEBPACK_IMPORTED_MODULE_5___default.a, {
         itemClass: "page-item",
         linkClass: "page-link",
         hideNavigation: true,
@@ -74181,6 +74181,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Shop_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.js");
+/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
+/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_5__);
+
+
 
 
 
@@ -74207,14 +74212,14 @@ function ShopProductItem(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-action-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "Add to cart",
-    href: "#"
+    title: "Add to cart"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
-      return postCart(props.itemid, 1);
+      return postCart(props.itemid, 1, props.name);
     },
     type: "button",
-    className: "btn btn-primary"
+    className: "btn btn-primary",
+    preventDefault: true
   }, "Add to cart"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.seller), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74222,7 +74227,7 @@ function ShopProductItem(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, props.price)))));
 }
 
-function postCart(itemid, amount) {
+function postCart(itemid, amount, name) {
   try {
     //ADD OAUTH TOKEN LATER ON
     var response = axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/shop', {
@@ -74231,6 +74236,15 @@ function postCart(itemid, amount) {
       amount: amount
     });
     console.log('👉 Returned data:', response, itemid, amount);
+    react_toastify__WEBPACK_IMPORTED_MODULE_4__["toast"].info('🛒 ' + 'Added ' + name + ' To Carts !', {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
+    });
   } catch (e) {
     console.log("\uD83D\uDE31 Axios request failed: ".concat(e));
   }
