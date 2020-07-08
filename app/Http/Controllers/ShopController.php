@@ -20,7 +20,7 @@ class ShopController extends Controller
     public function __construct()
     {
         //Api Requests Only
-        $this->middleware('auth:api');
+        //$this->middleware('auth:api');
     
         //Initialize Websender
         $mc_connection =  new WebsenderAPI($this->hosts, $this->port, $this->password);
@@ -31,19 +31,64 @@ class ShopController extends Controller
             $this->status = true;
         } else {
             $this->status = false;
-            abort(404, 'cant contact server');
+            //abort(404, 'cant contact server');
         }
     }
-    public function proccessPayment(Request $request)
+    public function addItemCart(Request $request)
     {
-        //Get Username
+        //Initialize Variable
         $username = $request->input('username');
-        return $this->processCart($username);
-        
+        $id = $request->input('item');
+        $amount = $request->input('amount');
+
+        //Check if users exists in records
+        if( UsersCart::where('username', '=', $username)->first() == null)
+        {
+            //Create if not exists
+            UsersCart::insert(
+                [
+                    'username' => $username,
+                    'inventory' => null,
+                    'amount' => null,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]
+            );
+            
+        }
+
+        //Initialize users cart object
+        $cart = UsersCart::find($username);
+        //Check if empty
+        if( !empty($cart->inventory))
+        {
+            $cartd = json_decode($cart->inventory);
+            $amountd = json_decode($cart->amount);
+        }else{
+            //Init Array Empty
+            $cartd = array();
+            $amountd = array();
+        }
+
+        //Push Data to array
+        array_push($cartd, $id);
+        array_push($amountd, $amount);
+
+        //Save to database
+        $cart->inventory = json_encode($cartd);
+        $cart->amount = json_encode($amountd);
+        return $cart->save();
     }
+    // public function proccessPayment(Request $request)
+    // {
+    //     //Get Username
+    //     $username = $request->input('username');
+    //     return $this->processCart($username);
+        
+    // }
     private function processCart($username)
     {
-        //Get Moneyand Cart
+        //Get Money and Cart
         $money = $this->getMoney($username);
         $cart = Userscart::find($username);
         $inventory = json_decode($cart['inventory']);
@@ -65,9 +110,10 @@ class ShopController extends Controller
                 $this->deliverItems($username, $inventory[$i], $amount[$i]);
                 $this->incrementItemCounter($inventory[$i]);
             }
+            $this->DecrementMoney($username, $totalprice);
+            return true;
         }
-        //$this->decrement money
-        return true;
+        return false;
     }
     private function deliverItems($username, $item, $amount)
     {
@@ -75,6 +121,12 @@ class ShopController extends Controller
         $items = Itemsdata::findOrFail($item)['minecraft_short_hand'];
         $this->con->sendCommand("give $username $items $amount");
         return true;
+    }
+    private function DecrementMoney($username, $amount)
+    {
+        $users = PlayerData::findOrFail($username);
+        $users->money = $users->money - $amount;
+        return $users->save();
     }
     public static function getMoney($username)
     {
@@ -86,7 +138,7 @@ class ShopController extends Controller
         //Get Price from model
         return Itemsdata::findOrFail($item)['price'];
     }
-    public static function incrementItemCounter($id)
+    private static function incrementItemCounter($id)
     {
         return Itemsdata::findOrFail($id)->increment('counter');
     }

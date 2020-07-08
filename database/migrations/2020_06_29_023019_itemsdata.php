@@ -17,7 +17,7 @@ class Itemsdata extends Migration
             $table->id();
             $table->string('name');
             $table->string('seller');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('type');
             $table->string('minecraft_item_id');
             $table->string('minecraft_item_shorthand');

@@ -74410,7 +74410,7 @@ var Notification = /*#__PURE__*/function (_React$Component) {
     });
     /** React Toastify + Laravel Echos */
 
-    echo.channel('GameEvent').listen('GameEvent', function (e) {
+    echo.channel('GlobalNotifications').listen('GlobalNotifications', function (e) {
       react_toastify__WEBPACK_IMPORTED_MODULE_2__["toast"].info('🔪 ' + e.data, {
         position: "bottom-left",
         autoClose: 5000,
@@ -74460,8 +74460,8 @@ if (document.getElementById('Notification')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/damar/Uwucraft/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/damar/Uwucraft/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/damaralbaribin/Uwucraft/Uwucraft/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/damaralbaribin/Uwucraft/Uwucraft/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),

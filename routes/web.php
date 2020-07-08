@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Itemsdata;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +27,3 @@ Route::get('/shop', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
-Route::get('/test/{id}', function ($id) {
-    $obj = Itemsdata::find($id);
-    $obj->counter = $obj->counter + 1;
-    $obj->save();
-    return $obj;
-});

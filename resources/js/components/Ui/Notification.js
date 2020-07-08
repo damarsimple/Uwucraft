@@ -18,8 +18,8 @@ class Notification extends React.Component{
             }
         )
         /** React Toastify + Laravel Echos */
-        echo.channel('GameEvent')
-        .listen('GameEvent', e => {
+        echo.channel('GlobalNotifications')
+        .listen('GlobalNotifications', e => {
             toast.info( '🔪 ' + e.data , {
                 position: "bottom-left",
                 autoClose: 5000,

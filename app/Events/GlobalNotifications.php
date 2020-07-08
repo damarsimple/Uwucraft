@@ -10,7 +10,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class GameEvent implements ShouldBroadcast
+class GlobalNotifications implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -32,6 +32,6 @@ class GameEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('GameEvent');
+        return new Channel('GlobalNotifications');
     }
 }

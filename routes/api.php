@@ -69,7 +69,7 @@ Route::delete('items/{$id}', function($id)
 /** Game Notifications */
 Route::get('game/{data}', function ($data)
 {
-    event(new \App\Events\GameEvent($data));
+    event(new \App\Events\GlobalNotifications($data));
     return 'adding' . $data;
 });
 
@@ -87,3 +87,4 @@ Route::delete('/chats/room/{id}', 'ChatsController@DeleteRoom');
 
 Route::post('/chats/subscribe' , 'ChatsController@addChatsSubscribe'); //accept sender +
 Route::post('/chats/message' , 'ChatsController@addMessage'); //accept room id + sender + content
+Route::post('/tes1', 'ShopController@addItemCart');
