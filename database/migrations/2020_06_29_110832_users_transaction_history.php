@@ -18,7 +18,8 @@ class UsersTransactionHistory extends Migration
         $table->string('username')->primary();
         $table->string('inventory');
         $table->string('amount');
-        $table->string('date');
+        $table->timestamp('created_at')->nullable();
+        $table->timestamp('updated_at')->nullable();
     });
     }
 

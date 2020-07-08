@@ -17,7 +17,8 @@ class UsersCart extends Migration
             $table->string('username')->primary();
             $table->string('inventory');
             $table->string('amount');
-            $table->timestamp('time');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

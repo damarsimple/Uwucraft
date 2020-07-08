@@ -18,19 +18,22 @@ class CreateChatsTable extends Migration
             $table->id('roomid');
             $table->json('participantid'); //Store People ID thats in chats rooms
             $table->json('messageid'); //Store Message Data that people sends
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
         Schema::create('chatsmessage', function (Blueprint $table) {
             $table->id('messageid');
             $table->integer('senderid'); //Store ID of messsage sender
             $table->integer('roomid'); //store ID of room sender message into
             $table->string('messages'); //Store Message
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
         Schema::create('chatssubscribes', function (Blueprint $table) {
             $table->id();
             $table->json('chatssubscribe');
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

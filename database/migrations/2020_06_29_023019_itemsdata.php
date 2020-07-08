@@ -23,6 +23,8 @@ class Itemsdata extends Migration
             $table->string('minecraft_item_shorthand');
             $table->integer('price');
             $table->integer('counter');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
 
         });
     }
