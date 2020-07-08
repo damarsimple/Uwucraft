@@ -2,9 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Itemsdata;
 use App\PlayerData;
 use App\Http\Controllers\ItemImgController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes

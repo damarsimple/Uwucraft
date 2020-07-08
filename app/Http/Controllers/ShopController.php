@@ -20,7 +20,7 @@ class ShopController extends Controller
     public function __construct()
     {
         //Api Requests Only
-        //$this->middleware('auth:api');
+        $this->middleware('auth:api');
     
         //Initialize Websender
         $mc_connection =  new WebsenderAPI($this->hosts, $this->port, $this->password);

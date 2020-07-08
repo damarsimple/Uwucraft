@@ -68,5 +68,10 @@
         <script src="{{ asset('js/app.js') }}"></script>
             <!-- Scripts Here -->
             @yield('scripts')
+            <script>
+             axios.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/test').then(res => {
+            console.log(res.data);
+        });
+            </script>
     </body>
     </html>

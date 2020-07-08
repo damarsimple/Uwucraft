@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +27,15 @@ Route::get('/shop', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+/*
+This Method return API Tokens from current authenticated users
+
+The idea here is create a method to fetch api tokens for use throghout the app
+i dont know better idea than this 
+*/
+Route::get('test', function()
+{
+    return response(['user' => Auth::user()]);
+})->middleware('auth');
