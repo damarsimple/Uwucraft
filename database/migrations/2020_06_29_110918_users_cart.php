@@ -15,7 +15,6 @@ class UsersCart extends Migration
     {
         Schema::create('users_cart', function (Blueprint $table) {
             $table->string('username')->primary();
-            $table->string('UUID');
             $table->string('inventory');
             $table->string('amount');
             $table->timestamp('time');

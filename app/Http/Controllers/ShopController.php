@@ -13,14 +13,14 @@ use app\UsersTransactionHistory;
 
 class ShopController extends Controller
 {
-
-    var $hosts = '';
-    var $port = '';
-    var $password = '';
-    var $con;
-    public $mode = 'Offline';
+    public $hosts = '';
+    public $port = '';
+    public $password = '';
+    public $con;
     public function __construct()
     {
+        $this->middleware('auth:api');
+    
         $mc_connection =  new WebsenderAPI($this->hosts, $this->port, $this->password);
         if ($mc_connection->connect()) {
             $this->con = $mc_connection;
@@ -29,35 +29,33 @@ class ShopController extends Controller
             $this->status = false;
         }
     }
-    public function proccessPayment(array $data)
+    public function proccessPayment(Request $request)
     {
-        if ($this->mode == true)
+        $username = $request->input('username');
+        $item = $request->input('name');
+        $amount = $request->input('amount');
+        if($this->deliverItems($username, $item, $amount))
         {
-            foreach($data as $key=>$value)
-            {
-                self::addTransactionHistory($data);
-                $this->deliverItems($data['username'],$data['items'],$data['amount']);
-                return true;
-            }
+            return true;
         }
         return false;
     }
-    public function deliverItems(array $data)
+    public function deliverItems($username, $item, $amount)
     {
-        if($this->status)
-        {
-            return $this->con->sendCommand('give ' + $data['username'] + $data['item'] + $data['amount']);
+        if ($this->status) {
+            $this->con->sendCommand("give $username $item $amount");
+            return true;
         }
         return false;
+    }
+    public function processCart($username)
+    {
+        $money = $this->getMoney($username);
+
+        $cart = $this-
     }
     public static function addTransactionHistory(array $data)
     {
-        if( self::checkUsersExistsHistory())
-        {
-            return UsersTransactionHistory::insert();
-        }else{
-            return self::addUsersTransactionHistory();
-        }
 
     }
     public static function getMoney($username)
@@ -69,22 +67,6 @@ class ShopController extends Controller
         $items = Itemsdata::findOrFail($id);
         $counter = Itemsdata::find($id)['counter'];
         return $items->update(['counter'  => $counter + 1]);
-    }
-    public static function addUsersCart()
-    {
-
-    }
-    public static function addUsersTransactionHistory()
-    {
-
-    }
-    public static function checkUsersExistsCart()
-    {
-        return UsersCart::where();
-    }
-    public static function checkUsersExistsHistory()
-    {
-
     }
     public function __destruct()
     {

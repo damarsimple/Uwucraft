@@ -16,7 +16,6 @@ class UsersTransactionHistory extends Migration
         Schema::create('users_transaction_history', function(Blueprint $table)
     {
         $table->string('username')->primary();
-        $table->string('UUID');
         $table->string('inventory');
         $table->string('amount');
         $table->string('date');
