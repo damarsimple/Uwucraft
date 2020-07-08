@@ -61,6 +61,7 @@ class ShopProduct extends Component {
                                 price={"$" + product.price}
                                 seller={product.seller}
                                 modal={<ShopProductModal />}
+                                itemid={product.id}
                                 img={this.getImg(product.minecraft_item_shorthand)}
                             />
                         ))}

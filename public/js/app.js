@@ -74137,6 +74137,7 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
           price: "$" + product.price,
           seller: product.seller,
           modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProductModal__WEBPACK_IMPORTED_MODULE_6__["ShopProductModal"], null),
+          itemid: product.id,
           img: _this4.getImg(product.minecraft_item_shorthand)
         });
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_js_pagination__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -74178,6 +74179,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactjs_popup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactjs-popup */ "./node_modules/reactjs-popup/reactjs-popup.es.js");
 /* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Shop.css */ "./resources/js/components/Shop/Shop.css");
 /* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Shop_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -74206,6 +74210,9 @@ function ShopProductItem(props) {
     title: "Add to cart",
     href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return postCart(props.itemid, 1);
+    },
     type: "button",
     className: "btn btn-primary"
   }, "Add to cart"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74213,6 +74220,20 @@ function ShopProductItem(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.seller), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-price"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, props.price)))));
+}
+
+function postCart(itemid, amount) {
+  try {
+    //ADD OAUTH TOKEN LATER ON
+    var response = axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/shop', {
+      username: 'dazzle',
+      item: itemid,
+      amount: amount
+    });
+    console.log('👉 Returned data:', response, itemid, amount);
+  } catch (e) {
+    console.log("\uD83D\uDE31 Axios request failed: ".concat(e));
+  }
 }
 
 /***/ }),

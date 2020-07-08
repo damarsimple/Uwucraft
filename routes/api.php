@@ -87,4 +87,5 @@ Route::delete('/chats/room/{id}', 'ChatsController@DeleteRoom');
 
 Route::post('/chats/subscribe' , 'ChatsController@addChatsSubscribe'); //accept sender +
 Route::post('/chats/message' , 'ChatsController@addMessage'); //accept room id + sender + content
-Route::post('/tes1', 'ShopController@addItemCart');
+
+Route::post('/shop', 'ShopController@addItemCart');
