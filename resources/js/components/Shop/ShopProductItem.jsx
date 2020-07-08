@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Popup from "reactjs-popup";
 import "./Shop.css";
 import axios from "axios";
-import { ToastContainer,toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function ShopProductItem(props) {
     return (
@@ -26,8 +26,13 @@ export function ShopProductItem(props) {
                         <div className="product-action-2">
                             <a title="Add to cart">
                                 <button
-                                    onClick={
-                                        () => postCart(props.itemid, 1, props.name)
+                                    onClick={() =>
+                                        postCart(
+                                            props.itemid,
+                                            1,
+                                            props.name,
+                                            props.token
+                                        )
                                     }
                                     type="button"
                                     className="btn btn-primary"
@@ -49,26 +54,33 @@ export function ShopProductItem(props) {
         </div>
     );
 }
-function postCart(itemid, amount , name)
-{
+function postCart(itemid, amount, name, token) {
     try {
-        //ADD OAUTH TOKEN LATER ON
-        const response = axios.post(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/shop', 
-        { 
-            username: 'dazzle',
-            item: itemid,
-            amount: amount,
-    });
-        toast.info( '🛒 ' + 'Added ' + name + ' To Carts !', {
+        const response = axios.post(
+            window.location.protocol +
+                "//" +
+                window.location.hostname +
+                ":" +
+                window.location.port +
+                "/api/shop",
+            {
+                username: 'dazzle',
+                item: itemid,
+                amount: amount
+            },{
+                headers: { Authorization: 'Bearer ' + token}
+            }
+        );
+        toast.info("🛒 " + "Added " + name + " To Carts !", {
             position: "bottom-left",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            progress: undefined,
-            });
-      } catch (e) {
+            progress: undefined
+        });
+    } catch (e) {
         console.log(`😱 Axios request failed: ${e}`);
-      }
+    }
 }
