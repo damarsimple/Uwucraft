@@ -5,48 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\Library\WebsenderAPI;
+
 use App\Itemsdata;
 use App\User;
 use App\UsersCart;
 use App\PlayerData;
-use app\UsersTransactionHistory;
-
+use App\UsersTransactionHistory;
+use App\Http\Controllers\ServerController;
 
 /** Revamp to user Auth Facades */
 class ShopController extends Controller
 {
-    public $hosts = '';
-    public $port = '';
-    public $password = '';
-    public $con;
     public function __construct()
     {
-        //Api Requests Only
-        $this->middleware('auth:api');
-    
+
         //Initialize Websender
-        $mc_connection =  new WebsenderAPI($this->hosts, $this->port, $this->password);
-        //Check Conection
-        if ($mc_connection->connect()) 
-        {
-            $this->con = $mc_connection;
-            $this->status = true;
-        } else {
-            $this->status = false;
-            //abort(404, 'cant contact server');
-        }
     }
     public function addItemCart(Request $request)
     {
         //Initialize Variable
-        $username = $request->input('username');
+        $username = Auth::user()->username;
         $id = $request->input('item');
         $amount = $request->input('amount');
 
-        //Check if users exists in records
-        if( UsersCart::where('username', '=', $username)->first() == null)
-        {
+        //Check if users carts exists in records
+        if (UsersCart::where('username', '=', $username)->first() == null) {
             //Create if not exists
             UsersCart::insert(
                 [
@@ -57,17 +40,15 @@ class ShopController extends Controller
                     'updated_at' => now(),
                 ]
             );
-            
         }
 
         //Initialize users cart object
         $cart = UsersCart::find($username);
         //Check if empty
-        if( !empty($cart->inventory))
-        {
+        if (!empty($cart->inventory)) {
             $cartd = json_decode($cart->inventory);
             $amountd = json_decode($cart->amount);
-        }else{
+        } else {
             //Init Array Empty
             $cartd = array();
             $amountd = array();
@@ -82,34 +63,25 @@ class ShopController extends Controller
         $cart->amount = json_encode($amountd);
         return $cart->save();
     }
-    // public function proccessPayment(Request $request)
-    // {
-    //     //Get Username
-    //     $username = $request->input('username');
-    //     return $this->processCart($username);
-        
-    // }
-    private function processCart($username)
+    private function processCart()
     {
         //Get Money and Cart
+        $username = Auth::user()->username;
         $money = $this->getMoney($username);
         $cart = Userscart::find($username);
         $inventory = json_decode($cart['inventory']);
         $amount = json_decode($cart['amount']);
         //Calculate Total Price
-        $totalprice;
-        $price;
-        for ($i = 0 ; $i < count($inventory); $i++) 
-        {
+        $totalprice = null;
+        for ($i = 0; $i < count($inventory); $i++) {
             //Get Price of item
             $price = $this->getPrice($inventory[$i]);
             //Increment Total Price
             $totalprice += $price * $amount;
         }
         //Simple Check
-        if( $money >= $totalprice)
-        {
-            for ($i = 0 ; $i < count($inventory); $i++) {
+        if ($money >= $totalprice) {
+            for ($i = 0; $i < count($inventory); $i++) {
                 $this->deliverItems($username, $inventory[$i], $amount[$i]);
                 $this->incrementItemCounter($inventory[$i]);
             }
@@ -122,8 +94,8 @@ class ShopController extends Controller
     {
         //Send item
         $items = Itemsdata::findOrFail($item)['minecraft_short_hand'];
-        $this->con->sendCommand("give $username $items $amount");
-        return true;
+        $server = new ServerController();
+        return $server->give($username, $items, $amount);
     }
     private function DecrementMoney($username, $amount)
     {
@@ -131,11 +103,34 @@ class ShopController extends Controller
         $users->money = $users->money - $amount;
         return $users->save();
     }
-    public static function getMoney($username)
+    public static function getMoney()
     {
         //Get Player money from model
-        return Auth::user();
-        return PlayerData::findOrFail($username)['money'];
+        return PlayerData::findOrFail(Auth::user()->username)['money'];
+    }
+    public static function getCart()
+    {
+        $obj = UsersCart::find(Auth::user()->username);
+        $inventory = json_decode($obj->inventory);
+        $amount = json_decode($obj->amount);
+
+        if ($inventory == null) {
+            $inventory = array();
+        }
+
+        $inv = array();
+        for ($i = 0; $i < count($inventory); $i++) {
+            $item = Itemsdata::find($inventory[$i]);
+            $item['amount'] = $amount[$i];
+            array_push($inv, $item);
+        }
+        $data = [
+            'username' => Auth::user()->username,
+            'cart' => $inv,
+            'last_update' =>  $obj->updated_at,
+
+        ];
+        return $data;
     }
     public static function getPrice($item)
     {
@@ -145,12 +140,5 @@ class ShopController extends Controller
     private static function incrementItemCounter($id)
     {
         return Itemsdata::findOrFail($id)->increment('counter');
-    }
-    public function __destruct()
-    {
-        if ($this->status) 
-        {
-            $this->con->disconnect();
-        }
     }
 }

@@ -31,7 +31,6 @@ export function ShopProductItem(props) {
                                             props.itemid,
                                             1,
                                             props.name,
-                                            props.token
                                         )
                                     }
                                     type="button"
@@ -54,7 +53,7 @@ export function ShopProductItem(props) {
         </div>
     );
 }
-function postCart(itemid, amount, name, token) {
+function postCart(itemid, amount, name) {
     try {
         const response = axios.post(
             window.location.protocol +
@@ -62,13 +61,10 @@ function postCart(itemid, amount, name, token) {
                 window.location.hostname +
                 ":" +
                 window.location.port +
-                "/api/shop",
+                "/ajax/shop",
             {
-                username: 'dazzle',
                 item: itemid,
                 amount: amount
-            },{
-                headers: { Authorization: 'Bearer ' + token}
             }
         );
         toast.info("🛒 " + "Added " + name + " To Carts !", {
@@ -83,4 +79,5 @@ function postCart(itemid, amount, name, token) {
     } catch (e) {
         console.log(`😱 Axios request failed: ${e}`);
     }
+    
 }

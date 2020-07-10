@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./Shop.css";
 import { ShopProductItem } from "./ShopProductItem";
-import axios from "axios";
-import  Token  from '../Auth/Token';
-import Pagination from "react-js-pagination";
 import { ShopProductModal } from "./ShopProductModal";
+import { fetchItems,getImg  } from "../Ajax/Shop";
+import Pagination from "react-js-pagination";
+
 class ShopProduct extends Component {
     constructor(props) {
         super(props);
@@ -16,13 +16,11 @@ class ShopProduct extends Component {
             lastPage: null,
             totalPages: null,
             total: 10,
-            perpage: null,
-            token: null,
+            perpage: null
         };
     }
     componentDidMount() {
-        this.getToken();
-        axios.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/items').then(res => {
+        fetchItems().then(res => {
             const currentPage = res.data.current_page;
             const nextPage = res.data.next_page_url;
             const lastPage = res.data.last_page_url;
@@ -39,27 +37,24 @@ class ShopProduct extends Component {
             this.setState({ perpage });
         });
     }
-    /** Bad Way To Implement This 
-     *  I need better way to implement get token function i dont get how babel javascript works sad UwU
-    */
-    getToken()
-    {
-        axios.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/token').then(res => {
-            const token = res.data.token;
-            this.setState({ token });
-        });
-    }
     setProduct(pageNumber) {
-        axios.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/items?page=' + pageNumber).then(res => {
-            const products = res.data.data;
-            const currentPage = res.data.current_page;
-            this.setState({ products });
-            this.setState({ currentPage });
-            this.setState({ activePage: pageNumber });
-        });
-    }
-    getImg(img) {
-        return window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/image/item/' + img;
+        axios
+            .get(
+                window.location.protocol +
+                    "//" +
+                    window.location.hostname +
+                    ":" +
+                    window.location.port +
+                    "/api/items?page=" +
+                    pageNumber
+            )
+            .then(res => {
+                const products = res.data.data;
+                const currentPage = res.data.current_page;
+                this.setState({ products });
+                this.setState({ currentPage });
+                this.setState({ activePage: pageNumber });
+            });
     }
     render() {
         return (
@@ -74,13 +69,12 @@ class ShopProduct extends Component {
                                 seller={product.seller}
                                 modal={<ShopProductModal />}
                                 itemid={product.id}
-                                img={this.getImg(product.minecraft_item_shorthand)}
-                                token={ this.state.token }
+                                img={getImg(product.minecraft_item_shorthand)}
                             />
                         ))}
                     </div>
                 </div>
-                { 'will make it to infinite scrolling instead of pagination'}
+                {"will make it to infinite scrolling instead of pagination"}
                 <Pagination
                     itemClass="page-item"
                     linkClass="page-link"

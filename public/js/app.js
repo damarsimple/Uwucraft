@@ -73667,14 +73667,34 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Auth/Token.jsx":
-/*!************************************************!*\
-  !*** ./resources/js/components/Auth/Token.jsx ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./resources/js/components/Ajax/Shop.jsx":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Ajax/Shop.jsx ***!
+  \***********************************************/
+/*! exports provided: Cart, Test, fetchItems, getImg */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cart", function() { return Cart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Test", function() { return Test; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchItems", function() { return fetchItems; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getImg", function() { return getImg; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
+function Cart() {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + "/ajax/shop");
+}
+function Test() {
+  console.log("tst");
+}
+function fetchItems() {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + "/api/items");
+}
+function getImg(img) {
+  return window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + "/api/image/item/" + img;
+}
 
 /***/ }),
 
@@ -73941,7 +73961,7 @@ var ShopCarousel = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container-fluid w-75"
+        className: "container-fluid w-50"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_responsive_carousel__WEBPACK_IMPORTED_MODULE_3__["Carousel"], {
         showThumbs: false,
         showArrows: false,
@@ -73951,27 +73971,27 @@ var ShopCarousel = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: "slide1"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://imagekit.io/static/img/newPages/homepage-wave-bg.svg"
+        src: "https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: "slide2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://imagekit.io/static/img/newPages/homepage-wave-bg.svg"
+        src: "https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: "slide3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://imagekit.io/static/img/newPages/homepage-wave-bg.svg"
+        src: "https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: "slide4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://imagekit.io/static/img/newPages/homepage-wave-bg.svg"
+        src: "https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: "slide5"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://imagekit.io/static/img/newPages/homepage-wave-bg.svg"
+        src: "https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: "slide6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://imagekit.io/static/img/newPages/homepage-wave-bg.svg"
+        src: "https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg"
       }))));
     }
   }]);
@@ -74003,13 +74023,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Shop.css */ "./resources/js/components/Shop/Shop.css");
 /* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Shop_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _ShopProductItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ShopProductItem */ "./resources/js/components/Shop/ShopProductItem.jsx");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Auth_Token__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Auth/Token */ "./resources/js/components/Auth/Token.jsx");
-/* harmony import */ var _Auth_Token__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Auth_Token__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _ShopProductModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ShopProductModal */ "./resources/js/components/Shop/ShopProductModal.jsx");
+/* harmony import */ var _Ajax_Shop__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Ajax/Shop */ "./resources/js/components/Ajax/Shop.jsx");
 /* harmony import */ var react_js_pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-js-pagination */ "./node_modules/react-js-pagination/dist/Pagination.js");
 /* harmony import */ var react_js_pagination__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_js_pagination__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _ShopProductModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ShopProductModal */ "./resources/js/components/Shop/ShopProductModal.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -74040,7 +74057,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var ShopProduct = /*#__PURE__*/function (_Component) {
   _inherits(ShopProduct, _Component);
 
@@ -74059,8 +74075,7 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
       lastPage: null,
       totalPages: null,
       total: 10,
-      perpage: null,
-      token: null
+      perpage: null
     };
     return _this;
   }
@@ -74070,8 +74085,7 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      this.getToken();
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/items').then(function (res) {
+      Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_5__["fetchItems"])().then(function (res) {
         var currentPage = res.data.current_page;
         var nextPage = res.data.next_page_url;
         var lastPage = res.data.last_page_url;
@@ -74109,55 +74123,31 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
         });
       });
     }
-    /** Bad Way To Implement This 
-     *  I need better way to implement get token function i dont get how babel javascript works sad UwU
-    */
-
-  }, {
-    key: "getToken",
-    value: function getToken() {
-      var _this3 = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/token').then(function (res) {
-        var token = res.data.token;
-
-        _this3.setState({
-          token: token
-        });
-      });
-    }
   }, {
     key: "setProduct",
     value: function setProduct(pageNumber) {
-      var _this4 = this;
+      var _this3 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get(window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/items?page=' + pageNumber).then(function (res) {
+      axios.get(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + "/api/items?page=" + pageNumber).then(function (res) {
         var products = res.data.data;
         var currentPage = res.data.current_page;
 
-        _this4.setState({
+        _this3.setState({
           products: products
         });
 
-        _this4.setState({
+        _this3.setState({
           currentPage: currentPage
         });
 
-        _this4.setState({
+        _this3.setState({
           activePage: pageNumber
         });
       });
     }
   }, {
-    key: "getImg",
-    value: function getImg(img) {
-      return window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/image/item/' + img;
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
-
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74168,12 +74158,11 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
           name: product.name,
           price: "$" + product.price,
           seller: product.seller,
-          modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProductModal__WEBPACK_IMPORTED_MODULE_7__["ShopProductModal"], null),
+          modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProductModal__WEBPACK_IMPORTED_MODULE_4__["ShopProductModal"], null),
           itemid: product.id,
-          img: _this5.getImg(product.minecraft_item_shorthand),
-          token: _this5.state.token
+          img: Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_5__["getImg"])(product.minecraft_item_shorthand)
         });
-      }))), 'will make it to infinite scrolling instead of pagination', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_js_pagination__WEBPACK_IMPORTED_MODULE_6___default.a, {
+      }))), "will make it to infinite scrolling instead of pagination", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_js_pagination__WEBPACK_IMPORTED_MODULE_6___default.a, {
         itemClass: "page-item",
         linkClass: "page-link",
         hideNavigation: true,
@@ -74248,7 +74237,7 @@ function ShopProductItem(props) {
     title: "Add to cart"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
-      return postCart(props.itemid, 1, props.name, props.token);
+      return postCart(props.itemid, 1, props.name);
     },
     type: "button",
     className: "btn btn-primary"
@@ -74259,16 +74248,11 @@ function ShopProductItem(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, props.price)))));
 }
 
-function postCart(itemid, amount, name, token) {
+function postCart(itemid, amount, name) {
   try {
-    var response = axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + "/api/shop", {
-      username: 'dazzle',
+    var response = axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + "/ajax/shop", {
       item: itemid,
       amount: amount
-    }, {
-      headers: {
-        Authorization: 'Bearer ' + token
-      }
     });
     react_toastify__WEBPACK_IMPORTED_MODULE_4__["toast"].info("🛒 " + "Added " + name + " To Carts !", {
       position: "bottom-left",
@@ -74336,8 +74320,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
-/* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/ai */ "./node_modules/react-icons/ai/index.esm.js");
+/* harmony import */ var _Ajax_Shop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Ajax/Shop */ "./resources/js/components/Ajax/Shop.jsx");
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fi */ "./node_modules/react-icons/fi/index.esm.js");
+/* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/ai */ "./node_modules/react-icons/ai/index.esm.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -74365,18 +74350,38 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var ShopProfile = /*#__PURE__*/function (_Component) {
   _inherits(ShopProfile, _Component);
 
   var _super = _createSuper(ShopProfile);
 
-  function ShopProfile() {
+  function ShopProfile(props) {
+    var _this;
+
     _classCallCheck(this, ShopProfile);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = {
+      username: null,
+      money: null,
+      points: null
+    };
+    return _this;
   }
 
   _createClass(ShopProfile, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var money = 100;
+      this.setState({
+        money: money
+      });
+      Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_2__["Cart"])().then(function (response) {
+        console.log(response);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74390,7 +74395,7 @@ var ShopProfile = /*#__PURE__*/function (_Component) {
         src: "https://www.pinclipart.com/picdir/big/60-602450_profile-clipart-profile-icon-round-profile-pic-png.png"
       }), "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "border-top border-silver pt-2"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_ai__WEBPACK_IMPORTED_MODULE_3__["AiOutlineDollarCircle"], null), " Balance", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Money  ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_2__["FiDollarSign"], null), "1000"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Points   1000"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_ai__WEBPACK_IMPORTED_MODULE_4__["AiOutlineDollarCircle"], null), " Balance", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Money ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_fi__WEBPACK_IMPORTED_MODULE_3__["FiDollarSign"], null), this.state.money), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Points 1000"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "border-top border-silver  p-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "font-weight-bold"
@@ -74401,8 +74406,8 @@ var ShopProfile = /*#__PURE__*/function (_Component) {
   return ShopProfile;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-if (document.getElementById('ShopProfile')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ShopProfile, null), document.getElementById('ShopProfile'));
+if (document.getElementById("ShopProfile")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ShopProfile, null), document.getElementById("ShopProfile"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (ShopProfile);

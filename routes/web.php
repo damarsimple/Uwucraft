@@ -35,9 +35,7 @@ This Method return API Tokens from current authenticated users
 The idea here is create a method to fetch api tokens for use throghout the app
 i dont know better idea than this 
 */
-Route::get('token', function()
-{
-    //this will have its own function to get and create or retrieve
-    $accessToken = Auth::user()->createToken('authToken')->accessToken;
-    return response(['token' => $accessToken]);
-})->middleware('auth');
+Route::post('/ajax/shop', 'ShopController@addItemCart')->middleware('auth');
+Route::get('/ajax/shop', 'ShopController@getCart')->middleware('auth');
+
+Route::get('/test/{username}' , 'ShopController@getMoney');
