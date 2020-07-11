@@ -34,3 +34,14 @@ export function getImg(img) {
         img
     );
 }
+export function getCarousel(){
+    return (
+        window.location.protocol +
+        "//" +
+        window.location.hostname +
+        ":" +
+        window.location.port +
+        "/api/image/carousel/" +
+        img
+    );
+}

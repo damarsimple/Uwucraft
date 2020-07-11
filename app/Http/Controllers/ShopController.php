@@ -126,6 +126,8 @@ class ShopController extends Controller
         }
         $data = [
             'username' => Auth::user()->username,
+            'balance' => self::getMoney(),
+            'points' => rand(10,2500),
             'cart' => $inv,
             'last_update' =>  $obj->updated_at,
 

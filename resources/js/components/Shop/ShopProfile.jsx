@@ -2,24 +2,29 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Cart } from "../Ajax/Shop";
 import { FiDollarSign } from "react-icons/fi";
-import { AiOutlineDollarCircle } from "react-icons/ai";
+import { AiOutlineDollarCircle, AiOutlineUser } from "react-icons/ai";
+import NumberFormat from 'react-number-format';
 class ShopProfile extends Component {
     constructor(props) {
-        super(props)
+        super(props);
 
-        this.state = 
-        {
+        this.state = {
             username: null,
             money: null,
             points: null,
-        }
+            totalCarts: null,
+        };
     }
     componentDidMount() {
-        const money = 100;
-        this.setState( { money })
-        
         Cart().then(response => {
-            //console.log(response);
+            const username = response.data.username;
+            const money = response.data.balance;
+            const points = response.data.points;
+            const totalCarts = response.data.cart.length;
+            this.setState({ username });
+            this.setState({ money });
+            this.setState({ points });
+            this.setState({ totalCarts });
         });
     }
     render() {
@@ -27,24 +32,21 @@ class ShopProfile extends Component {
             <div className="shadow-sm p-3 mb-5 bg-white rounded bg-light p-2 text-dark">
                 <div className="balance text-small  p-2">
                     <div className="mb-2 font-weight-bold p-1">
-                        <img
-                            height={35}
-                            src="https://www.pinclipart.com/picdir/big/60-602450_profile-clipart-profile-icon-round-profile-pic-png.png"
-                        />
-                        Name
+                        <AiOutlineUser size="2.5em" />
+                        {this.state.username}
                     </div>
                     <div className="border-top border-silver pt-2">
-                        <AiOutlineDollarCircle /> Balance
+                        <AiOutlineDollarCircle size="1em" /> Balance
                         <div>
-                            Money <FiDollarSign />
+                            Money <FiDollarSign size="1em" />
                             {this.state.money}
                         </div>
-                        <div>Points 1000</div>
+                        <div>Points {this.state.points}</div>
                     </div>
                 </div>
                 <div className="border-top border-silver  p-2">
                     <p className="font-weight-bold">Purchase History</p>
-                    <p>Small</p>
+                    <p>Carts {this.state.totalCarts}</p>
                     <p>Small</p>
                     <p>Small</p>
                 </div>
