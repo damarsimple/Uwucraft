@@ -19,7 +19,7 @@ class ShopProfile extends Component {
         this.setState( { money })
         
         Cart().then(response => {
-            console.log(response);
+            //console.log(response);
         });
     }
     render() {

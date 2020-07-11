@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Itemsdata extends Model
 {
     protected $table = 'itemsdata';
-
     protected $fillable = [
         'name',
         'seller',

@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import "./Shop.css";
 import { ShopProductItem } from "./ShopProductItem";
 import { ShopProductModal } from "./ShopProductModal";
-import { fetchItems,getImg  } from "../Ajax/Shop";
-import Pagination from "react-js-pagination";
-
+import { fetchItems, getImg } from "../Ajax/Shop";
+import InfiniteScroll from "react-infinite-scroll-component";
+import axios from "axios";
 class ShopProduct extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +16,8 @@ class ShopProduct extends Component {
             lastPage: null,
             totalPages: null,
             total: 10,
-            perpage: null
+            perpage: null,
+            hasMore: true
         };
     }
     componentDidMount() {
@@ -37,29 +38,35 @@ class ShopProduct extends Component {
             this.setState({ perpage });
         });
     }
-    setProduct(pageNumber) {
+    fetchMoreData() {
+        const number = parseInt(this.state.currentPage) + 1;
         axios
             .get(
-                window.location.protocol +
-                    "//" +
-                    window.location.hostname +
-                    ":" +
-                    window.location.port +
-                    "/api/items?page=" +
-                    pageNumber
+                this.state.nextPage
             )
             .then(res => {
-                const products = res.data.data;
                 const currentPage = res.data.current_page;
-                this.setState({ products });
+                const products = this.state.products.concat(res.data.data);
+                const nextPage = res.data.next_page_url;
+                this.setState({ nextPage });
                 this.setState({ currentPage });
-                this.setState({ activePage: pageNumber });
+                this.setState({ products });
+                if (this.state.totalPages <= this.state.currentPage) {
+                    const hasMore = false;
+                    this.setState({ hasMore });
+                }
             });
     }
     render() {
         return (
             <div>
-                <div className="container-fluid">
+                <div className="container-fluid"></div>
+                <InfiniteScroll
+                    dataLength={this.state.products.length}
+                    next={this.fetchMoreData.bind(this)}
+                    hasMore={this.state.hasMore}
+                    loader={<h4>Loading...</h4>}
+                >
                     <div className="row">
                         {this.state.products.map(product => (
                             <ShopProductItem
@@ -73,18 +80,7 @@ class ShopProduct extends Component {
                             />
                         ))}
                     </div>
-                </div>
-                {"will make it to infinite scrolling instead of pagination"}
-                <Pagination
-                    itemClass="page-item"
-                    linkClass="page-link"
-                    hideNavigation
-                    activePage={this.state.currentPage}
-                    itemsCountPerPage={this.state.perpage}
-                    totalItemsCount={this.state.total}
-                    pageRangeDisplayed={5}
-                    onChange={this.setProduct.bind(this)}
-                />
+                </InfiniteScroll>
             </div>
         );
     }

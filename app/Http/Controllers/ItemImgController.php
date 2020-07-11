@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class ItemImgController extends Controller
 {
     public $os = PHP_OS;
@@ -30,6 +31,8 @@ class ItemImgController extends Controller
             }
             $path = storage_path('image') . '/item/' . 'bedrock' . '.png';
             $file = file_get_contents($path);
+            //delete file doesnt exists
+            //\DB::table('itemsdata')->where('name', $img)->delete();
             return response($file, 200)->header('Content-Type', 'image/jpeg');
         }
 
