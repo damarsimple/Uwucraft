@@ -1,0 +1,13 @@
+.bottom-widget {
+    bottom: 0;
+    right: 0;
+}
+
+.chat-widget {
+    margin-right: 3rem;
+    width: 250px;
+}
+
+.chat-widget-friend {
+    width: 250px;
+}

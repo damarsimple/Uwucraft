@@ -1,19 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+            integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+            integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
-    </script>
-</head>
+    <body>
+        <style>
+            .bottom-widget {
+                bottom: 0;
+                right: 0;
+            }
 
-<body>
+            .chat-widget {
+                margin-right: 3rem;
+                width: 250px;
+            }
 
-</body>
+            .chat-widget-friend {
+                width: 250px;
+            }
+        </style>
+        <div class="bottom-widget position-fixed d-flex">
+            <div
+                id="friend-box"
+                class="align-self-end mr-2 chat-widget-friend bg-transparent border border-dark shadow"
+            >
+                <div
+                    class="font-weight-bold text-upparcase bg-light p-2 text-uppercase text-center"
+                >
+                    Friend 1
+                </div>
+            </div>
 
+            <div
+                id="box"
+                class="align-self-end chat-widget bg-transparent border border-dark shadow"
+            >
+                <div
+                    class="font-weight-bold text-upparcase bg-light p-2 text-uppercase text-center"
+                >
+                    Chat
+                </div>
+                <div id="show-chat">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>Friend 1</td>
+                            </tr>
+                            <tr>
+                                <td>Friend 1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
