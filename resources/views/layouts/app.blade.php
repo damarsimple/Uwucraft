@@ -8,6 +8,7 @@
         <title>Laravel</title>
     </head>
     <body>
+    <!-- Navbar --> 
         <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
             <div class="container-fluid">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
@@ -37,11 +38,20 @@
                     <li class="nav-item">
                         <a  href="{{ url('/shop') }}" class="nav-link active" aria-current="page">Shop</a>
                     </li>
+                    <li class="nav-item">
+                        <a  href="{{ url('/home') }}" class="nav-link active" aria-current="page">Server</a>
+                    </li>
+                    <li class="nav-item">
+                        <a  href="{{ url('/home') }}" class="nav-link active" aria-current="page">Status</a>
+                    </li>
                 </ul>
             </div>
         </nav>
         <div class="m-5"></div>
+
         @yield('content')
+
+        <!-- Footer -->
         <footer class="container-fluid mt-5 p-lg-5 bg-dark text-white">
             <div class="row">
                 <div class="col-sm">

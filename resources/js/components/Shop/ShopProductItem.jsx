@@ -22,7 +22,7 @@ export function ShopProductItem(props) {
                     </Popup>
                 </div>
                 <div className="product-content">
-                    <h3>{props.name}</h3>
+                    <h5>{props.name}</h5>
                     <p>{props.seller}</p>
                     <div className="product-price">
                         <span>{props.price}</span>
