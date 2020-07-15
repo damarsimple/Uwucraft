@@ -86,10 +86,5 @@ class DashboardTop extends React.Component{
         );
     }
 }
-
-if(document.getElementById('DashboardTop'))
-{
-    ReactDOM.render(<DashboardTop />, document.getElementById('DashboardTop'))
-}
 export default DashboardTop;
 

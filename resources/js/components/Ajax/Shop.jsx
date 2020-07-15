@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 export function Cart() {
     return axios.get(
         window.location.protocol +
@@ -44,4 +45,33 @@ export function getCarousel(){
         "/api/image/carousel/" +
         img
     );
+}
+
+export function postCart(itemid, amount, name) {
+    try {
+        const response = axios.post(
+            window.location.protocol +
+                "//" +
+                window.location.hostname +
+                ":" +
+                window.location.port +
+                "/ajax/shop",
+            {
+                item: itemid,
+                amount: amount
+            }
+        );
+        toast.info("🛒 " + "Added " + name + " To Carts !", {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined
+        });
+    } catch (e) {
+        console.log(`😱 Axios request failed: ${e}`);
+    }
+    
 }

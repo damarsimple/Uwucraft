@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Cart } from "../Ajax/Shop";
-import { FiDollarSign } from "react-icons/fi";
-import { AiOutlineDollarCircle, AiOutlineUser } from "react-icons/ai";
-import NumberFormat from 'react-number-format';
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
+import NumberFormat from "react-number-format";
 class ShopProfile extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +12,7 @@ class ShopProfile extends Component {
             username: null,
             money: null,
             points: null,
-            totalCarts: null,
+            totalCarts: null
         };
     }
     componentDidMount() {
@@ -36,27 +36,35 @@ class ShopProfile extends Component {
                         {this.state.username}
                     </div>
                     <div className="border-top border-silver pt-2">
-                        <AiOutlineDollarCircle size="1em" /> Balance
+                        <p className="font-weight-bold">Balance</p>
                         <div>
-                            Money <FiDollarSign size="1em" />
-                            {this.state.money}
+                            <NumberFormat
+                                value={this.state.money}
+                                displayType={"text"}
+                                thousandSeparator={true}
+                                prefix={"$ "}
+                            />
                         </div>
-                        <div>Points {this.state.points}</div>
+                        <div>
+                            Points
+                            <NumberFormat
+                                value={this.state.points}
+                                displayType={"text"}
+                                thousandSeparator={true}
+                                prefix={" "}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="border-top border-silver  p-2">
                     <p className="font-weight-bold">Purchase History</p>
-                    <p>Carts {this.state.totalCarts}</p>
-                    <p>Small</p>
-                    <p>Small</p>
+                    <p>
+                        <AiOutlineShoppingCart size="1em" />
+                        Carts {this.state.totalCarts}
+                    </p>
                 </div>
             </div>
         );
     }
 }
-
-if (document.getElementById("ShopProfile")) {
-    ReactDOM.render(<ShopProfile />, document.getElementById("ShopProfile"));
-}
-
 export default ShopProfile;

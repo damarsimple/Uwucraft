@@ -4,7 +4,7 @@ import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Echo from "laravel-echo";
 import socketio from 'socket.io-client'
-
+import { AiOutlineNotification } from 'react-icons/ai';
 /**  Using Echo listen for events then show it using react toastify */
 class Notification extends React.Component{
     constructor(props) {
@@ -20,7 +20,7 @@ class Notification extends React.Component{
         /** React Toastify + Laravel Echos */
         echo.channel('GlobalNotifications')
         .listen('GlobalNotifications', e => {
-            toast.info( '🔪 ' + e.data , {
+            toast.info( '🔔 ' +  e.data , {
                 position: "bottom-left",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -38,9 +38,5 @@ class Notification extends React.Component{
             </div>
         );
     }
-}
-if(document.getElementById('Notification'))
-{
-    ReactDOM.render(<Notification />, document.getElementById('Notification'));
 }
 export default Notification;

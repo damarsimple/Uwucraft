@@ -85,9 +85,4 @@ class ShopProduct extends Component {
         );
     }
 }
-
-if (document.getElementById("ShopProduct")) {
-    ReactDOM.render(<ShopProduct />, document.getElementById("ShopProduct"));
-}
-
 export default ShopProduct;

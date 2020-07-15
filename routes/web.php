@@ -22,7 +22,7 @@ Route::get('/fire', function () {
 
 Route::get('/shop', function () {
     return view('shop');
-});
+})->middleware('auth');
 
 Auth::routes();
 

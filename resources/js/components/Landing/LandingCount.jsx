@@ -86,10 +86,5 @@ class LandingCount extends React.Component{
         );
     }
 }
-
-if(document.getElementById('LandingCount'))
-{
-    ReactDOM.render(<LandingCount />, document.getElementById('LandingCount'))
-}
 export default LandingCount;
 

@@ -30,11 +30,5 @@ class ShopCarousel extends Component {
 
 )}
 }
-
-if(document.getElementById('ShopCarousel'))
-{
-    ReactDOM.render(<ShopCarousel />, document.getElementById('ShopCarousel'));
-}
-
 export default ShopCarousel;
 

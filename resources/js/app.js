@@ -10,15 +10,4 @@ require('./bootstrap');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-require('./components/Landing/LandingCount')
-
-require('./components/Ui/Notification')
-require('./components/Ui/Chat')
-
-require('./components/Shop/ShopProfile')
-require('./components/Shop/ShopCarousel')
-require('./components/Shop/ShopProduct')
-
-require('./components/Dashboard/DashboardTop')
-
+require('./Components')

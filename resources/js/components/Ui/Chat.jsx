@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./Chat.css";
 class Chat extends React.Component {
     render() {
@@ -37,9 +36,4 @@ class Chat extends React.Component {
         );
     }
 }
-
 export default Chat;
-
-if (document.getElementById("Chat")) {
-    ReactDOM.render(<Chat />, document.getElementById("Chat"));
-}
