@@ -1,10 +1,10 @@
 import React from "react";
 import ShopCardGroup from "./ShopCardGroup";
-class ShopRecomendation extends React.Component {
+class ShopTopRecomendation extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <h3> Recomendation </h3>
+                <h3> Top Purchase </h3>
                 <div className="card-group">
                     <ShopCardGroup title="Nice" image="http://localhost/api/image/item/stone"/>
                     <ShopCardGroup title="Nice" image="http://localhost/api/image/item/stone"/>
@@ -16,4 +16,4 @@ class ShopRecomendation extends React.Component {
     }
 }
 
-export default ShopRecomendation;
+export default ShopTopRecomendation;

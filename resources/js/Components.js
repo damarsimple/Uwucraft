@@ -12,7 +12,7 @@ import ShopProfile from './components/Shop/ShopProfile';
 import ShopCarousel from './components/Shop/ShopCarousel';
 import ShopProduct from './components/Shop/ShopProduct';
 import ShopRecomendation from './components/Shop/ShopRecomendation';
-
+import ShopTopRecomendation from './components/Shop/ShopTopRecomendation';
 //* Do theres better way to do this ?  */
 
 if (document.getElementById('Notification')) {
@@ -41,4 +41,8 @@ if (document.getElementById('ShopCarousel')) {
 }
 if (document.getElementById('ShopProduct')) {
     ReactDOM.render(  <ShopProduct />, document.getElementById('ShopProduct'));
+}
+if(document.getElementById('ShopTopRecomendation'))
+{
+    ReactDOM.render( <ShopTopRecomendation /> , document.getElementById('ShopTopRecomendation'));
 }

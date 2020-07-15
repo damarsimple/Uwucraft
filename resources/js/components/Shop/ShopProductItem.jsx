@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Popup from "reactjs-popup";
 import "./Shop.css";
 import "react-toastify/dist/ReactToastify.css";
