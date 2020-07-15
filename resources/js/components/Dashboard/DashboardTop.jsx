@@ -1,84 +1,105 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { AiFillDollarCircle } from 'react-icons/ai';
-import { FiUserCheck } from 'react-icons/fi';
-import { FiUsers } from 'react-icons/fi';
-class DashboardTop extends React.Component{
-    constructor(props)
-    {
-        super(props);
-        this.state = {
-            PlayerCurrent: Date.now(),
-            PlayerTotal: Date.now(),
-            PlayerTransaction: Date.now(),
-        };
-    }
-    componentDidMount() {
-        this.interval = setInterval(() => this.setState({
-            PlayerCurrent: Math.random().toString(),
-            PlayerTotal: Math.random().toString(),
-            PlayerTransaction: Math.random().toString(),
-        }), 1000);
-    }
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
+import React from "react";
+import ReactDOM from "react-dom";
+import { AiFillDollarCircle } from "react-icons/ai";
+import { FiUserCheck } from "react-icons/fi";
+import { FiUsers } from "react-icons/fi";
+class DashboardTop extends React.Component {
     render() {
         return (
-            <div style={{boxSizing: null}} className="container-fluid card d-flex text-center justify-content-center p-5">
-                <h3 className="font-weight-bold">Stats</h3>
-                <p className="font-weight-light">Player Proved to be happy in our hand!</p>
-                <div className="container-fluid">
-                    <div className="row p-5">
-                        <div className="col-sm">
-                            <FiUserCheck size={50}/>
-                            <h4 className="font-weight-bold mt-3">{ this.state.PlayerCurrent }</h4>
-                            <h5 className="text-uppercase font-weight-bold">Need More Idea</h5>
-                            <p className="font-weight-light">
-                            lorem1000
-                            </p>
-                        </div>
-                        <div className="col-sm">
-                            <FiUsers size={50}/>
-                            <h4 className="font-weight-bold mt-3">{ this.state.PlayerTotal }</h4>
-                            <h5 className="text-uppercase font-weight-bold">Need More Idea</h5>
-                            <p className="font-weight-light">
-                            lorem1000
-                            </p>
-                        </div>
-                        <div className="col-sm">
-                            <AiFillDollarCircle size={50}/>
-                            <h4 className="font-weight-bold mt-3">{ this.state.PlayerTransaction }</h4>
-                            <h5 className="text-uppercase font-weight-bold">Need More Idea</h5>
-                            <p className="font-weight-light">
-                            lorem1000
-                            </p>
+            <div className="row">
+                {/* Earnings (Monthly) Card Example */}
+                <div className="col-xl-3 col-md-6 mb-4">
+                    <div className="card border-left-primary shadow h-100 py-2">
+                        <div className="card-body">
+                            <div className="row no-gutters align-items-center">
+                                <div className="col mr-2">
+                                    <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Earnings (Monthly)
+                                    </div>
+                                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+                                        $40,000
+                                    </div>
+                                </div>
+                                <div className="col-auto">
+                                    <i className="fas fa-calendar fa-2x text-gray-300" />
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="row p-5">
-                        <div className="col-sm">
-                            <FiUserCheck size={50}/>
-                            <h4 className="font-weight-bold mt-3">{ this.state.PlayerCurrent }</h4>
-                            <h5 className="text-uppercase font-weight-bold">Current Player on Server</h5>
-                            <p className="font-weight-light">
-                            Join us in the server and play with many player on server
-                            </p>
+                </div>
+                {/* Earnings (Annual) Card Example */}
+                <div className="col-xl-3 col-md-6 mb-4">
+                    <div className="card border-left-success shadow h-100 py-2">
+                        <div className="card-body">
+                            <div className="row no-gutters align-items-center">
+                                <div className="col mr-2">
+                                    <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Earnings (Annual)
+                                    </div>
+                                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+                                        $215,000
+                                    </div>
+                                </div>
+                                <div className="col-auto">
+                                    <i className="fas fa-dollar-sign fa-2x text-gray-300" />
+                                </div>
+                            </div>
                         </div>
-                        <div className="col-sm">
-                            <FiUsers size={50}/>
-                            <h4 className="font-weight-bold mt-3">{ this.state.PlayerTotal }</h4>
-                            <h5 className="text-uppercase font-weight-bold">Played on server</h5>
-                            <p className="font-weight-light">
-                            Our server is legendary and has many players
-                            </p>
+                    </div>
+                </div>
+                {/* Tasks Card Example */}
+                <div className="col-xl-3 col-md-6 mb-4">
+                    <div className="card border-left-info shadow h-100 py-2">
+                        <div className="card-body">
+                            <div className="row no-gutters align-items-center">
+                                <div className="col mr-2">
+                                    <div className="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                        Tasks
+                                    </div>
+                                    <div className="row no-gutters align-items-center">
+                                        <div className="col-auto">
+                                            <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                50%
+                                            </div>
+                                        </div>
+                                        <div className="col">
+                                            <div className="progress progress-sm mr-2">
+                                                <div
+                                                    className="progress-bar bg-info"
+                                                    role="progressbar"
+                                                    style={{ width: "50%" }}
+                                                    aria-valuenow={50}
+                                                    aria-valuemin={0}
+                                                    aria-valuemax={100}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-auto">
+                                    <i className="fas fa-clipboard-list fa-2x text-gray-300" />
+                                </div>
+                            </div>
                         </div>
-                        <div className="col-sm">
-                            <AiFillDollarCircle size={50}/>
-                            <h4 className="font-weight-bold mt-3">{ this.state.PlayerTransaction }</h4>
-                            <h5 className="text-uppercase font-weight-bold">Transaction Made</h5>
-                            <p className="font-weight-light">
-                            Yes our server is pay to win so make sure to take your mom credit card and purchase 32k Diamond Sword !
-                            </p>
+                    </div>
+                </div>
+                {/* Pending Requests Card Example */}
+                <div className="col-xl-3 col-md-6 mb-4">
+                    <div className="card border-left-warning shadow h-100 py-2">
+                        <div className="card-body">
+                            <div className="row no-gutters align-items-center">
+                                <div className="col mr-2">
+                                    <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        Pending Requests
+                                    </div>
+                                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+                                        18
+                                    </div>
+                                </div>
+                                <div className="col-auto">
+                                    <i className="fas fa-comments fa-2x text-gray-300" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,4 +108,3 @@ class DashboardTop extends React.Component{
     }
 }
 export default DashboardTop;
-
