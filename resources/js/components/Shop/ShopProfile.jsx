@@ -1,34 +1,10 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { Cart } from "../Ajax/Shop";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import NumberFormat from "react-number-format";
 class ShopProfile extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            username: null,
-            money: null,
-            points: null,
-            totalCarts: null,
-            cart : [],
-        };
-    }
-    componentDidMount() {
-        Cart().then((response) => {
-            const username = response.data.username;
-            const money = response.data.balance;
-            const points = response.data.points;
-            const totalCarts = response.data.cart.length;
-            const cart = response.data.cart;
-            this.setState({ username });
-            this.setState({ money });
-            this.setState({ points });
-            this.setState({ totalCarts });
-            this.setState({ cart});
-        });
     }
     render() {
         return (
@@ -36,13 +12,13 @@ class ShopProfile extends Component {
                 <div className="balance text-small  p-2">
                     <div className="mb-2 font-weight-bold p-1">
                         <AiOutlineUser size="2.5em" />
-                        {this.state.username}
+                        {this.props.username}
                     </div>
                     <div className="border-top border-silver pt-2">
                         <p className="font-weight-bold">Balance</p>
                         <div>
                             <NumberFormat
-                                value={this.state.money}
+                                value={this.props.money}
                                 displayType={"text"}
                                 thousandSeparator={true}
                                 prefix={"$ "}
@@ -51,7 +27,7 @@ class ShopProfile extends Component {
                         <div>
                             Points
                             <NumberFormat
-                                value={this.state.points}
+                                value={this.props.points}
                                 displayType={"text"}
                                 thousandSeparator={true}
                                 prefix={" "}
@@ -63,10 +39,10 @@ class ShopProfile extends Component {
                     <p className="font-weight-bold">Purchase History</p>
                     <p>
                         <AiOutlineShoppingCart size="1em" />
-                        Carts {this.state.totalCarts}
+                        Carts {this.props.totalCarts}
                     </p>
                 </div>
-                {this.state.cart.map((item,index) => {
+                {this.props.cart.map((item,index) => {
                     return (
                         <div key={ index } className="card">
                             <div className="card-body">

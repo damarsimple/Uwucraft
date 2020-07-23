@@ -1,20 +1,12 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-
 import Notification from './components/Ui/Notification';
 import Chat from './components/Ui/Chat';
-
 import LandingCount from './components/Landing/LandingCount';
-
 import DashboardTop from './components/Dashboard/DashboardTop';
-
-import ShopProfile from './components/Shop/ShopProfile';
-import ShopCarousel from './components/Shop/ShopCarousel';
-import ShopProduct from './components/Shop/ShopProduct';
-import ShopRecomendation from './components/Shop/ShopRecomendation';
-import ShopTopRecomendation from './components/Shop/ShopTopRecomendation';
+import Shop from './components/Shop/Shop';
 //* Do theres better way to do this ?  */
-
+ReactDOM.render(  <Shop />, document.getElementById('Shop'));
 if (document.getElementById('Notification')) {
     ReactDOM.render(  <Notification />, document.getElementById('Notification'));
 }
@@ -30,19 +22,3 @@ if (document.getElementById('DashboardTop')) {
     ReactDOM.render(  <DashboardTop />, document.getElementById('DashboardTop'));
 }
 
-if (document.getElementById('ShopRecomendation')) {
-    ReactDOM.render(  <ShopRecomendation />, document.getElementById('ShopRecomendation'));
-}
-if (document.getElementById('ShopProfile')) {
-    ReactDOM.render(  <ShopProfile />, document.getElementById('ShopProfile'));
-}
-if (document.getElementById('ShopCarousel')) {
-    ReactDOM.render(  <ShopCarousel />, document.getElementById('ShopCarousel'));
-}
-if (document.getElementById('ShopProduct')) {
-    ReactDOM.render(  <ShopProduct />, document.getElementById('ShopProduct'));
-}
-if(document.getElementById('ShopTopRecomendation'))
-{
-    ReactDOM.render( <ShopTopRecomendation /> , document.getElementById('ShopTopRecomendation'));
-}
