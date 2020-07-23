@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Carbon\Carbon;
 
 use App\Itemsdata;
 use App\User;
@@ -111,12 +112,21 @@ class ShopController extends Controller
     public static function getCart()
     {
         $obj = UsersCart::find(Auth::user()->username);
-        $inventory = json_decode($obj->inventory);
-        $amount = json_decode($obj->amount);
-
-        if ($inventory == null) {
+        //Check Null
+        if ($obj == null) {
             $inventory = array();
+            $update = Carbon::now()->toDateTimeString(); 
+        } else {
+
+            $inventory = json_decode($obj->inventory);
+            $amount = json_decode($obj->amount);
+            $update = $obj->updated_at;
+    
+            if ($inventory == null) {
+                $inventory = array();
+            }
         }
+
 
         $inv = array();
         for ($i = 0; $i < count($inventory); $i++) {
@@ -127,9 +137,9 @@ class ShopController extends Controller
         $data = [
             'username' => Auth::user()->username,
             'balance' => self::getMoney(),
-            'points' => rand(10,2500),
+            'points' => rand(10, 2500),
             'cart' => $inv,
-            'last_update' =>  $obj->updated_at,
+            'last_update' =>  $update,
 
         ];
         return $data;

@@ -19,7 +19,8 @@ DB Connection, Broadcast Driver,Cache Driver, Queue Conecntion, Redis host passw
 and change laravel-echo-server.json authost to your need
 
 dont forget to change REDIS_CLIENT enviroment variable from phpredis to predis if you in windows
-phpredis is not officaly supported in windows if you on windows change below in database.php
+on database.php
+phpredis is avaible on PECL if you want to get dll but its pain to install bruh
 
 'client' => env('REDIS_CLIENT', 'predis'),
 
@@ -37,6 +38,7 @@ then change file .env to
 - BROADCAST_DRIVER = redis
 - CACHE_DRIVER = redis
 - QUEUE_CONECTION = redis
+
 then run php artisan migrate to add necessary column to table
 then run php artisan db:seed --class=itemsdata if you want to add dummy items
 

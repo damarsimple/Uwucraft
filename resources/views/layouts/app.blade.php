@@ -9,7 +9,7 @@
     </head>
     <body>
     <!-- Navbar --> 
-        <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary bg-gradient fixed-top">
             <div class="container-fluid">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                     @if (Route::has('login'))

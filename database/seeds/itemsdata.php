@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Carbon\Carbon;
 class itemsdata extends Seeder
 {
     /**
@@ -26,6 +26,8 @@ class itemsdata extends Seeder
                             'minecraft_item_shorthand' => $table[$i]['name'],
                             'price' => rand(0,1000),
                             'counter' => 0,
+                            'updated_at' => Carbon::now()->toDateTimeString(),
+                            'created_at' => Carbon::now()->toDateTimeString(),
                         ]);
         }
     }
