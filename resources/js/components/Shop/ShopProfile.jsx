@@ -12,19 +12,22 @@ class ShopProfile extends Component {
             username: null,
             money: null,
             points: null,
-            totalCarts: null
+            totalCarts: null,
+            cart : [],
         };
     }
     componentDidMount() {
-        Cart().then(response => {
+        Cart().then((response) => {
             const username = response.data.username;
             const money = response.data.balance;
             const points = response.data.points;
             const totalCarts = response.data.cart.length;
+            const cart = response.data.cart;
             this.setState({ username });
             this.setState({ money });
             this.setState({ points });
             this.setState({ totalCarts });
+            this.setState({ cart});
         });
     }
     render() {
@@ -63,6 +66,23 @@ class ShopProfile extends Component {
                         Carts {this.state.totalCarts}
                     </p>
                 </div>
+                {this.state.cart.map((item,index) => {
+                    return (
+                        <div key={ index } className="card">
+                            <div className="card-body">
+                                <div className="row">
+                                    <div className="col-xs-12 col-md-3">
+                                        <img
+                                            src={"/api/image/item/" + item.minecraft_item_shorthand}
+                                            width="25px"
+                                        ></img>
+                                    </div>
+                                    <div className="col-md-9"> { `${item.name} x${item.amount}  $${item.amount * item.price}` }</div>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         );
     }
