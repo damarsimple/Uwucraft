@@ -75686,6 +75686,11 @@ var Shop = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "bruhmoment",
+    value: function bruhmoment() {
+      console.log('test');
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -75709,7 +75714,9 @@ var Shop = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProduct__WEBPACK_IMPORTED_MODULE_6__["default"], {
         fetchMoreData: this.fetchMoreData.bind(this),
         products: this.state.products,
-        hasMore: this.state.hasMore
+        hasMore: this.state.hasMore //Need To pass onclick event to grandchild component somehow
+        ,
+        update: this.bruhmoment.bind(this)
       })))));
     }
   }]);
@@ -75909,6 +75916,8 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
   _createClass(ShopProduct, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -75926,7 +75935,8 @@ var ShopProduct = /*#__PURE__*/function (_Component) {
           seller: product.seller,
           modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProductModal__WEBPACK_IMPORTED_MODULE_3__["ShopProductModal"], null),
           itemid: product.id,
-          img: Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_4__["getImg"])(product.minecraft_item_shorthand)
+          img: Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_4__["getImg"])(product.minecraft_item_shorthand),
+          update: _this.props.update.bind(_this)
         });
       }))));
     }
@@ -75952,13 +75962,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactjs_popup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactjs-popup */ "./node_modules/reactjs-popup/reactjs-popup.es.js");
-/* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Shop.css */ "./resources/js/components/Shop/Shop.css");
-/* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Shop_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
-/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Ajax_Shop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Ajax/Shop */ "./resources/js/components/Ajax/Shop.jsx");
-
-
+/* harmony import */ var _Ajax_Shop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Ajax/Shop */ "./resources/js/components/Ajax/Shop.jsx");
 
 
 
@@ -75983,11 +75987,25 @@ function ShopProductItem(props) {
     className: "product-content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.seller), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-price"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, props.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, props.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "input-group input-group-sm mb-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "input-group-prepend"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "input-group-text",
+    id: "inputGroup-sizing-sm"
+  }, "Small")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "form-control",
+    "aria-label": "Small",
+    "aria-describedby": "inputGroup-sizing-sm"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     title: "Add to cart"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    //Need A way to fix this garbage code
     onClick: function onClick() {
-      return Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_4__["postCart"])(props.itemid, 1, props.name);
+      Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_2__["postCart"])(props.itemid, 1, props.name);
+      props.update;
     },
     type: "button",
     className: "btn btn-primary"

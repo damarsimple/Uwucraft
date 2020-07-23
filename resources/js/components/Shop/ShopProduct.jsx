@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Shop.css";
 import { ShopProductItem } from "./ShopProductItem";
 import { ShopProductModal } from "./ShopProductModal";
-import {  getImg } from "../Ajax/Shop";
+import { getImg } from "../Ajax/Shop";
 import InfiniteScroll from "react-infinite-scroll-component";
 class ShopProduct extends Component {
     constructor(props) {
@@ -28,6 +28,7 @@ class ShopProduct extends Component {
                                 modal={<ShopProductModal />}
                                 itemid={product.id}
                                 img={getImg(product.minecraft_item_shorthand)}
+                                update={this.props.update.bind(this)}
                             />
                         ))}
                     </div>

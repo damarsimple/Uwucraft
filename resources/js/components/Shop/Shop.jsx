@@ -1,6 +1,6 @@
 import React from "react";
 import "./Shop.css";
-import { fetchItems, Cart } from "../Ajax/Shop";
+import { fetchItems, Cart, postCart } from "../Ajax/Shop";
 import axios from "axios";
 import ShopProfile from "./ShopProfile";
 import ShopCarousel from "./ShopCarousel";
@@ -72,6 +72,10 @@ export default class Shop extends React.Component {
             }
         });
     }
+    bruhmoment()
+    {
+        console.log('test');
+    }
     render() {
         return (
             <div className="container mt-5">
@@ -95,6 +99,8 @@ export default class Shop extends React.Component {
                                 fetchMoreData={this.fetchMoreData.bind(this)}
                                 products={this.state.products}
                                 hasMore={this.state.hasMore}
+                                //Need To pass onclick event to grandchild component somehow
+                                update={this.bruhmoment.bind(this)}
                             />
                         </div>
                     </div>

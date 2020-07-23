@@ -22,6 +22,17 @@ class ShopController extends Controller
 
         //Initialize Websender
     }
+    public static function createCart($username)
+    {
+        UsersCart::insert(
+            [
+                'username' => $username,
+                'inventory' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
+    }
     public function addItemCart(Request $request)
     {
         //Initialize Variable
@@ -32,15 +43,7 @@ class ShopController extends Controller
         //Check if users carts exists in records
         if (UsersCart::where('username', '=', $username)->first() == null) {
             //Create if not exists
-            UsersCart::insert(
-                [
-                    'username' => $username,
-                    'inventory' => null,
-                    'amount' => null,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ]
-            );
+            self::createCart($username);
         }
 
         //Initialize users cart object
@@ -48,22 +51,20 @@ class ShopController extends Controller
         //Check if empty
         if (!empty($cart->inventory)) {
             $cartd = json_decode($cart->inventory);
-            $amountd = json_decode($cart->amount);
         } else {
             //Init Array Empty
             $cartd = array();
-            $amountd = array();
         }
 
-        //Push Data to array
-        array_push($cartd, $id);
-        array_push($amountd, $amount);
-
+        //Check IF item already exists in inventory
+        //Help I DONT KNOW HOW TO MIMPLEMENT THIS FUCNTIONS
+        $arr = ['id' => $id, 'amount' => $amount];
+        array_push($cartd, $arr);
         //Save to database
         $cart->inventory = json_encode($cartd);
-        $cart->amount = json_encode($amountd);
         return $cart->save();
     }
+    //Broke
     private function processCart()
     {
         //Get Money and Cart
@@ -107,40 +108,31 @@ class ShopController extends Controller
     public static function getMoney()
     {
         //Get Player money from model
-        return PlayerData::findOrFail(Auth::user()->username)['money'];
+        $data = PlayerData::find(Auth::user()->username);
+        return empty($data['money']) ? 0 : $data['money'];
     }
     public static function getCart()
     {
+
         $obj = UsersCart::find(Auth::user()->username);
         //Check Null
         if ($obj == null) {
+            self::createCart(Auth::user()->username);
             $inventory = array();
-            $update = Carbon::now()->toDateTimeString(); 
+            $update = Carbon::now()->toDateTimeString();
         } else {
-
             $inventory = json_decode($obj->inventory);
-            $amount = json_decode($obj->amount);
             $update = $obj->updated_at;
-    
             if ($inventory == null) {
                 $inventory = array();
             }
-        }
-
-
-        $inv = array();
-        for ($i = 0; $i < count($inventory); $i++) {
-            $item = Itemsdata::find($inventory[$i]);
-            $item['amount'] = $amount[$i];
-            array_push($inv, $item);
         }
         $data = [
             'username' => Auth::user()->username,
             'balance' => self::getMoney(),
             'points' => rand(10, 2500),
-            'cart' => $inv,
+            'cart' => $inventory,
             'last_update' =>  $update,
-
         ];
         return $data;
     }
