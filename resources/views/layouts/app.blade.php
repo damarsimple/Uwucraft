@@ -48,10 +48,8 @@
             </ul>
         </div>
     </nav>
-    TEST/12
-    <div id=ShopNavbar></div>
-    <div class="m-5"></div>
-
+    @yield('navbar')
+   
     @yield('content')
 
     <!-- Footer -->
