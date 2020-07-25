@@ -73,9 +73,6 @@ export default class Shop extends React.Component {
             }
         });
     }
-    bruhmoment() {
-        console.log("test");
-    }
     render() {
         const {
             points,
@@ -108,8 +105,6 @@ export default class Shop extends React.Component {
                                 fetchMoreData={this.fetchMoreData.bind(this)}
                                 products={products}
                                 hasMore={hasMore}
-                                //Need To pass onclick event to grandchild component somehow
-                                update={this.bruhmoment.bind(this)}
                             />
                         </div>
                     </div>
