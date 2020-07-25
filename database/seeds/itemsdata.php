@@ -17,9 +17,10 @@ class itemsdata extends Seeder
         $table = json_decode($json, true);
         for($i = 0; $i < count($table); $i++)
         {
+            $faker = Faker\Factory::create();
             DB::table('itemsdata')->insert([
                             'name' => $table[$i]['displayName'],
-                            'seller' => 'Admin',
+                            'seller' => $faker->name,
                             'description' => 'Items that called ' . $table[$i]['displayName'],
                             'type' => 'misc',
                             'minecraft_item_id' => 'minecraft:' . $table[$i]['name'],

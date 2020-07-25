@@ -40,6 +40,10 @@ class ShopController extends Controller
         $id = $request->input('item');
         $amount = $request->input('amount');
 
+        if(!is_int($amount))
+        {
+            abort(400, 'INTEGER!');
+        }
         //Check if users carts exists in records
         if (UsersCart::where('username', '=', $username)->first() == null) {
             //Create if not exists
@@ -127,13 +131,20 @@ class ShopController extends Controller
                 $inventory = array();
             }
         }
+        $inv = array();
+        for ($i = 0; $i < count($inventory); $i++) {
+            $item = Itemsdata::find($inventory[$i]->id)->toArray();
+            $item['amount'] = $inventory[$i]->amount;
+            array_push($inv, $item);
+        }
         $data = [
             'username' => Auth::user()->username,
             'balance' => self::getMoney(),
             'points' => rand(10, 2500),
-            'cart' => $inventory,
+            'cart' => $inv,
             'last_update' =>  $update,
         ];
+        //return dd($inventory[1]->id);
         return $data;
     }
     public static function getPrice($item)

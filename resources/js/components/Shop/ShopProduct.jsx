@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./Shop.css";
-import { ShopProductItem } from "./ShopProductItem";
+import  ShopProductItem  from "./ShopProductItem";
 import { ShopProductModal } from "./ShopProductModal";
-import { getImg } from "../Ajax/Shop";
+
 import InfiniteScroll from "react-infinite-scroll-component";
 class ShopProduct extends Component {
     constructor(props) {
@@ -20,15 +20,10 @@ class ShopProduct extends Component {
                 >
                     <div className="row">
                         {this.props.products.map(product => (
+                            
                             <ShopProductItem
                                 key={product.id}
-                                name={product.name}
-                                price={"$" + product.price}
-                                seller={product.seller}
-                                modal={<ShopProductModal />}
-                                itemid={product.id}
-                                img={getImg(product.minecraft_item_shorthand)}
-                                update={this.props.update.bind(this)}
+                                data={ product }
                             />
                         ))}
                     </div>

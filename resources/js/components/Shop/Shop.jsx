@@ -1,5 +1,6 @@
 import React from "react";
-import "./Shop.css";
+//import "./Shop.css";
+import "./Shop2.css";
 import { fetchItems, Cart, postCart } from "../Ajax/Shop";
 import axios from "axios";
 import ShopProfile from "./ShopProfile";
@@ -72,22 +73,30 @@ export default class Shop extends React.Component {
             }
         });
     }
-    bruhmoment()
-    {
-        console.log('test');
+    bruhmoment() {
+        console.log("test");
     }
     render() {
+        const {
+            points,
+            money,
+            cart,
+            username,
+            totalCarts,
+            products,
+            hasMore
+        } = this.state;
         return (
             <div className="container mt-5">
-                <div className="row">
+                <div className="row padding">
                     <div className="col-md-3 shadow-sm p-3 mb-5 bg-white rounded">
                         <div className="mt-5" />
                         <ShopProfile
-                            points={this.state.points}
-                            money={this.state.money}
-                            cart={this.state.cart}
-                            username={this.state.username}
-                            totalCarts={this.state.totalCarts}
+                            points={points}
+                            money={money}
+                            cart={cart}
+                            username={username}
+                            totalCarts={totalCarts}
                         />
                     </div>
                     <div className="col-md-9">
@@ -97,8 +106,8 @@ export default class Shop extends React.Component {
                         <div className="shadow-sm p-3 mb-5 bg-white rounded mt-5">
                             <ShopProduct
                                 fetchMoreData={this.fetchMoreData.bind(this)}
-                                products={this.state.products}
-                                hasMore={this.state.hasMore}
+                                products={products}
+                                hasMore={hasMore}
                                 //Need To pass onclick event to grandchild component somehow
                                 update={this.bruhmoment.bind(this)}
                             />

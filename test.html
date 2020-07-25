@@ -18,54 +18,45 @@
     </head>
 
     <body>
-        <style>
-            .bottom-widget {
-                bottom: 0;
-                right: 0;
-            }
-
-            .chat-widget {
-                margin-right: 3rem;
-                width: 250px;
-            }
-
-            .chat-widget-friend {
-                width: 250px;
-            }
-        </style>
-        <div class="bottom-widget position-fixed d-flex">
-            <div
-                id="friend-box"
-                class="align-self-end mr-2 chat-widget-friend bg-transparent border border-dark shadow"
-            >
-                <div
-                    class="font-weight-bold text-upparcase bg-light p-2 text-uppercase text-center"
-                >
-                    Friend 1
+        <div class="card" style="width: 18rem;">
+            <img src="http://localhost/api/image/item/stone" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <div>
+                    <h5>{props.name}</h5>
+                    <p>{props.seller}</p>
+                    <div>
+                        <span>{props.price}</span>
+                        <div className="input-group input-group-sm mb-3">
+                            <div className="input-group-prepend">
+                                <span
+                                    className="input-group-text"
+                                    id="inputGroup-sizing-sm"
+                                >
+                                    Small
+                                </span>
+                            </div>
+                            <input
+                                type="text"
+                                className="form-control"
+                                aria-label="Small"
+                                aria-describedby="inputGroup-sizing-sm"
+                            />
+                        </div>
+                        <div>
+                            <a title="Add to cart">
+                                <button
+                                //Need A way to fix this garbage code
+                                    onClick={() => {postCart(props.itemid, 1, props.name); props.update}}
+                                    type="button"
+                                    className="btn btn-primary"
+                                >
+                                    Add to cart
+                                </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div
-                id="box"
-                class="align-self-end chat-widget bg-transparent border border-dark shadow"
-            >
-                <div
-                    class="font-weight-bold text-upparcase bg-light p-2 text-uppercase text-center"
-                >
-                    Chat
-                </div>
-                <div id="show-chat">
-                    <table class="table table-hover">
-                        <tbody>
-                            <tr>
-                                <td>Friend 1</td>
-                            </tr>
-                            <tr>
-                                <td>Friend 1</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </body>

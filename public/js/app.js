@@ -4623,6 +4623,25 @@ module.exports = function(a, b){
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/rc-input-number/assets/index.css":
+/*!***************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/rc-input-number/assets/index.css ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".rc-input-number {\n  margin: 0;\n  padding: 0;\n  line-height: 26px;\n  font-size: 12px;\n  height: 26px;\n  display: inline-block;\n  vertical-align: middle;\n  border: 1px solid #D9D9D9;\n  border-radius: 4px;\n  transition: all .3s;\n}\n.rc-input-number-focused {\n  border-color: #1890ff;\n  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);\n}\n.rc-input-number-handler {\n  text-align: center;\n  line-height: 12px;\n  height: 12px;\n  overflow: hidden;\n  display: block;\n  touch-action: none;\n}\n.rc-input-number-handler-active {\n  background: #ddd;\n}\n.rc-input-number-handler-up-inner,\n.rc-input-number-handler-down-inner {\n  color: #666666;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n  -webkit-user-select: none;\n}\n.rc-input-number:hover {\n  border-color: #1890ff;\n}\n.rc-input-number:hover .rc-input-number-handler-up,\n.rc-input-number:hover .rc-input-number-handler-wrap {\n  border-color: #1890ff;\n}\n.rc-input-number-disabled:hover {\n  border-color: #d9d9d9;\n}\n.rc-input-number-disabled:hover .rc-input-number-handler-up,\n.rc-input-number-disabled:hover .rc-input-number-handler-wrap {\n  border-color: #d9d9d9;\n}\n.rc-input-number-input-wrap {\n  overflow: hidden;\n  height: 100%;\n}\n.rc-input-number-input {\n  width: 100%;\n  text-align: center;\n  outline: 0;\n  -moz-appearance: textfield;\n  line-height: 26px;\n  height: 100%;\n  transition: all 0.3s ease;\n  color: #666666;\n  border: 0;\n  border-radius: 4px;\n  padding: 0;\n  transition: all .3s;\n}\n.rc-input-number-handler-wrap {\n  float: right;\n  border-left: 1px solid #D9D9D9;\n  width: 20px;\n  height: 100%;\n  transition: all .3s;\n}\n.rc-input-number-handler-up {\n  border-bottom: 1px solid #D9D9D9;\n  padding-top: 1px;\n  transition: all .3s;\n}\n.rc-input-number-handler-up-inner:after {\n  content: '+';\n}\n.rc-input-number-handler-down {\n  transition: all .3s;\n}\n.rc-input-number-handler-down-inner:after {\n  content: '-';\n}\n.rc-input-number-handler-down-disabled,\n.rc-input-number-handler-up-disabled {\n  opacity: 0.72;\n}\n.rc-input-number-handler-down-disabled:hover,\n.rc-input-number-handler-up-disabled:hover {\n  color: #999;\n  border-color: #d9d9d9;\n}\n.rc-input-number-disabled .rc-input-number-input {\n  opacity: 0.72;\n  cursor: not-allowed;\n  background-color: #f3f3f3;\n}\n.rc-input-number-disabled .rc-input-number-handler {\n  opacity: 0.72;\n}\n.rc-input-number-disabled .rc-input-number-handler:hover {\n  color: #999;\n  border-color: #d9d9d9;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-responsive-carousel/lib/styles/carousel.min.css":
 /*!************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/react-responsive-carousel/lib/styles/carousel.min.css ***!
@@ -4673,7 +4692,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "/* =====================================\r\n        Template Name: Eshop\r\n        Author Name: Naimur Rahman\r\n        Author URI: http://www.wpthemesgrid.com/\r\n        Description: Eshop - eCommerce HTML5 Template.\r\n        Version:1.0\r\n        ========================================*/\r\n        /*======================================\r\n        [ CSS Table of contents ]\r\n        01. Preloader CSS\r\n        02. Header CSS\r\n            + Logo\r\n            + Category Menu\r\n            + Main Menu\r\n        03. Hero Area CSS\r\n        04. Small Banner CSS\r\n        05. Medium Banner CSS\r\n        06. Single Product CSS\r\n        07. Shop Sidebar CSS\r\n        08. Shop Single CSS\r\n        09. Shop Home List CSS\r\n        10. Cart CSS\r\n        11. Checkout CSS\r\n        12. Login & Register CSS\r\n        13. Cowndown CSS\r\n        14. Shop Services CSS\r\n        15. Newslatter CSS\r\n        16. About Us CSS\r\n        17. Team CSS\r\n        18. Blog CSS\r\n            + Blog Archive\r\n            + Blog Sidebar\r\n            + Blog Single\r\n        19. Contact CSS\r\n        20. 404 Error CSS\r\n        21. Footer CSS\r\n        ========================================*/\r\n        .color-plate {\r\n            position: fixed;\r\n            display: block;\r\n            z-index: 99998;\r\n            padding: 20px;\r\n            width: 245px;\r\n            background: #fff;\r\n            right: -245px;\r\n            text-align: left;\r\n            top: 30%;\r\n            transition:all 0.4s ease;\r\n            box-shadow: -3px 0px 25px -2px rgba(0, 0, 0, 0.2);\r\n        }\r\n        .color-plate.active{\r\n            right:0;\r\n        }\r\n        .color-plate .color-plate-icon {\r\n            position: absolute;\r\n            left: -48px;\r\n            width: 48px;\r\n            height: 45px;\r\n            line-height: 45px;\r\n            font-size: 21px;\r\n            border-radius: 5px 0 0 5px;\r\n            background: #fff;\r\n            text-align: center;\r\n            color: #333;\r\n            top: 0;\r\n            cursor: pointer;\r\n            box-shadow: -4px 0px 5px #00000036;\r\n        }\r\n        .color-plate h4 {\r\n            display: block;\r\n            font-size: 15px;\r\n            margin-bottom: 5px;\r\n            font-weight: 500;\r\n        }\r\n        .color-plate p {\r\n            font-size: 13px;\r\n            margin-bottom: 15px;\r\n            line-height: 20px;\r\n        }\r\n        .color-plate span {\r\n            width: 42px;\r\n            height: 35px;\r\n            border-radius: 0;\r\n            cursor: pointer;\r\n            display: inline-block;\r\n            margin-right: 3px;\r\n        }\r\n        .color-plate span:hover{\r\n            cursor:pointer;\r\n        }\r\n        .color-plate span.color1{\r\n            background:#F7941D;\r\n        }\r\n        .color-plate span.color2{\r\n            background:#0088CC;\r\n        }\r\n        .color-plate span.color3{\r\n            background:#32B87D;\r\n        }\r\n        .color-plate span.color4{\r\n            background:#FE754A;\r\n        }\r\n        .color-plate span.color5{\r\n            background:#F82F56;\r\n        }\r\n        .color-plate span.color6{\r\n            background:#00cec9;\r\n        }\r\n        .color-plate span.color7{\r\n            background:#6c5ce7;\r\n        }\r\n        .color-plate span.color8{\r\n            background:#85BA46;\r\n        }\r\n        .color-plate span.color9{\r\n            background:#fd79a8;\r\n        }\r\n        .color-plate span.color10{\r\n            background:#a29bfe;\r\n        }\r\n        .color-plate span.color11{\r\n            background:#badc58;\r\n        }\r\n        .color-plate span.color12{\r\n            background:#FF1D38;\r\n        }\r\n        /* Preloader */\r\n        .preloader {\r\n          position: fixed;\r\n          top: 0;\r\n          left: 0;\r\n          z-index: 999999999;\r\n          width: 100%;\r\n          height: 100%;\r\n          background-color: #fff;\r\n          overflow: hidden;\r\n        }\r\n        .preloader-inner {\r\n          position: absolute;\r\n          top: 50%;\r\n          left: 50%;\r\n          transform: translate(-50%,-50%);\r\n        }\r\n        .preloader-icon {\r\n          width: 100px;\r\n          height: 100px;\r\n          display: inline-block;\r\n          padding: 0px;\r\n        }\r\n        .preloader-icon span {\r\n          position: absolute;\r\n          display: inline-block;\r\n          width: 100px;\r\n          height: 100px;\r\n          border-radius: 100%;\r\n          background:#F7941D;\r\n          -webkit-animation: preloader-fx 1.6s linear infinite;\r\n          animation: preloader-fx 1.6s linear infinite;\r\n        }\r\n        .preloader-icon span:last-child {\r\n          animation-delay: -0.8s;\r\n          -webkit-animation-delay: -0.8s;\r\n        }\r\n        @keyframes preloader-fx {\r\n          0% {transform: scale(0, 0); opacity:0.5;}\r\n          100% {transform: scale(1, 1); opacity:0;}\r\n        }\r\n        @-webkit-keyframes preloader-fx {\r\n          0% {-webkit-transform: scale(0, 0); opacity:0.5;}\r\n          100% {-webkit-transform: scale(1, 1); opacity:0;}\r\n        }\r\n        /* End Preloader */\r\n\r\n        .btn {\r\n            position: relative;\r\n            font-weight: 500;\r\n            font-size:14px;\r\n            color: #fff;\r\n            background: #333;\r\n            display: inline-block;\r\n            transition: all 0.4s ease;\r\n            z-index: 5;\r\n            display: inline-block;\r\n            padding: 13px 32px;\r\n            border-radius: 0px;\r\n            text-transform:uppercase;\r\n        }\r\n        .btn:hover{\r\n            color:#fff;\r\n            background:#F7941D;\r\n        }\r\n        #scrollUp {\r\n            right: 10px;\r\n            z-index: 33;\r\n            bottom: 10px;\r\n            text-align: center;\r\n        }\r\n        #scrollUp i{\r\n            height: 40px;\r\n            width: 40px;\r\n            line-height: 40px;\r\n            background:transparent;\r\n            background:#222;\r\n            border-radius: 0;\r\n            font-size: 18px;\r\n            transition: all 500ms ease;\r\n            display:block;\r\n            color: #fff;\r\n            box-shadow: 0px 4px 19px #00000038;\r\n        }\r\n        #scrollUp i:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        /*======================================\r\n            01. Header CSS\r\n        ========================================*/\r\n        /* Topbar */\r\n        .topbar {\r\n            background-color: #fff;\r\n            border-bottom: 1px solid #e2e2e2;\r\n            padding: 15px 0;\r\n        }\r\n        /* Logo */\r\n        .header .logo {\r\n            float: left;\r\n            margin-top: 35px;\r\n            transition: all 0.4s ease;\r\n        }\r\n        .header .navbar {\r\n            padding: 0;\r\n        }\r\n        /* Main Menu */\r\n        .navbar-expand-lg .navbar-collapse{\r\n            display:block !important;\r\n        }\r\n        .header.v3 .navbar-expand-lg .navbar-collapse{\r\n            display:block !important;\r\n            background:#333;\r\n        }\r\n        .header .nav li a i {\r\n            margin-left: 6px;\r\n            font-size: 10px;\r\n        }\r\n        /* Dropdown Menu */\r\n        .header .nav li .dropdown {\r\n            background: #fff;\r\n            width: 220px;\r\n            position: absolute;\r\n            top: 100%;\r\n            z-index: 999;\r\n            box-shadow: 0px 3px 5px #3333334d;\r\n            transform-origin: 0 0 0;\r\n            transform: scaleY(0.2);\r\n            transition: all 0.3s ease 0s;\r\n            opacity: 0;\r\n            visibility: hidden;\r\n            padding: 10px;\r\n            left: 0;\r\n            margin: 0;\r\n        }\r\n        .header .nav li:hover .dropdown{\r\n            opacity:1;\r\n            visibility:visible;\r\n            transform:translateY(0px);\r\n        }\r\n        .header .nav li .dropdown li{\r\n            float:none;\r\n            margin:0;\r\n        }\r\n        .header .nav li .dropdown li a {\r\n            padding: 8px 15px;\r\n            color: #666;\r\n            display: block;\r\n            font-weight: 400;\r\n            text-transform: capitalize;\r\n            background: transparent;\r\n        }\r\n        .header .nav li .dropdown li a:before{\r\n            display:none;\r\n        }\r\n        .header .nav li .dropdown li:last-child a{\r\n            border-bottom:0px;\r\n        }\r\n        .header .nav li .dropdown li:hover a{\r\n            color:#fff;\r\n            background:#F7941D;\r\n        }\r\n        .header .nav li .dropdown li a:hover{\r\n            border-color:transparent;\r\n        }\r\n        .header .nav li .dropdown li i {\r\n            float: right;\r\n            margin-top: 8px;\r\n            font-size:10px;\r\n            z-index:5;\r\n        }\r\n        .header .nav li .dropdown.sub-dropdown {\r\n            background: #fff;\r\n            width: 220px;\r\n            position: absolute;\r\n            left: 186px;\r\n            top: 0;\r\n            z-index: 999;\r\n           box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);\r\n            box-shadow: 0px 3px 5px #3333334d;\r\n            transform-origin: 0 0 0;\r\n            transform: scaleY(0.2);\r\n            transition: all 0.3s ease 0s;\r\n            opacity: 0;\r\n            visibility: hidden;\r\n            padding: 10px;\r\n        }\r\n        .header .nav li .dropdown li:hover .dropdown.sub-dropdown{\r\n            opacity:1;\r\n            visibility:visible;\r\n            transform:translateY(0px);\r\n        }\r\n        .header .nav li .dropdown.sub-dropdown li a{\r\n            padding: 8px 15px;\r\n            color: #666;\r\n            display: block;\r\n            font-weight: 400;\r\n            text-transform: capitalize;\r\n            background: transparent;\r\n        }\r\n        .header .nav li .dropdown li:hover .dropdown.sub-dropdown li a{\r\n            background:transparent;\r\n        }\r\n        .header .nav li .dropdown li .dropdown.sub-dropdown li a:hover{\r\n            color:#fff;\r\n            background:#F7941D;\r\n        }\r\n        .header .nav li .dropdown.sub-dropdown li:last-child a{\r\n            border-bottom:0px solid;\r\n        }\r\n        .mobile-search{\r\n            display:none;\r\n        }\r\n        .header.shop .topbar {\r\n            border: none;\r\n            padding: 12px 0px;\r\n        }\r\n        .header.shop .nav-inner {\r\n            margin-right: 188px;\r\n        }\r\n        .header.shop .logo {\r\n            float: left;\r\n            margin-top: 35px;\r\n        }\r\n        .header.shop .top-contact {\r\n            margin-top:0px;\r\n        }\r\n        .header.shop .topbar p {\r\n            color: #ccc;\r\n        }\r\n        .header.shop .topbar .login a {\r\n            color: #F7941D;\r\n        }\r\n        /* Topbar Left Nav */\r\n        .header.shop .left-nav{\r\n\r\n        }\r\n        .header.shop .top-left .list-main li:first-child{\r\n            padding-left:0;\r\n        }\r\n        .header.shop .top-left .list-main li i{\r\n            display: inline-block;\r\n            margin-right: 4px;\r\n            font-size: 15px;\r\n            color: #F7941D;\r\n            position: relative;\r\n            top: 3px;\r\n        }\r\n        .header.shop .right-content{\r\n            float:right;\r\n        }\r\n        .header.shop .list-main li {\r\n            display: inline-block;\r\n            color: #333;\r\n            font-size: 13px;\r\n            font-weight: 500;\r\n            border-right: 1px solid #f0f0f0;\r\n            padding: 0px 13px;\r\n        }\r\n        .header.shop .list-main li i {\r\n            display: inline-block;\r\n            margin-right: 4px;\r\n            font-size: 15px;\r\n            color: #F7941D;\r\n            position: relative;\r\n            top: 1px;\r\n        }\r\n        .header.shop .list-main li:last-child{\r\n            padding-right:0;\r\n            border:none;\r\n        }\r\n        .header.shop .list-main li a{\r\n            color:#333;\r\n        }\r\n        .header.shop .list-main li a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .header.shop .nav li {\r\n            margin-right: 40px;\r\n            float: left;\r\n            position: relative;\r\n        }\r\n        .header.shop .nav li {\r\n            margin-right: 38px;\r\n            position: relative;\r\n        }\r\n        .header.shop .nav li:last-child {\r\n            margin: 0 !important;\r\n        }\r\n        .header.shop .nav li .new {\r\n            background: #F7941D;\r\n            color: #fff;\r\n            text-transform: uppercase;\r\n            font-size: 10px;\r\n            padding: 0px 9px;\r\n            position: absolute;\r\n            left: 0;\r\n            top: 6px;\r\n            font-weight: 500;\r\n        }\r\n        .header.shop .nav li .new::before {\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 4px;\r\n            bottom: -8px;\r\n            border: 4px solid #F7941D;\r\n            border-bottom-color: transparent;\r\n            border-left-color: transparent;\r\n            border-right-color: transparent;\r\n        }\r\n        /* Shopping Cart */\r\n        .header .shopping {\r\n            display: inline-block;\r\n            z-index: 9999;\r\n        }\r\n        .header .shopping .icon {\r\n            position: relative;\r\n            cursor:pointer;\r\n            color:#222;\r\n        }\r\n        .header .shopping .shopping-item {\r\n            position: absolute;\r\n            top: 68px;\r\n            right: 0;\r\n            width: 300px;\r\n            background: #fff;\r\n            padding: 20px 25px;\r\n            transition: all 0.3s ease 0s;\r\n            transform: translateY(10px);\r\n            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);\r\n            opacity:0;\r\n            visibility:hidden;\r\n            z-index:99;\r\n        }\r\n        .header .shopping:hover .shopping-item{\r\n            transform: translateY(0px);\r\n            opacity:1;\r\n            visibility:visible;\r\n        }\r\n        .header .shopping .dropdown-cart-header{\r\n            padding-bottom: 10px;\r\n            margin-bottom: 15px;\r\n            border-bottom:1px solid #e6e6e6;\r\n        }\r\n        .header .shopping .dropdown-cart-header span {\r\n            text-transform: uppercase;\r\n            color: #222;\r\n            font-size: 13px;\r\n            font-weight: 600;\r\n        }\r\n        .header .shopping .dropdown-cart-header a {\r\n            float: right;\r\n            text-transform: uppercase;\r\n            color: #222;\r\n            font-size: 13px;\r\n            font-weight: 600;\r\n        }\r\n        .header .shopping .dropdown-cart-header a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .header .shopping-list li {\r\n            overflow: hidden;\r\n            border-bottom: 1px solid #e6e6e6;\r\n            padding-bottom: 15px;\r\n            margin-bottom: 15px;\r\n            position:relative;\r\n        }\r\n        .header .shopping-list li .remove {\r\n            position: absolute;\r\n            left: 0;\r\n            bottom: 16px;\r\n            margin-top: -20px;\r\n            height: 20px;\r\n            width: 20px;\r\n            line-height: 18px;\r\n            text-align: center;\r\n            background: #fff;\r\n            color: #222;\r\n            border-radius: 0;\r\n            font-size: 11px;\r\n            border: 1px solid #ededed;\r\n        }\r\n        .header .shopping-list li .remove:hover{\r\n            background:#222;\r\n            color:#fff !important;\r\n            border-color:transparent;\r\n        }\r\n        .header .shopping-list .cart-img {\r\n            float: right;\r\n            border: 1px solid #ededed;\r\n            overflow:hidden;\r\n        }\r\n        .header .shopping-list .cart-img img {\r\n            width: 70px;\r\n            height: 70px;\r\n            border-radius:0;\r\n\r\n        }\r\n        .header .shopping-list .cart-img:hover img{\r\n            transform:scale(1.09);\r\n        }\r\n        .header .shopping-list .quantity{\r\n            line-height: 22px;\r\n            font-size: 13px;\r\n            padding-bottom: 30px;\r\n        }\r\n        .header .shopping-list h4 {\r\n            font-size: 14px;\r\n        }\r\n        .header .shopping-list h4 a {\r\n            font-weight: 600;\r\n            font-size: 13px;\r\n            color: #333;\r\n        }\r\n        .header .shopping-list h4 a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .header .shopping-item .bottom {\r\n            text-align: center;\r\n        }\r\n        .header .shopping-item .total {\r\n            overflow:hidden;\r\n            display: block;\r\n            padding-bottom: 10px;\r\n        }\r\n        .header .shopping-item .total span {\r\n            text-transform:uppercase;\r\n            color:#222;\r\n            font-size:13px;\r\n            font-weight:600;\r\n            float:left;\r\n        }\r\n        .header .shopping-item .total .total-amount {\r\n            float:right;\r\n            font-size:14px;\r\n        }\r\n        .header .shopping-item .bottom .btn {\r\n            background: #222;\r\n            padding: 10px 20px;\r\n            display: block;\r\n            color: #fff;\r\n            margin-top: 10px;\r\n            border-radius: 0px;\r\n            text-transform: uppercase;\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n        }\r\n        .header .shopping-item .bottom .btn:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        .header.shop{\r\n            background:#fff;\r\n        }\r\n        .header.shop .nav-inner {\r\n            margin: 0;\r\n            float: left;\r\n        }\r\n        .header.shop .topbar {\r\n            background-color: #fff;\r\n            border: none;\r\n        }\r\n        .header.shop.v3 .topbar{\r\n            padding:0;\r\n        }\r\n        .header.shop.v3 .topbar .inner-content{\r\n            border-bottom:1px solid #eee;\r\n            padding: 12px 0px;\r\n        }\r\n        .header.shop .right-nav li a {\r\n            color: #333;\r\n        }\r\n        .header.shop .logo {\r\n            float: left;\r\n            margin: 19px 0 0;\r\n        }\r\n        .header.shop .top-contact {\r\n            margin-top:0px;\r\n        }\r\n        /* Header Middle */\r\n        .header.shop .search-bar-top {\r\n            text-align: center;\r\n            margin-top: 10px;\r\n        }\r\n        .header.shop .search-bar {\r\n            margin-top: 33px;\r\n            width: 460px;\r\n            height: 40px;\r\n            display: inline-block;\r\n            background: #fff;\r\n            position: relative;\r\n        }\r\n        .header.shop .search-bar {\r\n            width: 535px;\r\n            height: 50px;\r\n            display: inline-block;\r\n            background: #fff;\r\n            position: relative;\r\n            margin: 0;\r\n            line-height: 45px;\r\n            border-radius: 5px;\r\n            border: 1px solid #ececec;\r\n        }\r\n        .header.shop .nice-select {\r\n            clear: initial;\r\n            margin: 0;\r\n            height: 48px;\r\n            width: 150px;\r\n            border: none;\r\n            text-align: center;\r\n            background: transparent;\r\n            text-transform: capitalize;\r\n            padding: 0 0 0 20px;\r\n            border-right: 1px solid #eee;\r\n            line-height: 50px;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n        }\r\n        .header.shop .nice-select::after {\r\n            border-color: #666;\r\n            right: 20px;\r\n        }\r\n        .header.shop .nice-select .list {\r\n            border-radius:0px;\r\n        }\r\n        .header.shop .nice-select .list li.focus{\r\n            font-weight:400;\r\n        }\r\n        .header.shop .nice-select .list li {\r\n            color: #666;\r\n            border-radius: 0px;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n        }\r\n        .header.shop .nice-select .list li:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        .header.shop .search-bar form {\r\n            display: inline-block;\r\n            float: left;\r\n            width: 260px;\r\n        }\r\n        .header.shop .search-bar input {\r\n            height: 48px;\r\n            background: transparent;\r\n            color: #666;\r\n            border-radius: 0;\r\n            border: none;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n            padding: 0 25px 0 20px;\r\n            width: 328px;\r\n        }\r\n        .header.shop .search-bar .btnn {\r\n            height: 50px;\r\n            line-height: 53px;\r\n            width: 62px;\r\n            text-align: center;\r\n            font-size: 18px;\r\n            color: #fff;\r\n            background: #333333;\r\n            position: absolute;\r\n            right: -2px;\r\n            top: -1px;\r\n            border: none;\r\n            border-radius: 0 5px 5px 0;\r\n            transition: all 0.4s ease;\r\n        }\r\n        .header.shop .search-bar .btnn:hover{\r\n            color:#fff;\r\n            background:#F7941D;\r\n        }\r\n        /* Search Form */\r\n        .header.shop .search-top {\r\n            opacity: 1;\r\n            visibility: visible;\r\n            top: 0;\r\n            background: transparent;\r\n            border: none;\r\n            box-shadow: none;\r\n            padding: 0;\r\n            top: 0;\r\n        }\r\n        .header.shop .middle-inner {\r\n            padding: 20px 0;\r\n            background: #fff;\r\n            border-top: 1px solid #eee;\r\n        }\r\n        .header.shop.v3 .middle-inner {\r\n            border:none;\r\n        }\r\n        .header.shop .header-inner {\r\n            background: #333;\r\n        }\r\n        .header.shop.v3 .header-inner {\r\n            background: transparent;\r\n        }\r\n        .header.shop.v2 .header-inner {\r\n            background: #fff;\r\n            border-top:1px solid #eee;\r\n        }\r\n        .header.shop .topbar p {\r\n            color: #333;\r\n        }\r\n        .header.shop .all-category {\r\n            color: #fff;\r\n            background: transparent;\r\n            position: relative;\r\n            background: #f7941d;\r\n        }\r\n        .header.shop .all-category h3{\r\n            padding: 20px 25px;\r\n        }\r\n        .header.shop .cat-heading {\r\n            font-size: 20px;\r\n            color: #fff;\r\n        }\r\n        .header.shop .cat-heading i {\r\n            color: #fff;\r\n            display: inline-block;\r\n            margin-right: 15px;\r\n            font-size: 22px;\r\n        }\r\n        .header.shop .main-category {\r\n            position: absolute;\r\n            left: 0;\r\n            top: 64px;\r\n            background: #fff;\r\n            z-index: 1;\r\n            width: 100%;\r\n            box-shadow: 0px 5px 15px #0000000a;\r\n        }\r\n        .header.shop .main-category li{\r\n            display:block;\r\n            border-bottom:1px solid #f6f6f6;\r\n            position:relative;\r\n        }\r\n        .header.shop .main-category li:last-child{\r\n            border:none;\r\n        }\r\n        .header.shop .main-category li a {\r\n            font-size: 14px;\r\n            font-weight: 600;\r\n            color: #333;\r\n            padding: 13px 25px 13px 25px;\r\n            display: block;\r\n            text-transform: uppercase;\r\n        }\r\n        .header.shop .main-category li a i{\r\n            display:inline-block;\r\n            float:right;\r\n        }\r\n        .header.shop .sub-category {\r\n            background: #fff;\r\n            width: 220px;\r\n            position: absolute;\r\n            left: 238px;\r\n            top: 0;\r\n            z-index: 999999;\r\n            opacity: 0;\r\n            visibility: hidden;\r\n            transition: all 0.4s ease;\r\n            border-left: 3px solid #F7941D;\r\n            box-shadow: 0px 5px 15px #0000000a;\r\n        }\r\n        .header.shop .main-category li:hover .sub-category{\r\n            opacity:1;\r\n            visibility:visible;\r\n        }\r\n        .header.shop .main-category li a{\r\n            text-transform:capitalize;\r\n            font-weight:400;\r\n        }\r\n        .header.shop .main-category li a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .header.shop .main-category .main-mega{\r\n            position:relative;\r\n        }\r\n        .header.shop .main-category li .mega-menu {\r\n            width: 850px;\r\n            display: inline-block;\r\n            height: auto;\r\n            position: absolute;\r\n            left: 238px;\r\n            top: 0;\r\n            z-index: 99999;\r\n            background: #fff;\r\n            border: none;\r\n            padding: 30px;\r\n            border-left: 3px solid #F7941D;\r\n            opacity:0;\r\n            visibility:hidden;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .header.shop .main-category li:hover .mega-menu{\r\n            opacity:1;\r\n            visibility:visible;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu {\r\n            width: 33%;\r\n            display: inline-block;\r\n            border: none;\r\n            padding: 0;\r\n            padding-right: 20px;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu a{\r\n            padding:0;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu .image{\r\n            overflow:hidden;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu img{\r\n            display:block;\r\n            height:100%;\r\n            width:100%;\r\n            cursor:pointer;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu .image:hover img{\r\n            transform:scale(1.1);\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu .title-link {\r\n            margin-bottom: 20px;\r\n            background: #F7941D;\r\n            color: #fff;\r\n            padding: 2px 13px;\r\n            border-radius: 3px;\r\n            display: inline-block;\r\n            font-size: 14px;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu .title-link:hover{\r\n            background:#333;\r\n            color:#fff;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu .inner-link{\r\n            margin-top:25px;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu .inner-link a{\r\n            margin-bottom:10px;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu .inner-link a:hover{\r\n            color:#F7941D;\r\n            background:transparent;\r\n        }\r\n        .header.shop .main-category li .mega-menu .single-menu .inner-link a:last-child{\r\n            margin-bottom:0px;\r\n        }\r\n        .header.shop .menu-origin {\r\n            float:none;\r\n            display: inline-block;\r\n            float: right;\r\n        }\r\n        .header.shop .nav li {\r\n            margin-right: 40px;\r\n            float: left;\r\n            position: relative;\r\n        }\r\n        .header.shop .nav li {\r\n            margin-right:5px;\r\n            position: relative;\r\n            float: none;\r\n        }\r\n        .header.shop .nav li:last-child{\r\n            margin-right:0;\r\n        }\r\n        .header.shop .nav li .new {\r\n            background: #F7941D;\r\n            color: #fff;\r\n            text-transform: uppercase;\r\n            font-size: 9px;\r\n            position: absolute;\r\n            left: 21px;\r\n            top: 2px;\r\n            font-weight: 500;\r\n            height: 18px;\r\n            line-height: 18px;\r\n            text-align: center;\r\n            display: block;\r\n        }\r\n        .header.shop.v2 .nav li a{\r\n            color:#333;\r\n        }\r\n        .header.shop .nav li a {\r\n            color: #fff;\r\n            text-transform: capitalize;\r\n            font-size: 15px;\r\n            padding: 20px 15px;\r\n            font-weight: 500;\r\n            display: block;\r\n            position: relative;\r\n            transition: all 0.4s ease;\r\n        }\r\n        .header.shop .nav li:hover a{\r\n            color:#fff;\r\n            background:#F7941D;\r\n        }\r\n        .header.shop.v2 .nav li:hover a{\r\n            color:#F7941D;\r\n            background:transparent;\r\n        }\r\n        .header.shop .nav li.active a{\r\n            color:#fff;\r\n            background:#F7941D;\r\n        }\r\n        .header.shop.v2 .nav li.active a{\r\n            color:#333 !important;\r\n            background:transparent !important;\r\n        }\r\n        .header.shop.v2 .nav li.active a{\r\n            color:#F7941D !important;\r\n        }\r\n        .header.shop .nav .dropdown li{\r\n            margin:0;\r\n        }\r\n        .header.shop .nav li .dropdown li:hover a{\r\n            background:#F7941D;\r\n        }\r\n        .header.shop.v2 .nav li.active .dropdown li a{\r\n            color:#333 !important;\r\n        }\r\n        .header.shop.v2 .nav li.active .dropdown li a:hover{\r\n            color:#fff !important;\r\n            background:#F7941D !important;\r\n        }\r\n        .header.shop.v2 .nav li.active .dropdown li a:hover{\r\n            color:#fff !important;\r\n        }\r\n        .header.shop.v2 .nav li .dropdown li:hover a{\r\n            color:#F7941D;\r\n        }\r\n        .header.shop .nav li .dropdown li a {\r\n            color: #333;\r\n            padding: 8px 15px;\r\n            font-weight: 400;\r\n            background:#fff;\r\n        }\r\n        .header.shop.v2 .nav li .dropdown li a {\r\n            color: #333;\r\n            background:#fff;\r\n        }\r\n        .header.shop .nav li .dropdown li a {\r\n            font-weight: 400;\r\n            font-size: 14px;\r\n        }\r\n        .header.shop .nav li .dropdown li a:hover{\r\n            color:#fff;\r\n        }\r\n        .header.shop.v2 .nav li .dropdown li a:hover{\r\n            color:#fff !important;\r\n            background:#F7941D;\r\n        }\r\n        .header.shop .nav li .dropdown li .dropdown.sub-dropdown li a:hover{\r\n            background:#F7941D;\r\n        }\r\n        .header.shop .right-bar {\r\n            display: inline-block;\r\n            padding: 0;\r\n            margin: 0;\r\n            top: 20px;\r\n            float: right;\r\n            position: relative;\r\n        }\r\n        .header.shop .right-bar .sinlge-bar.top-search a {\r\n            transform: translateY(3px);\r\n        }\r\n        .header.shop .right-bar .sinlge-bar.top-search a:hover {\r\n            color:#F7941D;\r\n        }\r\n        .header.shop .right-bar .sinlge-bar .single-icon{\r\n            color:#333;\r\n            font-size:20px;\r\n            position:relative;\r\n        }\r\n        .header.shop .right-bar .sinlge-bar .single-icon:hover{\r\n            color:#F7941D;\r\n        }\r\n        .header.shop .right-bar .sinlge-bar .single-icon .total-count {\r\n            position: absolute;\r\n            top: -7px;\r\n            right: -8px;\r\n            background: #f6931d;\r\n            width: 18px;\r\n            height: 18px;\r\n            line-height: 18px;\r\n            text-align: center;\r\n            color: #fff;\r\n            border-radius: 100%;\r\n            font-size: 11px;\r\n        }\r\n        .header.shop .right-bar .sinlge-bar{\r\n            display:inline-block;\r\n            margin-right:25px;\r\n        }\r\n        .header.shop .right-bar .sinlge-bar:last-child{\r\n            margin-right:0px;\r\n        }\r\n        .header.shop .right-bar .sinlge-bar li a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .mobile-search{\r\n            display:none;\r\n        }\r\n        /* Header Search */\r\n        /* Search */\r\n        .header .search-top{\r\n            display:none;\r\n        }\r\n        .header .search-top a{\r\n            font-size:17px;\r\n        }\r\n        .header .search-top a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .header .search-form {\r\n            position: absolute;\r\n            left: -128px;\r\n            z-index: 9999;\r\n            opacity: 0;\r\n            visibility: hidden;\r\n            transition: all 0.5s ease;\r\n            top: 46px;\r\n            background: #ffffff75;\r\n            padding: 7px;\r\n            border-radius: 5px;\r\n            transform: scaleY(0);\r\n            box-shadow: 0px 4px 7px #0000003b;\r\n            padding: 0;\r\n            border-radius: 0;\r\n        }\r\n        .header .search-top.active .search-form {\r\n            opacity:1;\r\n            visibility:visible;\r\n            transform: scaleY(1);\r\n        }\r\n        .header .search-form input {\r\n            width: 220px;\r\n            height: 45px;\r\n            line-height: 45px;\r\n            padding: 0 60px 0 15px;\r\n            transition: all 0.4s ease;\r\n            border-radius: 3px;\r\n            border: none;\r\n            background: #fff;\r\n            color: #333;\r\n            border-radius: 0;\r\n        }\r\n        .header .search-form button {\r\n            position: absolute;\r\n            right: 0;\r\n            height: 45px;\r\n            top: 0;\r\n            width: 45px;\r\n            background: transparent;\r\n            border: none;\r\n            color: #3353ea;\r\n            border-radius: 0 3px 3px 0;\r\n            border-radius: 0;\r\n            border-left: 1px solid #eee;\r\n            font-size: 15px;\r\n            color: #333;\r\n            transition: all 0.4s ease;\r\n        }\r\n        .header .search-form button:hover{\r\n            color:#fff;\r\n            background:#F7941D;\r\n            border-color:transparent;\r\n        }\r\n        /* Header Sticky */\r\n        .header .header-inner{\r\n            width:100%;\r\n            z-index:999;\r\n        }\r\n        .header.sticky .all-category{}\r\n        .header.sticky .all-category h3{\r\n            cursor:pointer;\r\n\r\n        }\r\n        .header.sticky .all-category .main-category{\r\n            opacity:0;\r\n            visibility:hidden;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .header.sticky .all-category:hover .main-category{\r\n            opacity:1;\r\n            visibility:visible;\r\n        }\r\n        .header.sticky .header-inner .nav li a {\r\n            color: #333;\r\n        }\r\n        .header.sticky.v3 .header-inner .nav li a {\r\n            color: #fff;\r\n        }\r\n        .header.sticky .header-inner .nav li:hover a{\r\n            color:#fff;\r\n        }\r\n        .header.sticky.v2 .header-inner .nav li:hover a{\r\n            color:#F7941D;\r\n        }\r\n        .header.sticky .header-inner .nav li .dropdown li a{\r\n            color:#333;\r\n        }\r\n        .header.sticky.v2 .header-inner .nav li .dropdown li a{\r\n            color:#333;\r\n        }\r\n        .header.sticky .header-inner .nav li .dropdown li a:hover{\r\n            color:#fff;\r\n        }\r\n        .header.sticky .header-inner .nav li.active a {\r\n            color: #fff;\r\n        }\r\n        .header.sticky .header-inner{\r\n            position:fixed;\r\n            top:0;\r\n            left:0;\r\n            background:#fff;\r\n            -webkit-animation: fadeInDown 1s both 0.2s;\r\n                    animation: fadeInDown 1s both 0.2s;\r\n            box-shadow:0px 0px 10px rgba(0, 0, 0, 0.3);\r\n            z-index:999;\r\n        }\r\n        .header.sticky.v3 .header-inner{\r\n            box-shadow:none;\r\n        }\r\n        .header.sticky.v3 .navbar-expand-lg .navbar-collapse{\r\n            -webkit-animation: fadeInDown 1s both 0.2s;\r\n                    animation: fadeInDown 1s both 0.2s;\r\n            box-shadow:0px 0px 10px rgba(0, 0, 0, 0.3);\r\n        }\r\n        /*======================================\r\n            End Header CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Hero Area CSS\r\n        ========================================*/\r\n        .hero-slider {\r\n            background: #fff;\r\n            overflow: hidden;\r\n        }\r\n        .hero-slider .single-slider {\r\n            height: auto;\r\n            background-image: url('https://via.placeholder.com/1900x700');\r\n            background-size: cover;\r\n            background-position: center;\r\n            background-repeat: no-repeat;\r\n            height: 510px;\r\n        }\r\n        .hero-slider .text-inner {\r\n\r\n        }\r\n        .hero-slider .hero-text {\r\n            padding: 0 30px;\r\n            margin-top:100px;\r\n        }\r\n        .hero-slider .hero-text h1 {\r\n            line-height: 50px;\r\n            font-size: 47px;\r\n            font-weight: 700;\r\n            color: #F7941D;\r\n            margin-bottom: 20px;\r\n        }\r\n        .hero-slider .hero-text h1 span {\r\n            font-size: 20px;\r\n            display: block;\r\n            margin-bottom: 12px;\r\n            color: #333;\r\n            font-weight: 700;\r\n            line-height: initial;\r\n        }\r\n        .hero-slider .hero-text p {\r\n            color: #333;\r\n            margin-bottom: 35px;\r\n        }\r\n        .hero-slider .hero-text .button{\r\n            margin:0;\r\n        }\r\n        .hero-slider .hero-text .btn {\r\n            color: #fff;\r\n            background: #333;\r\n            padding: 13px 30px;\r\n            line-height: initial;\r\n            border: none;\r\n            height: auto;\r\n            z-index: 0;\r\n        }\r\n        .hero-slider .hero-text .btn:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        /* Start Hero Area 2 CSS */\r\n        .hero-area2{\r\n            position:relative;\r\n        }\r\n        .hero-area2 .single-slider.overlay:before{\r\n            background:#F7941D;\r\n            opacity:0;\r\n            visibility:hidden;\r\n            transform:scale(0.9);\r\n        }\r\n        .hero-area2 .single-slider.overlay:hover:before{\r\n            opacity:0.9;\r\n            visibility:visible;\r\n            transform:scale(1);\r\n        }\r\n        .hero-area2 .single-slider{\r\n            height:500px;\r\n            position:relative;\r\n            background-size:cover;\r\n            background-position:center;\r\n            background-repeat:no-repeat;\r\n        }\r\n        .hero-area2 .single-slider .content{\r\n            position:relative;\r\n        }\r\n        .hero-area2 .single-slider .content {\r\n            width: 100%;\r\n            padding: 15px;\r\n            z-index: 2;\r\n            transition:all 0.4s ease;\r\n            text-align: center;\r\n            padding-top: 120px;\r\n            opacity:0;\r\n            visibility:hidden;\r\n            transform:scale(1.1);\r\n        }\r\n        .hero-area2 .single-slider:hover .content{\r\n            opacity:1;\r\n            visibility:visible;\r\n            transform:scale(1);\r\n        }\r\n        .hero-area2 .single-slider .content .sub-title{\r\n            color:#fff;\r\n            text-transform: uppercase;\r\n            font-size:15px;\r\n            font-weight:500;\r\n        }\r\n        .hero-area2 .single-slider .content .title {\r\n            color: #fff;\r\n            text-transform: uppercase;\r\n            font-size: 24px;\r\n            display: block;\r\n            margin-top: 10px;\r\n            margin-bottom: 10px;\r\n        }\r\n        .hero-area2 .single-slider .content .des{\r\n            color:#fff;\r\n        }\r\n        .hero-area2 .single-slider .content .button{}\r\n        .hero-area2 .single-slider .content .button .btn {\r\n            padding: 9px 25px;\r\n            border: 2px solid #fff;\r\n            background: transparent;\r\n            color: #fff;\r\n            margin-top: 25px;\r\n        }\r\n        .hero-area2 .single-slider .content .button .btn:hover{\r\n            background:#fff;\r\n            color:#333;\r\n            border-color:transparent;\r\n        }\r\n        /* Owl Nav CSS */\r\n        .hero-area2 .owl-carousel .owl-nav {\r\n            margin: 0;\r\n            position: absolute;\r\n            top: 50%;\r\n            width: 100%;\r\n            margin-top:-30px;\r\n        }\r\n        .hero-area2 .owl-carousel .owl-nav div {\r\n            height: 60px;\r\n            width: 40px;\r\n            line-height: 60px;\r\n            text-align: center;\r\n            background: #333;\r\n            color: #fff;\r\n            font-size: 14px;\r\n            position: absolute;\r\n            margin: 0;\r\n            transition: all 0.4s ease;\r\n            padding: 0;\r\n            border-radius: 0;\r\n        }\r\n        .hero-area2 .owl-carousel .owl-nav div:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        .hero-area2 .owl-carousel .owl-controls .owl-nav .owl-prev{\r\n            left:0;\r\n        }\r\n        .hero-area2 .owl-carousel .owl-controls .owl-nav .owl-next{\r\n            right:0;\r\n        }\r\n        /* Hero Area 3 */\r\n        .hero-area3{}\r\n        .hero-area3 .big-content{\r\n            background-image: url('https://via.placeholder.com/850x530');\r\n            background-size: cover;\r\n            background-position: center;\r\n            background-repeat: no-repeat;\r\n            height: 511px;\r\n            margin-top:30px;\r\n            position:relative;\r\n        }\r\n        .hero-area3 .big-content .inner {\r\n            position: absolute;\r\n            right: 0;\r\n            top: 50%;\r\n            padding: 0 50px 0 360px;\r\n            transform: translateY(-50%);\r\n        }\r\n        .hero-area3 .big-content .title {\r\n            font-size: 28px;\r\n            margin-bottom: 20px;\r\n            font-weight: 700;\r\n            text-transform: capitalize;\r\n            line-height: 37px;\r\n        }\r\n        .hero-area3 .big-content .title span{\r\n            color:#F7941D;\r\n        }\r\n        .hero-area3 .big-content .des{}\r\n        .hero-area3 .big-content .button{\r\n            margin-top:40px;\r\n            display:block;\r\n        }\r\n        .hero-area3 .big-content .button .btn{\r\n            color:#fff;\r\n        }\r\n\r\n        .hero-area3 .small-content{\r\n            height:240px;\r\n            background-size: cover;\r\n            background-position: center;\r\n            background-repeat: no-repeat;\r\n            margin-top:30px;\r\n            position:relative;\r\n        }\r\n        .hero-area3 .small-content.first{\r\n            background-image: url('https://via.placeholder.com/450x300');\r\n        }\r\n        .hero-area3 .small-content.secound{\r\n            background-image: url('https://via.placeholder.com/450x300');\r\n        }\r\n        .hero-area3 .small-content .inner {\r\n            padding: 30px;\r\n            text-align:right;\r\n            position:absolute;\r\n            right:0;\r\n            bottom:0;\r\n        }\r\n        .hero-area3 .small-content .title {\r\n            font-size: 18px;\r\n            margin-bottom: 20px;\r\n            font-weight: 600;\r\n            text-transform: capitalize;\r\n        }\r\n        .hero-area3 .small-content .title span{\r\n            color:#F7941D;\r\n        }\r\n        .hero-area3 .small-content .des{}\r\n        .hero-area3 .small-content .button{\r\n            margin-top:10px;\r\n            display:block;\r\n        }\r\n        .hero-area3 .small-content .button .btn {\r\n            background: transparent;\r\n            padding: 0;\r\n            color: #333;\r\n            border-bottom: 2px solid #333;\r\n            font-size: 13px;\r\n        }\r\n        .hero-area3 .small-content .button .btn:hover{\r\n            color:#F7941D;\r\n            border-color:#F7941D;\r\n        }\r\n        /* Hero Area 4 */\r\n        .hero-area4 .big-content{\r\n\r\n            background-size: cover;\r\n            background-position: center;\r\n            background-repeat: no-repeat;\r\n            height: 510px;\r\n            margin-top:30px;\r\n            position:relative;\r\n        }\r\n        .hero-area4 .big-content .inner {\r\n            position: absolute;\r\n            right: 0;\r\n            top: 50%;\r\n            padding: 0 80px 0 50px;\r\n            transform: translateY(-50%);\r\n        }\r\n        .hero-area4 .big-content .title {\r\n            font-size: 32px;\r\n            margin-bottom: 20px;\r\n            font-weight: 700;\r\n            text-transform: capitalize;\r\n            line-height: 35px;\r\n        }\r\n        .hero-area4 .big-content .title span{\r\n            color:#F7941D;\r\n        }\r\n        .hero-area4 .big-content .des{}\r\n        .hero-area4 .big-content .button{\r\n            margin-top:40px;\r\n            display:block;\r\n        }\r\n        .hero-area4 .big-content .button .btn{\r\n            color:#fff;\r\n        }\r\n        .hero-area4 .owl-carousel .owl-nav {\r\n            margin: 0;\r\n            position: absolute;\r\n            top: 50%;\r\n            width: 100%;\r\n            margin-top:-20px;\r\n        }\r\n        .hero-area4 .owl-carousel .owl-nav div {\r\n            height: 40px;\r\n            width: 40px;\r\n            line-height: 40px;\r\n            text-align: center;\r\n            background: #333;\r\n            color: #fff;\r\n            font-size: 14px;\r\n            position: absolute;\r\n            margin: 0;\r\n            transition: all 0.4s ease;\r\n            padding: 0;\r\n            border-radius: 0;\r\n        }\r\n        .hero-area4 .owl-carousel .owl-nav div:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        .hero-area4 .owl-carousel .owl-controls .owl-nav .owl-prev{\r\n            left:0;\r\n        }\r\n        .hero-area4 .owl-carousel .owl-controls .owl-nav .owl-next{\r\n            right:0;\r\n        }\r\n\r\n        /*======================================\r\n           End Hero Area CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Small Banner CSS\r\n        ========================================*/\r\n        .small-banner{\r\n            padding:30px 0;\r\n            padding-bottom:0;\r\n        }\r\n        .small-banner .single-banner {\r\n            overflow:hidden;\r\n            position:relative;\r\n        }\r\n        .small-banner .single-banner img{\r\n            height:100%;\r\n            width:100%;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .small-banner .single-banner .content {\r\n            position: absolute;\r\n            left: 0;\r\n            top: 50%;\r\n            transform: translateY(-50%);\r\n            padding-left: 35px;\r\n        }\r\n        .small-banner .single-banner h3 {\r\n            font-size: 22px;\r\n            font-weight: 700;\r\n            text-transform: capitalize;\r\n            color: #333;\r\n        }\r\n        .small-banner .single-banner h3 span{\r\n            color:#F7941D;\r\n        }\r\n        .small-banner .single-banner p {\r\n            font-size: 14px;\r\n            color: #F7941D;\r\n            font-weight: 500;\r\n            margin-bottom: 5px;\r\n            text-transform: capitalize;\r\n        }\r\n        .small-banner .single-banner a {\r\n            color: #333;\r\n            margin-top: 22px;\r\n            display: block;\r\n            font-size: 12px;\r\n            font-weight:500;\r\n            display: inline-block;\r\n            text-transform:uppercase;\r\n            border-bottom:2px solid #333;\r\n        }\r\n        .small-banner .single-banner a:hover{\r\n            color:#F7941D;\r\n            border-color:#F7941D;\r\n        }\r\n        /*======================================\r\n           End Small Banner CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Mid Banner CSS\r\n        ========================================*/\r\n        .midium-banner{\r\n            padding:0;\r\n        }\r\n        .midium-banner .single-banner{\r\n            position:relative;\r\n        }\r\n        .midium-banner .single-banner img{\r\n            height:100%;\r\n            width:100%;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .midium-banner .single-banner .content {\r\n            padding-left:50px;\r\n            position: absolute;\r\n            left: 0;\r\n            top: 50%;\r\n            transform:translateY(-50%);\r\n        }\r\n        .midium-banner .single-banner h3 {\r\n            font-size: 27px;\r\n            font-weight: 700;\r\n            text-transform: uppercase;\r\n            color: #333;\r\n            line-height: 30px;\r\n        }\r\n        .midium-banner .single-banner h3 span{\r\n            color:#F7941D;\r\n        }\r\n        .midium-banner .single-banner p {\r\n            font-size: 13px;\r\n            color: #F7941D;\r\n            font-weight: 500;\r\n            margin-bottom: 5px;\r\n            text-transform: uppercase;\r\n        }\r\n        .midium-banner .single-banner a {\r\n            display: inline-block;\r\n            font-weight: 600;\r\n            text-align: center;\r\n            -webkit-user-select: none;\r\n            -moz-user-select: none;\r\n            -ms-user-select: none;\r\n            user-select: none;\r\n            padding: .375rem .75rem;\r\n            font-size: 13px;\r\n            border-radius: .25rem;\r\n            background: #333;\r\n            color: #fff !important;\r\n            padding: 10px 27px;\r\n            border-radius: 30px;\r\n            margin-top: 25px;\r\n            text-transform: uppercase;\r\n        }\r\n        .midium-banner .single-banner a:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        /*======================================\r\n           End Mid Banner CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Most Popular CSS\r\n        ========================================*/\r\n        .pro-tab-viewmore-wrap {\r\n            position: relative;\r\n            text-align: center;\r\n        }\r\n        .most-popular .section-title{\r\n            margin-bottom:40px;\r\n        }\r\n        .pro-tab-viewmore-wrap .pro-viewmore {\r\n          position: absolute;\r\n          right: 40px;\r\n          top: 0;\r\n        }\r\n        .most-popular .single-product{\r\n            margin:50px 15px 0 15px;\r\n        }\r\n        /* Slider Nav */\r\n        .most-popular .owl-nav{\r\n            margin: 0;\r\n            position: absolute;\r\n            top: 50%;\r\n            width: 100%;\r\n            margin-top:-25px;\r\n        }\r\n        .most-popular .owl-carousel .owl-nav div {\r\n            height: 60px;\r\n            width: 30px;\r\n            line-height: 58px;\r\n            background: #fff;\r\n            color: #333;\r\n            position: absolute;\r\n            margin: 0;\r\n            border-radius: 0;\r\n            font-size: 15px;\r\n            text-align: center;\r\n            transition:all 0.4s ease;\r\n            box-shadow: 0px 0px 10px #3333331c;\r\n        }\r\n        .most-popular .owl-carousel .owl-nav div:hover{\r\n            color:#fff;\r\n            background:#F7941D;\r\n        }\r\n        .most-popular .owl-carousel .owl-controls .owl-nav .owl-prev{\r\n            left:0;\r\n        }\r\n        .most-popular .owl-carousel .owl-controls .owl-nav .owl-next{\r\n            right:0;\r\n        }\r\n        /*======================================\r\n           End Most Popular CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Single Product CSS\r\n        ========================================*/\r\n        .product-area .nav-tabs {\r\n            text-align: center;\r\n            display: inline-block;\r\n            width: 100%;\r\n            border:none;\r\n        }\r\n        .product-area .nav-tabs .nav-item {\r\n            margin-bottom: -1px;\r\n            display: inline-block;\r\n        }\r\n        .product-area .nav-tabs li a {\r\n            color: #333;\r\n            text-transform: uppercase;\r\n            display: inline-block;\r\n            position: relative;\r\n            margin-right: 5px;\r\n            font-weight: 500;\r\n            background: #fff;\r\n            color: #333;\r\n            padding: 3px 14px;\r\n            border-radius: 3px;\r\n            font-size: 13px;\r\n        }\r\n        .product-area .nav-tabs li:last-child a{\r\n            border-color:transparent;\r\n        }\r\n        .product-area .nav-tabs li a i{\r\n            margin-right:10px;\r\n        }\r\n        .product-area .nav-tabs li a.active,\r\n        .product-area .nav-tabs li:hover a{\r\n            background:#F7941D;\r\n            color:#fff;\r\n            border-color:transparent;\r\n        }\r\n        /* Sinlge Product */\r\n        .single-product{\r\n            margin-top:50px;\r\n        }\r\n        .single-product .product-img {\r\n          position: relative;\r\n          overflow: hidden;\r\n          cursor:pointer;\r\n        }\r\n        .single-product .product-img a {\r\n          display: block;\r\n          position: relative;\r\n        }\r\n        .single-product .product-img a img {\r\n          width: 100%;\r\n        }\r\n        .single-product .product-img a img.hover-img {\r\n          position: absolute;\r\n          left: 0;\r\n          top: 0;\r\n          z-index: 1;\r\n          opacity: 0;\r\n          transition: opacity 0.5s ease, transform 2s cubic-bezier(0, 0, 0.44, 1.18);\r\n        }\r\n        .single-product .product-img a span.price-dec {\r\n            background-color: #f6931d;\r\n            display: inline-block;\r\n            font-size: 11px;\r\n            color: #fff;\r\n            right: 20px;\r\n            top: 20px;\r\n            padding: 1px 16px;\r\n            font-weight: 700;\r\n            border-radius: 0;\r\n            text-align: center;\r\n            position: absolute;\r\n            text-transform: uppercase;\r\n            border-radius: 30px;\r\n            height: 26px;\r\n            line-height: 25px;\r\n        }\r\n        .single-product .product-img a span.new {\r\n            background-color: #8493ca;\r\n            display: inline-block;\r\n            font-size: 11px;\r\n            color: #fff;\r\n            right: 20px;\r\n            top: 20px;\r\n            padding: 1px 16px;\r\n            font-weight: 700;\r\n            border-radius: 0;\r\n            text-align: center;\r\n            position: absolute;\r\n            text-transform: uppercase;\r\n            border-radius: 30px;\r\n            height: 26px;\r\n            line-height: 24px;\r\n        }\r\n        .single-product .product-img a span.out-of-stock {\r\n            background-color: #ed1b24;\r\n            display: inline-block;\r\n            font-size: 11px;\r\n            color: #fff;\r\n            right: 20px;\r\n            top: 20px;\r\n            padding: 1px 16px;\r\n            font-weight: 700;\r\n            border-radius: 0;\r\n            text-align: center;\r\n            position: absolute;\r\n            text-transform: uppercase;\r\n            border-radius: 30px;\r\n            height: 26px;\r\n            line-height: 24px;\r\n        }\r\n        .single-product .product-img .product-action {\r\n            display: inline-block;\r\n            position: absolute;\r\n            right: 0;\r\n            bottom: 0;\r\n            z-index: 99;\r\n            border-radius: 3px;\r\n        }\r\n        .single-product .product-img .product-action a {\r\n            background-color: transparent;\r\n            color: #333;\r\n            display: block;\r\n            font-size: 16px;\r\n            display: inline-block;\r\n            margin-right: 15px;\r\n            text-align: right;\r\n            height: 52px;\r\n            position: relative;\r\n            top: 2px;\r\n        }\r\n        .single-product .product-img .product-action a:last-child{\r\n            margin-right:0;\r\n            border:none;\r\n        }\r\n        .single-product .product-img .product-action a i {\r\n          line-height: 40px;\r\n        }\r\n        .single-product .product-img .product-action a span {\r\n            visibility: hidden;\r\n            position: absolute;\r\n            background: #F7941D !important;\r\n            color: #fff !important;\r\n            text-align: center;\r\n            padding: 5px 12px;\r\n            z-index: 3;\r\n            opacity: 0;\r\n            transition: opacity .6s, margin .3s;\r\n            font-size: 11px;\r\n            right: 0;\r\n            line-height: 14px;\r\n            top: -12px;\r\n            margin-top: -5px;\r\n            margin-right: 0;\r\n            display: inline-block;\r\n            width: 120px;\r\n            border-radius:15px 0 0 15px;\r\n        }\r\n        .single-product .product-img .button-head .product-action a span::after {\r\n            position: absolute;\r\n            content: \"\";\r\n            right: 0;\r\n            bottom: -12px;\r\n            border: 6px solid #F7941D;\r\n            border-left:0px solid transparent;\r\n            border-right:6px solid transparent;\r\n            border-bottom:6px solid transparent;\r\n        }\r\n        .single-product .product-img .product-action a:hover {\r\n            color:#F7941D;\r\n        }\r\n        .single-product .product-img .product-action a:hover span {\r\n          visibility: visible;\r\n          opacity: 1;\r\n          color:#333;\r\n          background:#fff;\r\n          margin-top: -12px;\r\n        }\r\n        .single-product .product-img .product-action.pro-action-width-dec a {\r\n          width: 30px;\r\n          height: 30px;\r\n          font-size: 14px;\r\n        }\r\n        .single-product .product-img .product-action.pro-action-width-dec a i {\r\n          line-height: 30px;\r\n        }\r\n        .single-product .product-img .product-action.pro-action-width-dec-2 {\r\n          bottom: 45px;\r\n        }\r\n        .single-product .product-img .product-action-2 {\r\n            position: absolute;\r\n            left: 0;\r\n            bottom: 0;\r\n            text-align: left;\r\n            z-index: 99;\r\n            transition: all 250ms ease-out;\r\n        }\r\n        .single-product .product-img .product-action-2 a {\r\n            display: block;\r\n            background-color: transparent;\r\n            color: #333;\r\n            text-align: left;\r\n            font-size: 12px;\r\n            font-weight: 600;\r\n            text-transform: uppercase;\r\n            line-height: 1;\r\n            display: inline-block;\r\n        }\r\n        .single-product .product-img .product-action-2 a:hover {\r\n          color:#F7941D;\r\n        }\r\n        .single-product .button-head {\r\n            background: #fff;\r\n            display: inline-block;\r\n            height: 40px;\r\n            width: 100%;\r\n            position: absolute;\r\n            left: 0;\r\n            bottom: -50px;\r\n            z-index: 9;\r\n            height: 50px;\r\n            line-height: 50px;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .single-product:hover .button-head{\r\n            bottom:0;\r\n        }\r\n        .single-product .product-img .shop-list-quickview {\r\n          position: absolute;\r\n          top: 50%;\r\n          transform: translateY(-50%);\r\n          left: 0;\r\n          right: 0;\r\n          text-align: center;\r\n          z-index: 99;\r\n          margin-top: 20px;\r\n          visibility: hidden;\r\n          opacity: 0;\r\n          transition: all .35s ease 0s;\r\n        }\r\n        .single-product .product-img .shop-list-quickview a {\r\n          color: #000;\r\n          background-color: #fff;\r\n          display: inline-block;\r\n          width: 50px;\r\n          height: 50px;\r\n          border-radius: 100%;\r\n          font-size: 18px;\r\n        }\r\n        .single-product .product-img .shop-list-quickview a:hover {\r\n          background-color: #222;\r\n          color: #fff;\r\n        }\r\n        .single-product .product-img .shop-list-quickview a i {\r\n          line-height: 50px;\r\n        }\r\n        .single-product .product-content{\r\n            margin-top:20px;\r\n        }\r\n        .single-product .product-img:hover.default-overlay::before {\r\n          background-color: rgba(38, 38, 38, 0.2);\r\n          z-index: 9;\r\n          transition: all 250ms ease-out;\r\n          pointer-events: none;\r\n          opacity: 1;\r\n        }\r\n        .single-product .product-img:hover.default-overlay.metro-overlay::before {\r\n          background-color: rgba(38, 38, 38, 0.4);\r\n          z-index: 9;\r\n          transition: all 250ms ease-out;\r\n          pointer-events: none;\r\n          opacity: 1;\r\n        }\r\n        .single-product .product-img:hover img.hover-img {\r\n          opacity: 1;\r\n        }\r\n        .single-product .product-content h3 {\r\n            line-height: 22px;\r\n        }\r\n        .single-product .product-content h3 a {\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n            margin: 0;\r\n        }\r\n        .single-product .product-content h3 a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .single-product .product-content .product-price {\r\n          margin: 6px 0 0 0;\r\n        }\r\n        .single-product .product-content .product-price span {\r\n            font-size: 15px;\r\n            font-weight: 500;\r\n        }\r\n        .single-product .product-content .product-price span.old {\r\n          text-decoration: line-through;\r\n          opacity: .6;\r\n          margin-right: 2px;\r\n        }\r\n        /*======================================\r\n           End Single Product CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Shop Sidebar CSS\r\n        ========================================*/\r\n        .shop-sidebar .single-widget {\r\n            margin-top: 30px;\r\n            background: #F6F7FB;\r\n            padding: 30px;\r\n        }\r\n        .shop-sidebar .single-widget:first-child {\r\n            margin-top: 0;\r\n        }\r\n        .shop-sidebar .single-widget .title {\r\n            position: relative;\r\n            font-size: 18px;\r\n            font-weight: 500;\r\n            text-transform: capitalize;\r\n            margin-bottom: 25px;\r\n            display: block;\r\n            border-bottom: 1px solid #ddd;\r\n            padding-bottom: 15px;\r\n        }\r\n        /* Shop Price */\r\n        .shop .range .price-filter {\r\n            display: block;\r\n            margin-top: 20px;\r\n        }\r\n        .shop .range #slider-range {\r\n            box-shadow: none;\r\n            border: none;\r\n            height: 4px;\r\n            background: #F7941D;\r\n            color: #F7941D;\r\n            border-radius: 0px;\r\n        }\r\n        .shop .range #slider-range .ui-slider-range {\r\n            box-shadow: none;\r\n            background: #222;\r\n            border-radius: 0px;\r\n            border: none;\r\n        }\r\n        .shop .range .ui-slider-handle.ui-state-default.ui-corner-all {\r\n            width: 14px;\r\n            height: 14px;\r\n            line-height: 10px;\r\n            background: #222;\r\n            border: none;\r\n            border-radius: 100%;\r\n            top: -5px;\r\n        }\r\n        .shop .range .label-input {\r\n            margin-top: 15px;\r\n        }\r\n        .shop .range .label-input span{\r\n            margin-right:5px;\r\n            color:#282828;\r\n        }\r\n        .shop .range .ui-slider-handle.ui-state-default.ui-corner-all {\r\n            background: #F7941D;\r\n            color: #F7941D;\r\n            cursor:pointer;\r\n        }\r\n        .shop .range .label-input input {\r\n            border: none;\r\n            margin: 0;\r\n            font-weight: 600;\r\n            font-size: 14px;\r\n            color: #222;\r\n            background: transparent;\r\n        }\r\n        .shop .range .check-box-list {\r\n            margin-top: 15px;\r\n        }\r\n        .shop .range .check-box-list li {\r\n            margin-bottom: 5px;\r\n        }\r\n        .shop .range .check-box-list li:last-child{\r\n            margin:0;\r\n        }\r\n        .shop .range .check-box-list li label input {\r\n            display: inline-block;\r\n            margin-right: 6px;\r\n            position: relative;\r\n            top: 1px;\r\n        }\r\n        .shop .range .check-box-list li label {\r\n            margin: 0;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n            color:#333;\r\n            cursor:pointer;\r\n        }\r\n        .shop .range .check-box-list .count{\r\n            margin-left:5px;\r\n            color:#666;\r\n        }\r\n        /* Category List */\r\n        .shop-sidebar .categor-list {\r\n            margin-top: 10px;\r\n        }\r\n        .shop-sidebar .categor-list li{\r\n\r\n        }\r\n        .shop-sidebar .categor-list li {\r\n            margin-bottom: 10px;\r\n        }\r\n        .shop-sidebar .categor-list li:last-child{\r\n            margin-bottom:0px;\r\n        }\r\n        .shop-sidebar .categor-list li a {\r\n            display: inline-block;\r\n            color: #666;\r\n            font-weight: 400;\r\n            font-size: 14px;\r\n            text-transform: capitalize;\r\n        }\r\n        .shop-sidebar .categor-list li a:hover{\r\n            color:#F7941D;\r\n        }\r\n        /* Recent Post */\r\n        .shop-sidebar .single-post {\r\n            position: relative;\r\n            margin-top: 30px;\r\n            padding-bottom: 30px;\r\n            border-bottom: 1px solid #ddd;\r\n        }\r\n        .shop-sidebar .single-post.first{\r\n            padding-top:0px;\r\n        }\r\n        .shop-sidebar .single-post:last-child{\r\n            padding-bottom:0px;\r\n            border:none;\r\n        }\r\n        .shop-sidebar .single-post .image img{\r\n            height: 80px;\r\n            width: 80px;\r\n            position:absolute;\r\n            left:0;\r\n            top:0;\r\n            border-radius:100%;\r\n        }\r\n        .shop-sidebar .single-post .content{\r\n            padding-left:100px;\r\n        }\r\n        .shop-sidebar .single-post .content h5 {\r\n            line-height: 18px;\r\n        }\r\n        .shop-sidebar .single-post .content h5 a {\r\n            color: #222;\r\n            font-weight: 500;\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n            display: block;\r\n        }\r\n        .shop-sidebar .single-post .content h5 a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shop-sidebar .single-post .content .price {\r\n            display: block;\r\n            color: #333;\r\n            font-weight: 500;\r\n            margin: 5px 0 0px 0;\r\n            text-transform: uppercase;\r\n            font-size: 14px;\r\n        }\r\n        .shop-sidebar .single-post .reviews li{\r\n            display:inline-block;\r\n        }\r\n        .shop-sidebar .single-post .reviews li i{\r\n            color:#999;\r\n        }\r\n        .shop-sidebar .single-post .reviews li.yellow i{\r\n            color:#F7941D;\r\n        }\r\n        /* Shop Topbar */\r\n        .shop .shop-top {\r\n            clear: both;\r\n            background: #f6f7fb;\r\n            padding: 18px 20px 50px 20px;\r\n        }\r\n        .shop .shop-shorter {\r\n            float: left;\r\n        }\r\n        .shop .single-shorter {\r\n            display: inline-block;\r\n            margin-right: 10px;\r\n        }\r\n        .shop .single-shorter:last-child{\r\n            margin:0;\r\n        }\r\n        .shop .single-shorter label {\r\n            display: inline-block;\r\n            float: left;\r\n            margin: 4px 5px 0 0;\r\n            font-weight:500;\r\n        }\r\n        .shop .single-shorter option{}\r\n        .shop .nice-select {\r\n            clear: initial;\r\n            display: inline-block;\r\n            margin: 0;\r\n            border: 1px solid #e6e6e6;\r\n            border-radius: 0px;\r\n            height: auto;\r\n            width: auto;\r\n            border-radius: 0px;\r\n        }\r\n        .shop .nice-select::after{\r\n            border-color:#888;\r\n        }\r\n        .shop .nice-select .list {\r\n            border-radius:0px;\r\n        }\r\n        .shop .nice-select .option.selected {\r\n            font-weight: 500;\r\n        }\r\n        .shop .nice-select .list li{\r\n            color:#666;\r\n            border-radius:0px;\r\n        }\r\n        .shop .nice-select .list li:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        .shop .view-mode {\r\n            float: right;\r\n        }\r\n        .shop .view-mode li {\r\n            display: inline-block;\r\n            margin-right: 5px;\r\n        }\r\n        .shop .view-mode li:last-child{\r\n            margin:0;\r\n        }\r\n        .shop .view-mode li a {\r\n            width: 43px;\r\n            height: 32px;\r\n            background: transparent;\r\n            border: 1px solid #77777775;\r\n            text-align: center;\r\n            display: block;\r\n            line-height: 32px;\r\n            color: #888;\r\n            border-radius: 0px;\r\n        }\r\n        .shop .view-mode li.active a,\r\n        .shop .view-mode li:hover a {\r\n            background: #F7941D;\r\n            color:#fff;\r\n            border-color:transparent;\r\n        }\r\n        /*======================================\r\n           End Shop Sidebar CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Shop Single CSS\r\n        ========================================*/\r\n        .shop.single{\r\n            padding:70px 0 100px;\r\n        }\r\n        .shop.single .product-gallery {\r\n            margin-top: 30px;\r\n        }\r\n        .shop.single .flexslider-thumbnails {\r\n            position: relative;\r\n        }\r\n        .shop.single .product-gallery .slides li{\r\n            position:relative;\r\n        }\r\n        .shop.single .product-gallery .slides li img{\r\n            width:100%;\r\n        }\r\n        .shop.single .flex-control-nav{\r\n            margin-top:15px;\r\n        }\r\n        .shop.single .flex-control-thumbs li {\r\n            width: 20%;\r\n            position: relative;\r\n            margin: 0 8px 10px -3px;\r\n        }\r\n        .shop.single .flex-control-thumbs li img {\r\n            border: none;\r\n            padding: 0;\r\n            border:1px solid transparent;\r\n        }\r\n        .shop.single .flex-control-thumbs li img.flex-active{\r\n            border-color:#F7941D;\r\n        }\r\n        .shop.single .flex-direction-nav{\r\n            display:none;\r\n        }\r\n        .shop.single .product-des{\r\n            margin-top:30px;\r\n        }\r\n        .shop.single .product-des .short h4 {\r\n            font-size: 22px;\r\n            font-weight: 600;\r\n            margin-top: -5px;\r\n            line-height: 28px;\r\n        }\r\n        .shop.single .product-des .short .description {\r\n            font-size: 14px;\r\n            color: #555555;\r\n            margin-top: 20px;\r\n            margin-bottom: 20px;\r\n            padding-bottom: 20px;\r\n            border-bottom: 1px solid #eee;\r\n        }\r\n        .shop.single .product-des {}\r\n        .shop.single .product-des .total-review{\r\n            font-size:14px;\r\n            font-weight:500;\r\n            margin-left:10px;\r\n            display:inline-block;\r\n        }\r\n        .shop.single .product-des .total-review:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shop.single .product-des  .rating{\r\n            margin-top:20px;\r\n            display:inline-block;\r\n        }\r\n        .shop.single .product-des .rating li{\r\n            display:inline-block;\r\n        }\r\n        .shop.single .product-des .rating li i{\r\n            color:#F7941D;\r\n        }\r\n        .shop.single .product-des .rating li.dark i{\r\n            color:#555;\r\n        }\r\n        .shop.single .product-des .price {\r\n            font-size: 20px;\r\n            color: #333;\r\n            font-weight: 600;\r\n            margin-top: 15px;\r\n        }\r\n        .shop.single .product-des .price s{\r\n            color:#333;\r\n        }\r\n        .shop.single .product-des .price span{\r\n            display:inline-block;\r\n            margin-right:15px;\r\n            color:#F7941D;\r\n        }\r\n        .shop.single .product-des .product-buy {\r\n            margin-top: 40px;\r\n        }\r\n        .shop.single .product-des .product-buy{}\r\n        .shop.single .product-des .color {\r\n            display: inline-block;\r\n            margin-right: 50px;\r\n        }\r\n        .shop.single .product-des .color h4 {\r\n            font-size: 18px;\r\n            font-weight: 600;\r\n        }\r\n        .shop.single .product-des .color h4 span {\r\n            display: block;\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n            margin-top: 4px;\r\n        }\r\n        .shop.single .product-des .color ul{\r\n            margin-top: 10px;\r\n        }\r\n        .shop.single .product-des .color ul li{\r\n            display:inline-block;\r\n            margin-right:5px;\r\n        }\r\n        .shop.single .product-des .color ul li:last-child{\r\n            margin-right:0;\r\n        }\r\n        .shop.single .product-des .color ul li a{\r\n            height:30px;\r\n            width:30px;\r\n            line-height:30px;\r\n            text-align:center;\r\n            display:block;\r\n            background:#333;\r\n        }\r\n        .shop.single .product-des .color ul li a i{\r\n            font-size:11px;\r\n            color:#fff;\r\n            opacity:0;\r\n            visibility:hidden;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .shop.single .product-des .color ul li a:hover i{\r\n            opacity:1;\r\n            visibility:visible;\r\n        }\r\n        .shop.single .product-des .color ul li .one{\r\n            background:#3498db;\r\n        }\r\n        .shop.single .product-des .color ul li .two{\r\n            background:#F7941D;\r\n        }\r\n        .shop.single .product-des .color ul li .three{\r\n            background:#8e44ad;\r\n        }\r\n        .shop.single .product-des .color ul li .four{\r\n            background:#2ecc71;\r\n        }\r\n        /* Size */\r\n        .shop.single .product-des .size{\r\n            display:inline-block;\r\n        }\r\n        .shop.single .product-des .size h4{\r\n            display: block;\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n            margin-top: 0px;\r\n        }\r\n        .shop.single .product-des .size ul{\r\n            display:inline-block;\r\n            margin-top: 10px;\r\n        }\r\n        .shop.single .product-des .size ul li {\r\n            display: inline-block;\r\n            margin-right: 5px;\r\n        }\r\n        .shop.single .product-des .size ul li:last-child{\r\n            margin-right:0;\r\n        }\r\n        .shop.single .product-des .size ul li a {\r\n            display: block;\r\n            height: 30px;\r\n            width: 36px;\r\n            border: 1px solid #eee;\r\n            text-align: center;\r\n            line-height: 30px;\r\n            font-size: 14px;\r\n        }\r\n        .shop.single .product-des .size ul li a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shop.single .quantity {\r\n            display: inline-block;\r\n            margin-right: 10px;\r\n        }\r\n        .shop.single .quantity h6 {\r\n            display: inline-block;\r\n            margin-right: 10px;\r\n            font-size: 15px;\r\n            font-weight: 500;\r\n        }\r\n        .shop.single .quantity .input-group {\r\n            width: 151px;\r\n            display: inline-block;\r\n        }\r\n        .shop.single .quantity .button {\r\n            display: inline-block;\r\n            position: absolute;\r\n            top: 0;\r\n            display:inline-block;\r\n        }\r\n        .shop.single .quantity .button.minus{\r\n            left:0;\r\n            border-radius:0;\r\n            overflow:hidden;\r\n        }\r\n        .shop.single .quantity .button.plus {\r\n            right: 0;\r\n            border-radius:0;\r\n            overflow:hidden;\r\n        }\r\n        .shop.single .quantity .button .btn {\r\n            padding: 0;\r\n            width: 35px;\r\n            height: 45px;\r\n            line-height: 45px;\r\n            border-radius: 0px;\r\n            background: transparent;\r\n            color: #282828;\r\n            font-size: 12px;\r\n            border: none;\r\n        }\r\n        .shop.single .quantity .button .btn:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shop.single .quantity .input-number {\r\n            border: 1px solid #eceded;\r\n            width: 100%;\r\n            text-align: center;\r\n            height: 45px;\r\n            border-radius: 0px;\r\n            overflow: hidden;\r\n            padding: 0px 38px;\r\n        }\r\n        .shop.single .add-to-cart {\r\n            display:inline-block;\r\n        }\r\n        .shop.single .add-to-cart .btn {\r\n            height: 45px;\r\n            width: auto;\r\n            padding: 0 42px;\r\n            line-height: 45px;\r\n            text-align: center;\r\n            text-transform: capitalize;\r\n            margin-right: 5px;\r\n            border-radius: 0px;\r\n            background: #333;\r\n            color: #fff;\r\n            display: inline-block;\r\n            font-weight: 500;\r\n        }\r\n        .shop.single .add-to-cart .btn:hover{\r\n            color:#fff;\r\n            background:#F7941D;\r\n        }\r\n        .shop.single .add-to-cart .btn.min {\r\n            padding: 0 20px;\r\n            font-size: 17px;\r\n            position: relative;\r\n            top: 1px;\r\n            line-height: 45px;\r\n        }\r\n        .shop.single .cat{\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n            color:#333;\r\n            margin-top:30px;\r\n        }\r\n        .shop.single .cat a{\r\n            display:inline-block;\r\n            margin-left:10px;\r\n        }\r\n        .shop.single .cat a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shop.single .availability{\r\n            color:#333;\r\n            font-size:14px;\r\n            margin-top:6px;\r\n        }\r\n        /* Product Tab */\r\n        .shop.single .product-info {\r\n            margin-top: 50px;\r\n        }\r\n        .shop.single .nav-tabs {\r\n            border:none;\r\n        }\r\n        .shop.single .nav-tabs li {\r\n            margin-right: 10px;\r\n        }\r\n        .shop.single .nav-tabs li:last-child{\r\n            margin-right:0;\r\n        }\r\n        .shop.single .nav-tabs li a {\r\n            border: 0px solid;\r\n            border-radius: 0px;\r\n            background: #fff;\r\n            color: #333;\r\n            padding: 10px 30px;\r\n            font-weight: 500;\r\n            font-size: 14px;\r\n            border: 1px solid #eee;\r\n        }\r\n        .shop.single .nav-tabs li a i{\r\n            margin-right:10px;\r\n        }\r\n        .shop.single .nav-tabs li a.active,\r\n        .shop.single .nav-tabs li:hover a{\r\n            background:#F7941D;\r\n            color:#fff;\r\n            border-color:transparent;\r\n        }\r\n        .shop.single .tab-single {\r\n\r\n        }\r\n        .shop.single .single-des {\r\n            margin-top:35px;\r\n        }\r\n        .shop.single .single-des h4{\r\n            margin-bottom:15px;\r\n            font-weight:500;\r\n            font-size:22px;\r\n\r\n        }\r\n        .shop.single .single-des ul{}\r\n        .shop.single .single-des ul li {\r\n            color: #555;\r\n            display: block;\r\n            margin-bottom: 10px;\r\n            position:relative;\r\n            padding-left:20px;\r\n        }\r\n        .shop.single .single-des ul li::before {\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 0;\r\n            top: 9px;\r\n            height: 7px;\r\n            width: 7px;\r\n            background: #f7941d;\r\n            border-radius: 50%;\r\n        }\r\n        .shop.single .single-des p{}\r\n\r\n        .shop.single .item-info {\r\n            width: 100%;\r\n        }\r\n        .shop.single .item-info tbody{}\r\n        .shop.single .item-info tbody tr{}\r\n        .shop.single .item-info tbody td {\r\n            border: 1px solid #e6e6e6;\r\n            padding: 10px;\r\n        }\r\n        .shop.single .item-info tbody strong{}\r\n        .shop.single .ratting-main{}\r\n        .shop.single .avg-ratting {\r\n            margin-bottom: 20px;\r\n        }\r\n        .shop.single .avg-ratting h4 {\r\n            font-size: 18px;\r\n            margin: 0;\r\n        }\r\n        .shop.single .avg-ratting h4 span{\r\n            font-size:14px;\r\n        }\r\n        .shop.single .single-rating {\r\n            margin-bottom: 20px;\r\n        }\r\n        .shop.single .single-rating:last-child{\r\n            margin:0;\r\n            border:none;\r\n            padding:0;\r\n        }\r\n        .shop.single .rating-author {\r\n            float: left;\r\n            margin-right: 10px;\r\n            padding: 20px;\r\n            padding-right: 10px;\r\n        }\r\n        .shop.single .rating-author img {\r\n            width: 60px;\r\n            border-radius: 100%;\r\n            height: 60px;\r\n        }\r\n        .shop.single .rating-des {\r\n            padding-left: 72px;\r\n            background: #f9f8f8;\r\n            padding: 17px 20px 17px 107px;\r\n        }\r\n        .shop.single .rating-des .ratings {\r\n            margin: 0;\r\n        }\r\n        .shop.single .rating-des h6 {\r\n            font-size: 14px;\r\n            font-weight: 600;\r\n            line-height: 18px;\r\n        }\r\n        .shop.single .ratting-main .single-rating ul{}\r\n        .shop.single .ratting-main .single-rating ul li{\r\n            display:inline-block;\r\n        }\r\n        .shop.single .ratting-main .single-rating ul li i{\r\n            color:#F7941D;\r\n            font-size:14px;\r\n        }\r\n        .shop.single .review-inner label {\r\n            display: inline-block;\r\n            margin: 0 5px 0 0;\r\n        }\r\n        .shop.single .review-inner .ratings {\r\n            overflow: visible;\r\n            display: inline-block;\r\n            margin: 0;\r\n        }\r\n        .shop.single .review-inner .ratings ul{\r\n            display:inline-block;\r\n        }\r\n        .shop.single .ratting-main .single-rating ul {\r\n            display: inline-block;\r\n            margin-right: 5px;\r\n        }\r\n        .shop.single .ratings .rate-count {\r\n            display: inline-block;\r\n            color: #666;\r\n            font-size: 13px;\r\n        }\r\n        .shop.single .comment-review {\r\n            margin-bottom: 30px;\r\n        }\r\n        .shop.single .comment-review .add-review{\r\n            margin-top:30px;\r\n        }\r\n        .shop.single .comment-review .add-review h5{\r\n            font-size: 18px;\r\n            font-weight: 600;\r\n            margin-bottom: 7px;\r\n        }\r\n        .shop.single .comment-review .add-review p{\r\n            color:#333;\r\n        }\r\n        .shop.single .comment-review h4 {\r\n            font-size: 15px;\r\n            font-weight: 600;\r\n            margin-bottom: 7px;\r\n            margin-top:20px;\r\n        }\r\n        .shop.single .comment-review .review-inner{\r\n            margin-bottom:15px;\r\n            display:block;\r\n        }\r\n        .shop.single .comment-review .rating li {\r\n            display:inline-block;\r\n        }\r\n        .shop.single .comment-review .rating li i{\r\n            color:#F7941D;\r\n            font-size: 14px;\r\n        }\r\n        .shop.single .rating-des p{\r\n            margin-top:5px;\r\n        }\r\n        .shop.single .avg-ratting h4 {\r\n            font-size: 20px;\r\n            color: #333;\r\n        }\r\n        .shop.single .avg-ratting{}\r\n        .shop.single .form .form-group input {\r\n            width: 100%;\r\n            height: 45px;\r\n            padding: 10px 20px;\r\n            background: #fff;\r\n            border: 1px solid #ddd;\r\n            resize: none;\r\n            border-radius: 0;\r\n            color: #333;\r\n        }\r\n        .shop.single .form .form-group button {\r\n            border: none;\r\n            padding: 17px 50px;\r\n        }\r\n        .shop.single .form .form-group textarea {\r\n            width: 100%;\r\n            height:200px;\r\n            padding: 20px;\r\n            background:#fff;\r\n            border:1px solid #ddd;\r\n            resize:none;\r\n            border-radius:0;\r\n            color:#333;\r\n        }\r\n        .shop.single .form .form-group label {\r\n            color: #333;\r\n            position: relative;\r\n        }\r\n        .shop.single .form .form-group label span {\r\n            color: #ff2c18;\r\n            display: inline-block;\r\n            position: absolute;\r\n            right: -12px;\r\n            top: 4px;\r\n            font-size: 16px;\r\n        }\r\n        .shop.single .review-panel{\r\n            margin-top:35px;\r\n        }\r\n        /*======================================\r\n           End Shop Single CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Shop Home List CSS\r\n        ========================================*/\r\n        .shop-home-list{\r\n            padding:0;\r\n            padding-bottom:100px;\r\n        }\r\n        .shop-home-list .shop-section-title{\r\n            margin-bottom:20px;\r\n        }\r\n        .shop-home-list .shop-section-title h1 {\r\n            font-size: 22px;\r\n            margin-bottom: 0;\r\n            text-transform: capitalize;\r\n            position: relative;\r\n            color: #2c2d3f;\r\n            font-weight: 700;\r\n            margin-bottom: 10px;\r\n            padding-bottom: 10px;\r\n        }\r\n        .shop-home-list .shop-section-title h1::before {\r\n            position: absolute;\r\n            content: \"\";\r\n            height: 2px;\r\n            width: 50px;\r\n            background: #F7941D;\r\n            left: 0;\r\n            bottom: -1px;\r\n        }\r\n        .shop-home-list .single-list {\r\n            overflow: hidden;\r\n            position: relative;\r\n            margin-top: 30px;\r\n            border: 1px solid #eee;\r\n            padding: 10px;\r\n        }\r\n        .shop-home-list .single-list .list-image{\r\n            position:relative;\r\n        }\r\n        .shop-home-list .single-list .list-image.overlay:before{\r\n            background:#000;\r\n            opacity:0;\r\n            visibility:hidden;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .shop-home-list .single-list .list-image.overlay:hover:before{\r\n            opacity:0.3;\r\n            visibility:visible;\r\n        }\r\n        .shop-home-list .single-list .list-image .buy{\r\n            height:40px;\r\n            width:40px;\r\n            line-height:40px;\r\n            font-size:14px;\r\n            color:#fff;\r\n            background:#F7941D;\r\n            border-radius:100%;\r\n            display:block;\r\n            position:absolute;\r\n            left:50%;\r\n            top:50%;\r\n            margin-left:-20px;\r\n            margin-top:-20px;\r\n            text-align:center;\r\n            transition:all 0.4s ease;\r\n            transform:scale(0);\r\n            opacity:0;\r\n            visibility:hidden;\r\n        }\r\n        .shop-home-list .single-list .list-image .buy:hover{\r\n            background:#fff;\r\n            color:#333;\r\n        }\r\n        .shop-home-list .single-list .list-image:hover .buy{\r\n            opacity:1;\r\n            visibility:visible;\r\n            transform:scale(1);\r\n        }\r\n        .shop-home-list .single-list .no-padding{\r\n            padding-right:0px;\r\n        }\r\n        .shop-home-list .single-list img{\r\n            width:100%;\r\n            height:100%;\r\n        }\r\n        .shop-home-list .single-list .content {\r\n            padding-top: 45px;\r\n            padding-right: 12px;\r\n        }\r\n        .shop-home-list .single-list .content .title {\r\n            line-height: 18px;\r\n        }\r\n        .shop-home-list .single-list .content .title a{\r\n            font-size: 14px;\r\n            font-weight: 600;\r\n        }\r\n        .shop-home-list .single-list .content .titlea {\r\n            color: #333;\r\n        }\r\n        .shop-home-list .single-list .content a:hover{\r\n            color: #F7941D;\r\n        }\r\n        .shop-home-list .single-list .content .price {\r\n            margin-top: 15px;\r\n            font-weight: 500;\r\n            background: #f7941d;\r\n            display: inline-block;\r\n            color: #fff;\r\n            padding: 2px 18px;\r\n            border-radius: 30px;\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n        }\r\n        /*======================================\r\n           End Shop Home List CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Shopping Cart CSS\r\n        ========================================*/\r\n        .table.shopping-summery {\r\n            background: #fff;\r\n        }\r\n        .shopping-cart {\r\n            background: #f6f6f6;\r\n            padding: 50px 0;\r\n        }\r\n        .shopping-summery thead .main-hading{\r\n            padding:0px 50px;\r\n        }\r\n        .shopping-summery thead {\r\n            background: #F7941D;\r\n            color: #fff;\r\n        }\r\n        .shopping-summery thead tr th {\r\n            border: none;\r\n            font-weight: 600;\r\n            color: #fff;\r\n            text-align: center;\r\n        }\r\n        .shopping-summery tbody tr {\r\n            border-bottom: 1px solid #F7941D;\r\n            margin-top: 20px;\r\n        }\r\n        .shopping-summery tbody tr img {\r\n            border-radius: 0;\r\n            width: 80px;\r\n            height: 80px;\r\n        }\r\n        .shopping-summery tbody tr:last-child{\r\n            border:none;\r\n        }\r\n        .shopping-summery tbody .product-name a {\r\n            font-weight: 600;\r\n            color: #282828;\r\n            font-weight: 600;\r\n            font-size: 17px;\r\n        }\r\n        .shopping-cart .table p {\r\n            font-size: 14px;\r\n            color: #666;\r\n        }\r\n        .shopping-summery tbody .product-name a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shopping-summery tbody .product img {\r\n            max-width: 70px;\r\n            border-radius: 100%;\r\n            max-height: 65px;\r\n            border: 1px solid #e6e6e6;\r\n            padding: 4px;\r\n        }\r\n        .shopping-summery tbody .product:hover img{\r\n            border-color:#F7941D;\r\n            transform:rotate(360deg);\r\n        }\r\n        .shopping-cart .border{\r\n\r\n        }\r\n        .shopping-cart .table .remove-icon{\r\n            font-size:16px;\r\n        }\r\n        .shopping-cart .table td {\r\n            vertical-align: middle;\r\n            border-top: 1px solid #eee;\r\n            padding: 30px;\r\n        }\r\n        .shopping-summery tbody .price {\r\n            text-align: center;\r\n        }\r\n        .shopping-summery tbody .price span{}\r\n        .shopping-cart tbody .qty .input-group {\r\n            width: 175px;\r\n            display: inline-block;\r\n        }\r\n        .shopping-cart .qty .button {\r\n            display: inline-block;\r\n            position: absolute;\r\n            top: 0;\r\n        }\r\n        .shopping-cart .qty .button.minus{\r\n            left:0;\r\n            border-radius:0;\r\n            overflow:hidden;\r\n        }\r\n        .shopping-cart .qty .button.plus {\r\n            right: 0;\r\n            border-radius:0;\r\n            overflow:hidden;\r\n        }\r\n        .shopping-cart .qty .button .btn {\r\n            padding: 0;\r\n            width: 44px;\r\n            height: 47px;\r\n            line-height: 50px;\r\n            border-radius: 0px;\r\n            background: transparent;\r\n            color: #282828;\r\n            border: none;\r\n            font-size: 12px;\r\n        }\r\n        .shopping-cart .qty .button .btn:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shopping-cart .qty .input-number {\r\n            border: 1px solid #eceded;\r\n            width: 100%;\r\n            text-align: center;\r\n            height: 47px;\r\n            border-radius:0;\r\n            overflow: hidden;\r\n            padding: 0px 45px;\r\n        }\r\n        .shopping-summery tbody .total-amount {\r\n            text-align: center;\r\n        }\r\n        .shopping-summery tbody .total-amount span{}\r\n        .shopping-summery tbody .action {\r\n            text-align: center;\r\n        }\r\n        .shopping-summery tbody .action a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shopping-cart .total-amount{\r\n            margin-top:50px;\r\n        }\r\n        .shopping-cart .total-amount .left{}\r\n        .shopping-cart .total-amount .left .coupon{}\r\n        .shopping-cart .total-amount .left .coupon form{}\r\n        .shopping-cart .total-amount .left .coupon form input {\r\n            width: 220px;\r\n            display: inline-block;\r\n            height: 48px;\r\n            color: #333;\r\n            padding: 0px 20px;\r\n            border: none;\r\n            box-shadow: 0px 0px 5px #0000000a;\r\n        }\r\n        .shopping-cart .total-amount .left .coupon form .btn {\r\n            display: inline-block;\r\n            height: 48px;\r\n            border: navajowhite;\r\n            margin-left: 4px;\r\n            background: transparent;\r\n            color: #333;\r\n            background: #fff;\r\n            box-shadow: 0px 0px 5px #00000012;\r\n        }\r\n        .shopping-cart .total-amount .left .coupon form .btn:hover{\r\n            background:#fff;\r\n            color:#F7941D;\r\n        }\r\n        .shopping-cart .total-amount .left label{\r\n            font-size:22px;\r\n            font-weight:500;\r\n            color:#333;\r\n        }\r\n        .shopping-cart .total-amount .left .checkbox {\r\n            text-align: left;\r\n            margin: 0;\r\n            margin-top: 20px;\r\n        }\r\n        .shopping-cart .total-amount .left .checkbox label {\r\n            font-size: 15px;\r\n            font-weight: 400;\r\n            color: #333;\r\n            position: relative;\r\n            padding-left: 30px;\r\n        }\r\n        .shopping-cart .total-amount .left .checkbox label:hover{\r\n            cursor:pointer;\r\n        }\r\n        .shopping-cart .total-amount .left .checkbox label input{\r\n            display:none;\r\n        }\r\n        .shopping-cart .total-amount .left .checkbox label::before {\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 0;\r\n            top: 4px;\r\n            width: 16px;\r\n            height: 16px;\r\n            border: 1px solid #555555;\r\n            border-radius: 0px;\r\n        }\r\n        .shopping-cart .total-amount .left .checkbox label::after {\r\n            position: absolute;\r\n            content: \"\\F00C\";\r\n            font-family: \"Fontawesome\";\r\n            left: 0;\r\n            top: 0;\r\n            width: 22px;\r\n            height: 22px;\r\n            line-height: 24px;\r\n            left: 3px;\r\n            top: 0px;\r\n            opacity: 0;\r\n            visibility: hidden;\r\n            transform: scale(0);\r\n            transition: all 0.4s ease;\r\n            display: block;\r\n            font-size: 11px;\r\n        }\r\n        .shopping-cart .total-amount .left .checkbox label.checked::after{\r\n            opacity:1;\r\n            visibility:visible;\r\n            transform:scale(1);\r\n        }\r\n        .shopping-cart .total-amount .right {\r\n            padding-left: 100px;\r\n        }\r\n        .shopping-cart .total-amount .right ul{\r\n\r\n        }\r\n        .shopping-cart .total-amount .right ul li {\r\n            font-size: 15px;\r\n            font-weight: 400;\r\n            color: #333;\r\n            margin-bottom: 12px;\r\n        }\r\n        .shopping-cart .total-amount .right ul li.last {\r\n            padding-top: 12px;\r\n            border-top: 1px solid #c8c8c8;\r\n            color: #333;\r\n            font-size: 15px;\r\n            font-weight: 400;\r\n        }\r\n        .shopping-cart .total-amount .right ul li span{\r\n            display:inline-block;\r\n            float:right;\r\n        }\r\n        .shopping-cart .total-amount .right .button5 .btn {\r\n            text-align: center;\r\n            border-radius: 0;\r\n            width: 100%;\r\n            margin-top: 10px;\r\n            height: 46px;\r\n            line-height: 18px;\r\n            font-size: 13px;\r\n            color: #fff;\r\n        }\r\n        /*======================================\r\n           End Shopping Cart CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Checkout Form CSS\r\n        ========================================*/\r\n        .shop.checkout {\r\n            padding: 0;\r\n            background: #fff;\r\n            padding-top: 20px;\r\n            padding-bottom: 50px;\r\n        }\r\n        .shop.checkout .checkout-form {\r\n            margin-top: 30px;\r\n        }\r\n        .shop.checkout .checkout-form h2 {\r\n            font-size: 25px;\r\n            color: #333;\r\n            font-weight: 700;\r\n            line-height: 27px;\r\n        }\r\n        .shop.checkout .checkout-form p {\r\n            font-size: 16px;\r\n            color: #333;\r\n            font-weight: 400;\r\n            margin-top: 12px;\r\n            margin-bottom: 30px;\r\n        }\r\n        .shop.checkout .form{}\r\n        .shop.checkout .form .form-group {\r\n            margin-bottom: 25px;\r\n        }\r\n        .shop.checkout .form .form-group label{\r\n            color:#333;\r\n            position:relative;\r\n        }\r\n        .shop.checkout .form .form-group label span {\r\n            color: #ff2c18;\r\n            display: inline-block;\r\n            position: absolute;\r\n            right: -12px;\r\n            top: 4px;\r\n            font-size: 16px;\r\n        }\r\n        .shop.checkout .form .form-group input {\r\n            width: 100%;\r\n            height: 45px;\r\n            line-height: 50px;\r\n            padding: 0 20px;\r\n            border-radius: 3px;\r\n            border-radius: 0px;\r\n            color: #333 !important;\r\n            border: none;\r\n            background: #F6F7FB;\r\n        }\r\n        .shop.checkout .form .form-group input:hover{\r\n\r\n        }\r\n        .shop.checkout .nice-select {\r\n            width: 100%;\r\n            height: 45px;\r\n            line-height: 50px;\r\n            margin-bottom: 25px;\r\n            background: #F6F7FB;\r\n            border-radius: 0px;\r\n            border:none;\r\n        }\r\n        .shop.checkout .nice-select .list {\r\n            width: 100%;\r\n            height: 300px;\r\n            overflow: scroll;\r\n        }\r\n        .shop.checkout .nice-select .list li{}\r\n        .shop.checkout .nice-select .list li.option{\r\n            color:#333;\r\n        }\r\n        .shop.checkout .nice-select .list li.option:hover{\r\n            background:#F6F7FB;\r\n            color:#333;\r\n        }\r\n        .shop.checkout .form .address input {\r\n            margin-bottom: 15px;\r\n        }\r\n        .shop.checkout .form .address input:last-child{\r\n            margin:0;\r\n        }\r\n        .shop.checkout .form .create-account {\r\n            margin: 0;\r\n        }\r\n        .shop.checkout .form .create-account input {\r\n            width: auto;\r\n            display: inline-block;\r\n            height: auto;\r\n            border-radius: 100%;\r\n            margin-right: 3px;\r\n        }\r\n        .shop.checkout .form .create-account label {\r\n            display: inline-block;\r\n            margin: 0;\r\n        }\r\n        .shop.checkout .order-details {\r\n            margin-top: 30px;\r\n            background: #fff;\r\n            padding: 15px 0 30px 0;\r\n            border: 1px solid #eee;\r\n        }\r\n        .shop.checkout .single-widget {\r\n            margin-bottom: 30px;\r\n        }\r\n        .shop.checkout .single-widget:last-child{\r\n            margin:0;\r\n        }\r\n        .shop.checkout .single-widget h2 {\r\n            position:relative;\r\n            font-size: 15px;\r\n            font-weight: 600;\r\n            padding: 10px 30px;\r\n            line-height: 24px;\r\n            text-transform: uppercase;\r\n            color: #333;\r\n            padding-bottom: 5px;\r\n        }\r\n        .shop.checkout .single-widget h2:before{\r\n            position:absolute;\r\n            content:\"\";\r\n            left:30px;\r\n            bottom:0;\r\n            height:2px;\r\n            width:50px;\r\n            background:#F7941D;\r\n        }\r\n        .shop.checkout .single-widget .content ul{\r\n            margin-top:30px;\r\n        }\r\n        .shop.checkout .single-widget .content ul li {\r\n            display: block;\r\n            padding: 0px 30px;\r\n            font-size: 15px;\r\n            font-weight: 400;\r\n            color: #333;\r\n            margin-bottom: 12px;\r\n        }\r\n        .shop.checkout .single-widget .content ul li span{\r\n            display:inline-block;\r\n            float:right;\r\n        }\r\n        .shop.checkout .single-widget .content ul li.last {\r\n            padding-top: 12px;\r\n            border-top: 1px solid #ebebeb;\r\n            display: block;\r\n            font-size: 15px;\r\n            font-weight: 400;\r\n            color: #333;\r\n        }\r\n        .shop.checkout .single-widget .checkbox {\r\n            text-align: left;\r\n            margin: 0;\r\n            padding: 0px 30px;\r\n            margin-top:30px;\r\n        }\r\n        .shop.checkout .single-widget .checkbox label {\r\n            color: #555555;\r\n            position: relative;\r\n            font-size: 14px;\r\n            padding-left: 20px;\r\n            margin-top: -5px;\r\n            font-weight: 400;\r\n            display: block;\r\n            margin-bottom: 15px;\r\n        }\r\n        .shop.checkout .single-widget .checkbox label:last-child{\r\n            margin-bottom:0;\r\n        }\r\n        .shop.checkout .single-widget .checkbox label:hover{\r\n            cursor:pointer;\r\n        }\r\n        .shop.checkout .single-widget .checkbox label input{\r\n            display:none;\r\n        }\r\n        .shop.checkout .single-widget .checkbox label::before {\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 0;\r\n            top: 7px;\r\n            width: 12px;\r\n            height: 12px;\r\n            line-height: 16px;\r\n            border: 1px solid #666;\r\n            border-radius: 100%;\r\n        }\r\n        .shop.checkout .single-widget .checkbox label::after {\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 0;\r\n            top: 7px;\r\n            width: 12px;\r\n            height: 12px;\r\n            line-height: 16px;\r\n            border-radius: 100%;\r\n            display:block;\r\n            background:#666;\r\n            transform:scale(0);\r\n            transition:all 0.4s ease;\r\n        }\r\n        .shop.checkout .single-widget .checkbox label.checked::after{\r\n            opacity:1;\r\n            visibility:visible;\r\n            transform:scale(1);\r\n        }\r\n        .shop.checkout .single-widget.payement {\r\n            padding: 0px 38px;\r\n            text-align: center;\r\n            margin-top: 30px;\r\n        }\r\n        .shop.checkout .single-widget.get-button {\r\n            text-align: center;\r\n            padding:0px 35px;\r\n        }\r\n        .shop.checkout .single-widget.get-button .btn {\r\n            height: 46px;\r\n            width: 100%;\r\n            line-height: 19px;\r\n            text-align: center;\r\n            border-radius: 0;\r\n            text-transform: uppercase;\r\n            color: #fff;\r\n        }\r\n        /*======================================\r\n           End Checkout Form CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Login & Register CSS\r\n        ========================================*/\r\n        .shop.login {\r\n            padding: 100px 0;\r\n        }\r\n        .shop.login .login-form h2 {\r\n            position:relative;\r\n            font-size: 35px;\r\n            color: #333;\r\n            font-weight: 400;\r\n            line-height: 27px;\r\n            text-transform: uppercase;\r\n            margin-bottom: 12px;\r\n            padding-bottom: 20px;\r\n            text-align: center;\r\n        }\r\n        .shop.login .login-form h2:before{\r\n            position:absolute;\r\n            content:\"\";\r\n            left:50%;\r\n            bottom:0;\r\n            height:2px;\r\n            width:50px;\r\n            background:#F7941D;\r\n            margin-left:-25px;\r\n        }\r\n        .shop.login .login-form p {\r\n            font-size: 14px;\r\n            color: #333;\r\n            font-weight: 400;\r\n            text-align: center;\r\n            margin-bottom:50px;\r\n        }\r\n        .shop.login .form {\r\n            margin-top: 30px;\r\n        }\r\n        .shop.login .form .form-group {\r\n            margin-bottom: 22px;\r\n        }\r\n        .shop.login .form .form-group input {\r\n            width: 100%;\r\n            height: 45px;\r\n            line-height: 50px;\r\n            padding: 0 20px;\r\n            border-radius: 3px;\r\n            border-radius: 0px;\r\n            color:#333 !important;\r\n            border: none;\r\n            background:#F6F7FB;\r\n        }\r\n        .shop.login .form .form-group label {\r\n            color: #333;\r\n            position: relative;\r\n        }\r\n        .shop.login .form .form-group label span {\r\n            color: #ff2c18;\r\n            display: inline-block;\r\n            position: absolute;\r\n            right: -12px;\r\n            top: 4px;\r\n            font-size: 16px;\r\n        }\r\n        .shop.login .form .form-group input:hover{\r\n            border-color:#1308a3;\r\n            color:#1308a3;\r\n        }\r\n        .shop.login .form .form-group.login-btn {\r\n            margin: 0;\r\n        }\r\n        .shop.login .form button {\r\n            border: none;\r\n        }\r\n        .shop.login .form .btn {\r\n            display: inline-block;\r\n            margin-right: 10px;\r\n            height: 46px;\r\n            color: #fff;\r\n            line-height: 20px;\r\n        }\r\n        .shop.login .form .btn:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        .shop.login .login-form .checkbox {\r\n            text-align: left;\r\n            margin: 0;\r\n            margin-top: 20px;\r\n            display:inline-block;\r\n        }\r\n        .shop.login .login-form .checkbox label {\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n            color: #333;\r\n            position: relative;\r\n            padding-left: 20px;\r\n        }\r\n        .shop.login .login-form .checkbox label:hover{\r\n            cursor:pointer;\r\n        }\r\n        .shop.login .login-form .checkbox label input{\r\n            display:none;\r\n        }\r\n        .shop.login .login-form .checkbox label::before {\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 0;\r\n            top: 6px;\r\n            width: 12px;\r\n            height: 12px;\r\n            border: 1px solid #555555;\r\n            border-radius: 0px;\r\n        }\r\n        .shop.login .login-form .checkbox label::after {\r\n            position: absolute;\r\n            content: \"\\F00C\";\r\n            font-family: \"Fontawesome\";\r\n            width: 12px;\r\n            height: 12px;\r\n            line-height: 23px;\r\n            left: 2px;\r\n            top: 0px;\r\n            opacity: 0;\r\n            visibility: hidden;\r\n            transform: scale(0);\r\n            transition: all 0.4s ease;\r\n            display: block;\r\n            font-size: 9px;\r\n        }\r\n        .shop.login .login-form .checkbox label.checked::after{\r\n            opacity:1;\r\n            visibility:visible;\r\n            transform:scale(1);\r\n        }\r\n        .shop.login .login-form .lost-pass{\r\n            display:inline-block;\r\n            margin-left:25px;\r\n            color:#333;\r\n            font-size:14px;\r\n            font-weight:400;\r\n        }\r\n        .shop.login .login-form .lost-pass:hover{\r\n            color:#F7941D;\r\n        }\r\n        /*======================================\r\n            End Login CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Shop List CSS\r\n        ========================================*/\r\n        .shop-list .list-content{\r\n            margin-top:50px;\r\n        }\r\n        .shop-list .list-content .product-price{}\r\n        .shop-list .list-content .product-price span {\r\n            font-size: 14px;\r\n            font-weight: 600;\r\n            margin-bottom: 3px;\r\n            display: block;\r\n        }\r\n        .shop-list .list-content .title {\r\n            line-height: 20px;\r\n        }\r\n        .shop-list .list-content .title a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shop-list .list-content .title a {\r\n            font-size: 18px;\r\n            font-weight: 600;\r\n        }\r\n        .shop-list .list-content .rating {\r\n            margin: 5px 0 8px 0;\r\n        }\r\n        .shop-list .list-content .rating li{\r\n            display:inline-block;\r\n        }\r\n        .shop-list .list-content .rating li i{\r\n            color: #F7941D;\r\n        }\r\n        .shop-list .list-content .rating li.total {\r\n            color: #333;\r\n            font-size: 12px;\r\n            margin-left: 3px;\r\n        }\r\n        .shop-list .list-content .des{}\r\n        .shop-list .list-content .btn {\r\n            margin-top: 22px;\r\n            height: 42px;\r\n            line-height: 15px;\r\n            color: #333;\r\n            background: transparent;\r\n            border: 1px solid #cecece;\r\n            font-size: 13px;\r\n            border-radius: 30px;\r\n            height: auto;\r\n            line-height: a;\r\n            padding: 13px 32px;\r\n        }\r\n        .shop-list .list-content .btn:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n            border-color:transparent;\r\n        }\r\n        /* Pagination CSS */\r\n        .pagination {\r\n            text-align: left;\r\n            margin: 50px 0 0 0;\r\n            display:block;\r\n        }\r\n        .pagination.center {\r\n            text-align: center;\r\n        }\r\n        .pagination .pagination-list li {\r\n            margin-right: 5px;\r\n            display: inline-block;\r\n        }\r\n        .pagination .pagination-list li:last-child{\r\n            margin-right:0px;\r\n        }\r\n        .pagination .pagination-list li a {\r\n            background: #F6F7FB;\r\n            color: #666;\r\n            padding: 6px 18px;\r\n            font-weight: 400;\r\n            border: 1px solid #e1e1e1;\r\n            font-size: 16px;\r\n            border-radius: 0px;\r\n        }\r\n        .pagination .pagination-list li.active a,\r\n        .pagination .pagination-list li:hover a{\r\n            background: #F7941D;\r\n            color: #fff;\r\n            border-color: transparent;\r\n        }\r\n        .pagination .pagination-list li a i{\r\n            font-size:13px;\r\n        }\r\n        .pagination .pagination-list li a i{}\r\n        .blog-grids.pagination{\r\n            margin-top:50px;\r\n            text-align:center;\r\n        }\r\n        /*======================================\r\n           End Shop List CSS\r\n        ========================================*/\r\n\r\n        /*=============================\r\n            Start Cowndown CSS\r\n        ===============================*/\r\n        .cown-down {\r\n            position: relative;\r\n            height: 515px;\r\n            overflow:hidden;\r\n        }\r\n        .cown-down .padding-right{\r\n            padding-right:0;\r\n        }\r\n        .cown-down .padding-left{\r\n            padding-left:0;\r\n        }\r\n        .cown-down .image img {\r\n            width:100%;\r\n            height:100%;\r\n        }\r\n        .cown-down .content {\r\n            text-align: center;\r\n            background: #FDFBEF;\r\n            height: 100%;\r\n            position:relative;\r\n        }\r\n        .cown-down .content .heading-block{\r\n            position:absolute;\r\n            left:0;\r\n            top:50%;\r\n            transform:translateY(-50%);\r\n            padding: 75px;\r\n        }\r\n        .cown-down .content .small-title {\r\n            font-size: 13px;\r\n            color: #777;\r\n            display: block;\r\n            text-transform: uppercase;\r\n            margin-bottom: 5px;\r\n            font-weight: 600;\r\n        }\r\n        .cown-down .content .title {\r\n            font-size: 25px;\r\n            font-weight: 600;\r\n            margin-bottom: 20px;\r\n            text-transform: capitalize;\r\n        }\r\n        .cown-down .content .price {\r\n            margin-top: 35px;\r\n            font-size: 35px;\r\n            font-weight: 700;\r\n            color: #F7941D;\r\n        }\r\n        .cown-down .content .price s{\r\n            margin-top: 35px;\r\n            font-size: 24px;\r\n            font-weight: 500;\r\n            color:#666;\r\n        }\r\n        .cown-down .content .cdown {\r\n            float: none;\r\n            text-align:center;\r\n            margin-top:40px;\r\n            width: 80px;\r\n            display:inline-block;\r\n\r\n        }\r\n        .cown-down .content .cdown {\r\n            text-align: center;\r\n        }\r\n        .cown-down .content .cdown{\r\n            display:inline-block;\r\n        }\r\n        .cown-down .content .cdown span {\r\n            color: #333;\r\n            font-size: 22px;\r\n            font-weight:400;\r\n            text-transform:uppercase;\r\n        }\r\n        .cown-down .content .cdown p{\r\n            font-size:13px;\r\n            color:#666;\r\n            text-transform:uppercase;\r\n        }\r\n        /*=============================\r\n            End Cowndown CSS\r\n        ===============================*/\r\n\r\n        /*======================================\r\n           Start Shop Services CSS\r\n        ========================================*/\r\n        .shop-services.section {\r\n            padding: 80px 0 0px 0;\r\n            background: #fff;\r\n        }\r\n        .shop-services.home{\r\n            padding:60px 0;\r\n            background:#F6F7FB;\r\n        }\r\n        .shop-services .single-service {\r\n            position: relative;\r\n            padding-left: 65px;\r\n        }\r\n        .shop-services .single-service i {\r\n            height: 50px;\r\n            width: 50px;\r\n            line-height: 50px;\r\n            text-align: center;\r\n            color: #333;\r\n            background: transparent;\r\n            border-radius: 100%;\r\n            display: block;\r\n            font-size: 32px;\r\n            position: absolute;\r\n            left: 0;\r\n            top: 0;\r\n        }\r\n        .shop-services .single-service h4 {\r\n            font-size: 14px;\r\n            font-weight: 600;\r\n            text-transform: uppercase;\r\n            line-height: 22px;\r\n            color: #333;\r\n        }\r\n        .shop-services .single-service p {\r\n            color: #898989;\r\n            line-height: 28px;\r\n            font-size:14px;\r\n        }\r\n        /*======================================\r\n           End Shop Services CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Shop Newsletter CSS\r\n        ========================================*/\r\n        .shop-newsletter{\r\n            background:#fff;\r\n        }\r\n        .shop-newsletter .inner{\r\n            text-align:center;\r\n        }\r\n        .shop-newsletter .inner h4 {\r\n            color: #333;\r\n            font-size: 17px;\r\n            font-weight: 600;\r\n            margin-bottom: 5px;\r\n            text-transform: uppercase;\r\n        }\r\n        .shop-newsletter .inner p{\r\n            color:#777;\r\n            font-size:14px;\r\n            font-weight:400;\r\n            margin-bottom:30px;\r\n        }\r\n        .shop-newsletter .inner p span{\r\n            color:#F7941D;\r\n        }\r\n        .shop-newsletter .newsletter-inner{\r\n            position:relative;\r\n            display: inline-block;\r\n        }\r\n        .shop-newsletter .newsletter-inner input {\r\n            width: 480px;\r\n            height: 55px;\r\n            border-radius: 0px;\r\n            padding: 0px 30px;\r\n            font-weight: 400;\r\n            display: inline-block;\r\n            text-shadow: none;\r\n            box-shadow: none;\r\n            border-radius: 0;\r\n            border: none;\r\n            border: 1px solid #ececec;\r\n            border-radius: 30px 0 0 30px;\r\n        }\r\n        .shop-newsletter .newsletter-inner button{\r\n            border:none;\r\n            text-shadow:none;\r\n            box-shadow:none;\r\n            border-radius:0;\r\n        }\r\n        .shop-newsletter .newsletter-inner .btn {\r\n            display: inline-block;\r\n            height: 55px;\r\n            padding: 10px 30px;\r\n            position: relative;\r\n            top: 0;\r\n            background: #F7941D;\r\n            color: #fff;\r\n            left: -4px;\r\n            border-radius: 0 30px 30px 0;\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n            text-transform: uppercase;\r\n        }\r\n        .shop-newsletter .newsletter-inner .btn:hover{\r\n            background:#333;\r\n            color:#fff;\r\n        }\r\n        /*======================================\r\n           End Shop Newsletter CSS\r\n        ========================================*/\r\n\r\n        /*=============================\r\n            About US CSS\r\n        ===============================*/\r\n        .about-us{\r\n            background:#fff;\r\n        }\r\n        .about-us .about-content {\r\n            padding-right: 50px;\r\n        }\r\n        .about-us .about-content .story{\r\n            display:block;\r\n            color:#04AAF4;\r\n            margin-bottom:20px;\r\n            font-size:17px;\r\n        }\r\n        .about-us .about-content .story i{\r\n            color:#04AAF4;\r\n            margin-right:5px;\r\n            font-size:22px;\r\n        }\r\n        .about-us .about-content h3 {\r\n            font-size: 30px;\r\n            font-weight: 600;\r\n            position: relative;\r\n            margin-bottom: 15px;\r\n            padding-bottom: 15px;\r\n        }\r\n        .about-us .about-content h3::before {\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 0;\r\n            bottom: -1px;\r\n            height: 2px;\r\n            width: 60px;\r\n            background: #F7941D;\r\n        }\r\n        .about-us .about-content h3 span{\r\n            display:inline-block;\r\n            font-weight:700;\r\n            color:#F7941D;\r\n        }\r\n        .about-us .about-content p {\r\n            line-height: 26px;\r\n            margin-bottom: 10px;\r\n        }\r\n        .about-us .about-content p:last-child{\r\n            margin:0;\r\n        }\r\n        .about-us .about-content .button{\r\n            margin-top:40px;\r\n        }\r\n        .about-us .about-content .button .btn{\r\n            background:#333;\r\n            color:#fff;\r\n            margin-right:15px;\r\n        }\r\n        .about-us .about-content .button .btn:hover{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        .about-us .about-content .button .btn.primary{\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        .about-us .about-content .button .btn.primary:hover{\r\n            background:#333;\r\n            color:#fff;\r\n        }\r\n        .about-us .about-content .button .btn:last-child{\r\n            margin:0;\r\n        }\r\n        .about-us .about-img {\r\n            position: relative;\r\n            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);\r\n            border: 10px solid #fff;\r\n        }\r\n        .about-us .about-img:before{\r\n            opacity:0;\r\n            visibility:hidden;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .about-us .about-img:hover:before{\r\n            opacity:0.6;\r\n            visibility:visible;\r\n        }\r\n        .about-us .about-img .video {\r\n            height: 64px;\r\n            width: 64px;\r\n            line-height: 64px;\r\n            background: #F7941D;\r\n            color: #fff;\r\n            font-size: 20px;\r\n            border-radius: 100%;\r\n            display: block;\r\n            text-align: center;\r\n            position: absolute;\r\n            left: 50%;\r\n            top: 50%;\r\n            margin-left: -32px;\r\n            margin-top: -32px;\r\n            padding-left: 4px;\r\n            transform: scale(0);\r\n            transition: all 0.4s ease;\r\n        }\r\n        .about-us .about-img .video:hover{\r\n            background:#fff;\r\n            color:#F7941D;\r\n        }\r\n        .about-us .about-img:hover .video{\r\n            transform:scale(1);\r\n        }\r\n        .about-us .about-img img{\r\n            height:100%;\r\n            width:100%;\r\n\r\n        }\r\n        /*=============================\r\n            End About US CSS\r\n        ===============================*/\r\n\r\n        /*======================================\r\n          10. Start Team CSS\r\n        ========================================*/\r\n        .team{\r\n            background:#F6F7FB;\r\n        }\r\n        .team .title-line{\r\n            margin-bottom:40px;\r\n        }\r\n        .team .single-team {\r\n            margin-top: 30px;\r\n            position:relative;\r\n            transition: all 500ms ease;\r\n            display: inline-block;\r\n            overflow:hidden;\r\n            text-align:center;\r\n            background:#fff;\r\n        }\r\n        .team .single-team .info-head {\r\n            padding: 35px 30px;\r\n        }\r\n        .team .single-team .image img{\r\n            height:100%;\r\n            width:100%;\r\n        }\r\n        .team .single-team .info-box {\r\n            text-align:center;\r\n        }\r\n        .team .single-team .info-box .name {\r\n            display: block;\r\n            font-size: 17px;\r\n            color: #333;\r\n            font-weight: 500;\r\n            margin-bottom: 3px;\r\n            text-transform:capitalize;\r\n        }\r\n        .team .single-team .info-box .designation{\r\n            color:#aaa;\r\n            font-size:13px;\r\n        }\r\n        .team .single-team .social-links {\r\n            transition: all 500ms ease;\r\n            margin-top:15px;\r\n        }\r\n        .team .single-team .social-links .social li{\r\n            display:inline-block;\r\n            margin-right:15px;\r\n        }\r\n        .team .single-team .social-links .social li:last-child{\r\n            margin-right:0px;\r\n        }\r\n        .team .single-team .social-links .social li a {\r\n            color: #666;\r\n            display: block;\r\n            font-size: 14px;\r\n        }\r\n        .team .single-team .social-links .social li a:hover{\r\n            color:#F7941D;\r\n        }\r\n        /*======================================\r\n          End Team CSS\r\n        ========================================*/\r\n\r\n        /*======================================\r\n           Start Shop Blog CSS\r\n        ========================================*/\r\n        .shop-blog.grid .shop-single-blog{\r\n            margin-top:30px;\r\n        }\r\n        .shop-blog .shop-single-blog{\r\n            text-align:center;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .shop-blog .shop-single-blog:hover{\r\n            box-shadow: 0px 10px 10px #0000000a;\r\n        }\r\n        .shop-blog .shop-single-blog img{\r\n            height:100%;\r\n            width:100%;\r\n        }\r\n        .shop-blog .shop-single-blog .content {\r\n            padding: 40px;\r\n        }\r\n        .shop-blog .shop-single-blog .content .title {\r\n            font-size: 17px;\r\n            font-weight: 600;\r\n            color: #333;\r\n        }\r\n        .shop-blog .shop-single-blog .content .title:hover{\r\n            color:#F7941D;\r\n        }\r\n        .shop-blog .shop-single-blog .content .date {\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n            margin-bottom: 5px;\r\n            color: #B7B7B7;\r\n        }\r\n        .shop-blog .shop-single-blog .content .more-btn {\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n            color: #3c3c3c;\r\n            margin-top: 10px;\r\n            display: block;\r\n        }\r\n        .shop-blog .shop-single-blog .content .more-btn:hover{\r\n            color:#F7941D;\r\n        }\r\n        /* Related Product */\r\n        .related-product{\r\n            padding-top:0;\r\n        }\r\n        .related-product .section-title {\r\n            text-align: center;\r\n            margin-bottom: 10px;\r\n            padding: 0;\r\n        }\r\n        .related-product .section-title h2 {\r\n            font-size: 25px;\r\n            margin-bottom: 0;\r\n            text-transform: capitalize;\r\n            position: relative;\r\n            color: #2c2d3f;\r\n            font-weight: 700;\r\n            padding-bottom: 15px;\r\n        }\r\n        /* Blog Sidebar */\r\n        .main-sidebar {\r\n            background: #fff;\r\n            margin-top: 30px;\r\n            padding: 40px;\r\n            background: transparent;\r\n            border: 1px solid #eeeeeec2;\r\n        }\r\n        .main-sidebar .single-widget{\r\n            margin-bottom:50px;\r\n        }\r\n        .main-sidebar .single-widget .title {\r\n            position: relative;\r\n            font-size: 18px;\r\n            font-weight: 600;\r\n            text-transform: capitalize;\r\n            margin-bottom: 30px;\r\n            display: block;\r\n            background: #fff;\r\n            padding-left: 12px;\r\n        }\r\n        .main-sidebar .single-widget .title::before {\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 0;\r\n            bottom: -1px;\r\n            height: 100%;\r\n            width: 3px;\r\n            background: #F7941D;\r\n        }\r\n        .main-sidebar .single-widget:last-child{\r\n            margin:0;\r\n        }\r\n        .main-sidebar .search{\r\n            position:relative;\r\n        }\r\n        .main-sidebar .search input {\r\n            width: 100%;\r\n            height: 45px;\r\n            box-shadow: none;\r\n            text-shadow: none;\r\n            font-size: 14px;\r\n            border: none;\r\n            color: #222;\r\n            background: transparent;\r\n            padding: 0 70px 0 20px;\r\n            transition: all 0.4s ease;\r\n            border-radius: 0;\r\n            border: 1px solid #eee;\r\n        }\r\n        .main-sidebar .search .button {\r\n            position: absolute;\r\n            right: 0;\r\n            top: 0;\r\n            height: 44px;\r\n            width: 50px;\r\n            line-height: 45px;\r\n            box-shadow: none;\r\n            text-shadow: none;\r\n            text-align: center;\r\n            border: none;\r\n            font-size: 14px;\r\n            color: #fff;\r\n            background: #333;\r\n            transition: all 0.4s ease;\r\n        }\r\n        .main-sidebar .search .button:hover {\r\n            background:#F7941D;\r\n            color:#fff;\r\n        }\r\n        /* Category List */\r\n        .main-sidebar .categor-list {\r\n            margin-top: 15px;\r\n        }\r\n        .main-sidebar .categor-list li{\r\n\r\n        }\r\n        .main-sidebar .categor-list li {\r\n            margin-bottom: 10px;\r\n        }\r\n        .main-sidebar .categor-list li:last-child{\r\n            margin-bottom:0px;\r\n        }\r\n        .main-sidebar .categor-list li a {\r\n            display: inline-block;\r\n            color: #333;\r\n            font-size:14px;\r\n        }\r\n        .main-sidebar .categor-list li a:hover{\r\n            color:#F7941D;\r\n            padding-left:7px;\r\n        }\r\n        .main-sidebar .categor-list li a i {\r\n            display: inline-block;\r\n            margin-right:0px;\r\n            font-size: 9px;\r\n            transform: translateY(-1px);\r\n            opacity:0;\r\n            visibility:hidden;\r\n            transition:all 0.4s ease;\r\n        }\r\n        .main-sidebar .categor-list li a:hover i{\r\n            margin-right: 6px;\r\n            opacity:1;\r\n            visibility:visible;\r\n        }\r\n        /* Recent Post */\r\n        .main-sidebar .recent-post{}\r\n        .main-sidebar .single-post {\r\n            position: relative;\r\n            border-bottom: 1px solid #ddd;\r\n            display: inline-block;\r\n            padding: 17px 0;\r\n        }\r\n        .main-sidebar .single-post:last-child{\r\n            padding-bottom:0px;\r\n            border:none;\r\n        }\r\n        .main-sidebar .single-post .image {\r\n\r\n        }\r\n        .main-sidebar .single-post .image img{\r\n            float: left;\r\n            width: 80px;\r\n            height: 80px;\r\n            margin-right: 20px;\r\n        }\r\n        .main-sidebar .single-post .content{\r\n            padding-left:100px;\r\n        }\r\n        .main-sidebar .single-post .content h5 {\r\n            line-height: 18px;\r\n        }\r\n        .main-sidebar .single-post .content h5 a {\r\n            color: #2C2D3F;\r\n            font-weight: 500;\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n            margin-top: 10px;\r\n            display: block;\r\n            margin-bottom: 10px;\r\n            margin-top: 0;\r\n        }\r\n        .main-sidebar .single-post .content h5 a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .main-sidebar .single-post .content .comment{}\r\n        .main-sidebar .single-post .content .comment li{\r\n            color:#888;\r\n            display:inline-block;\r\n            margin-right:15px;\r\n            font-weight:400;\r\n            font-size:14px;\r\n        }\r\n        .main-sidebar .single-post .content .comment li:last-child{\r\n            margin-right:0;\r\n        }\r\n        .main-sidebar .single-post .content .comment li i{\r\n            display:inline-block;\r\n            margin-right:5px;\r\n        }\r\n        /* Blog Tags */\r\n        .main-sidebar .side-tags{}\r\n        .main-sidebar .side-tags .tag{\r\n            margin-top:40px;\r\n        }\r\n        .main-sidebar .side-tags .tag li {\r\n            display: inline-block;\r\n            margin-right: 7px;\r\n            margin-bottom: 20px;\r\n        }\r\n        .main-sidebar .side-tags .tag li a {\r\n            background: #fff;\r\n            color: #333;\r\n            padding: 8px 14px;\r\n            text-transform: capitalize;\r\n            border-radius: 0;\r\n            font-size: 13px;\r\n            background: #F6F7FB;\r\n        }\r\n        .main-sidebar .side-tags .tag a:hover{\r\n            color:#fff;\r\n            background:#F7941D;\r\n            border-color:transparent;\r\n        }\r\n        /* Blog Newslatter CSS */\r\n        .main-sidebar .newsletter{\r\n\r\n        }\r\n        .main-sidebar .newsletter .letter-inner {\r\n            position:relative;\r\n            padding: 35px 30px;\r\n            box-shadow: 0px 0px 12px #00000014;\r\n            z-index:2;\r\n            overflow:hidden;\r\n        }\r\n        .main-sidebar .newsletter .letter-inner h4 {\r\n            text-transform: capitalize;\r\n            margin-bottom: 25px;\r\n            font-size: 18px;\r\n            font-weight: 600;\r\n            line-height: 24px;\r\n        }\r\n        .main-sidebar .newsletter .letter-inner p{\r\n            margin-bottom: 20px;\r\n        }\r\n        .main-sidebar .newsletter .letter-inner .form-inner{\r\n            position:relative;\r\n        }\r\n        .main-sidebar .newsletter .letter-inner input {\r\n            width: 100%;\r\n            height: 45px;\r\n            background: #fff;\r\n            border: none;\r\n            border: 1px solid #ddd;\r\n            padding: 0px 60px 0px 20px;\r\n            box-shadow: none;\r\n            text-shadow: none;\r\n            border-radius: 0;\r\n        }\r\n        .main-sidebar .newsletter .letter-inner .form-inner a {\r\n            height: 42px;\r\n            width: 100%;\r\n            background: #F7941D;\r\n            color: #fff;\r\n            font-size: 14px;\r\n            display: block;\r\n            text-align: center;\r\n            line-height: 42px;\r\n            margin-top: 10px;\r\n            text-transform: uppercase;\r\n            font-weight: 500;\r\n        }\r\n        .main-sidebar .newsletter .letter-inner .form-inner a:hover{\r\n            background:#333;\r\n            color:#fff;\r\n        }\r\n        /* Blog Single CSS */\r\n        .blog-single{\r\n            background:#fff;\r\n            padding:70px 0 100px;\r\n        }\r\n        .blog-single .blog-single-main {\r\n            margin-top: 30px;\r\n            background: #fff;\r\n        }\r\n        .blog-single .blog-detail {\r\n            background: #fff;\r\n        }\r\n        .blog-single .image{\r\n            position:relative;\r\n        }\r\n        .blog-single .image img{\r\n            width:100%;\r\n            height:100%;\r\n        }\r\n        .blog-single .blog-title {\r\n            font-size: 24px;\r\n            font-weight: 600;\r\n            text-transform: capitalize;\r\n            margin: 40px 0 15px 0;\r\n        }\r\n        .blog-single .blog-meta {\r\n            margin-bottom: 0;\r\n            overflow: hidden;\r\n            border-bottom: 1px solid #dddddd6e;\r\n            padding-bottom: 20px;\r\n            margin-bottom: 25px;\r\n        }\r\n        .blog-single .blog-meta .author i {\r\n            color: #F7941D;\r\n            margin-right: 10px;\r\n            font-size: 13px;\r\n        }\r\n        .blog-single .blog-meta .author a {\r\n            font-size: 13px;\r\n            border-right:1px solid #ddd;\r\n            padding:0px 15px;\r\n        }\r\n        .blog-single .blog-meta .author  a:first-child{\r\n            padding-left:0;\r\n        }\r\n        .blog-single .blog-meta .author  a:last-child{\r\n            padding-right:0;\r\n            border:none;\r\n        }\r\n        .blog-single .blog-meta span {\r\n            display: inline-block;\r\n            font-size: 14px;\r\n            color: #666;\r\n        }\r\n        .blog-single .blog-meta span a i {\r\n            margin-right: 10px;\r\n            color: #F7941D;\r\n        }\r\n        .blog-single .blog-meta span a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .blog-single .content p {\r\n            margin-bottom: 25px;\r\n            line-height: 26px;\r\n        }\r\n        .blog-single .content p:last-child{\r\n            margin:0;\r\n        }\r\n        .blog-single blockquote {\r\n            position: relative;\r\n            font-size: 13px;\r\n            font-weight: 400;\r\n            padding-left: 20px;\r\n            padding: 10px 20px;\r\n            background: #F6F6F6;\r\n            padding: 30px 40px 30px 70px;\r\n            color: #555;\r\n            border: none;\r\n            margin-bottom: 25px;\r\n            border-left: 3px solid #F7941D;\r\n        }\r\n        .blog-single blockquote i {\r\n            font-size: 30px;\r\n            color: #F7941D;\r\n            position: absolute;\r\n            left: 20px;\r\n            top: 20px;\r\n        }\r\n        .blog-single .content .img-post{\r\n            margin-bottom: 25px;\r\n        }\r\n        .blog-single .share-social .content-tags {\r\n            position: relative;\r\n            margin-top: 25px;\r\n        }\r\n        .blog-single .share-social .content-tags h4 {\r\n            position: absolute;\r\n            left: 0;\r\n            top: 7px;\r\n            font-size: 15px;\r\n            font-weight: 500;\r\n        }\r\n        .blog-single .share-social .content-tags .tag-inner{\r\n            padding-left:60px;\r\n        }\r\n        .blog-single .share-social .content-tags .tag-inner li {\r\n            display: inline-block;\r\n            margin-right: 7px;\r\n            margin-bottom: 10px;\r\n            margin-top: 4px;\r\n        }\r\n        .blog-single .share-social .content-tags .tag-inner li:last-child{\r\n            margin-right: 0px;\r\n            margin-bottom: 0px;\r\n        }\r\n        .blog-single .share-social .content-tags .tag-inner li a {\r\n            border-radius: 30px;\r\n            padding: 5px 15px;\r\n            background:#f4f7fc;\r\n            font-size: 13px;\r\n        }\r\n        .blog-single .share-social .content-tags .tag-inner li a:hover{\r\n            color:#fff;\r\n            background:#F7941D;\r\n        }\r\n        /* Comments */\r\n        .blog-single .comments{\r\n            margin-top:40px;\r\n        }\r\n        .blog-single .comments .comment-title {\r\n            position: relative;\r\n            font-size: 18px;\r\n            font-weight: 600;\r\n            text-transform: capitalize;\r\n            margin-bottom: 30px;\r\n            display: block;\r\n            background: #fff;\r\n            padding-left: 12px;\r\n        }\r\n        .blog-single .comments .comment-title:before{\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 0;\r\n            bottom: -1px;\r\n            height: 100%;\r\n            width: 3px;\r\n            background:#F7941D;\r\n        }\r\n        .blog-single .comments{\r\n\r\n        }\r\n        .blog-single .comments .single-comment {\r\n            position: relative;\r\n            margin-bottom: 40px;\r\n            border-radius: 5px;\r\n            padding-left: 95px;\r\n        }\r\n        .blog-single .comments .single-comment.left{\r\n            margin-left:110px;\r\n        }\r\n        .blog-single .comments .single-comment img {\r\n            height: 70px;\r\n            width: 70px;\r\n            border-radius: 100%;\r\n            position: absolute;\r\n            left: 0;\r\n        }\r\n        .blog-single .single-comment .content {\r\n\r\n        }\r\n        .blog-single .single-comment .content h4 {\r\n            color: #333;\r\n            font-size: 16px;\r\n            font-weight: 500;\r\n            margin-bottom: 10px;\r\n            display: inline-block;\r\n            margin-bottom: 18px;\r\n            text-transform: capitalize;\r\n        }\r\n        .blog-single .single-comment .content h4 span {\r\n            display: inline-block;\r\n            font-size: 13px;\r\n            color: #8D8D8D;\r\n            margin: 0;\r\n            font-weight: 400;\r\n            text-transform: capitalize;\r\n            display: block;\r\n            margin-top: 5px;\r\n        }\r\n        .blog-single .single-comment .content p {\r\n            color: #666;\r\n            font-weight: 400;\r\n            display: block;\r\n            margin: 0;\r\n            margin-bottom: 20px;\r\n            line-height: 22px;\r\n        }\r\n        .blog-single .single-comment .content .button{}\r\n        .blog-single .single-comment .content .btn {\r\n            display: inline-block;\r\n            color: #666;\r\n            font-weight: 400;\r\n            color: #6a6a6a;\r\n            border-radius: 4px;\r\n            text-transform: capitalize;\r\n            font-size: 14px;\r\n            background: transparent;\r\n            padding: 0;\r\n        }\r\n        .blog-single .single-comment .content a i{\r\n            display:inline-block;\r\n            margin-right:5px;\r\n        }\r\n        .blog-single .single-comment .content a:hover{\r\n            color:#F7941D;\r\n        }\r\n        /* Comment Form */\r\n        .blog-single .reply form {\r\n            padding: 40px;\r\n            border: 1px solid #eee;\r\n        }\r\n        .blog-single .reply .reply-title {\r\n            position: relative;\r\n            font-size: 18px;\r\n            font-weight: 600;\r\n            text-transform: capitalize;\r\n            margin-bottom: 30px;\r\n            display: block;\r\n            background: #fff;\r\n            padding-left: 12px;\r\n        }\r\n        .blog-single .reply .reply-title:before{\r\n            position: absolute;\r\n            content: \"\";\r\n            left: 0;\r\n            bottom: -1px;\r\n            height: 100%;\r\n            width: 3px;\r\n            background:#F7941D;\r\n        }\r\n        .blog-single .reply .form-group {\r\n            margin-bottom: 20px;\r\n        }\r\n        .blog-single .reply .form-group input {\r\n            width: 100%;\r\n            height: 45px;\r\n            line-height: 50px;\r\n            padding: 0 20px;\r\n            border-radius: 0px;\r\n            color: #333 !important;\r\n            border: none;\r\n            border: 1px solid #eee;\r\n        }\r\n        .blog-single .reply .form-group textarea {\r\n            width: 100%;\r\n            height: 200px;\r\n            line-height: 50px;\r\n            padding: 0 20px;\r\n            border-radius: 0px;\r\n            color: #333 !important;\r\n            border: none;\r\n            border: 1px solid #eee;\r\n        }\r\n        .blog-single .reply .form-group label {\r\n            color: #333;\r\n            position: relative;\r\n        }\r\n        .blog-single .reply .form-group label span {\r\n            color:#ff2c18;\r\n            display: inline-block;\r\n            position: absolute;\r\n            right: -12px;\r\n            top: 4px;\r\n            font-size: 16px;\r\n        }\r\n        .blog-single .reply .button {\r\n            text-align: left;\r\n            margin-bottom:0px;\r\n        }\r\n        .blog-single .reply .button .btn {\r\n            height: 50px;\r\n            border: none;\r\n        }\r\n        /*======================================\r\n           End Shop Blog CSS\r\n        ========================================*/\r\n\r\n\r\n        /*======================================\r\n          21. Contact CSS\r\n        ========================================*/\r\n        .contact-us {\r\n            position: relative;\r\n            z-index: 43;\r\n        }\r\n        .contact-us .title{\r\n            margin-bottom: 30px;\r\n        }\r\n        .contact-us .title h4 {\r\n            font-size: 17px;\r\n            font-weight: 500;\r\n            margin-bottom: 5px;\r\n            color: #F7941D;\r\n        }\r\n        .contact-us .title h3 {\r\n            font-size: 25px;\r\n            text-transform: capitalize;\r\n            font-weight: 600;\r\n        }\r\n        .contact-us .single-head {\r\n            padding: 50px;\r\n            box-shadow: 0px 0px 15px #0000001a;\r\n            height: 100%;\r\n        }\r\n        .contact-us .single-info {\r\n            text-align: left;\r\n            margin-bottom:30px;\r\n        }\r\n        .contact-us .single-info i {\r\n            color: #fff;\r\n            font-size: 18px;\r\n            display: inline-block;\r\n            margin-bottom: 15px;\r\n            height: 40px;\r\n            width: 40px;\r\n            display: block;\r\n            text-align: center;\r\n            border-radius: 3px;\r\n            line-height: 40px;\r\n            background:#F7941D;\r\n        }\r\n        .contact-us .single-info ul\r\n        .contact-us .single-info ul li{\r\n            margin-bottom:5px;\r\n        }\r\n        .contact-us .single-info ul li:last-child{\r\n            margin-bottom:0;\r\n        }\r\n        .contact-us .single-info ul li a{\r\n            font-weight:400;\r\n        }\r\n        .contact-us .single-info ul li a:hover{\r\n            color:#F7941D;\r\n        }\r\n        .contact-us .single-info .title {\r\n            margin-bottom: 10px;\r\n            font-weight: 500;\r\n            color: #333;\r\n            font-size: 18px;\r\n        }\r\n        .contact-us .form-main {\r\n            box-shadow: 0px 0px 15px #0000001a;\r\n            padding: 50px;\r\n        }\r\n        .contact-us .form .form-group input {\r\n            height: 48px;\r\n            line-height: 48px;\r\n            width: 100%;\r\n            border: 1px solid #e6e2f5;\r\n            padding: 0px 20px;\r\n            color: #333;\r\n            border-radius: 0px;\r\n            font-weight: 400;\r\n        }\r\n        .contact-us .form .form-group textarea {\r\n            height: 180px;\r\n            width: 100%;\r\n            border: 1px solid #e6e2f5;\r\n            padding: 15px 20px;\r\n            color: #333;\r\n            border-radius: 0px;\r\n            resize: none;\r\n            font-weight:400;\r\n        }\r\n        .contact-us .form .form-group label {\r\n            color: #333;\r\n            position: relative;\r\n        }\r\n        .contact-us .form .form-group label span {\r\n            color: #ff2c18;\r\n            display: inline-block;\r\n            position: absolute;\r\n            right: -12px;\r\n            top: 4px;\r\n            font-size: 16px;\r\n        }\r\n        .contact-us .form .button {\r\n            margin:0;\r\n        }\r\n        .contact-us .form .button .btn {\r\n            height: 50px;\r\n            border: none;\r\n        }\r\n        #myMap {\r\n            height: 500px;\r\n            width: 100%;\r\n        }\r\n        /*======================================\r\n          End Contact CSS\r\n        ========================================*/\r\n\r\n        /* Mail Success */\r\n        .mail-success .mail-inner {\r\n            text-align: center;\r\n            background: #fff;\r\n            padding: 0px 30px;\r\n        }\r\n        .mail-success .mail-inner h2 {\r\n            margin-bottom: 10px;\r\n            display: block;\r\n            font-weight: 600;\r\n            color: #F7941D;\r\n            text-transform: uppercase;\r\n            font-size: 30px;\r\n        }\r\n        .mail-success .mail-inner p {\r\n            font-size: 14;\r\n            color: #333;\r\n            margin-bottom: 30px;\r\n            line-height: 22px;\r\n        }\r\n        .mail-success .mail-inner .btn {\r\n            color: #fff;\r\n            padding: 10px 30px;\r\n        }\r\n        .mail-success .mail-inner .btn i{\r\n            margin-right:5px;\r\n        }\r\n\r\n        /*=============================\r\n            Start 404 Error CSS\r\n        ===============================*/\r\n        .error-page {\r\n            background:#fff;\r\n            width: 100%;\r\n            height: 100%;\r\n            overflow: hidden;\r\n            position:relative;\r\n        }\r\n        .error-page .error-inner {\r\n            text-align: center;\r\n            flex-direction: initial;\r\n            height: auto;\r\n            text-align: center;\r\n        }\r\n        .error-page .error-inner h2 {\r\n            color: #F7941D;\r\n            margin-bottom: 0;\r\n            font-weight: 700;\r\n            font-size: 100px;\r\n            display: inline-block;\r\n            font-size: 120px;\r\n        }\r\n        .error-page .error-inner h5 {\r\n            display: block;\r\n            color: #444;\r\n            font-size: 20px;\r\n            margin-bottom: 20px;\r\n            font-weight: 600;\r\n            text-transform: capitalize;\r\n        }\r\n        .error-page .error-inner p {\r\n            color: #666;\r\n            font-weight: 400;\r\n            line-height: 22px;\r\n            font-size: 15px;\r\n            padding: 0 30px;\r\n        }\r\n        .error-page .button {\r\n            margin-top: 30px;\r\n        }\r\n        .error-page .button .btn {\r\n            margin-right: 15px;\r\n            border-radius: 30px;\r\n            background: #333;\r\n            color: #fff;\r\n            font-weight: 600;\r\n            font-size: 14px;\r\n            font-weight: 500;\r\n            border: 1px solid #d7d7d7;\r\n            background: transparent;\r\n            color: #333;\r\n            padding: 10px 28px;\r\n        }\r\n        .error-page .button .btn:hover{\r\n            color:#fff;\r\n            background:#F7941D;\r\n            border-color:transparent;\r\n        }\r\n        /*=============================\r\n            /End 404 Error CSS\r\n        ===============================*/\r\n\r\n        /*=============================\r\n            20. Start Footer CSS\r\n        ===============================*/\r\n        .footer{\r\n            background:#222;\r\n        }\r\n        .footer .about {\r\n            padding-right: 50px;\r\n        }\r\n        .footer .single-footer h4 {\r\n            font-size: 17px;\r\n            font-weight: 600;\r\n            color: #fff;\r\n            text-transform: capitalize;\r\n            margin-bottom: 30px;\r\n        }\r\n        .footer .about .logo{\r\n            margin-bottom:20px;\r\n        }\r\n        .footer .about .logo img{}\r\n        .footer .about .text{\r\n            color:#fff;\r\n            font-weight: 400;\r\n        }\r\n        .footer .about .call {\r\n            color: #fff;\r\n            margin-top: 15px;\r\n            font-weight: 400;\r\n        }\r\n        .footer .about .call span{\r\n            display: block;\r\n        }\r\n        .footer .about .call a {\r\n            color: #f7941d;\r\n            font-size: 20px;\r\n            font-weight: 600;\r\n        }\r\n        .footer .links ul{}\r\n        .footer .links ul li {\r\n            display: block;\r\n            margin-bottom: 8px;\r\n        }\r\n        .footer .links ul li:last-child{\r\n            margin-bottom:0;\r\n        }\r\n        .footer .links ul li a{\r\n            color:#fff;\r\n            font-weight: 400;\r\n        }\r\n        .footer .links ul li a:hover{\r\n            color:#F7941D;\r\n            padding-left:10px;\r\n        }\r\n        .footer .social{}\r\n        .footer .social .contact{}\r\n        .footer .social .contact ul{}\r\n        .footer .social .contact ul li {\r\n            color: #fff;\r\n            display: block;\r\n            margin-bottom: 4px;\r\n            font-weight: 400;\r\n        }\r\n        .footer .contact ul li:last-child{\r\n            margin-bottom:0;\r\n        }\r\n        .footer .social ul {\r\n            margin-top: 20px;\r\n        }\r\n        .footer .social ul li{\r\n            display:inline-block;\r\n            margin-right:25px;\r\n        }\r\n        .footer .social ul li:last-child{\r\n            margin-right:0;\r\n        }\r\n        .footer .social ul li a{\r\n            color:#fff;\r\n            display:block;\r\n            font-size:16px;\r\n        }\r\n        .footer .social ul li a:hover{\r\n            color:#F7941D;\r\n        }\r\n        /* Copyright */\r\n        .footer .copyright{\r\n\r\n        }\r\n        .footer .copyright .inner{\r\n            border-top:1px solid #eeeeee3d;\r\n            padding:20px 0;\r\n        }\r\n        .footer .copyright .left{}\r\n        .footer .copyright .right{\r\n            float:right;\r\n        }\r\n        .footer .copyright p{\r\n            color:#fff;\r\n        }\r\n        .footer .copyright p a{\r\n            color:#fff;\r\n            text-decoration:underline;\r\n        }\r\n        /*=============================\r\n            End Footer CSS\r\n        ===============================*/\r\n", ""]);
+exports.push([module.i, "/* =====================================\n        Template Name: Eshop\n        Author Name: Naimur Rahman\n        Author URI: http://www.wpthemesgrid.com/\n        Description: Eshop - eCommerce HTML5 Template.\n        Version:1.0\n        ========================================*/\n        /*======================================\n        [ CSS Table of contents ]\n        01. Preloader CSS\n        02. Header CSS\n            + Logo\n            + Category Menu\n            + Main Menu\n        03. Hero Area CSS\n        04. Small Banner CSS\n        05. Medium Banner CSS\n        06. Single Product CSS\n        07. Shop Sidebar CSS\n        08. Shop Single CSS\n        09. Shop Home List CSS\n        10. Cart CSS\n        11. Checkout CSS\n        12. Login & Register CSS\n        13. Cowndown CSS\n        14. Shop Services CSS\n        15. Newslatter CSS\n        16. About Us CSS\n        17. Team CSS\n        18. Blog CSS\n            + Blog Archive\n            + Blog Sidebar\n            + Blog Single\n        19. Contact CSS\n        20. 404 Error CSS\n        21. Footer CSS\n        ========================================*/\n        .color-plate {\n            position: fixed;\n            display: block;\n            z-index: 99998;\n            padding: 20px;\n            width: 245px;\n            background: #fff;\n            right: -245px;\n            text-align: left;\n            top: 30%;\n            transition:all 0.4s ease;\n            box-shadow: -3px 0px 25px -2px rgba(0, 0, 0, 0.2);\n        }\n        .color-plate.active{\n            right:0;\n        }\n        .color-plate .color-plate-icon {\n            position: absolute;\n            left: -48px;\n            width: 48px;\n            height: 45px;\n            line-height: 45px;\n            font-size: 21px;\n            border-radius: 5px 0 0 5px;\n            background: #fff;\n            text-align: center;\n            color: #333;\n            top: 0;\n            cursor: pointer;\n            box-shadow: -4px 0px 5px #00000036;\n        }\n        .color-plate h4 {\n            display: block;\n            font-size: 15px;\n            margin-bottom: 5px;\n            font-weight: 500;\n        }\n        .color-plate p {\n            font-size: 13px;\n            margin-bottom: 15px;\n            line-height: 20px;\n        }\n        .color-plate span {\n            width: 42px;\n            height: 35px;\n            border-radius: 0;\n            cursor: pointer;\n            display: inline-block;\n            margin-right: 3px;\n        }\n        .color-plate span:hover{\n            cursor:pointer;\n        }\n        .color-plate span.color1{\n            background:#F7941D;\n        }\n        .color-plate span.color2{\n            background:#0088CC;\n        }\n        .color-plate span.color3{\n            background:#32B87D;\n        }\n        .color-plate span.color4{\n            background:#FE754A;\n        }\n        .color-plate span.color5{\n            background:#F82F56;\n        }\n        .color-plate span.color6{\n            background:#00cec9;\n        }\n        .color-plate span.color7{\n            background:#6c5ce7;\n        }\n        .color-plate span.color8{\n            background:#85BA46;\n        }\n        .color-plate span.color9{\n            background:#fd79a8;\n        }\n        .color-plate span.color10{\n            background:#a29bfe;\n        }\n        .color-plate span.color11{\n            background:#badc58;\n        }\n        .color-plate span.color12{\n            background:#FF1D38;\n        }\n        /* Preloader */\n        .preloader {\n          position: fixed;\n          top: 0;\n          left: 0;\n          z-index: 999999999;\n          width: 100%;\n          height: 100%;\n          background-color: #fff;\n          overflow: hidden;\n        }\n        .preloader-inner {\n          position: absolute;\n          top: 50%;\n          left: 50%;\n          transform: translate(-50%,-50%);\n        }\n        .preloader-icon {\n          width: 100px;\n          height: 100px;\n          display: inline-block;\n          padding: 0px;\n        }\n        .preloader-icon span {\n          position: absolute;\n          display: inline-block;\n          width: 100px;\n          height: 100px;\n          border-radius: 100%;\n          background:#F7941D;\n          -webkit-animation: preloader-fx 1.6s linear infinite;\n          animation: preloader-fx 1.6s linear infinite;\n        }\n        .preloader-icon span:last-child {\n          animation-delay: -0.8s;\n          -webkit-animation-delay: -0.8s;\n        }\n        @keyframes preloader-fx {\n          0% {transform: scale(0, 0); opacity:0.5;}\n          100% {transform: scale(1, 1); opacity:0;}\n        }\n        @-webkit-keyframes preloader-fx {\n          0% {-webkit-transform: scale(0, 0); opacity:0.5;}\n          100% {-webkit-transform: scale(1, 1); opacity:0;}\n        }\n        /* End Preloader */\n\n        .btn {\n            position: relative;\n            font-weight: 500;\n            font-size:14px;\n            color: #fff;\n            background: #333;\n            display: inline-block;\n            transition: all 0.4s ease;\n            z-index: 5;\n            display: inline-block;\n            padding: 13px 32px;\n            border-radius: 0px;\n            text-transform:uppercase;\n        }\n        .btn:hover{\n            color:#fff;\n            background:#F7941D;\n        }\n        #scrollUp {\n            right: 10px;\n            z-index: 33;\n            bottom: 10px;\n            text-align: center;\n        }\n        #scrollUp i{\n            height: 40px;\n            width: 40px;\n            line-height: 40px;\n            background:transparent;\n            background:#222;\n            border-radius: 0;\n            font-size: 18px;\n            transition: all 500ms ease;\n            display:block;\n            color: #fff;\n            box-shadow: 0px 4px 19px #00000038;\n        }\n        #scrollUp i:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        /*======================================\n            01. Header CSS\n        ========================================*/\n        /* Topbar */\n        .topbar {\n            background-color: #fff;\n            border-bottom: 1px solid #e2e2e2;\n            padding: 15px 0;\n        }\n        /* Logo */\n        .header .logo {\n            float: left;\n            margin-top: 35px;\n            transition: all 0.4s ease;\n        }\n        .header .navbar {\n            padding: 0;\n        }\n        /* Main Menu */\n        .navbar-expand-lg .navbar-collapse{\n            display:block !important;\n        }\n        .header.v3 .navbar-expand-lg .navbar-collapse{\n            display:block !important;\n            background:#333;\n        }\n        .header .nav li a i {\n            margin-left: 6px;\n            font-size: 10px;\n        }\n        /* Dropdown Menu */\n        .header .nav li .dropdown {\n            background: #fff;\n            width: 220px;\n            position: absolute;\n            top: 100%;\n            z-index: 999;\n            box-shadow: 0px 3px 5px #3333334d;\n            transform-origin: 0 0 0;\n            transform: scaleY(0.2);\n            transition: all 0.3s ease 0s;\n            opacity: 0;\n            visibility: hidden;\n            padding: 10px;\n            left: 0;\n            margin: 0;\n        }\n        .header .nav li:hover .dropdown{\n            opacity:1;\n            visibility:visible;\n            transform:translateY(0px);\n        }\n        .header .nav li .dropdown li{\n            float:none;\n            margin:0;\n        }\n        .header .nav li .dropdown li a {\n            padding: 8px 15px;\n            color: #666;\n            display: block;\n            font-weight: 400;\n            text-transform: capitalize;\n            background: transparent;\n        }\n        .header .nav li .dropdown li a:before{\n            display:none;\n        }\n        .header .nav li .dropdown li:last-child a{\n            border-bottom:0px;\n        }\n        .header .nav li .dropdown li:hover a{\n            color:#fff;\n            background:#F7941D;\n        }\n        .header .nav li .dropdown li a:hover{\n            border-color:transparent;\n        }\n        .header .nav li .dropdown li i {\n            float: right;\n            margin-top: 8px;\n            font-size:10px;\n            z-index:5;\n        }\n        .header .nav li .dropdown.sub-dropdown {\n            background: #fff;\n            width: 220px;\n            position: absolute;\n            left: 186px;\n            top: 0;\n            z-index: 999;\n           box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);\n            box-shadow: 0px 3px 5px #3333334d;\n            transform-origin: 0 0 0;\n            transform: scaleY(0.2);\n            transition: all 0.3s ease 0s;\n            opacity: 0;\n            visibility: hidden;\n            padding: 10px;\n        }\n        .header .nav li .dropdown li:hover .dropdown.sub-dropdown{\n            opacity:1;\n            visibility:visible;\n            transform:translateY(0px);\n        }\n        .header .nav li .dropdown.sub-dropdown li a{\n            padding: 8px 15px;\n            color: #666;\n            display: block;\n            font-weight: 400;\n            text-transform: capitalize;\n            background: transparent;\n        }\n        .header .nav li .dropdown li:hover .dropdown.sub-dropdown li a{\n            background:transparent;\n        }\n        .header .nav li .dropdown li .dropdown.sub-dropdown li a:hover{\n            color:#fff;\n            background:#F7941D;\n        }\n        .header .nav li .dropdown.sub-dropdown li:last-child a{\n            border-bottom:0px solid;\n        }\n        .mobile-search{\n            display:none;\n        }\n        .header.shop .topbar {\n            border: none;\n            padding: 12px 0px;\n        }\n        .header.shop .nav-inner {\n            margin-right: 188px;\n        }\n        .header.shop .logo {\n            float: left;\n            margin-top: 35px;\n        }\n        .header.shop .top-contact {\n            margin-top:0px;\n        }\n        .header.shop .topbar p {\n            color: #ccc;\n        }\n        .header.shop .topbar .login a {\n            color: #F7941D;\n        }\n        /* Topbar Left Nav */\n        .header.shop .left-nav{\n\n        }\n        .header.shop .top-left .list-main li:first-child{\n            padding-left:0;\n        }\n        .header.shop .top-left .list-main li i{\n            display: inline-block;\n            margin-right: 4px;\n            font-size: 15px;\n            color: #F7941D;\n            position: relative;\n            top: 3px;\n        }\n        .header.shop .right-content{\n            float:right;\n        }\n        .header.shop .list-main li {\n            display: inline-block;\n            color: #333;\n            font-size: 13px;\n            font-weight: 500;\n            border-right: 1px solid #f0f0f0;\n            padding: 0px 13px;\n        }\n        .header.shop .list-main li i {\n            display: inline-block;\n            margin-right: 4px;\n            font-size: 15px;\n            color: #F7941D;\n            position: relative;\n            top: 1px;\n        }\n        .header.shop .list-main li:last-child{\n            padding-right:0;\n            border:none;\n        }\n        .header.shop .list-main li a{\n            color:#333;\n        }\n        .header.shop .list-main li a:hover{\n            color:#F7941D;\n        }\n        .header.shop .nav li {\n            margin-right: 40px;\n            float: left;\n            position: relative;\n        }\n        .header.shop .nav li {\n            margin-right: 38px;\n            position: relative;\n        }\n        .header.shop .nav li:last-child {\n            margin: 0 !important;\n        }\n        .header.shop .nav li .new {\n            background: #F7941D;\n            color: #fff;\n            text-transform: uppercase;\n            font-size: 10px;\n            padding: 0px 9px;\n            position: absolute;\n            left: 0;\n            top: 6px;\n            font-weight: 500;\n        }\n        .header.shop .nav li .new::before {\n            position: absolute;\n            content: \"\";\n            left: 4px;\n            bottom: -8px;\n            border: 4px solid #F7941D;\n            border-bottom-color: transparent;\n            border-left-color: transparent;\n            border-right-color: transparent;\n        }\n        /* Shopping Cart */\n        .header .shopping {\n            display: inline-block;\n            z-index: 9999;\n        }\n        .header .shopping .icon {\n            position: relative;\n            cursor:pointer;\n            color:#222;\n        }\n        .header .shopping .shopping-item {\n            position: absolute;\n            top: 68px;\n            right: 0;\n            width: 300px;\n            background: #fff;\n            padding: 20px 25px;\n            transition: all 0.3s ease 0s;\n            transform: translateY(10px);\n            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);\n            opacity:0;\n            visibility:hidden;\n            z-index:99;\n        }\n        .header .shopping:hover .shopping-item{\n            transform: translateY(0px);\n            opacity:1;\n            visibility:visible;\n        }\n        .header .shopping .dropdown-cart-header{\n            padding-bottom: 10px;\n            margin-bottom: 15px;\n            border-bottom:1px solid #e6e6e6;\n        }\n        .header .shopping .dropdown-cart-header span {\n            text-transform: uppercase;\n            color: #222;\n            font-size: 13px;\n            font-weight: 600;\n        }\n        .header .shopping .dropdown-cart-header a {\n            float: right;\n            text-transform: uppercase;\n            color: #222;\n            font-size: 13px;\n            font-weight: 600;\n        }\n        .header .shopping .dropdown-cart-header a:hover{\n            color:#F7941D;\n        }\n        .header .shopping-list li {\n            overflow: hidden;\n            border-bottom: 1px solid #e6e6e6;\n            padding-bottom: 15px;\n            margin-bottom: 15px;\n            position:relative;\n        }\n        .header .shopping-list li .remove {\n            position: absolute;\n            left: 0;\n            bottom: 16px;\n            margin-top: -20px;\n            height: 20px;\n            width: 20px;\n            line-height: 18px;\n            text-align: center;\n            background: #fff;\n            color: #222;\n            border-radius: 0;\n            font-size: 11px;\n            border: 1px solid #ededed;\n        }\n        .header .shopping-list li .remove:hover{\n            background:#222;\n            color:#fff !important;\n            border-color:transparent;\n        }\n        .header .shopping-list .cart-img {\n            float: right;\n            border: 1px solid #ededed;\n            overflow:hidden;\n        }\n        .header .shopping-list .cart-img img {\n            width: 70px;\n            height: 70px;\n            border-radius:0;\n\n        }\n        .header .shopping-list .cart-img:hover img{\n            transform:scale(1.09);\n        }\n        .header .shopping-list .quantity{\n            line-height: 22px;\n            font-size: 13px;\n            padding-bottom: 30px;\n        }\n        .header .shopping-list h4 {\n            font-size: 14px;\n        }\n        .header .shopping-list h4 a {\n            font-weight: 600;\n            font-size: 13px;\n            color: #333;\n        }\n        .header .shopping-list h4 a:hover{\n            color:#F7941D;\n        }\n        .header .shopping-item .bottom {\n            text-align: center;\n        }\n        .header .shopping-item .total {\n            overflow:hidden;\n            display: block;\n            padding-bottom: 10px;\n        }\n        .header .shopping-item .total span {\n            text-transform:uppercase;\n            color:#222;\n            font-size:13px;\n            font-weight:600;\n            float:left;\n        }\n        .header .shopping-item .total .total-amount {\n            float:right;\n            font-size:14px;\n        }\n        .header .shopping-item .bottom .btn {\n            background: #222;\n            padding: 10px 20px;\n            display: block;\n            color: #fff;\n            margin-top: 10px;\n            border-radius: 0px;\n            text-transform: uppercase;\n            font-size: 14px;\n            font-weight: 500;\n        }\n        .header .shopping-item .bottom .btn:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        .header.shop{\n            background:#fff;\n        }\n        .header.shop .nav-inner {\n            margin: 0;\n            float: left;\n        }\n        .header.shop .topbar {\n            background-color: #fff;\n            border: none;\n        }\n        .header.shop.v3 .topbar{\n            padding:0;\n        }\n        .header.shop.v3 .topbar .inner-content{\n            border-bottom:1px solid #eee;\n            padding: 12px 0px;\n        }\n        .header.shop .right-nav li a {\n            color: #333;\n        }\n        .header.shop .logo {\n            float: left;\n            margin: 19px 0 0;\n        }\n        .header.shop .top-contact {\n            margin-top:0px;\n        }\n        /* Header Middle */\n        .header.shop .search-bar-top {\n            text-align: center;\n            margin-top: 10px;\n        }\n        .header.shop .search-bar {\n            margin-top: 33px;\n            width: 460px;\n            height: 40px;\n            display: inline-block;\n            background: #fff;\n            position: relative;\n        }\n        .header.shop .search-bar {\n            width: 535px;\n            height: 50px;\n            display: inline-block;\n            background: #fff;\n            position: relative;\n            margin: 0;\n            line-height: 45px;\n            border-radius: 5px;\n            border: 1px solid #ececec;\n        }\n        .header.shop .nice-select {\n            clear: initial;\n            margin: 0;\n            height: 48px;\n            width: 150px;\n            border: none;\n            text-align: center;\n            background: transparent;\n            text-transform: capitalize;\n            padding: 0 0 0 20px;\n            border-right: 1px solid #eee;\n            line-height: 50px;\n            font-size: 14px;\n            font-weight: 400;\n        }\n        .header.shop .nice-select::after {\n            border-color: #666;\n            right: 20px;\n        }\n        .header.shop .nice-select .list {\n            border-radius:0px;\n        }\n        .header.shop .nice-select .list li.focus{\n            font-weight:400;\n        }\n        .header.shop .nice-select .list li {\n            color: #666;\n            border-radius: 0px;\n            font-size: 14px;\n            font-weight: 400;\n        }\n        .header.shop .nice-select .list li:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        .header.shop .search-bar form {\n            display: inline-block;\n            float: left;\n            width: 260px;\n        }\n        .header.shop .search-bar input {\n            height: 48px;\n            background: transparent;\n            color: #666;\n            border-radius: 0;\n            border: none;\n            font-size: 14px;\n            font-weight: 400;\n            padding: 0 25px 0 20px;\n            width: 328px;\n        }\n        .header.shop .search-bar .btnn {\n            height: 50px;\n            line-height: 53px;\n            width: 62px;\n            text-align: center;\n            font-size: 18px;\n            color: #fff;\n            background: #333333;\n            position: absolute;\n            right: -2px;\n            top: -1px;\n            border: none;\n            border-radius: 0 5px 5px 0;\n            transition: all 0.4s ease;\n        }\n        .header.shop .search-bar .btnn:hover{\n            color:#fff;\n            background:#F7941D;\n        }\n        /* Search Form */\n        .header.shop .search-top {\n            opacity: 1;\n            visibility: visible;\n            top: 0;\n            background: transparent;\n            border: none;\n            box-shadow: none;\n            padding: 0;\n            top: 0;\n        }\n        .header.shop .middle-inner {\n            padding: 20px 0;\n            background: #fff;\n            border-top: 1px solid #eee;\n        }\n        .header.shop.v3 .middle-inner {\n            border:none;\n        }\n        .header.shop .header-inner {\n            background: #333;\n        }\n        .header.shop.v3 .header-inner {\n            background: transparent;\n        }\n        .header.shop.v2 .header-inner {\n            background: #fff;\n            border-top:1px solid #eee;\n        }\n        .header.shop .topbar p {\n            color: #333;\n        }\n        .header.shop .all-category {\n            color: #fff;\n            background: transparent;\n            position: relative;\n            background: #f7941d;\n        }\n        .header.shop .all-category h3{\n            padding: 20px 25px;\n        }\n        .header.shop .cat-heading {\n            font-size: 20px;\n            color: #fff;\n        }\n        .header.shop .cat-heading i {\n            color: #fff;\n            display: inline-block;\n            margin-right: 15px;\n            font-size: 22px;\n        }\n        .header.shop .main-category {\n            position: absolute;\n            left: 0;\n            top: 64px;\n            background: #fff;\n            z-index: 1;\n            width: 100%;\n            box-shadow: 0px 5px 15px #0000000a;\n        }\n        .header.shop .main-category li{\n            display:block;\n            border-bottom:1px solid #f6f6f6;\n            position:relative;\n        }\n        .header.shop .main-category li:last-child{\n            border:none;\n        }\n        .header.shop .main-category li a {\n            font-size: 14px;\n            font-weight: 600;\n            color: #333;\n            padding: 13px 25px 13px 25px;\n            display: block;\n            text-transform: uppercase;\n        }\n        .header.shop .main-category li a i{\n            display:inline-block;\n            float:right;\n        }\n        .header.shop .sub-category {\n            background: #fff;\n            width: 220px;\n            position: absolute;\n            left: 238px;\n            top: 0;\n            z-index: 999999;\n            opacity: 0;\n            visibility: hidden;\n            transition: all 0.4s ease;\n            border-left: 3px solid #F7941D;\n            box-shadow: 0px 5px 15px #0000000a;\n        }\n        .header.shop .main-category li:hover .sub-category{\n            opacity:1;\n            visibility:visible;\n        }\n        .header.shop .main-category li a{\n            text-transform:capitalize;\n            font-weight:400;\n        }\n        .header.shop .main-category li a:hover{\n            color:#F7941D;\n        }\n        .header.shop .main-category .main-mega{\n            position:relative;\n        }\n        .header.shop .main-category li .mega-menu {\n            width: 850px;\n            display: inline-block;\n            height: auto;\n            position: absolute;\n            left: 238px;\n            top: 0;\n            z-index: 99999;\n            background: #fff;\n            border: none;\n            padding: 30px;\n            border-left: 3px solid #F7941D;\n            opacity:0;\n            visibility:hidden;\n            transition:all 0.4s ease;\n        }\n        .header.shop .main-category li:hover .mega-menu{\n            opacity:1;\n            visibility:visible;\n        }\n        .header.shop .main-category li .mega-menu .single-menu {\n            width: 33%;\n            display: inline-block;\n            border: none;\n            padding: 0;\n            padding-right: 20px;\n        }\n        .header.shop .main-category li .mega-menu .single-menu a{\n            padding:0;\n        }\n        .header.shop .main-category li .mega-menu .single-menu .image{\n            overflow:hidden;\n        }\n        .header.shop .main-category li .mega-menu .single-menu img{\n            display:block;\n            height:100%;\n            width:100%;\n            cursor:pointer;\n        }\n        .header.shop .main-category li .mega-menu .single-menu .image:hover img{\n            transform:scale(1.1);\n        }\n        .header.shop .main-category li .mega-menu .single-menu .title-link {\n            margin-bottom: 20px;\n            background: #F7941D;\n            color: #fff;\n            padding: 2px 13px;\n            border-radius: 3px;\n            display: inline-block;\n            font-size: 14px;\n        }\n        .header.shop .main-category li .mega-menu .single-menu .title-link:hover{\n            background:#333;\n            color:#fff;\n        }\n        .header.shop .main-category li .mega-menu .single-menu .inner-link{\n            margin-top:25px;\n        }\n        .header.shop .main-category li .mega-menu .single-menu .inner-link a{\n            margin-bottom:10px;\n        }\n        .header.shop .main-category li .mega-menu .single-menu .inner-link a:hover{\n            color:#F7941D;\n            background:transparent;\n        }\n        .header.shop .main-category li .mega-menu .single-menu .inner-link a:last-child{\n            margin-bottom:0px;\n        }\n        .header.shop .menu-origin {\n            float:none;\n            display: inline-block;\n            float: right;\n        }\n        .header.shop .nav li {\n            margin-right: 40px;\n            float: left;\n            position: relative;\n        }\n        .header.shop .nav li {\n            margin-right:5px;\n            position: relative;\n            float: none;\n        }\n        .header.shop .nav li:last-child{\n            margin-right:0;\n        }\n        .header.shop .nav li .new {\n            background: #F7941D;\n            color: #fff;\n            text-transform: uppercase;\n            font-size: 9px;\n            position: absolute;\n            left: 21px;\n            top: 2px;\n            font-weight: 500;\n            height: 18px;\n            line-height: 18px;\n            text-align: center;\n            display: block;\n        }\n        .header.shop.v2 .nav li a{\n            color:#333;\n        }\n        .header.shop .nav li a {\n            color: #fff;\n            text-transform: capitalize;\n            font-size: 15px;\n            padding: 20px 15px;\n            font-weight: 500;\n            display: block;\n            position: relative;\n            transition: all 0.4s ease;\n        }\n        .header.shop .nav li:hover a{\n            color:#fff;\n            background:#F7941D;\n        }\n        .header.shop.v2 .nav li:hover a{\n            color:#F7941D;\n            background:transparent;\n        }\n        .header.shop .nav li.active a{\n            color:#fff;\n            background:#F7941D;\n        }\n        .header.shop.v2 .nav li.active a{\n            color:#333 !important;\n            background:transparent !important;\n        }\n        .header.shop.v2 .nav li.active a{\n            color:#F7941D !important;\n        }\n        .header.shop .nav .dropdown li{\n            margin:0;\n        }\n        .header.shop .nav li .dropdown li:hover a{\n            background:#F7941D;\n        }\n        .header.shop.v2 .nav li.active .dropdown li a{\n            color:#333 !important;\n        }\n        .header.shop.v2 .nav li.active .dropdown li a:hover{\n            color:#fff !important;\n            background:#F7941D !important;\n        }\n        .header.shop.v2 .nav li.active .dropdown li a:hover{\n            color:#fff !important;\n        }\n        .header.shop.v2 .nav li .dropdown li:hover a{\n            color:#F7941D;\n        }\n        .header.shop .nav li .dropdown li a {\n            color: #333;\n            padding: 8px 15px;\n            font-weight: 400;\n            background:#fff;\n        }\n        .header.shop.v2 .nav li .dropdown li a {\n            color: #333;\n            background:#fff;\n        }\n        .header.shop .nav li .dropdown li a {\n            font-weight: 400;\n            font-size: 14px;\n        }\n        .header.shop .nav li .dropdown li a:hover{\n            color:#fff;\n        }\n        .header.shop.v2 .nav li .dropdown li a:hover{\n            color:#fff !important;\n            background:#F7941D;\n        }\n        .header.shop .nav li .dropdown li .dropdown.sub-dropdown li a:hover{\n            background:#F7941D;\n        }\n        .header.shop .right-bar {\n            display: inline-block;\n            padding: 0;\n            margin: 0;\n            top: 20px;\n            float: right;\n            position: relative;\n        }\n        .header.shop .right-bar .sinlge-bar.top-search a {\n            transform: translateY(3px);\n        }\n        .header.shop .right-bar .sinlge-bar.top-search a:hover {\n            color:#F7941D;\n        }\n        .header.shop .right-bar .sinlge-bar .single-icon{\n            color:#333;\n            font-size:20px;\n            position:relative;\n        }\n        .header.shop .right-bar .sinlge-bar .single-icon:hover{\n            color:#F7941D;\n        }\n        .header.shop .right-bar .sinlge-bar .single-icon .total-count {\n            position: absolute;\n            top: -7px;\n            right: -8px;\n            background: #f6931d;\n            width: 18px;\n            height: 18px;\n            line-height: 18px;\n            text-align: center;\n            color: #fff;\n            border-radius: 100%;\n            font-size: 11px;\n        }\n        .header.shop .right-bar .sinlge-bar{\n            display:inline-block;\n            margin-right:25px;\n        }\n        .header.shop .right-bar .sinlge-bar:last-child{\n            margin-right:0px;\n        }\n        .header.shop .right-bar .sinlge-bar li a:hover{\n            color:#F7941D;\n        }\n        .mobile-search{\n            display:none;\n        }\n        /* Header Search */\n        /* Search */\n        .header .search-top{\n            display:none;\n        }\n        .header .search-top a{\n            font-size:17px;\n        }\n        .header .search-top a:hover{\n            color:#F7941D;\n        }\n        .header .search-form {\n            position: absolute;\n            left: -128px;\n            z-index: 9999;\n            opacity: 0;\n            visibility: hidden;\n            transition: all 0.5s ease;\n            top: 46px;\n            background: #ffffff75;\n            padding: 7px;\n            border-radius: 5px;\n            transform: scaleY(0);\n            box-shadow: 0px 4px 7px #0000003b;\n            padding: 0;\n            border-radius: 0;\n        }\n        .header .search-top.active .search-form {\n            opacity:1;\n            visibility:visible;\n            transform: scaleY(1);\n        }\n        .header .search-form input {\n            width: 220px;\n            height: 45px;\n            line-height: 45px;\n            padding: 0 60px 0 15px;\n            transition: all 0.4s ease;\n            border-radius: 3px;\n            border: none;\n            background: #fff;\n            color: #333;\n            border-radius: 0;\n        }\n        .header .search-form button {\n            position: absolute;\n            right: 0;\n            height: 45px;\n            top: 0;\n            width: 45px;\n            background: transparent;\n            border: none;\n            color: #3353ea;\n            border-radius: 0 3px 3px 0;\n            border-radius: 0;\n            border-left: 1px solid #eee;\n            font-size: 15px;\n            color: #333;\n            transition: all 0.4s ease;\n        }\n        .header .search-form button:hover{\n            color:#fff;\n            background:#F7941D;\n            border-color:transparent;\n        }\n        /* Header Sticky */\n        .header .header-inner{\n            width:100%;\n            z-index:999;\n        }\n        .header.sticky .all-category{}\n        .header.sticky .all-category h3{\n            cursor:pointer;\n\n        }\n        .header.sticky .all-category .main-category{\n            opacity:0;\n            visibility:hidden;\n            transition:all 0.4s ease;\n        }\n        .header.sticky .all-category:hover .main-category{\n            opacity:1;\n            visibility:visible;\n        }\n        .header.sticky .header-inner .nav li a {\n            color: #333;\n        }\n        .header.sticky.v3 .header-inner .nav li a {\n            color: #fff;\n        }\n        .header.sticky .header-inner .nav li:hover a{\n            color:#fff;\n        }\n        .header.sticky.v2 .header-inner .nav li:hover a{\n            color:#F7941D;\n        }\n        .header.sticky .header-inner .nav li .dropdown li a{\n            color:#333;\n        }\n        .header.sticky.v2 .header-inner .nav li .dropdown li a{\n            color:#333;\n        }\n        .header.sticky .header-inner .nav li .dropdown li a:hover{\n            color:#fff;\n        }\n        .header.sticky .header-inner .nav li.active a {\n            color: #fff;\n        }\n        .header.sticky .header-inner{\n            position:fixed;\n            top:0;\n            left:0;\n            background:#fff;\n            -webkit-animation: fadeInDown 1s both 0.2s;\n                    animation: fadeInDown 1s both 0.2s;\n            box-shadow:0px 0px 10px rgba(0, 0, 0, 0.3);\n            z-index:999;\n        }\n        .header.sticky.v3 .header-inner{\n            box-shadow:none;\n        }\n        .header.sticky.v3 .navbar-expand-lg .navbar-collapse{\n            -webkit-animation: fadeInDown 1s both 0.2s;\n                    animation: fadeInDown 1s both 0.2s;\n            box-shadow:0px 0px 10px rgba(0, 0, 0, 0.3);\n        }\n        /*======================================\n            End Header CSS\n        ========================================*/\n\n        /*======================================\n           Hero Area CSS\n        ========================================*/\n        .hero-slider {\n            background: #fff;\n            overflow: hidden;\n        }\n        .hero-slider .single-slider {\n            height: auto;\n            background-image: url('https://via.placeholder.com/1900x700');\n            background-size: cover;\n            background-position: center;\n            background-repeat: no-repeat;\n            height: 510px;\n        }\n        .hero-slider .text-inner {\n\n        }\n        .hero-slider .hero-text {\n            padding: 0 30px;\n            margin-top:100px;\n        }\n        .hero-slider .hero-text h1 {\n            line-height: 50px;\n            font-size: 47px;\n            font-weight: 700;\n            color: #F7941D;\n            margin-bottom: 20px;\n        }\n        .hero-slider .hero-text h1 span {\n            font-size: 20px;\n            display: block;\n            margin-bottom: 12px;\n            color: #333;\n            font-weight: 700;\n            line-height: initial;\n        }\n        .hero-slider .hero-text p {\n            color: #333;\n            margin-bottom: 35px;\n        }\n        .hero-slider .hero-text .button{\n            margin:0;\n        }\n        .hero-slider .hero-text .btn {\n            color: #fff;\n            background: #333;\n            padding: 13px 30px;\n            line-height: initial;\n            border: none;\n            height: auto;\n            z-index: 0;\n        }\n        .hero-slider .hero-text .btn:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        /* Start Hero Area 2 CSS */\n        .hero-area2{\n            position:relative;\n        }\n        .hero-area2 .single-slider.overlay:before{\n            background:#F7941D;\n            opacity:0;\n            visibility:hidden;\n            transform:scale(0.9);\n        }\n        .hero-area2 .single-slider.overlay:hover:before{\n            opacity:0.9;\n            visibility:visible;\n            transform:scale(1);\n        }\n        .hero-area2 .single-slider{\n            height:500px;\n            position:relative;\n            background-size:cover;\n            background-position:center;\n            background-repeat:no-repeat;\n        }\n        .hero-area2 .single-slider .content{\n            position:relative;\n        }\n        .hero-area2 .single-slider .content {\n            width: 100%;\n            padding: 15px;\n            z-index: 2;\n            transition:all 0.4s ease;\n            text-align: center;\n            padding-top: 120px;\n            opacity:0;\n            visibility:hidden;\n            transform:scale(1.1);\n        }\n        .hero-area2 .single-slider:hover .content{\n            opacity:1;\n            visibility:visible;\n            transform:scale(1);\n        }\n        .hero-area2 .single-slider .content .sub-title{\n            color:#fff;\n            text-transform: uppercase;\n            font-size:15px;\n            font-weight:500;\n        }\n        .hero-area2 .single-slider .content .title {\n            color: #fff;\n            text-transform: uppercase;\n            font-size: 24px;\n            display: block;\n            margin-top: 10px;\n            margin-bottom: 10px;\n        }\n        .hero-area2 .single-slider .content .des{\n            color:#fff;\n        }\n        .hero-area2 .single-slider .content .button{}\n        .hero-area2 .single-slider .content .button .btn {\n            padding: 9px 25px;\n            border: 2px solid #fff;\n            background: transparent;\n            color: #fff;\n            margin-top: 25px;\n        }\n        .hero-area2 .single-slider .content .button .btn:hover{\n            background:#fff;\n            color:#333;\n            border-color:transparent;\n        }\n        /* Owl Nav CSS */\n        .hero-area2 .owl-carousel .owl-nav {\n            margin: 0;\n            position: absolute;\n            top: 50%;\n            width: 100%;\n            margin-top:-30px;\n        }\n        .hero-area2 .owl-carousel .owl-nav div {\n            height: 60px;\n            width: 40px;\n            line-height: 60px;\n            text-align: center;\n            background: #333;\n            color: #fff;\n            font-size: 14px;\n            position: absolute;\n            margin: 0;\n            transition: all 0.4s ease;\n            padding: 0;\n            border-radius: 0;\n        }\n        .hero-area2 .owl-carousel .owl-nav div:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        .hero-area2 .owl-carousel .owl-controls .owl-nav .owl-prev{\n            left:0;\n        }\n        .hero-area2 .owl-carousel .owl-controls .owl-nav .owl-next{\n            right:0;\n        }\n        /* Hero Area 3 */\n        .hero-area3{}\n        .hero-area3 .big-content{\n            background-image: url('https://via.placeholder.com/850x530');\n            background-size: cover;\n            background-position: center;\n            background-repeat: no-repeat;\n            height: 511px;\n            margin-top:30px;\n            position:relative;\n        }\n        .hero-area3 .big-content .inner {\n            position: absolute;\n            right: 0;\n            top: 50%;\n            padding: 0 50px 0 360px;\n            transform: translateY(-50%);\n        }\n        .hero-area3 .big-content .title {\n            font-size: 28px;\n            margin-bottom: 20px;\n            font-weight: 700;\n            text-transform: capitalize;\n            line-height: 37px;\n        }\n        .hero-area3 .big-content .title span{\n            color:#F7941D;\n        }\n        .hero-area3 .big-content .des{}\n        .hero-area3 .big-content .button{\n            margin-top:40px;\n            display:block;\n        }\n        .hero-area3 .big-content .button .btn{\n            color:#fff;\n        }\n\n        .hero-area3 .small-content{\n            height:240px;\n            background-size: cover;\n            background-position: center;\n            background-repeat: no-repeat;\n            margin-top:30px;\n            position:relative;\n        }\n        .hero-area3 .small-content.first{\n            background-image: url('https://via.placeholder.com/450x300');\n        }\n        .hero-area3 .small-content.secound{\n            background-image: url('https://via.placeholder.com/450x300');\n        }\n        .hero-area3 .small-content .inner {\n            padding: 30px;\n            text-align:right;\n            position:absolute;\n            right:0;\n            bottom:0;\n        }\n        .hero-area3 .small-content .title {\n            font-size: 18px;\n            margin-bottom: 20px;\n            font-weight: 600;\n            text-transform: capitalize;\n        }\n        .hero-area3 .small-content .title span{\n            color:#F7941D;\n        }\n        .hero-area3 .small-content .des{}\n        .hero-area3 .small-content .button{\n            margin-top:10px;\n            display:block;\n        }\n        .hero-area3 .small-content .button .btn {\n            background: transparent;\n            padding: 0;\n            color: #333;\n            border-bottom: 2px solid #333;\n            font-size: 13px;\n        }\n        .hero-area3 .small-content .button .btn:hover{\n            color:#F7941D;\n            border-color:#F7941D;\n        }\n        /* Hero Area 4 */\n        .hero-area4 .big-content{\n\n            background-size: cover;\n            background-position: center;\n            background-repeat: no-repeat;\n            height: 510px;\n            margin-top:30px;\n            position:relative;\n        }\n        .hero-area4 .big-content .inner {\n            position: absolute;\n            right: 0;\n            top: 50%;\n            padding: 0 80px 0 50px;\n            transform: translateY(-50%);\n        }\n        .hero-area4 .big-content .title {\n            font-size: 32px;\n            margin-bottom: 20px;\n            font-weight: 700;\n            text-transform: capitalize;\n            line-height: 35px;\n        }\n        .hero-area4 .big-content .title span{\n            color:#F7941D;\n        }\n        .hero-area4 .big-content .des{}\n        .hero-area4 .big-content .button{\n            margin-top:40px;\n            display:block;\n        }\n        .hero-area4 .big-content .button .btn{\n            color:#fff;\n        }\n        .hero-area4 .owl-carousel .owl-nav {\n            margin: 0;\n            position: absolute;\n            top: 50%;\n            width: 100%;\n            margin-top:-20px;\n        }\n        .hero-area4 .owl-carousel .owl-nav div {\n            height: 40px;\n            width: 40px;\n            line-height: 40px;\n            text-align: center;\n            background: #333;\n            color: #fff;\n            font-size: 14px;\n            position: absolute;\n            margin: 0;\n            transition: all 0.4s ease;\n            padding: 0;\n            border-radius: 0;\n        }\n        .hero-area4 .owl-carousel .owl-nav div:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        .hero-area4 .owl-carousel .owl-controls .owl-nav .owl-prev{\n            left:0;\n        }\n        .hero-area4 .owl-carousel .owl-controls .owl-nav .owl-next{\n            right:0;\n        }\n\n        /*======================================\n           End Hero Area CSS\n        ========================================*/\n\n        /*======================================\n           Start Small Banner CSS\n        ========================================*/\n        .small-banner{\n            padding:30px 0;\n            padding-bottom:0;\n        }\n        .small-banner .single-banner {\n            overflow:hidden;\n            position:relative;\n        }\n        .small-banner .single-banner img{\n            height:100%;\n            width:100%;\n            transition:all 0.4s ease;\n        }\n        .small-banner .single-banner .content {\n            position: absolute;\n            left: 0;\n            top: 50%;\n            transform: translateY(-50%);\n            padding-left: 35px;\n        }\n        .small-banner .single-banner h3 {\n            font-size: 22px;\n            font-weight: 700;\n            text-transform: capitalize;\n            color: #333;\n        }\n        .small-banner .single-banner h3 span{\n            color:#F7941D;\n        }\n        .small-banner .single-banner p {\n            font-size: 14px;\n            color: #F7941D;\n            font-weight: 500;\n            margin-bottom: 5px;\n            text-transform: capitalize;\n        }\n        .small-banner .single-banner a {\n            color: #333;\n            margin-top: 22px;\n            display: block;\n            font-size: 12px;\n            font-weight:500;\n            display: inline-block;\n            text-transform:uppercase;\n            border-bottom:2px solid #333;\n        }\n        .small-banner .single-banner a:hover{\n            color:#F7941D;\n            border-color:#F7941D;\n        }\n        /*======================================\n           End Small Banner CSS\n        ========================================*/\n\n        /*======================================\n           Start Mid Banner CSS\n        ========================================*/\n        .midium-banner{\n            padding:0;\n        }\n        .midium-banner .single-banner{\n            position:relative;\n        }\n        .midium-banner .single-banner img{\n            height:100%;\n            width:100%;\n            transition:all 0.4s ease;\n        }\n        .midium-banner .single-banner .content {\n            padding-left:50px;\n            position: absolute;\n            left: 0;\n            top: 50%;\n            transform:translateY(-50%);\n        }\n        .midium-banner .single-banner h3 {\n            font-size: 27px;\n            font-weight: 700;\n            text-transform: uppercase;\n            color: #333;\n            line-height: 30px;\n        }\n        .midium-banner .single-banner h3 span{\n            color:#F7941D;\n        }\n        .midium-banner .single-banner p {\n            font-size: 13px;\n            color: #F7941D;\n            font-weight: 500;\n            margin-bottom: 5px;\n            text-transform: uppercase;\n        }\n        .midium-banner .single-banner a {\n            display: inline-block;\n            font-weight: 600;\n            text-align: center;\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            padding: .375rem .75rem;\n            font-size: 13px;\n            border-radius: .25rem;\n            background: #333;\n            color: #fff !important;\n            padding: 10px 27px;\n            border-radius: 30px;\n            margin-top: 25px;\n            text-transform: uppercase;\n        }\n        .midium-banner .single-banner a:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        /*======================================\n           End Mid Banner CSS\n        ========================================*/\n\n        /*======================================\n           Start Most Popular CSS\n        ========================================*/\n        .pro-tab-viewmore-wrap {\n            position: relative;\n            text-align: center;\n        }\n        .most-popular .section-title{\n            margin-bottom:40px;\n        }\n        .pro-tab-viewmore-wrap .pro-viewmore {\n          position: absolute;\n          right: 40px;\n          top: 0;\n        }\n        .most-popular .single-product{\n            margin:50px 15px 0 15px;\n        }\n        /* Slider Nav */\n        .most-popular .owl-nav{\n            margin: 0;\n            position: absolute;\n            top: 50%;\n            width: 100%;\n            margin-top:-25px;\n        }\n        .most-popular .owl-carousel .owl-nav div {\n            height: 60px;\n            width: 30px;\n            line-height: 58px;\n            background: #fff;\n            color: #333;\n            position: absolute;\n            margin: 0;\n            border-radius: 0;\n            font-size: 15px;\n            text-align: center;\n            transition:all 0.4s ease;\n            box-shadow: 0px 0px 10px #3333331c;\n        }\n        .most-popular .owl-carousel .owl-nav div:hover{\n            color:#fff;\n            background:#F7941D;\n        }\n        .most-popular .owl-carousel .owl-controls .owl-nav .owl-prev{\n            left:0;\n        }\n        .most-popular .owl-carousel .owl-controls .owl-nav .owl-next{\n            right:0;\n        }\n        /*======================================\n           End Most Popular CSS\n        ========================================*/\n\n        /*======================================\n           Start Single Product CSS\n        ========================================*/\n        .product-area .nav-tabs {\n            text-align: center;\n            display: inline-block;\n            width: 100%;\n            border:none;\n        }\n        .product-area .nav-tabs .nav-item {\n            margin-bottom: -1px;\n            display: inline-block;\n        }\n        .product-area .nav-tabs li a {\n            color: #333;\n            text-transform: uppercase;\n            display: inline-block;\n            position: relative;\n            margin-right: 5px;\n            font-weight: 500;\n            background: #fff;\n            color: #333;\n            padding: 3px 14px;\n            border-radius: 3px;\n            font-size: 13px;\n        }\n        .product-area .nav-tabs li:last-child a{\n            border-color:transparent;\n        }\n        .product-area .nav-tabs li a i{\n            margin-right:10px;\n        }\n        .product-area .nav-tabs li a.active,\n        .product-area .nav-tabs li:hover a{\n            background:#F7941D;\n            color:#fff;\n            border-color:transparent;\n        }\n        /* Sinlge Product */\n        .single-product{\n            margin-top:50px;\n        }\n        .single-product .product-img {\n          position: relative;\n          overflow: hidden;\n          cursor:pointer;\n        }\n        .single-product .product-img a {\n          display: block;\n          position: relative;\n        }\n        .single-product .product-img a img {\n          width: 100%;\n        }\n        .single-product .product-img a img.hover-img {\n          position: absolute;\n          left: 0;\n          top: 0;\n          z-index: 1;\n          opacity: 0;\n          transition: opacity 0.5s ease, transform 2s cubic-bezier(0, 0, 0.44, 1.18);\n        }\n        .single-product .product-img a span.price-dec {\n            background-color: #f6931d;\n            display: inline-block;\n            font-size: 11px;\n            color: #fff;\n            right: 20px;\n            top: 20px;\n            padding: 1px 16px;\n            font-weight: 700;\n            border-radius: 0;\n            text-align: center;\n            position: absolute;\n            text-transform: uppercase;\n            border-radius: 30px;\n            height: 26px;\n            line-height: 25px;\n        }\n        .single-product .product-img a span.new {\n            background-color: #8493ca;\n            display: inline-block;\n            font-size: 11px;\n            color: #fff;\n            right: 20px;\n            top: 20px;\n            padding: 1px 16px;\n            font-weight: 700;\n            border-radius: 0;\n            text-align: center;\n            position: absolute;\n            text-transform: uppercase;\n            border-radius: 30px;\n            height: 26px;\n            line-height: 24px;\n        }\n        .single-product .product-img a span.out-of-stock {\n            background-color: #ed1b24;\n            display: inline-block;\n            font-size: 11px;\n            color: #fff;\n            right: 20px;\n            top: 20px;\n            padding: 1px 16px;\n            font-weight: 700;\n            border-radius: 0;\n            text-align: center;\n            position: absolute;\n            text-transform: uppercase;\n            border-radius: 30px;\n            height: 26px;\n            line-height: 24px;\n        }\n        .single-product .product-img .product-action {\n            display: inline-block;\n            position: absolute;\n            right: 0;\n            bottom: 0;\n            z-index: 99;\n            border-radius: 3px;\n        }\n        .single-product .product-img .product-action a {\n            background-color: transparent;\n            color: #333;\n            display: block;\n            font-size: 16px;\n            display: inline-block;\n            margin-right: 15px;\n            text-align: right;\n            height: 52px;\n            position: relative;\n            top: 2px;\n        }\n        .single-product .product-img .product-action a:last-child{\n            margin-right:0;\n            border:none;\n        }\n        .single-product .product-img .product-action a i {\n          line-height: 40px;\n        }\n        .single-product .product-img .product-action a span {\n            visibility: hidden;\n            position: absolute;\n            background: #F7941D !important;\n            color: #fff !important;\n            text-align: center;\n            padding: 5px 12px;\n            z-index: 3;\n            opacity: 0;\n            transition: opacity .6s, margin .3s;\n            font-size: 11px;\n            right: 0;\n            line-height: 14px;\n            top: -12px;\n            margin-top: -5px;\n            margin-right: 0;\n            display: inline-block;\n            width: 120px;\n            border-radius:15px 0 0 15px;\n        }\n        .single-product .product-img .button-head .product-action a span::after {\n            position: absolute;\n            content: \"\";\n            right: 0;\n            bottom: -12px;\n            border: 6px solid #F7941D;\n            border-left:0px solid transparent;\n            border-right:6px solid transparent;\n            border-bottom:6px solid transparent;\n        }\n        .single-product .product-img .product-action a:hover {\n            color:#F7941D;\n        }\n        .single-product .product-img .product-action a:hover span {\n          visibility: visible;\n          opacity: 1;\n          color:#333;\n          background:#fff;\n          margin-top: -12px;\n        }\n        .single-product .product-img .product-action.pro-action-width-dec a {\n          width: 30px;\n          height: 30px;\n          font-size: 14px;\n        }\n        .single-product .product-img .product-action.pro-action-width-dec a i {\n          line-height: 30px;\n        }\n        .single-product .product-img .product-action.pro-action-width-dec-2 {\n          bottom: 45px;\n        }\n        .single-product .product-img .product-action-2 {\n            position: absolute;\n            left: 0;\n            bottom: 0;\n            text-align: left;\n            z-index: 99;\n            transition: all 250ms ease-out;\n        }\n        .single-product .product-img .product-action-2 a {\n            display: block;\n            background-color: transparent;\n            color: #333;\n            text-align: left;\n            font-size: 12px;\n            font-weight: 600;\n            text-transform: uppercase;\n            line-height: 1;\n            display: inline-block;\n        }\n        .single-product .product-img .product-action-2 a:hover {\n          color:#F7941D;\n        }\n        .single-product .button-head {\n            background: #fff;\n            display: inline-block;\n            height: 40px;\n            width: 100%;\n            position: absolute;\n            left: 0;\n            bottom: -50px;\n            z-index: 9;\n            height: 50px;\n            line-height: 50px;\n            transition:all 0.4s ease;\n        }\n        .single-product:hover .button-head{\n            bottom:0;\n        }\n        .single-product .product-img .shop-list-quickview {\n          position: absolute;\n          top: 50%;\n          transform: translateY(-50%);\n          left: 0;\n          right: 0;\n          text-align: center;\n          z-index: 99;\n          margin-top: 20px;\n          visibility: hidden;\n          opacity: 0;\n          transition: all .35s ease 0s;\n        }\n        .single-product .product-img .shop-list-quickview a {\n          color: #000;\n          background-color: #fff;\n          display: inline-block;\n          width: 50px;\n          height: 50px;\n          border-radius: 100%;\n          font-size: 18px;\n        }\n        .single-product .product-img .shop-list-quickview a:hover {\n          background-color: #222;\n          color: #fff;\n        }\n        .single-product .product-img .shop-list-quickview a i {\n          line-height: 50px;\n        }\n        .single-product .product-content{\n            margin-top:20px;\n        }\n        .single-product .product-img:hover.default-overlay::before {\n          background-color: rgba(38, 38, 38, 0.2);\n          z-index: 9;\n          transition: all 250ms ease-out;\n          pointer-events: none;\n          opacity: 1;\n        }\n        .single-product .product-img:hover.default-overlay.metro-overlay::before {\n          background-color: rgba(38, 38, 38, 0.4);\n          z-index: 9;\n          transition: all 250ms ease-out;\n          pointer-events: none;\n          opacity: 1;\n        }\n        .single-product .product-img:hover img.hover-img {\n          opacity: 1;\n        }\n        .single-product .product-content h3 {\n            line-height: 22px;\n        }\n        .single-product .product-content h3 a {\n            font-size: 14px;\n            font-weight: 500;\n            margin: 0;\n        }\n        .single-product .product-content h3 a:hover{\n            color:#F7941D;\n        }\n        .single-product .product-content .product-price {\n          margin: 6px 0 0 0;\n        }\n        .single-product .product-content .product-price span {\n            font-size: 15px;\n            font-weight: 500;\n        }\n        .single-product .product-content .product-price span.old {\n          text-decoration: line-through;\n          opacity: .6;\n          margin-right: 2px;\n        }\n        /*======================================\n           End Single Product CSS\n        ========================================*/\n\n        /*======================================\n           Start Shop Sidebar CSS\n        ========================================*/\n        .shop-sidebar .single-widget {\n            margin-top: 30px;\n            background: #F6F7FB;\n            padding: 30px;\n        }\n        .shop-sidebar .single-widget:first-child {\n            margin-top: 0;\n        }\n        .shop-sidebar .single-widget .title {\n            position: relative;\n            font-size: 18px;\n            font-weight: 500;\n            text-transform: capitalize;\n            margin-bottom: 25px;\n            display: block;\n            border-bottom: 1px solid #ddd;\n            padding-bottom: 15px;\n        }\n        /* Shop Price */\n        .shop .range .price-filter {\n            display: block;\n            margin-top: 20px;\n        }\n        .shop .range #slider-range {\n            box-shadow: none;\n            border: none;\n            height: 4px;\n            background: #F7941D;\n            color: #F7941D;\n            border-radius: 0px;\n        }\n        .shop .range #slider-range .ui-slider-range {\n            box-shadow: none;\n            background: #222;\n            border-radius: 0px;\n            border: none;\n        }\n        .shop .range .ui-slider-handle.ui-state-default.ui-corner-all {\n            width: 14px;\n            height: 14px;\n            line-height: 10px;\n            background: #222;\n            border: none;\n            border-radius: 100%;\n            top: -5px;\n        }\n        .shop .range .label-input {\n            margin-top: 15px;\n        }\n        .shop .range .label-input span{\n            margin-right:5px;\n            color:#282828;\n        }\n        .shop .range .ui-slider-handle.ui-state-default.ui-corner-all {\n            background: #F7941D;\n            color: #F7941D;\n            cursor:pointer;\n        }\n        .shop .range .label-input input {\n            border: none;\n            margin: 0;\n            font-weight: 600;\n            font-size: 14px;\n            color: #222;\n            background: transparent;\n        }\n        .shop .range .check-box-list {\n            margin-top: 15px;\n        }\n        .shop .range .check-box-list li {\n            margin-bottom: 5px;\n        }\n        .shop .range .check-box-list li:last-child{\n            margin:0;\n        }\n        .shop .range .check-box-list li label input {\n            display: inline-block;\n            margin-right: 6px;\n            position: relative;\n            top: 1px;\n        }\n        .shop .range .check-box-list li label {\n            margin: 0;\n            font-size: 14px;\n            font-weight: 400;\n            color:#333;\n            cursor:pointer;\n        }\n        .shop .range .check-box-list .count{\n            margin-left:5px;\n            color:#666;\n        }\n        /* Category List */\n        .shop-sidebar .categor-list {\n            margin-top: 10px;\n        }\n        .shop-sidebar .categor-list li{\n\n        }\n        .shop-sidebar .categor-list li {\n            margin-bottom: 10px;\n        }\n        .shop-sidebar .categor-list li:last-child{\n            margin-bottom:0px;\n        }\n        .shop-sidebar .categor-list li a {\n            display: inline-block;\n            color: #666;\n            font-weight: 400;\n            font-size: 14px;\n            text-transform: capitalize;\n        }\n        .shop-sidebar .categor-list li a:hover{\n            color:#F7941D;\n        }\n        /* Recent Post */\n        .shop-sidebar .single-post {\n            position: relative;\n            margin-top: 30px;\n            padding-bottom: 30px;\n            border-bottom: 1px solid #ddd;\n        }\n        .shop-sidebar .single-post.first{\n            padding-top:0px;\n        }\n        .shop-sidebar .single-post:last-child{\n            padding-bottom:0px;\n            border:none;\n        }\n        .shop-sidebar .single-post .image img{\n            height: 80px;\n            width: 80px;\n            position:absolute;\n            left:0;\n            top:0;\n            border-radius:100%;\n        }\n        .shop-sidebar .single-post .content{\n            padding-left:100px;\n        }\n        .shop-sidebar .single-post .content h5 {\n            line-height: 18px;\n        }\n        .shop-sidebar .single-post .content h5 a {\n            color: #222;\n            font-weight: 500;\n            font-size: 14px;\n            font-weight: 500;\n            display: block;\n        }\n        .shop-sidebar .single-post .content h5 a:hover{\n            color:#F7941D;\n        }\n        .shop-sidebar .single-post .content .price {\n            display: block;\n            color: #333;\n            font-weight: 500;\n            margin: 5px 0 0px 0;\n            text-transform: uppercase;\n            font-size: 14px;\n        }\n        .shop-sidebar .single-post .reviews li{\n            display:inline-block;\n        }\n        .shop-sidebar .single-post .reviews li i{\n            color:#999;\n        }\n        .shop-sidebar .single-post .reviews li.yellow i{\n            color:#F7941D;\n        }\n        /* Shop Topbar */\n        .shop .shop-top {\n            clear: both;\n            background: #f6f7fb;\n            padding: 18px 20px 50px 20px;\n        }\n        .shop .shop-shorter {\n            float: left;\n        }\n        .shop .single-shorter {\n            display: inline-block;\n            margin-right: 10px;\n        }\n        .shop .single-shorter:last-child{\n            margin:0;\n        }\n        .shop .single-shorter label {\n            display: inline-block;\n            float: left;\n            margin: 4px 5px 0 0;\n            font-weight:500;\n        }\n        .shop .single-shorter option{}\n        .shop .nice-select {\n            clear: initial;\n            display: inline-block;\n            margin: 0;\n            border: 1px solid #e6e6e6;\n            border-radius: 0px;\n            height: auto;\n            width: auto;\n            border-radius: 0px;\n        }\n        .shop .nice-select::after{\n            border-color:#888;\n        }\n        .shop .nice-select .list {\n            border-radius:0px;\n        }\n        .shop .nice-select .option.selected {\n            font-weight: 500;\n        }\n        .shop .nice-select .list li{\n            color:#666;\n            border-radius:0px;\n        }\n        .shop .nice-select .list li:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        .shop .view-mode {\n            float: right;\n        }\n        .shop .view-mode li {\n            display: inline-block;\n            margin-right: 5px;\n        }\n        .shop .view-mode li:last-child{\n            margin:0;\n        }\n        .shop .view-mode li a {\n            width: 43px;\n            height: 32px;\n            background: transparent;\n            border: 1px solid #77777775;\n            text-align: center;\n            display: block;\n            line-height: 32px;\n            color: #888;\n            border-radius: 0px;\n        }\n        .shop .view-mode li.active a,\n        .shop .view-mode li:hover a {\n            background: #F7941D;\n            color:#fff;\n            border-color:transparent;\n        }\n        /*======================================\n           End Shop Sidebar CSS\n        ========================================*/\n\n        /*======================================\n           Start Shop Single CSS\n        ========================================*/\n        .shop.single{\n            padding:70px 0 100px;\n        }\n        .shop.single .product-gallery {\n            margin-top: 30px;\n        }\n        .shop.single .flexslider-thumbnails {\n            position: relative;\n        }\n        .shop.single .product-gallery .slides li{\n            position:relative;\n        }\n        .shop.single .product-gallery .slides li img{\n            width:100%;\n        }\n        .shop.single .flex-control-nav{\n            margin-top:15px;\n        }\n        .shop.single .flex-control-thumbs li {\n            width: 20%;\n            position: relative;\n            margin: 0 8px 10px -3px;\n        }\n        .shop.single .flex-control-thumbs li img {\n            border: none;\n            padding: 0;\n            border:1px solid transparent;\n        }\n        .shop.single .flex-control-thumbs li img.flex-active{\n            border-color:#F7941D;\n        }\n        .shop.single .flex-direction-nav{\n            display:none;\n        }\n        .shop.single .product-des{\n            margin-top:30px;\n        }\n        .shop.single .product-des .short h4 {\n            font-size: 22px;\n            font-weight: 600;\n            margin-top: -5px;\n            line-height: 28px;\n        }\n        .shop.single .product-des .short .description {\n            font-size: 14px;\n            color: #555555;\n            margin-top: 20px;\n            margin-bottom: 20px;\n            padding-bottom: 20px;\n            border-bottom: 1px solid #eee;\n        }\n        .shop.single .product-des {}\n        .shop.single .product-des .total-review{\n            font-size:14px;\n            font-weight:500;\n            margin-left:10px;\n            display:inline-block;\n        }\n        .shop.single .product-des .total-review:hover{\n            color:#F7941D;\n        }\n        .shop.single .product-des  .rating{\n            margin-top:20px;\n            display:inline-block;\n        }\n        .shop.single .product-des .rating li{\n            display:inline-block;\n        }\n        .shop.single .product-des .rating li i{\n            color:#F7941D;\n        }\n        .shop.single .product-des .rating li.dark i{\n            color:#555;\n        }\n        .shop.single .product-des .price {\n            font-size: 20px;\n            color: #333;\n            font-weight: 600;\n            margin-top: 15px;\n        }\n        .shop.single .product-des .price s{\n            color:#333;\n        }\n        .shop.single .product-des .price span{\n            display:inline-block;\n            margin-right:15px;\n            color:#F7941D;\n        }\n        .shop.single .product-des .product-buy {\n            margin-top: 40px;\n        }\n        .shop.single .product-des .product-buy{}\n        .shop.single .product-des .color {\n            display: inline-block;\n            margin-right: 50px;\n        }\n        .shop.single .product-des .color h4 {\n            font-size: 18px;\n            font-weight: 600;\n        }\n        .shop.single .product-des .color h4 span {\n            display: block;\n            font-size: 14px;\n            font-weight: 500;\n            margin-top: 4px;\n        }\n        .shop.single .product-des .color ul{\n            margin-top: 10px;\n        }\n        .shop.single .product-des .color ul li{\n            display:inline-block;\n            margin-right:5px;\n        }\n        .shop.single .product-des .color ul li:last-child{\n            margin-right:0;\n        }\n        .shop.single .product-des .color ul li a{\n            height:30px;\n            width:30px;\n            line-height:30px;\n            text-align:center;\n            display:block;\n            background:#333;\n        }\n        .shop.single .product-des .color ul li a i{\n            font-size:11px;\n            color:#fff;\n            opacity:0;\n            visibility:hidden;\n            transition:all 0.4s ease;\n        }\n        .shop.single .product-des .color ul li a:hover i{\n            opacity:1;\n            visibility:visible;\n        }\n        .shop.single .product-des .color ul li .one{\n            background:#3498db;\n        }\n        .shop.single .product-des .color ul li .two{\n            background:#F7941D;\n        }\n        .shop.single .product-des .color ul li .three{\n            background:#8e44ad;\n        }\n        .shop.single .product-des .color ul li .four{\n            background:#2ecc71;\n        }\n        /* Size */\n        .shop.single .product-des .size{\n            display:inline-block;\n        }\n        .shop.single .product-des .size h4{\n            display: block;\n            font-size: 14px;\n            font-weight: 500;\n            margin-top: 0px;\n        }\n        .shop.single .product-des .size ul{\n            display:inline-block;\n            margin-top: 10px;\n        }\n        .shop.single .product-des .size ul li {\n            display: inline-block;\n            margin-right: 5px;\n        }\n        .shop.single .product-des .size ul li:last-child{\n            margin-right:0;\n        }\n        .shop.single .product-des .size ul li a {\n            display: block;\n            height: 30px;\n            width: 36px;\n            border: 1px solid #eee;\n            text-align: center;\n            line-height: 30px;\n            font-size: 14px;\n        }\n        .shop.single .product-des .size ul li a:hover{\n            color:#F7941D;\n        }\n        .shop.single .quantity {\n            display: inline-block;\n            margin-right: 10px;\n        }\n        .shop.single .quantity h6 {\n            display: inline-block;\n            margin-right: 10px;\n            font-size: 15px;\n            font-weight: 500;\n        }\n        .shop.single .quantity .input-group {\n            width: 151px;\n            display: inline-block;\n        }\n        .shop.single .quantity .button {\n            display: inline-block;\n            position: absolute;\n            top: 0;\n            display:inline-block;\n        }\n        .shop.single .quantity .button.minus{\n            left:0;\n            border-radius:0;\n            overflow:hidden;\n        }\n        .shop.single .quantity .button.plus {\n            right: 0;\n            border-radius:0;\n            overflow:hidden;\n        }\n        .shop.single .quantity .button .btn {\n            padding: 0;\n            width: 35px;\n            height: 45px;\n            line-height: 45px;\n            border-radius: 0px;\n            background: transparent;\n            color: #282828;\n            font-size: 12px;\n            border: none;\n        }\n        .shop.single .quantity .button .btn:hover{\n            color:#F7941D;\n        }\n        .shop.single .quantity .input-number {\n            border: 1px solid #eceded;\n            width: 100%;\n            text-align: center;\n            height: 45px;\n            border-radius: 0px;\n            overflow: hidden;\n            padding: 0px 38px;\n        }\n        .shop.single .add-to-cart {\n            display:inline-block;\n        }\n        .shop.single .add-to-cart .btn {\n            height: 45px;\n            width: auto;\n            padding: 0 42px;\n            line-height: 45px;\n            text-align: center;\n            text-transform: capitalize;\n            margin-right: 5px;\n            border-radius: 0px;\n            background: #333;\n            color: #fff;\n            display: inline-block;\n            font-weight: 500;\n        }\n        .shop.single .add-to-cart .btn:hover{\n            color:#fff;\n            background:#F7941D;\n        }\n        .shop.single .add-to-cart .btn.min {\n            padding: 0 20px;\n            font-size: 17px;\n            position: relative;\n            top: 1px;\n            line-height: 45px;\n        }\n        .shop.single .cat{\n            font-size: 14px;\n            font-weight: 500;\n            color:#333;\n            margin-top:30px;\n        }\n        .shop.single .cat a{\n            display:inline-block;\n            margin-left:10px;\n        }\n        .shop.single .cat a:hover{\n            color:#F7941D;\n        }\n        .shop.single .availability{\n            color:#333;\n            font-size:14px;\n            margin-top:6px;\n        }\n        /* Product Tab */\n        .shop.single .product-info {\n            margin-top: 50px;\n        }\n        .shop.single .nav-tabs {\n            border:none;\n        }\n        .shop.single .nav-tabs li {\n            margin-right: 10px;\n        }\n        .shop.single .nav-tabs li:last-child{\n            margin-right:0;\n        }\n        .shop.single .nav-tabs li a {\n            border: 0px solid;\n            border-radius: 0px;\n            background: #fff;\n            color: #333;\n            padding: 10px 30px;\n            font-weight: 500;\n            font-size: 14px;\n            border: 1px solid #eee;\n        }\n        .shop.single .nav-tabs li a i{\n            margin-right:10px;\n        }\n        .shop.single .nav-tabs li a.active,\n        .shop.single .nav-tabs li:hover a{\n            background:#F7941D;\n            color:#fff;\n            border-color:transparent;\n        }\n        .shop.single .tab-single {\n\n        }\n        .shop.single .single-des {\n            margin-top:35px;\n        }\n        .shop.single .single-des h4{\n            margin-bottom:15px;\n            font-weight:500;\n            font-size:22px;\n\n        }\n        .shop.single .single-des ul{}\n        .shop.single .single-des ul li {\n            color: #555;\n            display: block;\n            margin-bottom: 10px;\n            position:relative;\n            padding-left:20px;\n        }\n        .shop.single .single-des ul li::before {\n            position: absolute;\n            content: \"\";\n            left: 0;\n            top: 9px;\n            height: 7px;\n            width: 7px;\n            background: #f7941d;\n            border-radius: 50%;\n        }\n        .shop.single .single-des p{}\n\n        .shop.single .item-info {\n            width: 100%;\n        }\n        .shop.single .item-info tbody{}\n        .shop.single .item-info tbody tr{}\n        .shop.single .item-info tbody td {\n            border: 1px solid #e6e6e6;\n            padding: 10px;\n        }\n        .shop.single .item-info tbody strong{}\n        .shop.single .ratting-main{}\n        .shop.single .avg-ratting {\n            margin-bottom: 20px;\n        }\n        .shop.single .avg-ratting h4 {\n            font-size: 18px;\n            margin: 0;\n        }\n        .shop.single .avg-ratting h4 span{\n            font-size:14px;\n        }\n        .shop.single .single-rating {\n            margin-bottom: 20px;\n        }\n        .shop.single .single-rating:last-child{\n            margin:0;\n            border:none;\n            padding:0;\n        }\n        .shop.single .rating-author {\n            float: left;\n            margin-right: 10px;\n            padding: 20px;\n            padding-right: 10px;\n        }\n        .shop.single .rating-author img {\n            width: 60px;\n            border-radius: 100%;\n            height: 60px;\n        }\n        .shop.single .rating-des {\n            padding-left: 72px;\n            background: #f9f8f8;\n            padding: 17px 20px 17px 107px;\n        }\n        .shop.single .rating-des .ratings {\n            margin: 0;\n        }\n        .shop.single .rating-des h6 {\n            font-size: 14px;\n            font-weight: 600;\n            line-height: 18px;\n        }\n        .shop.single .ratting-main .single-rating ul{}\n        .shop.single .ratting-main .single-rating ul li{\n            display:inline-block;\n        }\n        .shop.single .ratting-main .single-rating ul li i{\n            color:#F7941D;\n            font-size:14px;\n        }\n        .shop.single .review-inner label {\n            display: inline-block;\n            margin: 0 5px 0 0;\n        }\n        .shop.single .review-inner .ratings {\n            overflow: visible;\n            display: inline-block;\n            margin: 0;\n        }\n        .shop.single .review-inner .ratings ul{\n            display:inline-block;\n        }\n        .shop.single .ratting-main .single-rating ul {\n            display: inline-block;\n            margin-right: 5px;\n        }\n        .shop.single .ratings .rate-count {\n            display: inline-block;\n            color: #666;\n            font-size: 13px;\n        }\n        .shop.single .comment-review {\n            margin-bottom: 30px;\n        }\n        .shop.single .comment-review .add-review{\n            margin-top:30px;\n        }\n        .shop.single .comment-review .add-review h5{\n            font-size: 18px;\n            font-weight: 600;\n            margin-bottom: 7px;\n        }\n        .shop.single .comment-review .add-review p{\n            color:#333;\n        }\n        .shop.single .comment-review h4 {\n            font-size: 15px;\n            font-weight: 600;\n            margin-bottom: 7px;\n            margin-top:20px;\n        }\n        .shop.single .comment-review .review-inner{\n            margin-bottom:15px;\n            display:block;\n        }\n        .shop.single .comment-review .rating li {\n            display:inline-block;\n        }\n        .shop.single .comment-review .rating li i{\n            color:#F7941D;\n            font-size: 14px;\n        }\n        .shop.single .rating-des p{\n            margin-top:5px;\n        }\n        .shop.single .avg-ratting h4 {\n            font-size: 20px;\n            color: #333;\n        }\n        .shop.single .avg-ratting{}\n        .shop.single .form .form-group input {\n            width: 100%;\n            height: 45px;\n            padding: 10px 20px;\n            background: #fff;\n            border: 1px solid #ddd;\n            resize: none;\n            border-radius: 0;\n            color: #333;\n        }\n        .shop.single .form .form-group button {\n            border: none;\n            padding: 17px 50px;\n        }\n        .shop.single .form .form-group textarea {\n            width: 100%;\n            height:200px;\n            padding: 20px;\n            background:#fff;\n            border:1px solid #ddd;\n            resize:none;\n            border-radius:0;\n            color:#333;\n        }\n        .shop.single .form .form-group label {\n            color: #333;\n            position: relative;\n        }\n        .shop.single .form .form-group label span {\n            color: #ff2c18;\n            display: inline-block;\n            position: absolute;\n            right: -12px;\n            top: 4px;\n            font-size: 16px;\n        }\n        .shop.single .review-panel{\n            margin-top:35px;\n        }\n        /*======================================\n           End Shop Single CSS\n        ========================================*/\n\n        /*======================================\n           Start Shop Home List CSS\n        ========================================*/\n        .shop-home-list{\n            padding:0;\n            padding-bottom:100px;\n        }\n        .shop-home-list .shop-section-title{\n            margin-bottom:20px;\n        }\n        .shop-home-list .shop-section-title h1 {\n            font-size: 22px;\n            margin-bottom: 0;\n            text-transform: capitalize;\n            position: relative;\n            color: #2c2d3f;\n            font-weight: 700;\n            margin-bottom: 10px;\n            padding-bottom: 10px;\n        }\n        .shop-home-list .shop-section-title h1::before {\n            position: absolute;\n            content: \"\";\n            height: 2px;\n            width: 50px;\n            background: #F7941D;\n            left: 0;\n            bottom: -1px;\n        }\n        .shop-home-list .single-list {\n            overflow: hidden;\n            position: relative;\n            margin-top: 30px;\n            border: 1px solid #eee;\n            padding: 10px;\n        }\n        .shop-home-list .single-list .list-image{\n            position:relative;\n        }\n        .shop-home-list .single-list .list-image.overlay:before{\n            background:#000;\n            opacity:0;\n            visibility:hidden;\n            transition:all 0.4s ease;\n        }\n        .shop-home-list .single-list .list-image.overlay:hover:before{\n            opacity:0.3;\n            visibility:visible;\n        }\n        .shop-home-list .single-list .list-image .buy{\n            height:40px;\n            width:40px;\n            line-height:40px;\n            font-size:14px;\n            color:#fff;\n            background:#F7941D;\n            border-radius:100%;\n            display:block;\n            position:absolute;\n            left:50%;\n            top:50%;\n            margin-left:-20px;\n            margin-top:-20px;\n            text-align:center;\n            transition:all 0.4s ease;\n            transform:scale(0);\n            opacity:0;\n            visibility:hidden;\n        }\n        .shop-home-list .single-list .list-image .buy:hover{\n            background:#fff;\n            color:#333;\n        }\n        .shop-home-list .single-list .list-image:hover .buy{\n            opacity:1;\n            visibility:visible;\n            transform:scale(1);\n        }\n        .shop-home-list .single-list .no-padding{\n            padding-right:0px;\n        }\n        .shop-home-list .single-list img{\n            width:100%;\n            height:100%;\n        }\n        .shop-home-list .single-list .content {\n            padding-top: 45px;\n            padding-right: 12px;\n        }\n        .shop-home-list .single-list .content .title {\n            line-height: 18px;\n        }\n        .shop-home-list .single-list .content .title a{\n            font-size: 14px;\n            font-weight: 600;\n        }\n        .shop-home-list .single-list .content .titlea {\n            color: #333;\n        }\n        .shop-home-list .single-list .content a:hover{\n            color: #F7941D;\n        }\n        .shop-home-list .single-list .content .price {\n            margin-top: 15px;\n            font-weight: 500;\n            background: #f7941d;\n            display: inline-block;\n            color: #fff;\n            padding: 2px 18px;\n            border-radius: 30px;\n            font-size: 14px;\n            font-weight: 500;\n        }\n        /*======================================\n           End Shop Home List CSS\n        ========================================*/\n\n        /*======================================\n           Start Shopping Cart CSS\n        ========================================*/\n        .table.shopping-summery {\n            background: #fff;\n        }\n        .shopping-cart {\n            background: #f6f6f6;\n            padding: 50px 0;\n        }\n        .shopping-summery thead .main-hading{\n            padding:0px 50px;\n        }\n        .shopping-summery thead {\n            background: #F7941D;\n            color: #fff;\n        }\n        .shopping-summery thead tr th {\n            border: none;\n            font-weight: 600;\n            color: #fff;\n            text-align: center;\n        }\n        .shopping-summery tbody tr {\n            border-bottom: 1px solid #F7941D;\n            margin-top: 20px;\n        }\n        .shopping-summery tbody tr img {\n            border-radius: 0;\n            width: 80px;\n            height: 80px;\n        }\n        .shopping-summery tbody tr:last-child{\n            border:none;\n        }\n        .shopping-summery tbody .product-name a {\n            font-weight: 600;\n            color: #282828;\n            font-weight: 600;\n            font-size: 17px;\n        }\n        .shopping-cart .table p {\n            font-size: 14px;\n            color: #666;\n        }\n        .shopping-summery tbody .product-name a:hover{\n            color:#F7941D;\n        }\n        .shopping-summery tbody .product img {\n            max-width: 70px;\n            border-radius: 100%;\n            max-height: 65px;\n            border: 1px solid #e6e6e6;\n            padding: 4px;\n        }\n        .shopping-summery tbody .product:hover img{\n            border-color:#F7941D;\n            transform:rotate(360deg);\n        }\n        .shopping-cart .border{\n\n        }\n        .shopping-cart .table .remove-icon{\n            font-size:16px;\n        }\n        .shopping-cart .table td {\n            vertical-align: middle;\n            border-top: 1px solid #eee;\n            padding: 30px;\n        }\n        .shopping-summery tbody .price {\n            text-align: center;\n        }\n        .shopping-summery tbody .price span{}\n        .shopping-cart tbody .qty .input-group {\n            width: 175px;\n            display: inline-block;\n        }\n        .shopping-cart .qty .button {\n            display: inline-block;\n            position: absolute;\n            top: 0;\n        }\n        .shopping-cart .qty .button.minus{\n            left:0;\n            border-radius:0;\n            overflow:hidden;\n        }\n        .shopping-cart .qty .button.plus {\n            right: 0;\n            border-radius:0;\n            overflow:hidden;\n        }\n        .shopping-cart .qty .button .btn {\n            padding: 0;\n            width: 44px;\n            height: 47px;\n            line-height: 50px;\n            border-radius: 0px;\n            background: transparent;\n            color: #282828;\n            border: none;\n            font-size: 12px;\n        }\n        .shopping-cart .qty .button .btn:hover{\n            color:#F7941D;\n        }\n        .shopping-cart .qty .input-number {\n            border: 1px solid #eceded;\n            width: 100%;\n            text-align: center;\n            height: 47px;\n            border-radius:0;\n            overflow: hidden;\n            padding: 0px 45px;\n        }\n        .shopping-summery tbody .total-amount {\n            text-align: center;\n        }\n        .shopping-summery tbody .total-amount span{}\n        .shopping-summery tbody .action {\n            text-align: center;\n        }\n        .shopping-summery tbody .action a:hover{\n            color:#F7941D;\n        }\n        .shopping-cart .total-amount{\n            margin-top:50px;\n        }\n        .shopping-cart .total-amount .left{}\n        .shopping-cart .total-amount .left .coupon{}\n        .shopping-cart .total-amount .left .coupon form{}\n        .shopping-cart .total-amount .left .coupon form input {\n            width: 220px;\n            display: inline-block;\n            height: 48px;\n            color: #333;\n            padding: 0px 20px;\n            border: none;\n            box-shadow: 0px 0px 5px #0000000a;\n        }\n        .shopping-cart .total-amount .left .coupon form .btn {\n            display: inline-block;\n            height: 48px;\n            border: navajowhite;\n            margin-left: 4px;\n            background: transparent;\n            color: #333;\n            background: #fff;\n            box-shadow: 0px 0px 5px #00000012;\n        }\n        .shopping-cart .total-amount .left .coupon form .btn:hover{\n            background:#fff;\n            color:#F7941D;\n        }\n        .shopping-cart .total-amount .left label{\n            font-size:22px;\n            font-weight:500;\n            color:#333;\n        }\n        .shopping-cart .total-amount .left .checkbox {\n            text-align: left;\n            margin: 0;\n            margin-top: 20px;\n        }\n        .shopping-cart .total-amount .left .checkbox label {\n            font-size: 15px;\n            font-weight: 400;\n            color: #333;\n            position: relative;\n            padding-left: 30px;\n        }\n        .shopping-cart .total-amount .left .checkbox label:hover{\n            cursor:pointer;\n        }\n        .shopping-cart .total-amount .left .checkbox label input{\n            display:none;\n        }\n        .shopping-cart .total-amount .left .checkbox label::before {\n            position: absolute;\n            content: \"\";\n            left: 0;\n            top: 4px;\n            width: 16px;\n            height: 16px;\n            border: 1px solid #555555;\n            border-radius: 0px;\n        }\n        .shopping-cart .total-amount .left .checkbox label::after {\n            position: absolute;\n            content: \"\\F00C\";\n            font-family: \"Fontawesome\";\n            left: 0;\n            top: 0;\n            width: 22px;\n            height: 22px;\n            line-height: 24px;\n            left: 3px;\n            top: 0px;\n            opacity: 0;\n            visibility: hidden;\n            transform: scale(0);\n            transition: all 0.4s ease;\n            display: block;\n            font-size: 11px;\n        }\n        .shopping-cart .total-amount .left .checkbox label.checked::after{\n            opacity:1;\n            visibility:visible;\n            transform:scale(1);\n        }\n        .shopping-cart .total-amount .right {\n            padding-left: 100px;\n        }\n        .shopping-cart .total-amount .right ul{\n\n        }\n        .shopping-cart .total-amount .right ul li {\n            font-size: 15px;\n            font-weight: 400;\n            color: #333;\n            margin-bottom: 12px;\n        }\n        .shopping-cart .total-amount .right ul li.last {\n            padding-top: 12px;\n            border-top: 1px solid #c8c8c8;\n            color: #333;\n            font-size: 15px;\n            font-weight: 400;\n        }\n        .shopping-cart .total-amount .right ul li span{\n            display:inline-block;\n            float:right;\n        }\n        .shopping-cart .total-amount .right .button5 .btn {\n            text-align: center;\n            border-radius: 0;\n            width: 100%;\n            margin-top: 10px;\n            height: 46px;\n            line-height: 18px;\n            font-size: 13px;\n            color: #fff;\n        }\n        /*======================================\n           End Shopping Cart CSS\n        ========================================*/\n\n        /*======================================\n           Start Checkout Form CSS\n        ========================================*/\n        .shop.checkout {\n            padding: 0;\n            background: #fff;\n            padding-top: 20px;\n            padding-bottom: 50px;\n        }\n        .shop.checkout .checkout-form {\n            margin-top: 30px;\n        }\n        .shop.checkout .checkout-form h2 {\n            font-size: 25px;\n            color: #333;\n            font-weight: 700;\n            line-height: 27px;\n        }\n        .shop.checkout .checkout-form p {\n            font-size: 16px;\n            color: #333;\n            font-weight: 400;\n            margin-top: 12px;\n            margin-bottom: 30px;\n        }\n        .shop.checkout .form{}\n        .shop.checkout .form .form-group {\n            margin-bottom: 25px;\n        }\n        .shop.checkout .form .form-group label{\n            color:#333;\n            position:relative;\n        }\n        .shop.checkout .form .form-group label span {\n            color: #ff2c18;\n            display: inline-block;\n            position: absolute;\n            right: -12px;\n            top: 4px;\n            font-size: 16px;\n        }\n        .shop.checkout .form .form-group input {\n            width: 100%;\n            height: 45px;\n            line-height: 50px;\n            padding: 0 20px;\n            border-radius: 3px;\n            border-radius: 0px;\n            color: #333 !important;\n            border: none;\n            background: #F6F7FB;\n        }\n        .shop.checkout .form .form-group input:hover{\n\n        }\n        .shop.checkout .nice-select {\n            width: 100%;\n            height: 45px;\n            line-height: 50px;\n            margin-bottom: 25px;\n            background: #F6F7FB;\n            border-radius: 0px;\n            border:none;\n        }\n        .shop.checkout .nice-select .list {\n            width: 100%;\n            height: 300px;\n            overflow: scroll;\n        }\n        .shop.checkout .nice-select .list li{}\n        .shop.checkout .nice-select .list li.option{\n            color:#333;\n        }\n        .shop.checkout .nice-select .list li.option:hover{\n            background:#F6F7FB;\n            color:#333;\n        }\n        .shop.checkout .form .address input {\n            margin-bottom: 15px;\n        }\n        .shop.checkout .form .address input:last-child{\n            margin:0;\n        }\n        .shop.checkout .form .create-account {\n            margin: 0;\n        }\n        .shop.checkout .form .create-account input {\n            width: auto;\n            display: inline-block;\n            height: auto;\n            border-radius: 100%;\n            margin-right: 3px;\n        }\n        .shop.checkout .form .create-account label {\n            display: inline-block;\n            margin: 0;\n        }\n        .shop.checkout .order-details {\n            margin-top: 30px;\n            background: #fff;\n            padding: 15px 0 30px 0;\n            border: 1px solid #eee;\n        }\n        .shop.checkout .single-widget {\n            margin-bottom: 30px;\n        }\n        .shop.checkout .single-widget:last-child{\n            margin:0;\n        }\n        .shop.checkout .single-widget h2 {\n            position:relative;\n            font-size: 15px;\n            font-weight: 600;\n            padding: 10px 30px;\n            line-height: 24px;\n            text-transform: uppercase;\n            color: #333;\n            padding-bottom: 5px;\n        }\n        .shop.checkout .single-widget h2:before{\n            position:absolute;\n            content:\"\";\n            left:30px;\n            bottom:0;\n            height:2px;\n            width:50px;\n            background:#F7941D;\n        }\n        .shop.checkout .single-widget .content ul{\n            margin-top:30px;\n        }\n        .shop.checkout .single-widget .content ul li {\n            display: block;\n            padding: 0px 30px;\n            font-size: 15px;\n            font-weight: 400;\n            color: #333;\n            margin-bottom: 12px;\n        }\n        .shop.checkout .single-widget .content ul li span{\n            display:inline-block;\n            float:right;\n        }\n        .shop.checkout .single-widget .content ul li.last {\n            padding-top: 12px;\n            border-top: 1px solid #ebebeb;\n            display: block;\n            font-size: 15px;\n            font-weight: 400;\n            color: #333;\n        }\n        .shop.checkout .single-widget .checkbox {\n            text-align: left;\n            margin: 0;\n            padding: 0px 30px;\n            margin-top:30px;\n        }\n        .shop.checkout .single-widget .checkbox label {\n            color: #555555;\n            position: relative;\n            font-size: 14px;\n            padding-left: 20px;\n            margin-top: -5px;\n            font-weight: 400;\n            display: block;\n            margin-bottom: 15px;\n        }\n        .shop.checkout .single-widget .checkbox label:last-child{\n            margin-bottom:0;\n        }\n        .shop.checkout .single-widget .checkbox label:hover{\n            cursor:pointer;\n        }\n        .shop.checkout .single-widget .checkbox label input{\n            display:none;\n        }\n        .shop.checkout .single-widget .checkbox label::before {\n            position: absolute;\n            content: \"\";\n            left: 0;\n            top: 7px;\n            width: 12px;\n            height: 12px;\n            line-height: 16px;\n            border: 1px solid #666;\n            border-radius: 100%;\n        }\n        .shop.checkout .single-widget .checkbox label::after {\n            position: absolute;\n            content: \"\";\n            left: 0;\n            top: 7px;\n            width: 12px;\n            height: 12px;\n            line-height: 16px;\n            border-radius: 100%;\n            display:block;\n            background:#666;\n            transform:scale(0);\n            transition:all 0.4s ease;\n        }\n        .shop.checkout .single-widget .checkbox label.checked::after{\n            opacity:1;\n            visibility:visible;\n            transform:scale(1);\n        }\n        .shop.checkout .single-widget.payement {\n            padding: 0px 38px;\n            text-align: center;\n            margin-top: 30px;\n        }\n        .shop.checkout .single-widget.get-button {\n            text-align: center;\n            padding:0px 35px;\n        }\n        .shop.checkout .single-widget.get-button .btn {\n            height: 46px;\n            width: 100%;\n            line-height: 19px;\n            text-align: center;\n            border-radius: 0;\n            text-transform: uppercase;\n            color: #fff;\n        }\n        /*======================================\n           End Checkout Form CSS\n        ========================================*/\n\n        /*======================================\n           Login & Register CSS\n        ========================================*/\n        .shop.login {\n            padding: 100px 0;\n        }\n        .shop.login .login-form h2 {\n            position:relative;\n            font-size: 35px;\n            color: #333;\n            font-weight: 400;\n            line-height: 27px;\n            text-transform: uppercase;\n            margin-bottom: 12px;\n            padding-bottom: 20px;\n            text-align: center;\n        }\n        .shop.login .login-form h2:before{\n            position:absolute;\n            content:\"\";\n            left:50%;\n            bottom:0;\n            height:2px;\n            width:50px;\n            background:#F7941D;\n            margin-left:-25px;\n        }\n        .shop.login .login-form p {\n            font-size: 14px;\n            color: #333;\n            font-weight: 400;\n            text-align: center;\n            margin-bottom:50px;\n        }\n        .shop.login .form {\n            margin-top: 30px;\n        }\n        .shop.login .form .form-group {\n            margin-bottom: 22px;\n        }\n        .shop.login .form .form-group input {\n            width: 100%;\n            height: 45px;\n            line-height: 50px;\n            padding: 0 20px;\n            border-radius: 3px;\n            border-radius: 0px;\n            color:#333 !important;\n            border: none;\n            background:#F6F7FB;\n        }\n        .shop.login .form .form-group label {\n            color: #333;\n            position: relative;\n        }\n        .shop.login .form .form-group label span {\n            color: #ff2c18;\n            display: inline-block;\n            position: absolute;\n            right: -12px;\n            top: 4px;\n            font-size: 16px;\n        }\n        .shop.login .form .form-group input:hover{\n            border-color:#1308a3;\n            color:#1308a3;\n        }\n        .shop.login .form .form-group.login-btn {\n            margin: 0;\n        }\n        .shop.login .form button {\n            border: none;\n        }\n        .shop.login .form .btn {\n            display: inline-block;\n            margin-right: 10px;\n            height: 46px;\n            color: #fff;\n            line-height: 20px;\n        }\n        .shop.login .form .btn:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        .shop.login .login-form .checkbox {\n            text-align: left;\n            margin: 0;\n            margin-top: 20px;\n            display:inline-block;\n        }\n        .shop.login .login-form .checkbox label {\n            font-size: 14px;\n            font-weight: 400;\n            color: #333;\n            position: relative;\n            padding-left: 20px;\n        }\n        .shop.login .login-form .checkbox label:hover{\n            cursor:pointer;\n        }\n        .shop.login .login-form .checkbox label input{\n            display:none;\n        }\n        .shop.login .login-form .checkbox label::before {\n            position: absolute;\n            content: \"\";\n            left: 0;\n            top: 6px;\n            width: 12px;\n            height: 12px;\n            border: 1px solid #555555;\n            border-radius: 0px;\n        }\n        .shop.login .login-form .checkbox label::after {\n            position: absolute;\n            content: \"\\F00C\";\n            font-family: \"Fontawesome\";\n            width: 12px;\n            height: 12px;\n            line-height: 23px;\n            left: 2px;\n            top: 0px;\n            opacity: 0;\n            visibility: hidden;\n            transform: scale(0);\n            transition: all 0.4s ease;\n            display: block;\n            font-size: 9px;\n        }\n        .shop.login .login-form .checkbox label.checked::after{\n            opacity:1;\n            visibility:visible;\n            transform:scale(1);\n        }\n        .shop.login .login-form .lost-pass{\n            display:inline-block;\n            margin-left:25px;\n            color:#333;\n            font-size:14px;\n            font-weight:400;\n        }\n        .shop.login .login-form .lost-pass:hover{\n            color:#F7941D;\n        }\n        /*======================================\n            End Login CSS\n        ========================================*/\n\n        /*======================================\n           Start Shop List CSS\n        ========================================*/\n        .shop-list .list-content{\n            margin-top:50px;\n        }\n        .shop-list .list-content .product-price{}\n        .shop-list .list-content .product-price span {\n            font-size: 14px;\n            font-weight: 600;\n            margin-bottom: 3px;\n            display: block;\n        }\n        .shop-list .list-content .title {\n            line-height: 20px;\n        }\n        .shop-list .list-content .title a:hover{\n            color:#F7941D;\n        }\n        .shop-list .list-content .title a {\n            font-size: 18px;\n            font-weight: 600;\n        }\n        .shop-list .list-content .rating {\n            margin: 5px 0 8px 0;\n        }\n        .shop-list .list-content .rating li{\n            display:inline-block;\n        }\n        .shop-list .list-content .rating li i{\n            color: #F7941D;\n        }\n        .shop-list .list-content .rating li.total {\n            color: #333;\n            font-size: 12px;\n            margin-left: 3px;\n        }\n        .shop-list .list-content .des{}\n        .shop-list .list-content .btn {\n            margin-top: 22px;\n            height: 42px;\n            line-height: 15px;\n            color: #333;\n            background: transparent;\n            border: 1px solid #cecece;\n            font-size: 13px;\n            border-radius: 30px;\n            height: auto;\n            line-height: a;\n            padding: 13px 32px;\n        }\n        .shop-list .list-content .btn:hover{\n            background:#F7941D;\n            color:#fff;\n            border-color:transparent;\n        }\n        /* Pagination CSS */\n        .pagination {\n            text-align: left;\n            margin: 50px 0 0 0;\n            display:block;\n        }\n        .pagination.center {\n            text-align: center;\n        }\n        .pagination .pagination-list li {\n            margin-right: 5px;\n            display: inline-block;\n        }\n        .pagination .pagination-list li:last-child{\n            margin-right:0px;\n        }\n        .pagination .pagination-list li a {\n            background: #F6F7FB;\n            color: #666;\n            padding: 6px 18px;\n            font-weight: 400;\n            border: 1px solid #e1e1e1;\n            font-size: 16px;\n            border-radius: 0px;\n        }\n        .pagination .pagination-list li.active a,\n        .pagination .pagination-list li:hover a{\n            background: #F7941D;\n            color: #fff;\n            border-color: transparent;\n        }\n        .pagination .pagination-list li a i{\n            font-size:13px;\n        }\n        .pagination .pagination-list li a i{}\n        .blog-grids.pagination{\n            margin-top:50px;\n            text-align:center;\n        }\n        /*======================================\n           End Shop List CSS\n        ========================================*/\n\n        /*=============================\n            Start Cowndown CSS\n        ===============================*/\n        .cown-down {\n            position: relative;\n            height: 515px;\n            overflow:hidden;\n        }\n        .cown-down .padding-right{\n            padding-right:0;\n        }\n        .cown-down .padding-left{\n            padding-left:0;\n        }\n        .cown-down .image img {\n            width:100%;\n            height:100%;\n        }\n        .cown-down .content {\n            text-align: center;\n            background: #FDFBEF;\n            height: 100%;\n            position:relative;\n        }\n        .cown-down .content .heading-block{\n            position:absolute;\n            left:0;\n            top:50%;\n            transform:translateY(-50%);\n            padding: 75px;\n        }\n        .cown-down .content .small-title {\n            font-size: 13px;\n            color: #777;\n            display: block;\n            text-transform: uppercase;\n            margin-bottom: 5px;\n            font-weight: 600;\n        }\n        .cown-down .content .title {\n            font-size: 25px;\n            font-weight: 600;\n            margin-bottom: 20px;\n            text-transform: capitalize;\n        }\n        .cown-down .content .price {\n            margin-top: 35px;\n            font-size: 35px;\n            font-weight: 700;\n            color: #F7941D;\n        }\n        .cown-down .content .price s{\n            margin-top: 35px;\n            font-size: 24px;\n            font-weight: 500;\n            color:#666;\n        }\n        .cown-down .content .cdown {\n            float: none;\n            text-align:center;\n            margin-top:40px;\n            width: 80px;\n            display:inline-block;\n\n        }\n        .cown-down .content .cdown {\n            text-align: center;\n        }\n        .cown-down .content .cdown{\n            display:inline-block;\n        }\n        .cown-down .content .cdown span {\n            color: #333;\n            font-size: 22px;\n            font-weight:400;\n            text-transform:uppercase;\n        }\n        .cown-down .content .cdown p{\n            font-size:13px;\n            color:#666;\n            text-transform:uppercase;\n        }\n        /*=============================\n            End Cowndown CSS\n        ===============================*/\n\n        /*======================================\n           Start Shop Services CSS\n        ========================================*/\n        .shop-services.section {\n            padding: 80px 0 0px 0;\n            background: #fff;\n        }\n        .shop-services.home{\n            padding:60px 0;\n            background:#F6F7FB;\n        }\n        .shop-services .single-service {\n            position: relative;\n            padding-left: 65px;\n        }\n        .shop-services .single-service i {\n            height: 50px;\n            width: 50px;\n            line-height: 50px;\n            text-align: center;\n            color: #333;\n            background: transparent;\n            border-radius: 100%;\n            display: block;\n            font-size: 32px;\n            position: absolute;\n            left: 0;\n            top: 0;\n        }\n        .shop-services .single-service h4 {\n            font-size: 14px;\n            font-weight: 600;\n            text-transform: uppercase;\n            line-height: 22px;\n            color: #333;\n        }\n        .shop-services .single-service p {\n            color: #898989;\n            line-height: 28px;\n            font-size:14px;\n        }\n        /*======================================\n           End Shop Services CSS\n        ========================================*/\n\n        /*======================================\n           Start Shop Newsletter CSS\n        ========================================*/\n        .shop-newsletter{\n            background:#fff;\n        }\n        .shop-newsletter .inner{\n            text-align:center;\n        }\n        .shop-newsletter .inner h4 {\n            color: #333;\n            font-size: 17px;\n            font-weight: 600;\n            margin-bottom: 5px;\n            text-transform: uppercase;\n        }\n        .shop-newsletter .inner p{\n            color:#777;\n            font-size:14px;\n            font-weight:400;\n            margin-bottom:30px;\n        }\n        .shop-newsletter .inner p span{\n            color:#F7941D;\n        }\n        .shop-newsletter .newsletter-inner{\n            position:relative;\n            display: inline-block;\n        }\n        .shop-newsletter .newsletter-inner input {\n            width: 480px;\n            height: 55px;\n            border-radius: 0px;\n            padding: 0px 30px;\n            font-weight: 400;\n            display: inline-block;\n            text-shadow: none;\n            box-shadow: none;\n            border-radius: 0;\n            border: none;\n            border: 1px solid #ececec;\n            border-radius: 30px 0 0 30px;\n        }\n        .shop-newsletter .newsletter-inner button{\n            border:none;\n            text-shadow:none;\n            box-shadow:none;\n            border-radius:0;\n        }\n        .shop-newsletter .newsletter-inner .btn {\n            display: inline-block;\n            height: 55px;\n            padding: 10px 30px;\n            position: relative;\n            top: 0;\n            background: #F7941D;\n            color: #fff;\n            left: -4px;\n            border-radius: 0 30px 30px 0;\n            font-size: 14px;\n            font-weight: 500;\n            text-transform: uppercase;\n        }\n        .shop-newsletter .newsletter-inner .btn:hover{\n            background:#333;\n            color:#fff;\n        }\n        /*======================================\n           End Shop Newsletter CSS\n        ========================================*/\n\n        /*=============================\n            About US CSS\n        ===============================*/\n        .about-us{\n            background:#fff;\n        }\n        .about-us .about-content {\n            padding-right: 50px;\n        }\n        .about-us .about-content .story{\n            display:block;\n            color:#04AAF4;\n            margin-bottom:20px;\n            font-size:17px;\n        }\n        .about-us .about-content .story i{\n            color:#04AAF4;\n            margin-right:5px;\n            font-size:22px;\n        }\n        .about-us .about-content h3 {\n            font-size: 30px;\n            font-weight: 600;\n            position: relative;\n            margin-bottom: 15px;\n            padding-bottom: 15px;\n        }\n        .about-us .about-content h3::before {\n            position: absolute;\n            content: \"\";\n            left: 0;\n            bottom: -1px;\n            height: 2px;\n            width: 60px;\n            background: #F7941D;\n        }\n        .about-us .about-content h3 span{\n            display:inline-block;\n            font-weight:700;\n            color:#F7941D;\n        }\n        .about-us .about-content p {\n            line-height: 26px;\n            margin-bottom: 10px;\n        }\n        .about-us .about-content p:last-child{\n            margin:0;\n        }\n        .about-us .about-content .button{\n            margin-top:40px;\n        }\n        .about-us .about-content .button .btn{\n            background:#333;\n            color:#fff;\n            margin-right:15px;\n        }\n        .about-us .about-content .button .btn:hover{\n            background:#F7941D;\n            color:#fff;\n        }\n        .about-us .about-content .button .btn.primary{\n            background:#F7941D;\n            color:#fff;\n        }\n        .about-us .about-content .button .btn.primary:hover{\n            background:#333;\n            color:#fff;\n        }\n        .about-us .about-content .button .btn:last-child{\n            margin:0;\n        }\n        .about-us .about-img {\n            position: relative;\n            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);\n            border: 10px solid #fff;\n        }\n        .about-us .about-img:before{\n            opacity:0;\n            visibility:hidden;\n            transition:all 0.4s ease;\n        }\n        .about-us .about-img:hover:before{\n            opacity:0.6;\n            visibility:visible;\n        }\n        .about-us .about-img .video {\n            height: 64px;\n            width: 64px;\n            line-height: 64px;\n            background: #F7941D;\n            color: #fff;\n            font-size: 20px;\n            border-radius: 100%;\n            display: block;\n            text-align: center;\n            position: absolute;\n            left: 50%;\n            top: 50%;\n            margin-left: -32px;\n            margin-top: -32px;\n            padding-left: 4px;\n            transform: scale(0);\n            transition: all 0.4s ease;\n        }\n        .about-us .about-img .video:hover{\n            background:#fff;\n            color:#F7941D;\n        }\n        .about-us .about-img:hover .video{\n            transform:scale(1);\n        }\n        .about-us .about-img img{\n            height:100%;\n            width:100%;\n\n        }\n        /*=============================\n            End About US CSS\n        ===============================*/\n\n        /*======================================\n          10. Start Team CSS\n        ========================================*/\n        .team{\n            background:#F6F7FB;\n        }\n        .team .title-line{\n            margin-bottom:40px;\n        }\n        .team .single-team {\n            margin-top: 30px;\n            position:relative;\n            transition: all 500ms ease;\n            display: inline-block;\n            overflow:hidden;\n            text-align:center;\n            background:#fff;\n        }\n        .team .single-team .info-head {\n            padding: 35px 30px;\n        }\n        .team .single-team .image img{\n            height:100%;\n            width:100%;\n        }\n        .team .single-team .info-box {\n            text-align:center;\n        }\n        .team .single-team .info-box .name {\n            display: block;\n            font-size: 17px;\n            color: #333;\n            font-weight: 500;\n            margin-bottom: 3px;\n            text-transform:capitalize;\n        }\n        .team .single-team .info-box .designation{\n            color:#aaa;\n            font-size:13px;\n        }\n        .team .single-team .social-links {\n            transition: all 500ms ease;\n            margin-top:15px;\n        }\n        .team .single-team .social-links .social li{\n            display:inline-block;\n            margin-right:15px;\n        }\n        .team .single-team .social-links .social li:last-child{\n            margin-right:0px;\n        }\n        .team .single-team .social-links .social li a {\n            color: #666;\n            display: block;\n            font-size: 14px;\n        }\n        .team .single-team .social-links .social li a:hover{\n            color:#F7941D;\n        }\n        /*======================================\n          End Team CSS\n        ========================================*/\n\n        /*======================================\n           Start Shop Blog CSS\n        ========================================*/\n        .shop-blog.grid .shop-single-blog{\n            margin-top:30px;\n        }\n        .shop-blog .shop-single-blog{\n            text-align:center;\n            transition:all 0.4s ease;\n        }\n        .shop-blog .shop-single-blog:hover{\n            box-shadow: 0px 10px 10px #0000000a;\n        }\n        .shop-blog .shop-single-blog img{\n            height:100%;\n            width:100%;\n        }\n        .shop-blog .shop-single-blog .content {\n            padding: 40px;\n        }\n        .shop-blog .shop-single-blog .content .title {\n            font-size: 17px;\n            font-weight: 600;\n            color: #333;\n        }\n        .shop-blog .shop-single-blog .content .title:hover{\n            color:#F7941D;\n        }\n        .shop-blog .shop-single-blog .content .date {\n            font-size: 14px;\n            font-weight: 400;\n            margin-bottom: 5px;\n            color: #B7B7B7;\n        }\n        .shop-blog .shop-single-blog .content .more-btn {\n            font-size: 14px;\n            font-weight: 400;\n            color: #3c3c3c;\n            margin-top: 10px;\n            display: block;\n        }\n        .shop-blog .shop-single-blog .content .more-btn:hover{\n            color:#F7941D;\n        }\n        /* Related Product */\n        .related-product{\n            padding-top:0;\n        }\n        .related-product .section-title {\n            text-align: center;\n            margin-bottom: 10px;\n            padding: 0;\n        }\n        .related-product .section-title h2 {\n            font-size: 25px;\n            margin-bottom: 0;\n            text-transform: capitalize;\n            position: relative;\n            color: #2c2d3f;\n            font-weight: 700;\n            padding-bottom: 15px;\n        }\n        /* Blog Sidebar */\n        .main-sidebar {\n            background: #fff;\n            margin-top: 30px;\n            padding: 40px;\n            background: transparent;\n            border: 1px solid #eeeeeec2;\n        }\n        .main-sidebar .single-widget{\n            margin-bottom:50px;\n        }\n        .main-sidebar .single-widget .title {\n            position: relative;\n            font-size: 18px;\n            font-weight: 600;\n            text-transform: capitalize;\n            margin-bottom: 30px;\n            display: block;\n            background: #fff;\n            padding-left: 12px;\n        }\n        .main-sidebar .single-widget .title::before {\n            position: absolute;\n            content: \"\";\n            left: 0;\n            bottom: -1px;\n            height: 100%;\n            width: 3px;\n            background: #F7941D;\n        }\n        .main-sidebar .single-widget:last-child{\n            margin:0;\n        }\n        .main-sidebar .search{\n            position:relative;\n        }\n        .main-sidebar .search input {\n            width: 100%;\n            height: 45px;\n            box-shadow: none;\n            text-shadow: none;\n            font-size: 14px;\n            border: none;\n            color: #222;\n            background: transparent;\n            padding: 0 70px 0 20px;\n            transition: all 0.4s ease;\n            border-radius: 0;\n            border: 1px solid #eee;\n        }\n        .main-sidebar .search .button {\n            position: absolute;\n            right: 0;\n            top: 0;\n            height: 44px;\n            width: 50px;\n            line-height: 45px;\n            box-shadow: none;\n            text-shadow: none;\n            text-align: center;\n            border: none;\n            font-size: 14px;\n            color: #fff;\n            background: #333;\n            transition: all 0.4s ease;\n        }\n        .main-sidebar .search .button:hover {\n            background:#F7941D;\n            color:#fff;\n        }\n        /* Category List */\n        .main-sidebar .categor-list {\n            margin-top: 15px;\n        }\n        .main-sidebar .categor-list li{\n\n        }\n        .main-sidebar .categor-list li {\n            margin-bottom: 10px;\n        }\n        .main-sidebar .categor-list li:last-child{\n            margin-bottom:0px;\n        }\n        .main-sidebar .categor-list li a {\n            display: inline-block;\n            color: #333;\n            font-size:14px;\n        }\n        .main-sidebar .categor-list li a:hover{\n            color:#F7941D;\n            padding-left:7px;\n        }\n        .main-sidebar .categor-list li a i {\n            display: inline-block;\n            margin-right:0px;\n            font-size: 9px;\n            transform: translateY(-1px);\n            opacity:0;\n            visibility:hidden;\n            transition:all 0.4s ease;\n        }\n        .main-sidebar .categor-list li a:hover i{\n            margin-right: 6px;\n            opacity:1;\n            visibility:visible;\n        }\n        /* Recent Post */\n        .main-sidebar .recent-post{}\n        .main-sidebar .single-post {\n            position: relative;\n            border-bottom: 1px solid #ddd;\n            display: inline-block;\n            padding: 17px 0;\n        }\n        .main-sidebar .single-post:last-child{\n            padding-bottom:0px;\n            border:none;\n        }\n        .main-sidebar .single-post .image {\n\n        }\n        .main-sidebar .single-post .image img{\n            float: left;\n            width: 80px;\n            height: 80px;\n            margin-right: 20px;\n        }\n        .main-sidebar .single-post .content{\n            padding-left:100px;\n        }\n        .main-sidebar .single-post .content h5 {\n            line-height: 18px;\n        }\n        .main-sidebar .single-post .content h5 a {\n            color: #2C2D3F;\n            font-weight: 500;\n            font-size: 14px;\n            font-weight: 500;\n            margin-top: 10px;\n            display: block;\n            margin-bottom: 10px;\n            margin-top: 0;\n        }\n        .main-sidebar .single-post .content h5 a:hover{\n            color:#F7941D;\n        }\n        .main-sidebar .single-post .content .comment{}\n        .main-sidebar .single-post .content .comment li{\n            color:#888;\n            display:inline-block;\n            margin-right:15px;\n            font-weight:400;\n            font-size:14px;\n        }\n        .main-sidebar .single-post .content .comment li:last-child{\n            margin-right:0;\n        }\n        .main-sidebar .single-post .content .comment li i{\n            display:inline-block;\n            margin-right:5px;\n        }\n        /* Blog Tags */\n        .main-sidebar .side-tags{}\n        .main-sidebar .side-tags .tag{\n            margin-top:40px;\n        }\n        .main-sidebar .side-tags .tag li {\n            display: inline-block;\n            margin-right: 7px;\n            margin-bottom: 20px;\n        }\n        .main-sidebar .side-tags .tag li a {\n            background: #fff;\n            color: #333;\n            padding: 8px 14px;\n            text-transform: capitalize;\n            border-radius: 0;\n            font-size: 13px;\n            background: #F6F7FB;\n        }\n        .main-sidebar .side-tags .tag a:hover{\n            color:#fff;\n            background:#F7941D;\n            border-color:transparent;\n        }\n        /* Blog Newslatter CSS */\n        .main-sidebar .newsletter{\n\n        }\n        .main-sidebar .newsletter .letter-inner {\n            position:relative;\n            padding: 35px 30px;\n            box-shadow: 0px 0px 12px #00000014;\n            z-index:2;\n            overflow:hidden;\n        }\n        .main-sidebar .newsletter .letter-inner h4 {\n            text-transform: capitalize;\n            margin-bottom: 25px;\n            font-size: 18px;\n            font-weight: 600;\n            line-height: 24px;\n        }\n        .main-sidebar .newsletter .letter-inner p{\n            margin-bottom: 20px;\n        }\n        .main-sidebar .newsletter .letter-inner .form-inner{\n            position:relative;\n        }\n        .main-sidebar .newsletter .letter-inner input {\n            width: 100%;\n            height: 45px;\n            background: #fff;\n            border: none;\n            border: 1px solid #ddd;\n            padding: 0px 60px 0px 20px;\n            box-shadow: none;\n            text-shadow: none;\n            border-radius: 0;\n        }\n        .main-sidebar .newsletter .letter-inner .form-inner a {\n            height: 42px;\n            width: 100%;\n            background: #F7941D;\n            color: #fff;\n            font-size: 14px;\n            display: block;\n            text-align: center;\n            line-height: 42px;\n            margin-top: 10px;\n            text-transform: uppercase;\n            font-weight: 500;\n        }\n        .main-sidebar .newsletter .letter-inner .form-inner a:hover{\n            background:#333;\n            color:#fff;\n        }\n        /* Blog Single CSS */\n        .blog-single{\n            background:#fff;\n            padding:70px 0 100px;\n        }\n        .blog-single .blog-single-main {\n            margin-top: 30px;\n            background: #fff;\n        }\n        .blog-single .blog-detail {\n            background: #fff;\n        }\n        .blog-single .image{\n            position:relative;\n        }\n        .blog-single .image img{\n            width:100%;\n            height:100%;\n        }\n        .blog-single .blog-title {\n            font-size: 24px;\n            font-weight: 600;\n            text-transform: capitalize;\n            margin: 40px 0 15px 0;\n        }\n        .blog-single .blog-meta {\n            margin-bottom: 0;\n            overflow: hidden;\n            border-bottom: 1px solid #dddddd6e;\n            padding-bottom: 20px;\n            margin-bottom: 25px;\n        }\n        .blog-single .blog-meta .author i {\n            color: #F7941D;\n            margin-right: 10px;\n            font-size: 13px;\n        }\n        .blog-single .blog-meta .author a {\n            font-size: 13px;\n            border-right:1px solid #ddd;\n            padding:0px 15px;\n        }\n        .blog-single .blog-meta .author  a:first-child{\n            padding-left:0;\n        }\n        .blog-single .blog-meta .author  a:last-child{\n            padding-right:0;\n            border:none;\n        }\n        .blog-single .blog-meta span {\n            display: inline-block;\n            font-size: 14px;\n            color: #666;\n        }\n        .blog-single .blog-meta span a i {\n            margin-right: 10px;\n            color: #F7941D;\n        }\n        .blog-single .blog-meta span a:hover{\n            color:#F7941D;\n        }\n        .blog-single .content p {\n            margin-bottom: 25px;\n            line-height: 26px;\n        }\n        .blog-single .content p:last-child{\n            margin:0;\n        }\n        .blog-single blockquote {\n            position: relative;\n            font-size: 13px;\n            font-weight: 400;\n            padding-left: 20px;\n            padding: 10px 20px;\n            background: #F6F6F6;\n            padding: 30px 40px 30px 70px;\n            color: #555;\n            border: none;\n            margin-bottom: 25px;\n            border-left: 3px solid #F7941D;\n        }\n        .blog-single blockquote i {\n            font-size: 30px;\n            color: #F7941D;\n            position: absolute;\n            left: 20px;\n            top: 20px;\n        }\n        .blog-single .content .img-post{\n            margin-bottom: 25px;\n        }\n        .blog-single .share-social .content-tags {\n            position: relative;\n            margin-top: 25px;\n        }\n        .blog-single .share-social .content-tags h4 {\n            position: absolute;\n            left: 0;\n            top: 7px;\n            font-size: 15px;\n            font-weight: 500;\n        }\n        .blog-single .share-social .content-tags .tag-inner{\n            padding-left:60px;\n        }\n        .blog-single .share-social .content-tags .tag-inner li {\n            display: inline-block;\n            margin-right: 7px;\n            margin-bottom: 10px;\n            margin-top: 4px;\n        }\n        .blog-single .share-social .content-tags .tag-inner li:last-child{\n            margin-right: 0px;\n            margin-bottom: 0px;\n        }\n        .blog-single .share-social .content-tags .tag-inner li a {\n            border-radius: 30px;\n            padding: 5px 15px;\n            background:#f4f7fc;\n            font-size: 13px;\n        }\n        .blog-single .share-social .content-tags .tag-inner li a:hover{\n            color:#fff;\n            background:#F7941D;\n        }\n        /* Comments */\n        .blog-single .comments{\n            margin-top:40px;\n        }\n        .blog-single .comments .comment-title {\n            position: relative;\n            font-size: 18px;\n            font-weight: 600;\n            text-transform: capitalize;\n            margin-bottom: 30px;\n            display: block;\n            background: #fff;\n            padding-left: 12px;\n        }\n        .blog-single .comments .comment-title:before{\n            position: absolute;\n            content: \"\";\n            left: 0;\n            bottom: -1px;\n            height: 100%;\n            width: 3px;\n            background:#F7941D;\n        }\n        .blog-single .comments{\n\n        }\n        .blog-single .comments .single-comment {\n            position: relative;\n            margin-bottom: 40px;\n            border-radius: 5px;\n            padding-left: 95px;\n        }\n        .blog-single .comments .single-comment.left{\n            margin-left:110px;\n        }\n        .blog-single .comments .single-comment img {\n            height: 70px;\n            width: 70px;\n            border-radius: 100%;\n            position: absolute;\n            left: 0;\n        }\n        .blog-single .single-comment .content {\n\n        }\n        .blog-single .single-comment .content h4 {\n            color: #333;\n            font-size: 16px;\n            font-weight: 500;\n            margin-bottom: 10px;\n            display: inline-block;\n            margin-bottom: 18px;\n            text-transform: capitalize;\n        }\n        .blog-single .single-comment .content h4 span {\n            display: inline-block;\n            font-size: 13px;\n            color: #8D8D8D;\n            margin: 0;\n            font-weight: 400;\n            text-transform: capitalize;\n            display: block;\n            margin-top: 5px;\n        }\n        .blog-single .single-comment .content p {\n            color: #666;\n            font-weight: 400;\n            display: block;\n            margin: 0;\n            margin-bottom: 20px;\n            line-height: 22px;\n        }\n        .blog-single .single-comment .content .button{}\n        .blog-single .single-comment .content .btn {\n            display: inline-block;\n            color: #666;\n            font-weight: 400;\n            color: #6a6a6a;\n            border-radius: 4px;\n            text-transform: capitalize;\n            font-size: 14px;\n            background: transparent;\n            padding: 0;\n        }\n        .blog-single .single-comment .content a i{\n            display:inline-block;\n            margin-right:5px;\n        }\n        .blog-single .single-comment .content a:hover{\n            color:#F7941D;\n        }\n        /* Comment Form */\n        .blog-single .reply form {\n            padding: 40px;\n            border: 1px solid #eee;\n        }\n        .blog-single .reply .reply-title {\n            position: relative;\n            font-size: 18px;\n            font-weight: 600;\n            text-transform: capitalize;\n            margin-bottom: 30px;\n            display: block;\n            background: #fff;\n            padding-left: 12px;\n        }\n        .blog-single .reply .reply-title:before{\n            position: absolute;\n            content: \"\";\n            left: 0;\n            bottom: -1px;\n            height: 100%;\n            width: 3px;\n            background:#F7941D;\n        }\n        .blog-single .reply .form-group {\n            margin-bottom: 20px;\n        }\n        .blog-single .reply .form-group input {\n            width: 100%;\n            height: 45px;\n            line-height: 50px;\n            padding: 0 20px;\n            border-radius: 0px;\n            color: #333 !important;\n            border: none;\n            border: 1px solid #eee;\n        }\n        .blog-single .reply .form-group textarea {\n            width: 100%;\n            height: 200px;\n            line-height: 50px;\n            padding: 0 20px;\n            border-radius: 0px;\n            color: #333 !important;\n            border: none;\n            border: 1px solid #eee;\n        }\n        .blog-single .reply .form-group label {\n            color: #333;\n            position: relative;\n        }\n        .blog-single .reply .form-group label span {\n            color:#ff2c18;\n            display: inline-block;\n            position: absolute;\n            right: -12px;\n            top: 4px;\n            font-size: 16px;\n        }\n        .blog-single .reply .button {\n            text-align: left;\n            margin-bottom:0px;\n        }\n        .blog-single .reply .button .btn {\n            height: 50px;\n            border: none;\n        }\n        /*======================================\n           End Shop Blog CSS\n        ========================================*/\n\n\n        /*======================================\n          21. Contact CSS\n        ========================================*/\n        .contact-us {\n            position: relative;\n            z-index: 43;\n        }\n        .contact-us .title{\n            margin-bottom: 30px;\n        }\n        .contact-us .title h4 {\n            font-size: 17px;\n            font-weight: 500;\n            margin-bottom: 5px;\n            color: #F7941D;\n        }\n        .contact-us .title h3 {\n            font-size: 25px;\n            text-transform: capitalize;\n            font-weight: 600;\n        }\n        .contact-us .single-head {\n            padding: 50px;\n            box-shadow: 0px 0px 15px #0000001a;\n            height: 100%;\n        }\n        .contact-us .single-info {\n            text-align: left;\n            margin-bottom:30px;\n        }\n        .contact-us .single-info i {\n            color: #fff;\n            font-size: 18px;\n            display: inline-block;\n            margin-bottom: 15px;\n            height: 40px;\n            width: 40px;\n            display: block;\n            text-align: center;\n            border-radius: 3px;\n            line-height: 40px;\n            background:#F7941D;\n        }\n        .contact-us .single-info ul\n        .contact-us .single-info ul li{\n            margin-bottom:5px;\n        }\n        .contact-us .single-info ul li:last-child{\n            margin-bottom:0;\n        }\n        .contact-us .single-info ul li a{\n            font-weight:400;\n        }\n        .contact-us .single-info ul li a:hover{\n            color:#F7941D;\n        }\n        .contact-us .single-info .title {\n            margin-bottom: 10px;\n            font-weight: 500;\n            color: #333;\n            font-size: 18px;\n        }\n        .contact-us .form-main {\n            box-shadow: 0px 0px 15px #0000001a;\n            padding: 50px;\n        }\n        .contact-us .form .form-group input {\n            height: 48px;\n            line-height: 48px;\n            width: 100%;\n            border: 1px solid #e6e2f5;\n            padding: 0px 20px;\n            color: #333;\n            border-radius: 0px;\n            font-weight: 400;\n        }\n        .contact-us .form .form-group textarea {\n            height: 180px;\n            width: 100%;\n            border: 1px solid #e6e2f5;\n            padding: 15px 20px;\n            color: #333;\n            border-radius: 0px;\n            resize: none;\n            font-weight:400;\n        }\n        .contact-us .form .form-group label {\n            color: #333;\n            position: relative;\n        }\n        .contact-us .form .form-group label span {\n            color: #ff2c18;\n            display: inline-block;\n            position: absolute;\n            right: -12px;\n            top: 4px;\n            font-size: 16px;\n        }\n        .contact-us .form .button {\n            margin:0;\n        }\n        .contact-us .form .button .btn {\n            height: 50px;\n            border: none;\n        }\n        #myMap {\n            height: 500px;\n            width: 100%;\n        }\n        /*======================================\n          End Contact CSS\n        ========================================*/\n\n        /* Mail Success */\n        .mail-success .mail-inner {\n            text-align: center;\n            background: #fff;\n            padding: 0px 30px;\n        }\n        .mail-success .mail-inner h2 {\n            margin-bottom: 10px;\n            display: block;\n            font-weight: 600;\n            color: #F7941D;\n            text-transform: uppercase;\n            font-size: 30px;\n        }\n        .mail-success .mail-inner p {\n            font-size: 14;\n            color: #333;\n            margin-bottom: 30px;\n            line-height: 22px;\n        }\n        .mail-success .mail-inner .btn {\n            color: #fff;\n            padding: 10px 30px;\n        }\n        .mail-success .mail-inner .btn i{\n            margin-right:5px;\n        }\n\n        /*=============================\n            Start 404 Error CSS\n        ===============================*/\n        .error-page {\n            background:#fff;\n            width: 100%;\n            height: 100%;\n            overflow: hidden;\n            position:relative;\n        }\n        .error-page .error-inner {\n            text-align: center;\n            flex-direction: initial;\n            height: auto;\n            text-align: center;\n        }\n        .error-page .error-inner h2 {\n            color: #F7941D;\n            margin-bottom: 0;\n            font-weight: 700;\n            font-size: 100px;\n            display: inline-block;\n            font-size: 120px;\n        }\n        .error-page .error-inner h5 {\n            display: block;\n            color: #444;\n            font-size: 20px;\n            margin-bottom: 20px;\n            font-weight: 600;\n            text-transform: capitalize;\n        }\n        .error-page .error-inner p {\n            color: #666;\n            font-weight: 400;\n            line-height: 22px;\n            font-size: 15px;\n            padding: 0 30px;\n        }\n        .error-page .button {\n            margin-top: 30px;\n        }\n        .error-page .button .btn {\n            margin-right: 15px;\n            border-radius: 30px;\n            background: #333;\n            color: #fff;\n            font-weight: 600;\n            font-size: 14px;\n            font-weight: 500;\n            border: 1px solid #d7d7d7;\n            background: transparent;\n            color: #333;\n            padding: 10px 28px;\n        }\n        .error-page .button .btn:hover{\n            color:#fff;\n            background:#F7941D;\n            border-color:transparent;\n        }\n        /*=============================\n            /End 404 Error CSS\n        ===============================*/\n\n        /*=============================\n            20. Start Footer CSS\n        ===============================*/\n        .footer{\n            background:#222;\n        }\n        .footer .about {\n            padding-right: 50px;\n        }\n        .footer .single-footer h4 {\n            font-size: 17px;\n            font-weight: 600;\n            color: #fff;\n            text-transform: capitalize;\n            margin-bottom: 30px;\n        }\n        .footer .about .logo{\n            margin-bottom:20px;\n        }\n        .footer .about .logo img{}\n        .footer .about .text{\n            color:#fff;\n            font-weight: 400;\n        }\n        .footer .about .call {\n            color: #fff;\n            margin-top: 15px;\n            font-weight: 400;\n        }\n        .footer .about .call span{\n            display: block;\n        }\n        .footer .about .call a {\n            color: #f7941d;\n            font-size: 20px;\n            font-weight: 600;\n        }\n        .footer .links ul{}\n        .footer .links ul li {\n            display: block;\n            margin-bottom: 8px;\n        }\n        .footer .links ul li:last-child{\n            margin-bottom:0;\n        }\n        .footer .links ul li a{\n            color:#fff;\n            font-weight: 400;\n        }\n        .footer .links ul li a:hover{\n            color:#F7941D;\n            padding-left:10px;\n        }\n        .footer .social{}\n        .footer .social .contact{}\n        .footer .social .contact ul{}\n        .footer .social .contact ul li {\n            color: #fff;\n            display: block;\n            margin-bottom: 4px;\n            font-weight: 400;\n        }\n        .footer .contact ul li:last-child{\n            margin-bottom:0;\n        }\n        .footer .social ul {\n            margin-top: 20px;\n        }\n        .footer .social ul li{\n            display:inline-block;\n            margin-right:25px;\n        }\n        .footer .social ul li:last-child{\n            margin-right:0;\n        }\n        .footer .social ul li a{\n            color:#fff;\n            display:block;\n            font-size:16px;\n        }\n        .footer .social ul li a:hover{\n            color:#F7941D;\n        }\n        /* Copyright */\n        .footer .copyright{\n\n        }\n        .footer .copyright .inner{\n            border-top:1px solid #eeeeee3d;\n            padding:20px 0;\n        }\n        .footer .copyright .left{}\n        .footer .copyright .right{\n            float:right;\n        }\n        .footer .copyright p{\n            color:#fff;\n        }\n        .footer .copyright p a{\n            color:#fff;\n            text-decoration:underline;\n        }\n        /*=============================\n            End Footer CSS\n        ===============================*/\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Shop/Shop2.css":
+/*!********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Shop/Shop2.css ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".padding{\n    padding-top: 10rem\n}", ""]);
 
 // exports
 
@@ -4692,7 +4730,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".bottom-widget {\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.chat-widget {\r\n    margin-right: 3rem;\r\n    width: 250px;\r\n}\r\n\r\n.chat-widget-friend {\r\n    width: 250px;\r\n}", ""]);
+exports.push([module.i, ".bottom-widget {\n    bottom: 0;\n    right: 0;\n}\n\n.chat-widget {\n    margin-right: 3rem;\n    width: 250px;\n}\n\n.chat-widget-friend {\n    width: 250px;\n}", ""]);
 
 // exports
 
@@ -29412,6 +29450,1565 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
+
+/***/ }),
+
+/***/ "./node_modules/rc-input-number/assets/index.css":
+/*!*******************************************************!*\
+  !*** ./node_modules/rc-input-number/assets/index.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./index.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/rc-input-number/assets/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/rc-input-number/es/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/rc-input-number/es/index.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rc-util/es/KeyCode */ "./node_modules/rc-util/es/KeyCode.js");
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/* eslint-disable react/prop-types */
+
+
+
+
+function noop() {}
+
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+function defaultParser(input) {
+  return input.replace(/[^\w.-]+/g, '');
+}
+
+/**
+ * When click and hold on a button - the speed of auto changin the value.
+ */
+var SPEED = 200;
+
+/**
+ * When click and hold on a button - the delay before auto changin the value.
+ */
+var DELAY = 600;
+
+/**
+ * Max Safe Integer -- on IE this is not available, so manually set the number in that case.
+ * The reason this is used, instead of Infinity is because numbers above the MSI are unstable
+ */
+var MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
+
+var isValidProps = function isValidProps(value) {
+  return value !== undefined && value !== null;
+};
+
+var isEqual = function isEqual(oldValue, newValue) {
+  return newValue === oldValue || typeof newValue === 'number' && typeof oldValue === 'number' && isNaN(newValue) && isNaN(oldValue);
+};
+
+var InputNumber = function (_React$Component) {
+  _inherits(InputNumber, _React$Component);
+
+  function InputNumber(props) {
+    _classCallCheck(this, InputNumber);
+
+    var _this = _possibleConstructorReturn(this, (InputNumber.__proto__ || Object.getPrototypeOf(InputNumber)).call(this, props));
+
+    _initialiseProps.call(_this);
+
+    var value = void 0;
+    if ('value' in props) {
+      value = props.value;
+    } else {
+      value = props.defaultValue;
+    }
+    _this.state = {
+      focused: props.autoFocus
+    };
+    var validValue = _this.getValidValue(_this.toNumber(value));
+    _this.state = _extends({}, _this.state, {
+      inputValue: _this.toPrecisionAsStep(validValue),
+      value: validValue
+    });
+    return _this;
+  }
+
+  _createClass(InputNumber, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.componentDidUpdate();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      var _props = this.props,
+          value = _props.value,
+          onChange = _props.onChange,
+          max = _props.max,
+          min = _props.min;
+      var focused = this.state.focused;
+
+      // Don't trigger in componentDidMount
+
+      if (prevProps) {
+        if (!isEqual(prevProps.value, value) || !isEqual(prevProps.max, max) || !isEqual(prevProps.min, min)) {
+          var validValue = focused ? value : this.getValidValue(value);
+          var nextInputValue = void 0;
+          if (this.pressingUpOrDown) {
+            nextInputValue = validValue;
+          } else if (this.inputting) {
+            nextInputValue = this.rawInput;
+          } else {
+            nextInputValue = this.toPrecisionAsStep(validValue);
+          }
+          this.setState({ // eslint-disable-line
+            value: validValue,
+            inputValue: nextInputValue
+          });
+        }
+
+        // Trigger onChange when max or min change
+        // https://github.com/ant-design/ant-design/issues/11574
+        var nextValue = 'value' in this.props ? value : this.state.value;
+        // ref: null < 20 === true
+        // https://github.com/ant-design/ant-design/issues/14277
+        if ('max' in this.props && prevProps.max !== max && typeof nextValue === 'number' && nextValue > max && onChange) {
+          onChange(max);
+        }
+        if ('min' in this.props && prevProps.min !== min && typeof nextValue === 'number' && nextValue < min && onChange) {
+          onChange(min);
+        }
+      }
+
+      // Restore cursor
+      try {
+        // Firefox set the input cursor after it get focused.
+        // This caused that if an input didn't init with the selection,
+        // set will cause cursor not correct when first focus.
+        // Safari will focus input if set selection. We need skip this.
+        if (this.cursorStart !== undefined && this.state.focused) {
+          // In most cases, the string after cursor is stable.
+          // We can move the cursor before it
+
+          if (
+          // If not match full str, try to match part of str
+          !this.partRestoreByAfter(this.cursorAfter) && this.state.value !== this.props.value) {
+            // If not match any of then, let's just keep the position
+            // TODO: Logic should not reach here, need check if happens
+            var pos = this.cursorStart + 1;
+
+            // If not have last string, just position to the end
+            if (!this.cursorAfter) {
+              pos = this.input.value.length;
+            } else if (this.lastKeyCode === rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_2__["default"].BACKSPACE) {
+              pos = this.cursorStart - 1;
+            } else if (this.lastKeyCode === rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_2__["default"].DELETE) {
+              pos = this.cursorStart;
+            }
+            this.fixCaret(pos, pos);
+          } else if (this.currentValue === this.input.value) {
+            // Handle some special key code
+            switch (this.lastKeyCode) {
+              case rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_2__["default"].BACKSPACE:
+                this.fixCaret(this.cursorStart - 1, this.cursorStart - 1);
+                break;
+              case rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_2__["default"].DELETE:
+                this.fixCaret(this.cursorStart + 1, this.cursorStart + 1);
+                break;
+              default:
+              // Do nothing
+            }
+          }
+        }
+      } catch (e) {}
+      // Do nothing
+
+
+      // Reset last key
+      this.lastKeyCode = null;
+
+      // pressingUpOrDown is true means that someone just click up or down button
+      if (!this.pressingUpOrDown) {
+        return;
+      }
+      if (this.props.focusOnUpDown && this.state.focused) {
+        if (document.activeElement !== this.input) {
+          this.focus();
+        }
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.stop();
+    }
+  }, {
+    key: 'getCurrentValidValue',
+    value: function getCurrentValidValue(value) {
+      var val = value;
+      if (val === '') {
+        val = '';
+      } else if (!this.isNotCompleteNumber(parseFloat(val, 10))) {
+        val = this.getValidValue(val);
+      } else {
+        val = this.state.value;
+      }
+      return this.toNumber(val);
+    }
+  }, {
+    key: 'getRatio',
+    value: function getRatio(e) {
+      var ratio = 1;
+      if (e.metaKey || e.ctrlKey) {
+        ratio = 0.1;
+      } else if (e.shiftKey) {
+        ratio = 10;
+      }
+      return ratio;
+    }
+  }, {
+    key: 'getValueFromEvent',
+    value: function getValueFromEvent(e) {
+      // optimize for chinese input expierence
+      // https://github.com/ant-design/ant-design/issues/8196
+      var value = e.target.value.trim().replace(/。/g, '.');
+
+      if (isValidProps(this.props.decimalSeparator)) {
+        value = value.replace(this.props.decimalSeparator, '.');
+      }
+
+      return value;
+    }
+  }, {
+    key: 'getValidValue',
+    value: function getValidValue(value) {
+      var min = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.props.min;
+      var max = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.props.max;
+
+      var val = parseFloat(value, 10);
+      // https://github.com/ant-design/ant-design/issues/7358
+      if (isNaN(val)) {
+        return value;
+      }
+      if (val < min) {
+        val = min;
+      }
+      if (val > max) {
+        val = max;
+      }
+      return val;
+    }
+  }, {
+    key: 'setValue',
+    value: function setValue(v, callback) {
+      // trigger onChange
+      var precision = this.props.precision;
+
+      var newValue = this.isNotCompleteNumber(parseFloat(v, 10)) ? null : parseFloat(v, 10);
+      var _state = this.state,
+          _state$value = _state.value,
+          value = _state$value === undefined ? null : _state$value,
+          _state$inputValue = _state.inputValue,
+          inputValue = _state$inputValue === undefined ? null : _state$inputValue;
+      // https://github.com/ant-design/ant-design/issues/7363
+      // https://github.com/ant-design/ant-design/issues/16622
+
+      var newValueInString = typeof newValue === 'number' ? newValue.toFixed(precision) : '' + newValue;
+      var changed = newValue !== value || newValueInString !== '' + inputValue;
+      if (!('value' in this.props)) {
+        this.setState({
+          value: newValue,
+          inputValue: this.toPrecisionAsStep(v)
+        }, callback);
+      } else {
+        // always set input value same as value
+        this.setState({
+          inputValue: this.toPrecisionAsStep(this.state.value)
+        }, callback);
+      }
+      if (changed) {
+        this.props.onChange(newValue);
+      }
+
+      return newValue;
+    }
+  }, {
+    key: 'getFullNum',
+    value: function getFullNum(num) {
+      if (isNaN(num)) {
+        return num;
+      }
+      if (!/e/i.test(String(num))) {
+        return num;
+      }
+      return Number(num).toFixed(18).replace(/\.?0+$/, '');
+    }
+  }, {
+    key: 'getPrecision',
+    value: function getPrecision(value) {
+      if (isValidProps(this.props.precision)) {
+        return this.props.precision;
+      }
+      var valueString = value.toString();
+      if (valueString.indexOf('e-') >= 0) {
+        return parseInt(valueString.slice(valueString.indexOf('e-') + 2), 10);
+      }
+      var precision = 0;
+      if (valueString.indexOf('.') >= 0) {
+        precision = valueString.length - valueString.indexOf('.') - 1;
+      }
+      return precision;
+    }
+
+    // step={1.0} value={1.51}
+    // press +
+    // then value should be 2.51, rather than 2.5
+    // if this.props.precision is undefined
+    // https://github.com/react-component/input-number/issues/39
+
+  }, {
+    key: 'getMaxPrecision',
+    value: function getMaxPrecision(currentValue) {
+      var ratio = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+      var _props2 = this.props,
+          precision = _props2.precision,
+          step = _props2.step;
+
+      if (isValidProps(precision)) {
+        return precision;
+      }
+      var ratioPrecision = this.getPrecision(ratio);
+      var stepPrecision = this.getPrecision(step);
+      var currentValuePrecision = this.getPrecision(currentValue);
+      if (!currentValue) {
+        return ratioPrecision + stepPrecision;
+      }
+      return Math.max(currentValuePrecision, ratioPrecision + stepPrecision);
+    }
+  }, {
+    key: 'getPrecisionFactor',
+    value: function getPrecisionFactor(currentValue) {
+      var ratio = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+      var precision = this.getMaxPrecision(currentValue, ratio);
+      return Math.pow(10, precision);
+    }
+  }, {
+    key: 'fixCaret',
+    value: function fixCaret(start, end) {
+      if (start === undefined || end === undefined || !this.input || !this.input.value) {
+        return;
+      }
+
+      try {
+        var currentStart = this.input.selectionStart;
+        var currentEnd = this.input.selectionEnd;
+
+        if (start !== currentStart || end !== currentEnd) {
+          this.input.setSelectionRange(start, end);
+        }
+      } catch (e) {
+        // Fix error in Chrome:
+        // Failed to read the 'selectionStart' property from 'HTMLInputElement'
+        // http://stackoverflow.com/q/21177489/3040605
+      }
+    }
+  }, {
+    key: 'focus',
+    value: function focus() {
+      this.input.focus();
+      this.recordCursorPosition();
+    }
+  }, {
+    key: 'blur',
+    value: function blur() {
+      this.input.blur();
+    }
+  }, {
+    key: 'select',
+    value: function select() {
+      this.input.select();
+    }
+  }, {
+    key: 'formatWrapper',
+    value: function formatWrapper(num) {
+      // http://2ality.com/2012/03/signedzero.html
+      // https://github.com/ant-design/ant-design/issues/9439
+      if (this.props.formatter) {
+        return this.props.formatter(num);
+      }
+      return num;
+    }
+  }, {
+    key: 'toPrecisionAsStep',
+    value: function toPrecisionAsStep(num) {
+      if (this.isNotCompleteNumber(num) || num === '') {
+        return num;
+      }
+      var precision = Math.abs(this.getMaxPrecision(num));
+      if (!isNaN(precision)) {
+        return Number(num).toFixed(precision);
+      }
+      return num.toString();
+    }
+
+    // '1.' '1x' 'xx' '' => are not complete numbers
+
+  }, {
+    key: 'isNotCompleteNumber',
+    value: function isNotCompleteNumber(num) {
+      return isNaN(num) || num === '' || num === null || num && num.toString().indexOf('.') === num.toString().length - 1;
+    }
+  }, {
+    key: 'toNumber',
+    value: function toNumber(num) {
+      var precision = this.props.precision;
+      var focused = this.state.focused;
+      // num.length > 16 => This is to prevent input of large numbers
+
+      var numberIsTooLarge = num && num.length > 16 && focused;
+      if (this.isNotCompleteNumber(num) || numberIsTooLarge) {
+        return num;
+      }
+      if (isValidProps(precision)) {
+        return Math.round(num * Math.pow(10, precision)) / Math.pow(10, precision);
+      }
+      return Number(num);
+    }
+  }, {
+    key: 'upStep',
+    value: function upStep(val, rat) {
+      var step = this.props.step;
+
+      var precisionFactor = this.getPrecisionFactor(val, rat);
+      var precision = Math.abs(this.getMaxPrecision(val, rat));
+      var result = ((precisionFactor * val + precisionFactor * step * rat) / precisionFactor).toFixed(precision);
+      return this.toNumber(result);
+    }
+  }, {
+    key: 'downStep',
+    value: function downStep(val, rat) {
+      var step = this.props.step;
+
+      var precisionFactor = this.getPrecisionFactor(val, rat);
+      var precision = Math.abs(this.getMaxPrecision(val, rat));
+      var result = ((precisionFactor * val - precisionFactor * step * rat) / precisionFactor).toFixed(precision);
+      return this.toNumber(result);
+    }
+  }, {
+    key: 'step',
+    value: function step(type, e) {
+      var _this2 = this;
+
+      var ratio = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+      var recursive = arguments[3];
+
+      this.stop();
+      if (e) {
+        e.persist();
+        e.preventDefault();
+      }
+      var props = this.props;
+      if (props.disabled) {
+        return;
+      }
+      var value = this.getCurrentValidValue(this.state.inputValue) || 0;
+      if (this.isNotCompleteNumber(value)) {
+        return;
+      }
+      var val = this[type + 'Step'](value, ratio);
+      var outOfRange = val > props.max || val < props.min;
+      if (val > props.max) {
+        val = props.max;
+      } else if (val < props.min) {
+        val = props.min;
+      }
+      this.setValue(val);
+      this.setState({
+        focused: true
+      }, function () {
+        _this2.pressingUpOrDown = false;
+      });
+      if (outOfRange) {
+        return;
+      }
+      this.autoStepTimer = setTimeout(function () {
+        _this2[type](e, ratio, true);
+      }, recursive ? SPEED : DELAY);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _classNames;
+
+      var _props3 = this.props,
+          prefixCls = _props3.prefixCls,
+          disabled = _props3.disabled,
+          readOnly = _props3.readOnly,
+          useTouch = _props3.useTouch,
+          autoComplete = _props3.autoComplete,
+          upHandler = _props3.upHandler,
+          downHandler = _props3.downHandler,
+          className = _props3.className,
+          max = _props3.max,
+          min = _props3.min,
+          style = _props3.style,
+          title = _props3.title,
+          onMouseEnter = _props3.onMouseEnter,
+          onMouseLeave = _props3.onMouseLeave,
+          onMouseOver = _props3.onMouseOver,
+          onMouseOut = _props3.onMouseOut,
+          required = _props3.required,
+          onClick = _props3.onClick,
+          tabIndex = _props3.tabIndex,
+          type = _props3.type,
+          placeholder = _props3.placeholder,
+          id = _props3.id,
+          inputMode = _props3.inputMode,
+          pattern = _props3.pattern,
+          step = _props3.step,
+          maxLength = _props3.maxLength,
+          autoFocus = _props3.autoFocus,
+          name = _props3.name,
+          rest = _objectWithoutProperties(_props3, ['prefixCls', 'disabled', 'readOnly', 'useTouch', 'autoComplete', 'upHandler', 'downHandler', 'className', 'max', 'min', 'style', 'title', 'onMouseEnter', 'onMouseLeave', 'onMouseOver', 'onMouseOut', 'required', 'onClick', 'tabIndex', 'type', 'placeholder', 'id', 'inputMode', 'pattern', 'step', 'maxLength', 'autoFocus', 'name']);
+
+      var _state2 = this.state,
+          value = _state2.value,
+          focused = _state2.focused;
+
+      var classes = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls, (_classNames = {}, _defineProperty(_classNames, className, !!className), _defineProperty(_classNames, prefixCls + '-disabled', disabled), _defineProperty(_classNames, prefixCls + '-focused', focused), _classNames));
+
+      var dataOrAriaAttributeProps = {};
+      Object.keys(rest).forEach(function (key) {
+        if (key.substr(0, 5) === 'data-' || key.substr(0, 5) === 'aria-' || key === 'role') {
+          dataOrAriaAttributeProps[key] = rest[key];
+        }
+      });
+
+      var editable = !readOnly && !disabled;
+
+      // focus state, show input value
+      // unfocus state, show valid value
+      var inputDisplayValue = this.getInputDisplayValue();
+
+      var upDisabled = (value || value === 0) && (isNaN(value) || Number(value) >= max);
+      var downDisabled = (value || value === 0) && (isNaN(value) || Number(value) <= min);
+      var isUpDisabled = upDisabled || disabled || readOnly;
+      var isDownDisabled = downDisabled || disabled || readOnly;
+      var upClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls + '-handler', prefixCls + '-handler-up', _defineProperty({}, prefixCls + '-handler-up-disabled', isUpDisabled));
+      var downClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()(prefixCls + '-handler', prefixCls + '-handler-down', _defineProperty({}, prefixCls + '-handler-down-disabled', isDownDisabled));
+
+      var upEvents = useTouch ? {
+        onTouchStart: isUpDisabled ? noop : this.up,
+        onTouchEnd: this.stop
+      } : {
+        onMouseDown: isUpDisabled ? noop : this.up,
+        onMouseUp: this.stop,
+        onMouseLeave: this.stop
+      };
+      var downEvents = useTouch ? {
+        onTouchStart: isDownDisabled ? noop : this.down,
+        onTouchEnd: this.stop
+      } : {
+        onMouseDown: isDownDisabled ? noop : this.down,
+        onMouseUp: this.stop,
+        onMouseLeave: this.stop
+      };
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        'div',
+        {
+          className: classes,
+          style: style,
+          title: title,
+          onMouseEnter: onMouseEnter,
+          onMouseLeave: onMouseLeave,
+          onMouseOver: onMouseOver,
+          onMouseOut: onMouseOut,
+          onFocus: function onFocus() {
+            return null;
+          },
+          onBlur: function onBlur() {
+            return null;
+          }
+        },
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          'div',
+          { className: prefixCls + '-handler-wrap' },
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            'span',
+            _extends({
+              unselectable: 'unselectable'
+            }, upEvents, {
+              role: 'button',
+              'aria-label': 'Increase Value',
+              'aria-disabled': isUpDisabled,
+              className: upClassName
+            }),
+            upHandler || react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('span', {
+              unselectable: 'unselectable',
+              className: prefixCls + '-handler-up-inner',
+              onClick: preventDefault
+            })
+          ),
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            'span',
+            _extends({
+              unselectable: 'unselectable'
+            }, downEvents, {
+              role: 'button',
+              'aria-label': 'Decrease Value',
+              'aria-disabled': isDownDisabled,
+              className: downClassName
+            }),
+            downHandler || react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('span', {
+              unselectable: 'unselectable',
+              className: prefixCls + '-handler-down-inner',
+              onClick: preventDefault
+            })
+          )
+        ),
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          'div',
+          { className: prefixCls + '-input-wrap' },
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', _extends({
+            role: 'spinbutton',
+            'aria-valuemin': min,
+            'aria-valuemax': max,
+            'aria-valuenow': value,
+            required: required,
+            type: type,
+            placeholder: placeholder,
+            onClick: onClick,
+            onMouseUp: this.onMouseUp,
+            className: prefixCls + '-input',
+            tabIndex: tabIndex,
+            autoComplete: autoComplete,
+            onFocus: this.onFocus,
+            onBlur: this.onBlur,
+            onKeyDown: editable ? this.onKeyDown : noop,
+            onKeyUp: editable ? this.onKeyUp : noop,
+            autoFocus: autoFocus,
+            maxLength: maxLength,
+            readOnly: readOnly,
+            disabled: disabled,
+            max: max,
+            min: min,
+            step: step,
+            name: name,
+            title: title,
+            id: id,
+            onChange: this.onChange,
+            ref: this.saveInput,
+            value: this.getFullNum(inputDisplayValue),
+            pattern: pattern,
+            inputMode: inputMode
+          }, dataOrAriaAttributeProps))
+        )
+      );
+    }
+  }]);
+
+  return InputNumber;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+InputNumber.defaultProps = {
+  focusOnUpDown: true,
+  useTouch: false,
+  prefixCls: 'rc-input-number',
+  max: MAX_SAFE_INTEGER,
+  min: -MAX_SAFE_INTEGER,
+  step: 1,
+  style: {},
+  onChange: noop,
+  onKeyDown: noop,
+  onPressEnter: noop,
+  onFocus: noop,
+  onBlur: noop,
+  parser: defaultParser,
+  required: false,
+  autoComplete: 'off'
+};
+
+var _initialiseProps = function _initialiseProps() {
+  var _this3 = this;
+
+  this.onKeyDown = function (e) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var _props4 = _this3.props,
+        onKeyDown = _props4.onKeyDown,
+        onPressEnter = _props4.onPressEnter;
+
+
+    if (e.keyCode === rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_2__["default"].UP) {
+      var ratio = _this3.getRatio(e);
+      _this3.up(e, ratio);
+      _this3.stop();
+    } else if (e.keyCode === rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_2__["default"].DOWN) {
+      var _ratio = _this3.getRatio(e);
+      _this3.down(e, _ratio);
+      _this3.stop();
+    } else if (e.keyCode === rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_2__["default"].ENTER && onPressEnter) {
+      onPressEnter(e);
+    }
+
+    // Trigger user key down
+    _this3.recordCursorPosition();
+    _this3.lastKeyCode = e.keyCode;
+    if (onKeyDown) {
+      onKeyDown.apply(undefined, [e].concat(args));
+    }
+  };
+
+  this.onKeyUp = function (e) {
+    for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+      args[_key2 - 1] = arguments[_key2];
+    }
+
+    var onKeyUp = _this3.props.onKeyUp;
+
+
+    _this3.stop();
+
+    _this3.recordCursorPosition();
+
+    // Trigger user key up
+    if (onKeyUp) {
+      onKeyUp.apply(undefined, [e].concat(args));
+    }
+  };
+
+  this.onChange = function (e) {
+    var onChange = _this3.props.onChange;
+
+
+    if (_this3.state.focused) {
+      _this3.inputting = true;
+    }
+    _this3.rawInput = _this3.props.parser(_this3.getValueFromEvent(e));
+    _this3.setState({ inputValue: _this3.rawInput });
+    onChange(_this3.toNumber(_this3.rawInput)); // valid number or invalid string
+  };
+
+  this.onMouseUp = function () {
+    var onMouseUp = _this3.props.onMouseUp;
+
+
+    _this3.recordCursorPosition();
+
+    if (onMouseUp) {
+      onMouseUp.apply(undefined, arguments);
+    }
+  };
+
+  this.onFocus = function () {
+    var _props5;
+
+    _this3.setState({
+      focused: true
+    });
+    (_props5 = _this3.props).onFocus.apply(_props5, arguments);
+  };
+
+  this.onBlur = function () {
+    var onBlur = _this3.props.onBlur;
+
+    _this3.inputting = false;
+    _this3.setState({
+      focused: false
+    });
+    var value = _this3.getCurrentValidValue(_this3.state.inputValue);
+    var newValue = _this3.setValue(value);
+
+    if (onBlur) {
+      var originValue = _this3.input.value;
+      var displayValue = _this3.getInputDisplayValue({ focus: false, value: newValue });
+      _this3.input.value = displayValue ? Number(displayValue) : displayValue;
+      onBlur.apply(undefined, arguments);
+      _this3.input.value = originValue;
+    }
+  };
+
+  this.getInputDisplayValue = function (state) {
+    var _ref = state || _this3.state,
+        focused = _ref.focused,
+        inputValue = _ref.inputValue,
+        value = _ref.value;
+
+    var inputDisplayValue = void 0;
+    if (focused) {
+      inputDisplayValue = inputValue;
+    } else {
+      inputDisplayValue = _this3.toPrecisionAsStep(value);
+    }
+
+    if (inputDisplayValue === undefined || inputDisplayValue === null) {
+      inputDisplayValue = '';
+    }
+
+    var inputDisplayValueFormat = _this3.formatWrapper(inputDisplayValue);
+    if (isValidProps(_this3.props.decimalSeparator)) {
+      inputDisplayValueFormat = inputDisplayValueFormat.toString().replace('.', _this3.props.decimalSeparator);
+    }
+
+    return inputDisplayValueFormat;
+  };
+
+  this.recordCursorPosition = function () {
+    // Record position
+    try {
+      _this3.cursorStart = _this3.input.selectionStart;
+      _this3.cursorEnd = _this3.input.selectionEnd;
+      _this3.currentValue = _this3.input.value;
+      _this3.cursorBefore = _this3.input.value.substring(0, _this3.cursorStart);
+      _this3.cursorAfter = _this3.input.value.substring(_this3.cursorEnd);
+    } catch (e) {
+      // Fix error in Chrome:
+      // Failed to read the 'selectionStart' property from 'HTMLInputElement'
+      // http://stackoverflow.com/q/21177489/3040605
+    }
+  };
+
+  this.restoreByAfter = function (str) {
+    if (str === undefined) return false;
+
+    var fullStr = _this3.input.value;
+    var index = fullStr.lastIndexOf(str);
+
+    if (index === -1) return false;
+
+    var prevCursorPos = _this3.cursorBefore.length;
+    if (_this3.lastKeyCode === rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_2__["default"].DELETE && _this3.cursorBefore.charAt(prevCursorPos - 1) === str[0]) {
+      _this3.fixCaret(prevCursorPos, prevCursorPos);
+      return true;
+    }
+
+    if (index + str.length === fullStr.length) {
+      _this3.fixCaret(index, index);
+
+      return true;
+    }
+    return false;
+  };
+
+  this.partRestoreByAfter = function (str) {
+    if (str === undefined) return false;
+
+    // For loop from full str to the str with last char to map. e.g. 123
+    // -> 123
+    // -> 23
+    // -> 3
+    return Array.prototype.some.call(str, function (_, start) {
+      var partStr = str.substring(start);
+
+      return _this3.restoreByAfter(partStr);
+    });
+  };
+
+  this.stop = function () {
+    if (_this3.autoStepTimer) {
+      clearTimeout(_this3.autoStepTimer);
+    }
+  };
+
+  this.down = function (e, ratio, recursive) {
+    _this3.pressingUpOrDown = true;
+    _this3.step('down', e, ratio, recursive);
+  };
+
+  this.up = function (e, ratio, recursive) {
+    _this3.pressingUpOrDown = true;
+    _this3.step('up', e, ratio, recursive);
+  };
+
+  this.saveInput = function (node) {
+    _this3.input = node;
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (InputNumber);
+
+/***/ }),
+
+/***/ "./node_modules/rc-util/es/KeyCode.js":
+/*!********************************************!*\
+  !*** ./node_modules/rc-util/es/KeyCode.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * @ignore
+ * some key-codes definition and utils from closure-library
+ * @author yiminghe@gmail.com
+ */
+var KeyCode = {
+  /**
+   * MAC_ENTER
+   */
+  MAC_ENTER: 3,
+
+  /**
+   * BACKSPACE
+   */
+  BACKSPACE: 8,
+
+  /**
+   * TAB
+   */
+  TAB: 9,
+
+  /**
+   * NUMLOCK on FF/Safari Mac
+   */
+  NUM_CENTER: 12,
+
+  /**
+   * ENTER
+   */
+  ENTER: 13,
+
+  /**
+   * SHIFT
+   */
+  SHIFT: 16,
+
+  /**
+   * CTRL
+   */
+  CTRL: 17,
+
+  /**
+   * ALT
+   */
+  ALT: 18,
+
+  /**
+   * PAUSE
+   */
+  PAUSE: 19,
+
+  /**
+   * CAPS_LOCK
+   */
+  CAPS_LOCK: 20,
+
+  /**
+   * ESC
+   */
+  ESC: 27,
+
+  /**
+   * SPACE
+   */
+  SPACE: 32,
+
+  /**
+   * PAGE_UP
+   */
+  PAGE_UP: 33,
+
+  /**
+   * PAGE_DOWN
+   */
+  PAGE_DOWN: 34,
+
+  /**
+   * END
+   */
+  END: 35,
+
+  /**
+   * HOME
+   */
+  HOME: 36,
+
+  /**
+   * LEFT
+   */
+  LEFT: 37,
+
+  /**
+   * UP
+   */
+  UP: 38,
+
+  /**
+   * RIGHT
+   */
+  RIGHT: 39,
+
+  /**
+   * DOWN
+   */
+  DOWN: 40,
+
+  /**
+   * PRINT_SCREEN
+   */
+  PRINT_SCREEN: 44,
+
+  /**
+   * INSERT
+   */
+  INSERT: 45,
+
+  /**
+   * DELETE
+   */
+  DELETE: 46,
+
+  /**
+   * ZERO
+   */
+  ZERO: 48,
+
+  /**
+   * ONE
+   */
+  ONE: 49,
+
+  /**
+   * TWO
+   */
+  TWO: 50,
+
+  /**
+   * THREE
+   */
+  THREE: 51,
+
+  /**
+   * FOUR
+   */
+  FOUR: 52,
+
+  /**
+   * FIVE
+   */
+  FIVE: 53,
+
+  /**
+   * SIX
+   */
+  SIX: 54,
+
+  /**
+   * SEVEN
+   */
+  SEVEN: 55,
+
+  /**
+   * EIGHT
+   */
+  EIGHT: 56,
+
+  /**
+   * NINE
+   */
+  NINE: 57,
+
+  /**
+   * QUESTION_MARK
+   */
+  QUESTION_MARK: 63,
+
+  /**
+   * A
+   */
+  A: 65,
+
+  /**
+   * B
+   */
+  B: 66,
+
+  /**
+   * C
+   */
+  C: 67,
+
+  /**
+   * D
+   */
+  D: 68,
+
+  /**
+   * E
+   */
+  E: 69,
+
+  /**
+   * F
+   */
+  F: 70,
+
+  /**
+   * G
+   */
+  G: 71,
+
+  /**
+   * H
+   */
+  H: 72,
+
+  /**
+   * I
+   */
+  I: 73,
+
+  /**
+   * J
+   */
+  J: 74,
+
+  /**
+   * K
+   */
+  K: 75,
+
+  /**
+   * L
+   */
+  L: 76,
+
+  /**
+   * M
+   */
+  M: 77,
+
+  /**
+   * N
+   */
+  N: 78,
+
+  /**
+   * O
+   */
+  O: 79,
+
+  /**
+   * P
+   */
+  P: 80,
+
+  /**
+   * Q
+   */
+  Q: 81,
+
+  /**
+   * R
+   */
+  R: 82,
+
+  /**
+   * S
+   */
+  S: 83,
+
+  /**
+   * T
+   */
+  T: 84,
+
+  /**
+   * U
+   */
+  U: 85,
+
+  /**
+   * V
+   */
+  V: 86,
+
+  /**
+   * W
+   */
+  W: 87,
+
+  /**
+   * X
+   */
+  X: 88,
+
+  /**
+   * Y
+   */
+  Y: 89,
+
+  /**
+   * Z
+   */
+  Z: 90,
+
+  /**
+   * META
+   */
+  META: 91,
+
+  /**
+   * WIN_KEY_RIGHT
+   */
+  WIN_KEY_RIGHT: 92,
+
+  /**
+   * CONTEXT_MENU
+   */
+  CONTEXT_MENU: 93,
+
+  /**
+   * NUM_ZERO
+   */
+  NUM_ZERO: 96,
+
+  /**
+   * NUM_ONE
+   */
+  NUM_ONE: 97,
+
+  /**
+   * NUM_TWO
+   */
+  NUM_TWO: 98,
+
+  /**
+   * NUM_THREE
+   */
+  NUM_THREE: 99,
+
+  /**
+   * NUM_FOUR
+   */
+  NUM_FOUR: 100,
+
+  /**
+   * NUM_FIVE
+   */
+  NUM_FIVE: 101,
+
+  /**
+   * NUM_SIX
+   */
+  NUM_SIX: 102,
+
+  /**
+   * NUM_SEVEN
+   */
+  NUM_SEVEN: 103,
+
+  /**
+   * NUM_EIGHT
+   */
+  NUM_EIGHT: 104,
+
+  /**
+   * NUM_NINE
+   */
+  NUM_NINE: 105,
+
+  /**
+   * NUM_MULTIPLY
+   */
+  NUM_MULTIPLY: 106,
+
+  /**
+   * NUM_PLUS
+   */
+  NUM_PLUS: 107,
+
+  /**
+   * NUM_MINUS
+   */
+  NUM_MINUS: 109,
+
+  /**
+   * NUM_PERIOD
+   */
+  NUM_PERIOD: 110,
+
+  /**
+   * NUM_DIVISION
+   */
+  NUM_DIVISION: 111,
+
+  /**
+   * F1
+   */
+  F1: 112,
+
+  /**
+   * F2
+   */
+  F2: 113,
+
+  /**
+   * F3
+   */
+  F3: 114,
+
+  /**
+   * F4
+   */
+  F4: 115,
+
+  /**
+   * F5
+   */
+  F5: 116,
+
+  /**
+   * F6
+   */
+  F6: 117,
+
+  /**
+   * F7
+   */
+  F7: 118,
+
+  /**
+   * F8
+   */
+  F8: 119,
+
+  /**
+   * F9
+   */
+  F9: 120,
+
+  /**
+   * F10
+   */
+  F10: 121,
+
+  /**
+   * F11
+   */
+  F11: 122,
+
+  /**
+   * F12
+   */
+  F12: 123,
+
+  /**
+   * NUMLOCK
+   */
+  NUMLOCK: 144,
+
+  /**
+   * SEMICOLON
+   */
+  SEMICOLON: 186,
+
+  /**
+   * DASH
+   */
+  DASH: 189,
+
+  /**
+   * EQUALS
+   */
+  EQUALS: 187,
+
+  /**
+   * COMMA
+   */
+  COMMA: 188,
+
+  /**
+   * PERIOD
+   */
+  PERIOD: 190,
+
+  /**
+   * SLASH
+   */
+  SLASH: 191,
+
+  /**
+   * APOSTROPHE
+   */
+  APOSTROPHE: 192,
+
+  /**
+   * SINGLE_QUOTE
+   */
+  SINGLE_QUOTE: 222,
+
+  /**
+   * OPEN_SQUARE_BRACKET
+   */
+  OPEN_SQUARE_BRACKET: 219,
+
+  /**
+   * BACKSLASH
+   */
+  BACKSLASH: 220,
+
+  /**
+   * CLOSE_SQUARE_BRACKET
+   */
+  CLOSE_SQUARE_BRACKET: 221,
+
+  /**
+   * WIN_KEY
+   */
+  WIN_KEY: 224,
+
+  /**
+   * MAC_FF_META
+   */
+  MAC_FF_META: 224,
+
+  /**
+   * WIN_IME
+   */
+  WIN_IME: 229,
+  // ======================== Function ========================
+
+  /**
+   * whether text and modified key is entered at the same time.
+   */
+  isTextModifyingKeyEvent: function isTextModifyingKeyEvent(e) {
+    var keyCode = e.keyCode;
+
+    if (e.altKey && !e.ctrlKey || e.metaKey || // Function keys don't generate text
+    keyCode >= KeyCode.F1 && keyCode <= KeyCode.F12) {
+      return false;
+    } // The following keys are quite harmless, even in combination with
+    // CTRL, ALT or SHIFT.
+
+
+    switch (keyCode) {
+      case KeyCode.ALT:
+      case KeyCode.CAPS_LOCK:
+      case KeyCode.CONTEXT_MENU:
+      case KeyCode.CTRL:
+      case KeyCode.DOWN:
+      case KeyCode.END:
+      case KeyCode.ESC:
+      case KeyCode.HOME:
+      case KeyCode.INSERT:
+      case KeyCode.LEFT:
+      case KeyCode.MAC_FF_META:
+      case KeyCode.META:
+      case KeyCode.NUMLOCK:
+      case KeyCode.NUM_CENTER:
+      case KeyCode.PAGE_DOWN:
+      case KeyCode.PAGE_UP:
+      case KeyCode.PAUSE:
+      case KeyCode.PRINT_SCREEN:
+      case KeyCode.RIGHT:
+      case KeyCode.SHIFT:
+      case KeyCode.UP:
+      case KeyCode.WIN_KEY:
+      case KeyCode.WIN_KEY_RIGHT:
+        return false;
+
+      default:
+        return true;
+    }
+  },
+
+  /**
+   * whether character is entered.
+   */
+  isCharacterKey: function isCharacterKey(keyCode) {
+    if (keyCode >= KeyCode.ZERO && keyCode <= KeyCode.NINE) {
+      return true;
+    }
+
+    if (keyCode >= KeyCode.NUM_ZERO && keyCode <= KeyCode.NUM_MULTIPLY) {
+      return true;
+    }
+
+    if (keyCode >= KeyCode.A && keyCode <= KeyCode.Z) {
+      return true;
+    } // Safari sends zero key code for non-latin characters.
+
+
+    if (window.navigator.userAgent.indexOf('WebKit') !== -1 && keyCode === 0) {
+      return true;
+    }
+
+    switch (keyCode) {
+      case KeyCode.SPACE:
+      case KeyCode.QUESTION_MARK:
+      case KeyCode.NUM_PLUS:
+      case KeyCode.NUM_MINUS:
+      case KeyCode.NUM_PERIOD:
+      case KeyCode.NUM_DIVISION:
+      case KeyCode.SEMICOLON:
+      case KeyCode.DASH:
+      case KeyCode.EQUALS:
+      case KeyCode.COMMA:
+      case KeyCode.PERIOD:
+      case KeyCode.SLASH:
+      case KeyCode.APOSTROPHE:
+      case KeyCode.SINGLE_QUOTE:
+      case KeyCode.OPEN_SQUARE_BRACKET:
+      case KeyCode.BACKSLASH:
+      case KeyCode.CLOSE_SQUARE_BRACKET:
+        return true;
+
+      default:
+        return false;
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (KeyCode);
 
 /***/ }),
 
@@ -74988,6 +76585,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Landing_LandingCount__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Landing/LandingCount */ "./resources/js/components/Landing/LandingCount.jsx");
 /* harmony import */ var _components_Dashboard_DashboardTop__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Dashboard/DashboardTop */ "./resources/js/components/Dashboard/DashboardTop.jsx");
 /* harmony import */ var _components_Shop_Shop__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Shop/Shop */ "./resources/js/components/Shop/Shop.jsx");
+/* harmony import */ var _components_Shop_ShopNavbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Shop/ShopNavbar */ "./resources/js/components/Shop/ShopNavbar.jsx");
+
 
 
 
@@ -74995,6 +76594,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
  //* Do theres better way to do this ?  */
+
+if (document.getElementById('ShopNavbar')) {
+  console.log('test');
+  react_dom__WEBPACK_IMPORTED_MODULE_0___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Shop_ShopNavbar__WEBPACK_IMPORTED_MODULE_7__["default"], null), document.getElementById('ShopNavbar'));
+}
 
 react_dom__WEBPACK_IMPORTED_MODULE_0___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Shop_Shop__WEBPACK_IMPORTED_MODULE_6__["default"], null), document.getElementById('Shop'));
 
@@ -75510,8 +77114,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Shop; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Shop.css */ "./resources/js/components/Shop/Shop.css");
-/* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Shop_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shop2_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Shop2.css */ "./resources/js/components/Shop/Shop2.css");
+/* harmony import */ var _Shop2_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Shop2_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Ajax_Shop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Ajax/Shop */ "./resources/js/components/Ajax/Shop.jsx");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
@@ -75542,6 +77146,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+ //import "./Shop.css";
 
 
 
@@ -75688,33 +77293,41 @@ var Shop = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "bruhmoment",
     value: function bruhmoment() {
-      console.log('test');
+      console.log("test");
     }
   }, {
     key: "render",
     value: function render() {
+      var _this$state = this.state,
+          points = _this$state.points,
+          money = _this$state.money,
+          cart = _this$state.cart,
+          username = _this$state.username,
+          totalCarts = _this$state.totalCarts,
+          products = _this$state.products,
+          hasMore = _this$state.hasMore;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container mt-5"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+        className: "row padding"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-3 shadow-sm p-3 mb-5 bg-white rounded"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mt-5"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProfile__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        points: this.state.points,
-        money: this.state.money,
-        cart: this.state.cart,
-        username: this.state.username,
-        totalCarts: this.state.totalCarts
+        points: points,
+        money: money,
+        cart: cart,
+        username: username,
+        totalCarts: totalCarts
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopCarousel__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopRecomendation__WEBPACK_IMPORTED_MODULE_7__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopTopRecomendation__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "shadow-sm p-3 mb-5 bg-white rounded mt-5"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProduct__WEBPACK_IMPORTED_MODULE_6__["default"], {
         fetchMoreData: this.fetchMoreData.bind(this),
-        products: this.state.products,
-        hasMore: this.state.hasMore //Need To pass onclick event to grandchild component somehow
+        products: products,
+        hasMore: hasMore //Need To pass onclick event to grandchild component somehow
         ,
         update: this.bruhmoment.bind(this)
       })))));
@@ -75725,6 +77338,36 @@ var Shop = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/Shop/Shop2.css":
+/*!************************************************!*\
+  !*** ./resources/js/components/Shop/Shop2.css ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./Shop2.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Shop/Shop2.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -75856,6 +77499,108 @@ var ShopCarousel = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Shop/ShopNavbar.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Shop/ShopNavbar.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var ShopNavbar = /*#__PURE__*/function (_React$Component) {
+  _inherits(ShopNavbar, _React$Component);
+
+  var _super = _createSuper(ShopNavbar);
+
+  function ShopNavbar() {
+    _classCallCheck(this, ShopNavbar);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(ShopNavbar, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "navbar navbar-expand-lg navbar-light bg-light"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "navbar-brand",
+        href: "#"
+      }, "Navbar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "navbar-toggler",
+        type: "button",
+        "data-toggle": "collapse",
+        "data-target": "#navbarSupportedContent",
+        "aria-controls": "navbarSupportedContent",
+        "aria-expanded": "false",
+        "aria-label": "Toggle navigation"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "navbar-toggler-icon"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "collapse navbar-collapse",
+        id: "navbarSupportedContent"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "navbar-nav mr-auto"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item active"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-link",
+        href: "#"
+      }, "Home", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "sr-only"
+      }, "(current)"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-link",
+        href: "#"
+      }, "Link"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "form-inline my-2 my-lg-0"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control mr-sm-2",
+        type: "search",
+        placeholder: "Search",
+        "aria-label": "Search"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-outline-success my-2 my-sm-0",
+        type: "submit"
+      }, "Search")))));
+    }
+  }]);
+
+  return ShopNavbar;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ShopNavbar);
+
+/***/ }),
+
 /***/ "./resources/js/components/Shop/ShopProduct.jsx":
 /*!******************************************************!*\
   !*** ./resources/js/components/Shop/ShopProduct.jsx ***!
@@ -75871,8 +77616,92 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shop_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Shop_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _ShopProductItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ShopProductItem */ "./resources/js/components/Shop/ShopProductItem.jsx");
 /* harmony import */ var _ShopProductModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ShopProductModal */ "./resources/js/components/Shop/ShopProductModal.jsx");
-/* harmony import */ var _Ajax_Shop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Ajax/Shop */ "./resources/js/components/Ajax/Shop.jsx");
-/* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-infinite-scroll-component */ "./node_modules/react-infinite-scroll-component/dist/index.es.js");
+/* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-infinite-scroll-component */ "./node_modules/react-infinite-scroll-component/dist/index.es.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+
+var ShopProduct = /*#__PURE__*/function (_Component) {
+  _inherits(ShopProduct, _Component);
+
+  var _super = _createSuper(ShopProduct);
+
+  function ShopProduct(props) {
+    _classCallCheck(this, ShopProduct);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(ShopProduct, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container-fluid"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        dataLength: this.props.products.length,
+        next: this.props.fetchMoreData.bind(this),
+        hasMore: this.props.hasMore,
+        loader: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Loading...")
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, this.props.products.map(function (product) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProductItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          key: product.id,
+          data: product
+        });
+      }))));
+    }
+  }]);
+
+  return ShopProduct;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (ShopProduct);
+
+/***/ }),
+
+/***/ "./resources/js/components/Shop/ShopProductItem.jsx":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Shop/ShopProductItem.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ShopProductItem; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var rc_input_number__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rc-input-number */ "./node_modules/rc-input-number/es/index.js");
+/* harmony import */ var rc_input_number_assets_index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rc-input-number/assets/index.css */ "./node_modules/rc-input-number/assets/index.css");
+/* harmony import */ var rc_input_number_assets_index_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rc_input_number_assets_index_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Ajax_Shop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Ajax/Shop */ "./resources/js/components/Ajax/Shop.jsx");
+/* harmony import */ var reactjs_popup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactjs-popup */ "./node_modules/reactjs-popup/reactjs-popup.es.js");
+/* harmony import */ var react_number_format__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-number-format */ "./node_modules/react-number-format/dist/react-number-format.es.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -75902,115 +77731,85 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var ShopProduct = /*#__PURE__*/function (_Component) {
-  _inherits(ShopProduct, _Component);
 
-  var _super = _createSuper(ShopProduct);
+var ShopProductItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(ShopProductItem, _React$Component);
 
-  function ShopProduct(props) {
-    _classCallCheck(this, ShopProduct);
+  var _super = _createSuper(ShopProductItem);
 
-    return _super.call(this, props);
+  function ShopProductItem(props) {
+    var _this;
+
+    _classCallCheck(this, ShopProductItem);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      value: null
+    };
+    return _this;
   }
 
-  _createClass(ShopProduct, [{
+  _createClass(ShopProductItem, [{
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        value: e
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container-fluid"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        dataLength: this.props.products.length,
-        next: this.props.fetchMoreData.bind(this),
-        hasMore: this.props.hasMore,
-        loader: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Loading...")
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, this.props.products.map(function (product) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProductItem__WEBPACK_IMPORTED_MODULE_2__["ShopProductItem"], {
-          key: product.id,
-          name: product.name,
-          price: "$" + product.price,
-          seller: product.seller,
-          modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ShopProductModal__WEBPACK_IMPORTED_MODULE_3__["ShopProductModal"], null),
-          itemid: product.id,
-          img: Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_4__["getImg"])(product.minecraft_item_shorthand),
-          update: _this.props.update.bind(_this)
-        });
-      }))));
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactjs_popup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        trigger: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_3__["getImg"])(this.props.data.minecraft_item_shorthand),
+          className: "card-img-top"
+        })),
+        modal: true,
+        CloseOnDocumentClick: true
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Bruh")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, this.props.data.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.data.seller), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_number_format__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        value: this.props.data.price,
+        displayType: "text",
+        thousandSeparator: true,
+        prefix: "$ "
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(rc_input_number__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        min: 1,
+        max: 64,
+        placeholder: "Enter Amount",
+        onChange: this.handleChange.bind(this),
+        style: {
+          width: "200px",
+          height: "30px",
+          paddingRight: "2px"
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        onClick: function onClick() {
+          Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_3__["postCart"])(_this2.props.data.id, _this2.state.value, _this2.props.data.name);
+        },
+        className: "btn btn-primary",
+        style: {
+          width: "200px",
+          height: "30px",
+          textAlign: "center",
+          backgroundColor: "#0275d8",
+          color: "white",
+          padding: "0",
+          paddingRight: "2px"
+        }
+      }, "Add to cart"))))));
     }
   }]);
 
-  return ShopProduct;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (ShopProduct);
-
-/***/ }),
-
-/***/ "./resources/js/components/Shop/ShopProductItem.jsx":
-/*!**********************************************************!*\
-  !*** ./resources/js/components/Shop/ShopProductItem.jsx ***!
-  \**********************************************************/
-/*! exports provided: ShopProductItem */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShopProductItem", function() { return ShopProductItem; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var reactjs_popup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactjs-popup */ "./node_modules/reactjs-popup/reactjs-popup.es.js");
-/* harmony import */ var _Ajax_Shop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Ajax/Shop */ "./resources/js/components/Ajax/Shop.jsx");
+  return ShopProductItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
-
-function ShopProductItem(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-3 shadow-sm p-3 mb-5 bg-white rounded"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "single-product"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-img"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactjs_popup__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    trigger: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      className: "default-img",
-      src: props.img
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      className: "hover-img",
-      src: props.img
-    })),
-    modal: true,
-    CloseOnDocumentClick: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.modal))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.seller), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-price"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, props.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group input-group-sm mb-3"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group-prepend"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "input-group-text",
-    id: "inputGroup-sizing-sm"
-  }, "Small")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    className: "form-control",
-    "aria-label": "Small",
-    "aria-describedby": "inputGroup-sizing-sm"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "Add to cart"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    //Need A way to fix this garbage code
-    onClick: function onClick() {
-      Object(_Ajax_Shop__WEBPACK_IMPORTED_MODULE_2__["postCart"])(props.itemid, 1, props.name);
-      props.update;
-    },
-    type: "button",
-    className: "btn btn-primary"
-  }, "Add to cart")))))));
-}
 
 /***/ }),
 
@@ -76088,6 +77887,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+ // import
 
 
 
@@ -76106,7 +77906,7 @@ var ShopProfile = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "shadow-sm p-3 mb-5 bg-white rounded bg-light p-2 text-dark"
+        className: "p-3 mb-5 bg-white rounded bg-light p-2 text-dark"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "balance text-small  p-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -76148,7 +77948,12 @@ var ShopProfile = /*#__PURE__*/function (_Component) {
           width: "25px"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-md-9"
-        }, " ", "".concat(item.name, " x").concat(item.amount, "  $").concat(item.amount * item.price)))));
+        }, "".concat(item.name, " x").concat(item.amount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_number_format__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          value: item.amount * item.price,
+          displayType: "text",
+          thousandSeparator: true,
+          prefix: " $ "
+        })))));
       }));
     }
   }]);
@@ -76561,8 +78366,8 @@ var Notification = /*#__PURE__*/function (_React$Component) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! F:\Project\Uwucraft\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! F:\Project\Uwucraft\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/damaralbaribin/Uwucraft/Uwucraft/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/damaralbaribin/Uwucraft/Uwucraft/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),

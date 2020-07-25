@@ -25,8 +25,10 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "@material-ui/core": "^4.11.0",
         "@tippyjs/react": "^4.0.5",
         "laravel-echo": "^1.8.0",
+        "rc-input-number": "^5.1.1",
         "react-icons": "^3.10.0",
         "react-infinite-scroll-component": "^5.0.5",
         "react-js-pagination": "^3.0.3",

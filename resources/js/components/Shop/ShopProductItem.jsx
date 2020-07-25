@@ -1,60 +1,89 @@
 import React from "react";
+import InputNumber from "rc-input-number";
+import "rc-input-number/assets/index.css";
+import { getImg } from "../Ajax/Shop";
 import Popup from "reactjs-popup";
 import { postCart } from "../Ajax/Shop";
-export function ShopProductItem(props) {
-    return (
-        <div className="col-md-3 shadow-sm p-3 mb-5 bg-white rounded">
-            <div className="single-product">
-                <div className="product-img">
-                    <Popup
-                        trigger={
-                            <a>
-                                <img className="default-img" src={props.img} />
-                                <img className="hover-img" src={props.img} />
-                            </a>
-                        }
-                        modal
-                        CloseOnDocumentClick
-                    >
-                        <div>{props.modal}</div>
-                    </Popup>
-                </div>
-                <div className="product-content">
-                    <h5>{props.name}</h5>
-                    <p>{props.seller}</p>
-                    <div className="product-price">
-                        <span>{props.price}</span>
-                        <div className="input-group input-group-sm mb-3">
-                            <div className="input-group-prepend">
-                                <span
-                                    className="input-group-text"
-                                    id="inputGroup-sizing-sm"
-                                >
-                                    Small
-                                </span>
-                            </div>
-                            <input
-                                type="text"
-                                className="form-control"
-                                aria-label="Small"
-                                aria-describedby="inputGroup-sizing-sm"
+import NumberFormat from "react-number-format";
+export default class ShopProductItem extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: null
+        };
+    }
+    handleChange(e) {
+        this.setState({ value: e });
+    }
+    render() {
+        return (
+            <div className="col-md-3">
+                <Popup
+                    trigger={
+                        <a>
+                            <img
+                                src={getImg(
+                                    this.props.data.minecraft_item_shorthand
+                                )}
+                                className="card-img-top"
                             />
-                        </div>
+                        </a>
+                    }
+                    modal
+                    CloseOnDocumentClick
+                >
+                    <div>Bruh</div>
+                </Popup>
+                <div className="card-body">
+                    <div>
+                        <h5>{this.props.data.name}</h5>
+                        <p>{this.props.data.seller}</p>
                         <div>
-                            <a title="Add to cart">
+                            <span>
+                                <NumberFormat
+                                    value={this.props.data.price}
+                                    displayType={"text"}
+                                    thousandSeparator={true}
+                                    prefix={"$ "}
+                                />
+                            </span>
+                            <div>
+                            <InputNumber
+                                min={1}
+                                max={64}
+                                placeholder="Enter Amount"
+                                onChange={this.handleChange.bind(this)}
+                                style={{ width: "200px", height: "30px", paddingRight: "2px" }}
+                            />
                                 <button
-                                //Need A way to fix this garbage code
-                                    onClick={() => {postCart(props.itemid, 1, props.name); props.update}}
                                     type="button"
+                                    onClick={() => {
+                                        postCart(
+                                            this.props.data.id,
+                                            this.state.value,
+                                            this.props.data.name
+                                        );
+                                    }}
                                     className="btn btn-primary"
+                                    style={{
+                                        width: "200px",
+                                        height: "30px",
+                                        textAlign: "center",
+                                        backgroundColor: "#0275d8",
+                                        color: "white",
+                                        padding: "0",
+                                        paddingRight: "2px"
+                                    }}
                                 >
                                     Add to cart
                                 </button>
-                            </a>
+                            </div>
+                            
                         </div>
+                       
                     </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
