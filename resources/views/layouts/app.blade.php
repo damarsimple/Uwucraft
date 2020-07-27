@@ -11,9 +11,12 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary bg-gradient fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-silver fixed-top shadow-sm mb-5 bg-white rounded">
         <div class="container-fluid">
             <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                <a class="navbar-brand">
+                    <img src="/favicon.ico" height="25px">
+                </a>
                 @if (Route::has('login'))
                 @auth
                 <li class="nav-item">
@@ -49,9 +52,7 @@
         </div>
     </nav>
     @yield('navbar')
-   
     @yield('content')
-
     <!-- Footer -->
     <footer class="container-fluid mt-5 p-lg-5 bg-dark text-white">
         <div class="row">

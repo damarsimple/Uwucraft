@@ -1,6 +1,6 @@
 import React from "react";
 //import "./Shop.css";
-import "./Shop2.css";
+import "./Shop.css";
 import { fetchItems, Cart, postCart } from "../Ajax/Shop";
 import axios from "axios";
 import ShopProfile from "./ShopProfile";

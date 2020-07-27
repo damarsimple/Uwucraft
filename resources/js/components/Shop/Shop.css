@@ -1,3 +1,7 @@
 .padding{
     padding-top: 10rem
 }
+.fixed-top-2 {
+    position: fixed;
+    top: 56px;
+}

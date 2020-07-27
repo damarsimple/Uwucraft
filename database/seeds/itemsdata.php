@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
-class itemsdata extends Seeder
+
+class Itemsdata extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class itemsdata extends Seeder
      */
     public function run()
     {
-        /** Populate Table using dummy items */
+         /** Populate Table using dummy items */
         /** Not really dummy tho */
         $json = file_get_contents('https://raw.githubusercontent.com/PrismarineJS/minecraft-data/master/data/pc/1.8/items.json');
         $table = json_decode($json, true);
