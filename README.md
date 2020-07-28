@@ -9,6 +9,25 @@ Uwucraft is website for minecraft server built using React as Frontend and Larav
 ![Preview](https://raw.githubusercontent.com/damarsimple/Uwucraft/master/screenshot/1.png)
 ![Preview](https://raw.githubusercontent.com/damarsimple/Uwucraft/master/screenshot/2.png)
 
+##Painless installation using laradock
+
+you need Docker for this installation avaible on both windows and linux !
+
+git clone 
+cp .env.example .env
+Change redis host to redis 
+change mysql host to mysql
+mysql user and pass to root
+cd laradock 
+cp .env.example .env
+
+on.env
+
+PHP_WORKER_INSTALL_REDIS=true
+docker-compose up -d redis mysql redis php-fpm phpmyadmin redis-webui workspace laravel-echo-server nginx php-worker
+docker-compose stop to stop
+docker-compose start to start
+
 ## Preparing
 
 this project using redis as broadcast driver and laravel echo server as broadcast server so you need it to enable notification

@@ -9,10 +9,13 @@ import ShopNavbar from './components/Shop/ShopNavbar';
 //* Do theres better way to do this ?  */
 if(document.getElementById('ShopNavbar'))
 {
-    console.log('test');
     ReactDOM.render( <ShopNavbar />, document.getElementById('ShopNavbar'));
 }
-ReactDOM.render(  <Shop />, document.getElementById('Shop'));
+
+if(document.getElementById('Shop'))
+{
+    ReactDOM.render(  <Shop />, document.getElementById('Shop'));
+}
 if (document.getElementById('Notification')) {
     ReactDOM.render(  <Notification />, document.getElementById('Notification'));
 }

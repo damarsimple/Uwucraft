@@ -31,6 +31,5 @@ class DatabaseSeeder extends Seeder
                 'created_at' => Carbon::now()->toDateTimeString(),
             ]);
         }
-        $this->call(Itemsdata::class);
     }
 }
