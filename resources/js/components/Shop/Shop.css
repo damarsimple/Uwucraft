@@ -4,4 +4,5 @@
 .fixed-top-2 {
     position: fixed;
     top: 56px;
+    z-index: 1000;
 }

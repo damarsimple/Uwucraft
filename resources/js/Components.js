@@ -3,7 +3,7 @@ import React from 'react';
 import Notification from './components/Ui/Notification';
 import Chat from './components/Ui/Chat';
 import LandingCount from './components/Landing/LandingCount';
-import DashboardTop from './components/Dashboard/DashboardTop';
+import Dashboard from './components/Dashboard/Dashboard';
 import Shop from './components/Shop/Shop';
 import ShopNavbar from './components/Shop/ShopNavbar';
 //* Do theres better way to do this ?  */
@@ -27,7 +27,7 @@ if (document.getElementById('LandingCount')) {
     ReactDOM.render(  <LandingCount />, document.getElementById('LandingCount'));
 }
 
-if (document.getElementById('DashboardTop')) {
-    ReactDOM.render(  <DashboardTop />, document.getElementById('DashboardTop'));
+if (document.getElementById('Dashboard')) {
+    ReactDOM.render(  <Dashboard />, document.getElementById('Dashboard'));
 }
 

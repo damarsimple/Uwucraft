@@ -18,10 +18,6 @@ use App\Http\Controllers\ItemImgController;
 |
 */
 
-/* Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-}); */
-
 
 /** API LOGIN ROUTES */
 Route::post('/login', 'Api\LoginController@login');
@@ -44,7 +40,10 @@ Route::get('items/all', function()
 });
 Route::get('items/', function()
 {
-    return Itemsdata::paginate(12);
+    //Example Cache Implementation
+    return Cache::remember('items', 30, function () {
+        return Itemsdata::paginate(12);
+    });
 });
 Route::get('items/id/{id}', function($id)
 {

@@ -84,7 +84,7 @@ export default class Shop extends React.Component {
             hasMore
         } = this.state;
         return (
-            <div className="container mt-5">
+            <div className="container ">
                 <div className="row padding">
                     <div className="col-md-3 shadow-sm p-3 mb-5 bg-white rounded">
                         <div className="mt-5" />
