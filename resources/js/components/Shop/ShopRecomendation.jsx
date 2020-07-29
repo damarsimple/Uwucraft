@@ -6,10 +6,10 @@ class ShopRecomendation extends React.Component {
             <div className="container-fluid">
                 <h3> Recomendation </h3>
                 <div className="card-group">
-                    <ShopCardGroup title="Nice" image="http://localhost/api/image/item/stone"/>
-                    <ShopCardGroup title="Nice" image="http://localhost/api/image/item/stone"/>
-                    <ShopCardGroup title="Nice" image="http://localhost/api/image/item/stone"/>
-                    <ShopCardGroup title="Nice" image="http://localhost/api/image/item/stone"/>
+                    <ShopCardGroup title="Nice" image="/api/image/item/stone"/>
+                    <ShopCardGroup title="Nice" image="/api/image/item/stone"/>
+                    <ShopCardGroup title="Nice" image="/api/image/item/stone"/>
+                    <ShopCardGroup title="Nice" image="/api/image/item/stone"/>
                 </div>
             </div>
         );

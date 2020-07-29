@@ -57,7 +57,7 @@ export function postCart(itemid, amount, name) {
                 window.location.port +
                 "/ajax/shop",
             {
-                item: itemid,
+                itemid: itemid,
                 amount: amount
             }
         );
