@@ -9,7 +9,7 @@ use Carbon\Carbon;
 
 use App\Itemsdata;
 use App\User;
-use App\UsersCart;
+use App\Usercart;
 use App\PlayerData;
 use App\UsersTransactionHistory;
 use App\Http\Controllers\ServerController;
@@ -22,53 +22,101 @@ class ShopController extends Controller
 
         //Initialize Websender
     }
-    public static function createCart($username)
+    public function addCart(Request $request): object
     {
-        UsersCart::insert(
-            [
-                'username' => $username,
-                'inventory' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]
-        );
-    }
-    public function addItemCart(Request $request)
-    {
-        //Initialize Variable
-        $username = Auth::user()->username;
-        $id = $request->input('item');
+        $id = Auth::user()->id;
+        $itemid = $request->input('itemid');
         $amount = $request->input('amount');
+        $data = [
+            'user_id' => $id,
+            'item_id' => $itemid,
+            'amount' => $amount,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ];
 
-        if(!is_int($amount))
-        {
-            abort(400, 'INTEGER!');
-        }
-        //Check if users carts exists in records
-        if (UsersCart::where('username', '=', $username)->first() == null) {
-            //Create if not exists
-            self::createCart($username);
-        }
-
-        //Initialize users cart object
-        $cart = UsersCart::find($username);
-        //Check if empty
-        if (!empty($cart->inventory)) {
-            $cartd = json_decode($cart->inventory);
-        } else {
-            //Init Array Empty
-            $cartd = array();
-        }
-
-        //Check IF item already exists in inventory
-        //Help I DONT KNOW HOW TO MIMPLEMENT THIS FUCNTIONS
-        $arr = ['id' => $id, 'amount' => $amount];
-        array_push($cartd, $arr);
-        //Save to database
-        $cart->inventory = json_encode($cartd);
-        return $cart->save();
+        return Usercart::insert($data);
     }
-    //Broke
+    private function DecrementMoney($username, $amount): void
+    {
+        $users = PlayerData::findOrFail($username);
+        $users->money = $users->money - $amount;
+        $users->save();
+    }
+    public static function getMoney(): int
+    {
+        //Get Player money from model
+        $data = PlayerData::find(Auth::user()->username);
+        return empty($data['money']) ? 0 : $data['money'];
+    }
+    public static function getCart(): array
+    {
+        $user = User::find(Auth::user()->id);
+
+        $data = [
+            'username' => $user->username,
+            'balance' => self::getMoney(),
+            'points' => rand(10, 2500),
+            'cart' => self::proccesCart($user->usercart->toArray()),
+            'last_update' =>  Carbon::now(), //Timestamps,
+        ];
+        return $data;
+    }
+    /**
+     *    This method turn raw cart data to presentable array
+     *
+     * @var array
+     */
+    public static function proccesCart(array $proccess): array
+    {
+        $count = count($proccess);
+        $arr = array();
+        for ($i = 0; $i < $count; $i++) {
+            $item = Itemsdata::find($proccess[$i]['item_id'])->toArray();
+            $item['amount'] = $proccess[$i]['amount'];
+            $item['cartid'] = $proccess[$i]['id'];
+            array_push($arr, $item);
+        }
+        return $arr;
+    }
+    /**
+     *   Change spesific amount in carts
+     *
+     * @var Request
+     */
+    public static function changeAmountCart(Request $request): void
+    {
+        $id = $request->input('cartid');
+        $userid = $request->input('userid');
+        $amount = $request->input('amount');
+        //Check if auth user is indeed owner
+        if (Auth::user()->id != $userid) {
+            abort(403);
+        }
+        $cart = Usercart::find($id);
+        $cart->amount = $amount;
+        $cart->save();
+    }
+    public static function deleteItemCart(Request $request): void
+    {
+        $id = $request->input('cartid');
+        $userid = $request->input('userid');
+        //Check if auth user is indeed owner
+        if (Auth::user()->id != $userid) {
+            abort(403);
+        }
+        $cart = Usercart::find($id);
+        $cart->delete();
+    }
+    public static function getPrice($item): int
+    {
+        //Get Price from model
+        return Itemsdata::findOrFail($item)['price'];
+    }
+    private static function incrementItemCounter($id): object
+    {
+        return Itemsdata::findOrFail($id)->increment('counter');
+    }
     private function processCart()
     {
         //Get Money and Cart
@@ -102,58 +150,5 @@ class ShopController extends Controller
         $items = Itemsdata::findOrFail($item)['minecraft_short_hand'];
         $server = new ServerController();
         return $server->give($username, $items, $amount);
-    }
-    private function DecrementMoney($username, $amount)
-    {
-        $users = PlayerData::findOrFail($username);
-        $users->money = $users->money - $amount;
-        return $users->save();
-    }
-    public static function getMoney()
-    {
-        //Get Player money from model
-        $data = PlayerData::find(Auth::user()->username);
-        return empty($data['money']) ? 0 : $data['money'];
-    }
-    public static function getCart()
-    {
-
-        $obj = UsersCart::find(Auth::user()->username);
-        //Check Null
-        if ($obj == null) {
-            self::createCart(Auth::user()->username);
-            $inventory = array();
-            $update = Carbon::now()->toDateTimeString();
-        } else {
-            $inventory = json_decode($obj->inventory);
-            $update = $obj->updated_at;
-            if ($inventory == null) {
-                $inventory = array();
-            }
-        }
-        $inv = array();
-        for ($i = 0; $i < count($inventory); $i++) {
-            $item = Itemsdata::find($inventory[$i]->id)->toArray();
-            $item['amount'] = $inventory[$i]->amount;
-            array_push($inv, $item);
-        }
-        $data = [
-            'username' => Auth::user()->username,
-            'balance' => self::getMoney(),
-            'points' => rand(10, 2500),
-            'cart' => $inv,
-            'last_update' =>  $update,
-        ];
-        //return dd($inventory[1]->id);
-        return $data;
-    }
-    public static function getPrice($item)
-    {
-        //Get Price from model
-        return Itemsdata::findOrFail($item)['price'];
-    }
-    private static function incrementItemCounter($id)
-    {
-        return Itemsdata::findOrFail($id)->increment('counter');
     }
 }
