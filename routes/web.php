@@ -1,7 +1,9 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,7 +31,22 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::post('/ajax/shop', 'ShopController@addItemCart')->middleware('auth');
-Route::get('/ajax/shop', 'ShopController@getCart')->middleware('auth');
 
-Route::get('/test/{username}' , 'ShopController@getMoney');
+Route::group(['middleware' => 'auth', 'prefix' => '/ajax'], function () {
+    Route::post('/shop', 'ShopController@addCart');
+    Route::get('/shop', 'ShopController@getCart');
+    Route::put('/shop', 'ShopController@changeAmountCart');
+    Route::delete('/shop', 'ShopController@deleteItemCart');
+
+    Route::post('/dashboard', 'PostController@');
+});
+
+Route::get('/test', function () {
+    $user = User::find(1);
+    // return dd($user->usercart);
+    foreach ($user->usercart as $val) {
+        echo $val . "<br>";
+    }
+
+    return Auth::user()->id;
+});
