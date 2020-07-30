@@ -1,5 +1,5 @@
 import React from "react";
-import { FaShoppingCart, FaRegBell } from "react-icons/fa";
+import { FaShoppingCart, FaRegBell, FaUserAlt, FaStore } from "react-icons/fa";
 class ShopNavbar extends React.Component {
     render() {
         return (
@@ -12,19 +12,23 @@ class ShopNavbar extends React.Component {
                                 className="nav-link active"
                                 aria-current="page"
                             >
-                                Status
+                                Categories
                             </a>
                         </li>
                     </ul>
 
                     <input
-                        className="form-control "
+                        className="form-control m-3"
                         type="search"
                         placeholder="Search"
                         aria-label="Search"
                     />
-                    <FaShoppingCart />
-                    <FaRegBell />
+                    <FaShoppingCart size="1.5em" className="m-3"/>
+                    <FaRegBell size="1.5em" className="m-3"/>
+<div style={{ borderLeft: '1px solid black',
+  height: '35px'}}></div> 
+                    <FaStore size="1.5em" className="m-3"/>
+                    <FaUserAlt size="1.5em" className="m-3"/>
                 </div>
             </nav>
         );

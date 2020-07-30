@@ -59,7 +59,7 @@ then change file .env to
 - QUEUE_CONECTION = redis
 
 then run php artisan migrate to add necessary column to table
-then run php artisan db:seed --class=itemsdata if you want to add dummy items
+then run php artisan db:seed if you want to add dummy items
 
 then run this command
 - composer install

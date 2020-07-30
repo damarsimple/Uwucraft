@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
+import { FaWallet,FaCoins } from 'react-icons/fa';
 // import
 import NumberFormat from "react-number-format";
 class ShopProfile extends Component {
@@ -18,6 +19,7 @@ class ShopProfile extends Component {
                     <div className="border-top border-silver pt-2">
                         <p className="font-weight-bold">Balance</p>
                         <div>
+                            <FaWallet size="1em"className="m-3"/>
                             <NumberFormat
                                 value={this.props.money}
                                 displayType={"text"}
@@ -26,6 +28,7 @@ class ShopProfile extends Component {
                             />
                         </div>
                         <div>
+                        <FaCoins size="1em"className="m-3"/>
                             Points
                             <NumberFormat
                                 value={this.props.points}
@@ -39,7 +42,7 @@ class ShopProfile extends Component {
                 <div className="border-top border-silver  p-2">
                     <p className="font-weight-bold">Purchase History</p>
                     <p>
-                        <AiOutlineShoppingCart size="1em" />
+                        <AiOutlineShoppingCart size="1em" className="m-3"/>
                         Carts {this.props.totalCarts}
                     </p>
                 </div>

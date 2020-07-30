@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./Shop.css";
 import  ShopProductItem  from "./ShopProductItem";
-import { ShopProductModal } from "./ShopProductModal";
-
 import InfiniteScroll from "react-infinite-scroll-component";
 class ShopProduct extends Component {
     constructor(props) {
@@ -19,10 +17,10 @@ class ShopProduct extends Component {
                     loader={<h4>Loading...</h4>}
                 >
                     <div className="row">
-                        {this.props.products.map(product => (
+                        {this.props.products.map((product, index) => (
                             
                             <ShopProductItem
-                                key={product.id}
+                                key={index}
                                 data={ product }
                             />
                         ))}
