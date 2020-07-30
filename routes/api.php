@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Itemsdata;
 use App\PlayerData;
 use App\Http\Controllers\ItemImgController;
-
+use App\Item;
+use App\Post;
+use App\User;
+use App\Comment;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,43 +27,35 @@ Route::post('/login', 'Api\LoginController@login');
 /** Image Item API */
 Route::get('image/item/{itemname}', 'ItemImgController@get_img');
 /** Player API  */
-Route::get('player', function()
-{
+Route::get('player', function () {
     return PlayerData::all();
 });
-Route::get('player/{username}', function($username)
-{
+Route::get('player/{username}', function ($username) {
     return PlayerData::find($username);
 });
 /** END OF LINE */
 // Items API //
-Route::get('items/all', function()
-{
-    return Itemsdata::all();
+Route::get('items/all', function () {
+    return Item::all();
 });
-Route::get('items/', function()
-{
+Route::get('items/', function () {
     //Example Cache Implementation
     return Cache::remember('items', 30, function () {
-        return Itemsdata::paginate(12);
+        return Item::paginate(12);
     });
 });
-Route::get('items/id/{id}', function($id)
-{
-    return Itemsdata::find($id);
+Route::get('items/id/{id}', function ($id) {
+    return Item::find($id);
 });
-Route::post('items', function(Request $request)
-{
-    return Itemsdata::create($request->all());
+Route::post('items', function (Request $request) {
+    return Item::create($request->all());
 });
-Route::put('items/{$id}', function(Request $request, $id)
-{
+Route::put('items/{$id}', function (Request $request, $id) {
     $itemsdata = Itemsdata::findOrFail($id);
     $itemsdata->update($request->all());
     return $itemsdata;
 });
-Route::delete('items/{$id}', function($id)
-{
+Route::delete('items/{$id}', function ($id) {
     Itemsdata::find($id)->delete();
     return 204;
 });
@@ -68,27 +63,16 @@ Route::delete('items/{$id}', function($id)
 
 
 /** Game Notifications */
-Route::get('game/{data}', function ($data)
-{
+Route::get('game/{data}', function ($data) {
     event(new \App\Events\GlobalNotifications($data));
     return 'adding' . $data;
 });
 
-/** Sends data to chats room  */
-Route::get('/chats/room/{roomid}', 'ChatsController@getRoomData');
-Route::get('/chats/message/{id}', 'ChatsController@getMessagedata');
-Route::get('chats/subscribe/{id}', 'ChatsController@getSubscribedRoom');
-
-Route::put('/chats/message/{id}', 'ChatsController@EditRoom');
-Route::put('/chats/message/{id}', 'ChatsController@EditMessage');
-Route::put('/chats/subcribe/{id}', 'ChatsController@EditRoom'); //accept room to subscribe
-
-Route::delete('/chats/message/{id}', 'ChatsController@DeleteMessage');
-Route::delete('/chats/room/{id}', 'ChatsController@DeleteRoom');
-
-Route::post('/chats/subscribe' , 'ChatsController@addChatsSubscribe'); //accept sender +
-Route::post('/chats/message' , 'ChatsController@addMessage'); //accept room id + sender + content
-
-Route::post('/shop', 'ShopController@addItemCart');
-
-Route::get('/test/{username}' , 'ShopController@getMoney');
+Route::group(['prefix' => 'posts'], function () {
+    Route::get('/', function () {
+        return Post::with('user', 'comment', 'reaction')->paginate(10);
+    });
+    Route::post('/', function () {
+        echo 'noice';
+    });
+});

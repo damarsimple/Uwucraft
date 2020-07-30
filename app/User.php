@@ -38,9 +38,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function friend()
+    {
+        return $this->hasMany(Friend::class);
+    }
     public function usercart()
     {
         return $this->hasMany(Usercart::class);
     }
-
+    public function usertransactionhistory()
+    {
+        return $this->hasMany(Usertransactionhistory::class);
+    }
+    public function post()
+    {
+        return $this->hasMany(Post::class);
+    }
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
+//Route::get('/{username}', 'ProfileController@userPage');
 Route::get('/fire', function () {
     event(new \App\Events\TestEvent());
     return 'ok';
@@ -41,12 +42,3 @@ Route::group(['middleware' => 'auth', 'prefix' => '/ajax'], function () {
     Route::post('/dashboard', 'PostController@');
 });
 
-Route::get('/test', function () {
-    $user = User::find(1);
-    // return dd($user->usercart);
-    foreach ($user->usercart as $val) {
-        echo $val . "<br>";
-    }
-
-    return Auth::user()->id;
-});
