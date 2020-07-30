@@ -32,7 +32,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-
+use Carbon\Carbon;
+Route::get('/test', function(){
+    $data =            [
+        'user_id' => 1,
+        'post_id' => 1,
+        'content' => 'bruh moment',
+        'created_at' => Carbon::now(),
+        'updated_at' => Carbon::now()
+    ];
+    broadcast(new \App\Events\PostEvent($data));
+    return $data;
+});
 Route::group(['middleware' => 'auth', 'prefix' => '/ajax'], function () {
     Route::post('/shop', 'ShopController@addCart');
     Route::get('/shop', 'ShopController@getCart');
@@ -40,5 +51,9 @@ Route::group(['middleware' => 'auth', 'prefix' => '/ajax'], function () {
     Route::delete('/shop', 'ShopController@deleteItemCart');
 
     Route::post('/dashboard', 'PostController@');
-});
 
+    Route::group(['prefix' => 'posts'], function () {
+        Route::get('/', 'PostController@index');
+        Route::post('/', 'PostController@store')->middleware('auth');
+    });
+});

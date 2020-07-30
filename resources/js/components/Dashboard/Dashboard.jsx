@@ -2,6 +2,8 @@ import React from "react";
 import "./Dashboard.css";
 import ShopProfile from "../Shop/ShopProfile";
 import PostCard from "./PostCard";
+import Echo from "laravel-echo";
+import socketio from "socket.io-client";
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
@@ -17,7 +19,7 @@ class Dashboard extends React.Component {
         };
     }
     componentDidMount() {
-        axios.get("api/posts").then(response => {
+        axios.get("ajax/posts").then(response => {
             const currentPage = response.data.current_page;
             const nextPage = response.data.next_page_url;
             const lastPage = response.data.last_page_url;
@@ -70,12 +72,7 @@ class Dashboard extends React.Component {
                     <div className="col-md-9">
                         {/** Left */}
                         {this.state.posts.map((post, index) => {
-                            return (
-                                <PostCard
-                                    key={index}
-                                    data={post}
-                                />
-                            );
+                            return <PostCard key={index} data={post} />;
                         })}
 
                         {/** End Loop Here */}

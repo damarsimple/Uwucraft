@@ -1,5 +1,6 @@
 <?php
 
+use App\Comment;
 use Illuminate\Support\Facades\Broadcast;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Broadcast;
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
+
+// Broadcast::channel('posts.{post_id}', function ($user, $post_id) {
+//     return $user->id === 1;
+// });

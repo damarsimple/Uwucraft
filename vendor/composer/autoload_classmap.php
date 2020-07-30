@@ -9,6 +9,7 @@ return array(
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\GlobalNotifications' => $baseDir . '/app/Events/GlobalNotifications.php',
+    'App\\Events\\PostEvent' => $baseDir . '/app/Events/PostEvent.php',
     'App\\Events\\TestEvent' => $baseDir . '/app/Events/TestEvent.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Friend' => $baseDir . '/app/Friend.php',

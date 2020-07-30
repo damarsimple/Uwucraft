@@ -1,18 +1,37 @@
 import React from "react";
 import { FaEllipsisH } from "react-icons/fa";
 import { MdSend } from "react-icons/md";
-import { post } from "jquery";
+import Echo from "laravel-echo";
+import socketio from "socket.io-client";
 
 export default class PostCard extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: "", button: false };
+        this.state = {
+            value: "",
+            button: false,
+
+            username: this.props.data.user.username,
+            content: this.props.data.content,
+            comment: this.props.data.comment,
+            reaction: this.props.data.reaction,
+
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
-        //listen echo
+        const e = new Echo({
+            broadcaster: "socket.io",
+            host: window.location.hostname + ":6001",
+            client: socketio,
+        });
+        /** Init Echo  */
+        e.channel(`posts.${this.props.data.id}`).listen("PostEvent", (e) => {
+            console.log(e.data);
+            this.setState({comment: this.state.comment.concat(e.data)})
+        });
     }
     handleChange(event) {
         this.setState({ value: event.target.value });
@@ -23,9 +42,10 @@ export default class PostCard extends React.Component {
     handleSubmit(event) {
         const data = {
             id: this.props.data.id,
-            content: this.state.value
+            content: this.state.value,
         };
-        axios.post("/api/posts", data);
+        axios.post("/ajax/posts", data);
+        this.setState({ value: ""});
     }
     render() {
         return (
@@ -38,9 +58,9 @@ export default class PostCard extends React.Component {
                         />
                         <a
                             className="instagram-card-user-name"
-                            href={`./${this.props.data.username}`}
+                            href={`./${this.state.username}`}
                         >
-                            {this.props.data.username}
+                            {this.state.username}
                         </a>
                         <div className="instagram-card-action d-flex justify-content-center">
                             <FaEllipsisH />
@@ -55,28 +75,28 @@ export default class PostCard extends React.Component {
                     </div>
                     <div className="instagram-card-content">
                         <p className="likes">
-                            {this.props.data.reaction.length} reactions
+                            {this.state.reaction.length} reactions
                         </p>
                         <p>
                             <a
                                 className="instagram-card-content-user"
-                                href={`./${this.props.data.username}`}
+                                href={`./${this.state.username}`}
                             >
-                                {this.props.data.username}
+                                {this.state.username}
                             </a>
-                            {this.props.data.content}
+                            {this.state.content}
                         </p>
                         <p className="comments">
-                            view all {this.props.data.comment.length} comments
+                            view all {this.state.comment.length} comments
                         </p>
-                        {this.props.data.comment.map((comment, i) => {
+                        {this.state.comment.map((comment, i) => {
                             return (
                                 <div key={i}>
                                     <a
-                                        href={`/dazzle`}
+                                        href={`./${comment.user.username}`}
                                         className="user-comment"
                                     >
-                                        dazzle
+                                        {comment.user.username}
                                     </a>
                                     {comment.content}
                                 </div>
@@ -101,13 +121,12 @@ export default class PostCard extends React.Component {
                         />
 
                         <MdSend
-                            fill={ this.state.button ? 'blue' : '' }
+                            fill={this.state.button ? "blue" : ""}
                             onMouseEnter={this.handleMouseOver.bind(this)}
                             onMouseLeave={this.handleMouseOver.bind(this)}
-                            size='2em'
+                            size="2em"
                             onClick={this.handleSubmit}
                         />
-
                         <a className="footer-action-icons" href="#"></a>
                     </div>
                 </div>

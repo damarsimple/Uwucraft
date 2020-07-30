@@ -64,15 +64,7 @@ Route::delete('items/{$id}', function ($id) {
 
 /** Game Notifications */
 Route::get('game/{data}', function ($data) {
+    
     event(new \App\Events\GlobalNotifications($data));
     return 'adding' . $data;
-});
-
-Route::group(['prefix' => 'posts'], function () {
-    Route::get('/', function () {
-        return Post::with('user', 'comment', 'reaction')->paginate(10);
-    });
-    Route::post('/', function () {
-        echo 'noice';
-    });
 });
