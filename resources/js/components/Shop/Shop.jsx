@@ -59,7 +59,6 @@ export default class Shop extends React.Component {
         });
     }
     fetchMoreData() {
-        const number = parseInt(this.state.currentPage) + 1;
         axios.get(this.state.nextPage).then(res => {
             const currentPage = res.data.current_page;
             const products = this.state.products.concat(res.data.data);

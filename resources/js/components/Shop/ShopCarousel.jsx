@@ -5,25 +5,25 @@ import { Carousel } from 'react-responsive-carousel';
 class ShopCarousel extends Component {
     render() {
         return (
-            <div className="container-fluid w-50">
+            <div className="container-fluid w-75 shadow-sm p-3 mb-5 bg-white rounded">
         <Carousel showThumbs={false} showArrows={false} autoPlay infiniteLoop showStatus={false}>
         <div key="slide1">
-            <img src="https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg" />
+            <img src="https://cdn.discordapp.com/attachments/709042003744391188/738681348813881384/gotem.png" />
         </div>
         <div key="slide2">
-            <img src="https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg" />
+            <img src="https://cdn.discordapp.com/attachments/709042003744391188/738681348813881384/gotem.png" />
         </div>
         <div key="slide3">
-            <img src="https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg" />
+            <img src="https://cdn.discordapp.com/attachments/709042003744391188/738681348813881384/gotem.png" />
         </div>
         <div key="slide4">
-            <img src="https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg" />
+            <img src="https://cdn.discordapp.com/attachments/709042003744391188/738681348813881384/gotem.png" />
         </div>
         <div key="slide5">
-            <img src="https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg" />
+            <img src="https://cdn.discordapp.com/attachments/709042003744391188/738681348813881384/gotem.png" />
         </div>
         <div key="slide6">
-            <img src="https://previews.123rf.com/images/vitekprchal/vitekprchal1807/vitekprchal180700022/103816649-wide-sales-banner-for-your-promotion-simple-two-color-banner-with-a-lot-of-space-around-it-s-minimal.jpg" />
+            <img src="https://cdn.discordapp.com/attachments/709042003744391188/738681348813881384/gotem.png" />
         </div>
     </Carousel>
     </div>
