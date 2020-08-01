@@ -16,7 +16,7 @@ class Commentseed extends Seeder
             DB::table('comments')->insert([
                 'user_id' => 1,
                 'post_id' => rand(1,10),
-                'content' => rand(1,5),
+                'content' => $faker->sentence(20, true),
                 'updated_at' => Carbon::now()->toDateTimeString(),
                 'created_at' => Carbon::now()->toDateTimeString(),
             ]);

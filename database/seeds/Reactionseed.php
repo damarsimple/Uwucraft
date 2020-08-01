@@ -12,11 +12,10 @@ class Reactionseed extends Seeder
     public function run()
     {
         for ($i = 0; $i < 20; $i++) {
-            $faker = Faker\Factory::create();
             DB::table('reactions')->insert([
                 'user_id' => 1,
                 'post_id' => rand(1,10),
-                'content' => $faker->sentence(20, true),
+                'content' => rand(1,3),
                 'updated_at' => Carbon::now()->toDateTimeString(),
                 'created_at' => Carbon::now()->toDateTimeString(),
             ]);
