@@ -41,7 +41,7 @@ Route::get('items/all', function () {
 Route::get('items/', function () {
     //Example Cache Implementation
     return Cache::remember('items', 30, function () {
-        return Item::paginate(12);
+        return Item::with('user')->paginate(10);
     });
 });
 Route::get('items/id/{id}', function ($id) {

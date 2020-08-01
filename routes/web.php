@@ -1,5 +1,6 @@
 <?php
 
+use App\Friend;
 use App\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -33,16 +34,23 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 use Carbon\Carbon;
-Route::get('/test', function(){
-    $data =            [
+
+Route::get('/test', function () {
+    $data =      [
+        'id'=> 11,
         'user_id' => 1,
-        'post_id' => 1,
+        'post_id' => 40,
         'content' => 'bruh moment',
         'created_at' => Carbon::now(),
-        'updated_at' => Carbon::now()
+        'updated_at' => Carbon::now(),
+        'user' => User::find(1),
     ];
     broadcast(new \App\Events\PostEvent($data));
     return $data;
+});
+
+Route::get('/chat', function () {
+    return view('chat');
 });
 Route::group(['middleware' => 'auth', 'prefix' => '/ajax'], function () {
     Route::post('/shop', 'ShopController@addCart');
@@ -52,8 +60,12 @@ Route::group(['middleware' => 'auth', 'prefix' => '/ajax'], function () {
 
     Route::post('/dashboard', 'PostController@');
 
+    Route::get('/friend', function () {
+        $b = Friend::where('user_id', Auth::user()->id);
+        return $b->with('friend')->get();
+    });
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', 'PostController@index');
-        Route::post('/', 'PostController@store')->middleware('auth');
+        Route::post('/', 'PostController@store');
     });
 });
