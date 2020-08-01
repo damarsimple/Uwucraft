@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { FaEllipsisH } from "react-icons/fa";
+import { FaEllipsisH, FaHeart, FaThumbsUp, FaAngry } from "react-icons/fa";
 import { MdSend } from "react-icons/md";
-import Echo from "laravel-echo";
-import socketio from "socket.io-client";
+import ReadMoreReact from "read-more-react";
 export default function PostCard(props) {
     const data = props.props;
     const [input, setInput] = useState("");
@@ -10,10 +9,10 @@ export default function PostCard(props) {
     const submit = () => {
         const sub = {
             id: data.id,
-            content: input,
+            content: input
         };
         console.log(sub);
-        setInput('');
+        setInput("");
         return axios.post("/ajax/posts", sub);
     };
     return (
@@ -42,7 +41,22 @@ export default function PostCard(props) {
                     />
                 </div>
                 <div className="instagram-card-content">
-                    <p className="likes">{data.reaction.length} reactions</p>
+                    <FaHeart
+                        className="m-2"
+                        size="2em"
+                        fill={button ? "red" : ""}
+                    />
+                    <FaThumbsUp
+                        className="m-2"
+                        size="2em"
+                        fill={button ? "blue" : ""}
+                    />
+                    <FaAngry
+                        className="m-2"
+                        size="2em"
+                        fill={button ? "orange" : ""}
+                    />
+                    <p className="likes">{data.reaction.length} reacted</p>
                     <p>
                         <a
                             className="instagram-card-content-user"
@@ -50,8 +64,18 @@ export default function PostCard(props) {
                         >
                             {data.user.username}
                         </a>
-                        {data.content}
                     </p>
+                    <ReadMoreReact
+                        text={data.content}
+                        min={300}
+                        ideal={350}
+                        max={500}
+                        readMoreText={
+                            <h6 className="card-subtitle mb-2 text-muted mt-2 mb-2">
+                                click here to read more
+                            </h6>
+                        }
+                    />
                     <p className="comments">
                         view all {data.comment.length} comments
                     </p>
@@ -91,7 +115,7 @@ export default function PostCard(props) {
                         onMouseEnter={() => setButton(!button)}
                         onMouseLeave={() => setButton(!button)}
                         size="2em"
-                          onClick={submit}
+                        onClick={submit}
                     />
                     <a className="footer-action-icons" href="#"></a>
                 </div>

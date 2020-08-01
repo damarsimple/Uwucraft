@@ -17,7 +17,9 @@ class Dashboard extends React.Component {
             totalPages: null,
             total: 0,
             perpage: null,
-            hasMore: true
+            hasMore: true,
+
+            inputValue: ""
         };
     }
     componentDidMount() {
@@ -75,11 +77,35 @@ class Dashboard extends React.Component {
             }
         });
     }
+    handleSubmit() {
+        console.log(this.state);
+    }
     render() {
         return (
             <div className="container">
                 <div className="row padding">
                     <div className="col-md-9">
+                        <div className="card w-100 mb-3">
+                            <div className="card-body">
+                                <textarea
+                                    className="form-control"
+                                    rows={2}
+                                    value={this.state.inputValue}
+                                    onChange={() => {
+                                        this.setState({
+                                            inputValue: event.target.value
+                                        });
+                                    }}
+                                    placeholder="Submit Sumthing"
+                                />
+                                <button
+                                    onClick={this.handleSubmit.bind(this)}
+                                    className="btn btn-primary w-100 mt-2"
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
                         <InfiniteScroll
                             dataLength={this.state.posts.length}
                             next={this.fetchMoreData.bind(this)}
