@@ -35,7 +35,7 @@ export function getImg(img) {
         img
     );
 }
-export function getCarousel(){
+export function getCarousel() {
     return (
         window.location.protocol +
         "//" +
@@ -49,29 +49,31 @@ export function getCarousel(){
 
 export function postCart(itemid, amount, name) {
     try {
-        const response = axios.post(
-            window.location.protocol +
-                "//" +
-                window.location.hostname +
-                ":" +
-                window.location.port +
-                "/ajax/shop",
-            {
-                itemid: itemid,
-                amount: amount
-            }
-        );
-        toast.info("🛒 " + "Added " + name + " To Carts !", {
-            position: "bottom-left",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined
-        });
+        axios
+            .post(
+                window.location.protocol +
+                    "//" +
+                    window.location.hostname +
+                    ":" +
+                    window.location.port +
+                    "/ajax/shop",
+                {
+                    itemid: itemid,
+                    amount: amount
+                }
+            )
+            .then(
+                toast.info("🛒 " + "Added " + name + " To Carts !", {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined
+                })
+            );
     } catch (e) {
         console.log(`😱 Axios request failed: ${e}`);
     }
-    
 }
