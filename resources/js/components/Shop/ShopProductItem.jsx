@@ -21,29 +21,31 @@ export default class ShopProductItem extends React.Component {
         return (
             <div className="col-12 col-sm-8 col-md-6 col-lg-4 mt-2 mb-2">
                 <div className="card">
-                <Popup
-                    trigger={
-                        <a>
-                            <img
-                                src={getImg(
-                                    this.props.data.minecraft_item_shorthand
-                                )}
-                                className="card-img-top"
-                            />
-                        </a>
-                    }
-                    modal
-                    CloseOnDocumentClick
-                >
-                    <ShopProductModal />
-                </Popup>
-                    <div className="card-img-overlay d-flex justify-content-end">
+                    <Popup
+                        trigger={
+                            <a>
+                                <img
+                                    src={getImg(
+                                        this.props.data.minecraft_item_shorthand
+                                    )}
+                                    className="card-img-top"
+                                />
+                            </a>
+                        }
+                        modal
+                        CloseOnDocumentClick
+                    >
+                        <ShopProductModal />
+                    </Popup>
+                    {/* <div className="card-img-overlay d-flex justify-content-end">
                         <a href="#" className="card-link text-danger like">
                             <FaHeart />
                         </a>
-                    </div>
+                    </div> */}
                     <div className="card-body">
-                        <h4 className="card-title">{this.props.data.name}</h4>
+                        <h4 className="card-title">
+                            {this.props.data.item_name}
+                        </h4>
                         <h6 className="card-subtitle mb-2 text-muted">
                             Seller: {this.props.data.user.username}
                         </h6>
@@ -62,10 +64,18 @@ export default class ShopProductItem extends React.Component {
                                     />
                                 </h5>
                             </div>
-                            <a href="#" className="btn btn-danger mt-3">
-                                <FaShoppingCart/> Add to
-                                Cart
-                            </a>
+                            <button
+                                onClick={() => {
+                                    postCart(
+                                        this.props.data.id,
+                                        1,
+                                        this.props.data.item_name
+                                    );
+                                }}
+                                className="btn btn-danger mt-3"
+                            >
+                                <FaShoppingCart /> Add to Cart
+                            </button>
                         </div>
                     </div>
                 </div>
