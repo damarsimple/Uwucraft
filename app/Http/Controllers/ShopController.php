@@ -7,12 +7,12 @@ use Illuminate\Support\Facades\Auth;
 
 use Carbon\Carbon;
 
-use App\Itemsdata;
 use App\User;
 use App\Usercart;
 use App\PlayerData;
 use App\UsersTransactionHistory;
 use App\Http\Controllers\ServerController;
+use App\Item;
 
 /** Revamp to user Auth Facades */
 class ShopController extends Controller
@@ -22,7 +22,7 @@ class ShopController extends Controller
 
         //Initialize Websender
     }
-    public function addCart(Request $request): object
+    public function addCart(Request $request): bool
     {
         $id = Auth::user()->id;
         $itemid = $request->input('itemid');
@@ -72,7 +72,7 @@ class ShopController extends Controller
         $count = count($proccess);
         $arr = array();
         for ($i = 0; $i < $count; $i++) {
-            $item = Itemsdata::find($proccess[$i]['item_id'])->toArray();
+            $item = Item::find($proccess[$i]['item_id'])->toArray();
             $item['amount'] = $proccess[$i]['amount'];
             $item['cartid'] = $proccess[$i]['id'];
             array_push($arr, $item);
