@@ -20,6 +20,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 //Route::get('/{username}', 'ProfileController@userPage');
+Route::get('/test', function () {
+    $img = Image::make(storage_path('image/item/acacia_boat.png'))->resize(300, 200);
+    return $img->response('jpg');
+});
+// Route::get('/test', function () {
+//     $data =      [
+//         'id'=> 11,
+//         'user_id' => 1,
+//         'post_id' => 40,
+//         'content' => 'bruh moment',
+//         'created_at' => Carbon::now(),
+//         'updated_at' => Carbon::now(),
+//         'user' => User::find(1),
+//     ];
+//     broadcast(new \App\Events\PostEvent($data));
+//     return $data;
+// });
+
 Route::get('/fire', function () {
     event(new \App\Events\TestEvent());
     return 'ok';
@@ -32,23 +50,6 @@ Route::get('/shop', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
-use Carbon\Carbon;
-
-Route::get('/test', function () {
-    $data =      [
-        'id'=> 11,
-        'user_id' => 1,
-        'post_id' => 40,
-        'content' => 'bruh moment',
-        'created_at' => Carbon::now(),
-        'updated_at' => Carbon::now(),
-        'user' => User::find(1),
-    ];
-    broadcast(new \App\Events\PostEvent($data));
-    return $data;
-});
-
 Route::get('/chat', function () {
     return view('chat');
 });
