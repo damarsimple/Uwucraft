@@ -31,6 +31,6 @@ class PostEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('posts.' . 1);
+        return new Channel('posts');
     }
 }

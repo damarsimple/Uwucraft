@@ -37,7 +37,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) : object
     {
         $data =            [
             'user_id' => Auth::user()->id,
@@ -58,9 +58,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id) : object
     {
-        //
+        return Post::find($id);
     }
 
     /**
@@ -71,7 +71,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -81,9 +81,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) : void
     {
-        //
+        $post = Post::find($id);
+        $post->content = $request->input('content');
+        $post->save;
+
     }
 
     /**
@@ -92,8 +95,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id) : void
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
     }
 }
