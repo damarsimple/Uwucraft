@@ -9,32 +9,15 @@ class ItemImgController extends Controller
 {
     public $os = PHP_OS;
 
-    public function get_img($img)
+    public function get_img($name)
     {
-        /** Change \ to / in linux */
-        if( $this->os == 'WIN')
-        {
-            $path = storage_path('image') . '\\item' . $img . '.png';
-            if (file_exists($path)) {
-                $file = file_get_contents($path);
-                return response($file, 200)->header('Content-Type', 'image/jpeg');
-            }
-            $path = storage_path('image') . '\\item' . 'notfound' . '.png';
-            $file = file_get_contents($path);
-            return response($file, 200)->header('Content-Type', 'image/jpeg');
-        }else{
-            /** / in linuxs */
-            $path = storage_path('image') . '/item/' . $img . '.png';
-            if (file_exists($path)) {
-                $file = file_get_contents($path);
-                return response($file, 200)->header('Content-Type', 'image/jpeg');
-            }
-            $path = storage_path('image') . '/item/' . 'bedrock' . '.png';
-            $file = file_get_contents($path);
-            //delete file doesnt exists
-            //\DB::table('itemsdata')->where('name', $img)->delete();
-            return response($file, 200)->header('Content-Type', 'image/jpeg');
+        $path = storage_path("image/item/$name.png");
+        if (!file_exists($path)) {
+            $path = storage_path("image/item/stone.png");
+            $img = \Image::make($path)->resize(300, 300);
+            return $img->response('jpg');
         }
-
+        $img = \Image::make($path)->resize(300, 300);
+        return $img->response('jpg');
     }
 }
