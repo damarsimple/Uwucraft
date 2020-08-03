@@ -18,7 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::with('user', 'comment.user', 'reaction.user')->paginate(10);
+        return Post::with('author', 'comments.author', 'reactions.author')->paginate(10);
     }
 
     /**
@@ -47,7 +47,7 @@ class PostController extends Controller
             'updated_at' => Carbon::now()
         ];
         $post = Comment::create($data);
-        $data['user'] = User::find(Auth::user()->id);
+        $data['author'] = User::find(Auth::user()->id);
         broadcast(new \App\Events\PostEvent($data));
         return $post;
     }

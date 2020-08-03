@@ -3,18 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
-    public function user()
+    protected $hidden = ['user_id'];
+    public function author(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
-    public function comment()
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }
-    public function reaction()
+    public function reactions(): HasMany
     {
         return $this->hasMany(Reaction::class);
     }

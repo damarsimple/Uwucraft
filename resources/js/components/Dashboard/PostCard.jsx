@@ -11,7 +11,6 @@ export default function PostCard(props) {
             id: data.id,
             content: input
         };
-        console.log(sub);
         setInput("");
         return axios.post("/ajax/posts", sub);
     };
@@ -25,9 +24,9 @@ export default function PostCard(props) {
                     />
                     <a
                         className="instagram-card-user-name"
-                        href={`./${data.user.username}`}
+                        href={`./${data.author.username}`}
                     >
-                        {data.user.username}
+                        {data.author.username}
                     </a>
                     <div className="instagram-card-action d-flex justify-content-center">
                         <FaEllipsisH />
@@ -56,13 +55,13 @@ export default function PostCard(props) {
                         size="2em"
                         fill={button ? "orange" : ""}
                     />
-                    <p className="likes">{data.reaction.length} reacted</p>
+                    <p className="likes">{data.reactions.length} reacted</p>
                     <p>
                         <a
                             className="instagram-card-content-user"
-                            href={`./${data.user.username}`}
+                            href={`./${data.author.username}`}
                         >
-                            {data.user.username}
+                            {data.author.username}
                         </a>
                     </p>
                     <ReadMoreReact
@@ -73,16 +72,16 @@ export default function PostCard(props) {
                         readMoreText={"click here to read more"}
                     />
                     <p className="comments">
-                        view all {data.comment.length} comments
+                        view all {data.comments.length} comments
                     </p>
-                    {data.comment.map((comment, i) => {
+                    {data.comments.map((comment, i) => {
                         return (
                             <div key={i}>
                                 <a
-                                    href={`./${comment.user.username}`}
+                                    href={`./${comment.author.username}`}
                                     className="user-comment"
                                 >
-                                    {comment.user.username}
+                                    {comment.author.username}
                                 </a>
                                 {comment.content}
                             </div>

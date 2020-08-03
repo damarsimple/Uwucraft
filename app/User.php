@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -38,23 +39,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function friend()
+    public function friend(): HasMany
     {
         return $this->hasMany(Friend::class);
     }
-    public function usercart()
+    public function usercart(): HasMany
     {
         return $this->hasMany(Usercart::class);
     }
-    public function usertransactionhistory()
+    public function usertransactionhistory(): HasMany
     {
         return $this->hasMany(Usertransactionhistory::class);
     }
-    public function post()
+    public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
     }
-    public function comment()
+    public function comment(): HasMany
     {
         return $this->hasMany(Comment::class);
     }

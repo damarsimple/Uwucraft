@@ -44,18 +44,22 @@ class Dashboard extends React.Component {
                 host: window.location.hostname + ":6001",
                 client: socketio
             });
-
+            // TODO  PERSONAL FEED FOR MORE EFFICIENT TRANSFER//
+            //listen for events
             echo.channel("posts").listen("PostEvent", e => {
+                //find posts associate with comment
                 let index = this.state.posts.findIndex(
                     obj => obj.id == e.data.post_id
                 );
+                //check if post already rendered here
                 if (index != -1) {
+                    console.log(e.data);
                     //prepare the result
-                    let result = this.state.posts[index].comment.concat(e.data);
+                    let result = this.state.posts[index].comments.concat(e.data);
                     let posts = this.state.posts;
                     //Assign new data to object
                     let comments = Object.assign({}, posts[index]);
-                    comments.comment = result;
+                    comments.comments = result;
                     //assign new object to posts
                     posts[index] = comments;
                     this.setState({ posts: posts });
