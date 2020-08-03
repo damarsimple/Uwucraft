@@ -70,11 +70,7 @@ export default function PostCard(props) {
                         min={300}
                         ideal={350}
                         max={500}
-                        readMoreText={
-                            <h6 className="card-subtitle mb-2 text-muted mt-2 mb-2">
-                                click here to read more
-                            </h6>
-                        }
+                        readMoreText={"click here to read more"}
                     />
                     <p className="comments">
                         view all {data.comment.length} comments
