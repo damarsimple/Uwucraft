@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
+    protected $fillable = ['user_id', 'content'];
     protected $hidden = ['user_id'];
     public function author(): BelongsTo
     {

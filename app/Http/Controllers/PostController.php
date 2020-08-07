@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use App\Comment;
+use App\Reaction;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +19,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::with('author', 'comments.author', 'reactions.author')->paginate(10);
+        return Post::with('author', 'comments.author', 'reactions.author')->orderBy('created_at', 'desc')->paginate(10);
     }
 
     /**
@@ -37,19 +38,56 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) : object
+    public function store(Request $request): object
     {
-        $data =            [
-            'user_id' => Auth::user()->id,
-            'post_id' => $request->input('id'),
-            'content' => $request->input('content'),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
-        ];
-        $post = Comment::create($data);
-        $data['author'] = User::find(Auth::user()->id);
-        broadcast(new \App\Events\PostEvent($data));
-        return $post;
+        $type = $request->input('type');
+        switch ($type) {
+            case 'post':
+                $data = [
+                    'user_id' => Auth::user()->id,
+                    'content' => $request->input('content'),
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now()
+                ];
+                $post = Post::create($data);
+                unset($data['user_id']);
+                $data['id'] = $post->id;
+                $data['type'] = $type;
+                $data['author'] = $post->author;
+                $data['comments'] = $post->comments;
+                $data['reactions'] = $post->reactions;
+                broadcast(new \App\Events\PostEvent($data));
+                return $post;
+                break;
+            case 'comment':
+                $data =            [
+                    'user_id' => Auth::user()->id,
+                    'post_id' => $request->input('id'),
+                    'content' => $request->input('content'),
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now()
+                ];
+                $post = Comment::create($data);
+                $data['author'] = User::find(Auth::user()->id);
+                $data['type'] = $type;
+                broadcast(new \App\Events\PostEvent($data));
+                return $post;
+                break;
+            case 'reaction':
+                $data =            [
+                    'user_id' => Auth::user()->id,
+                    'post_id' => $request->input('id'),
+                    'content' => $request->input('content'),
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now()
+                ];
+                $post = Reaction::create($data);
+                $data['author'] = User::find(Auth::user()->id);
+                $data['type'] = $type;
+                broadcast(new \App\Events\PostEvent($data));
+                return $post;
+                break;
+        }
     }
 
     /**
@@ -58,7 +96,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) : object
+    public function show($id): object
     {
         return Post::find($id);
     }
@@ -71,7 +109,6 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        
     }
 
     /**
@@ -81,12 +118,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) : void
+    public function update(Request $request, $id): void
     {
         $post = Post::find($id);
         $post->content = $request->input('content');
         $post->save;
-
     }
 
     /**
@@ -95,7 +131,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) : void
+    public function destroy($id): void
     {
         $post = Post::find($id);
         $post->delete();

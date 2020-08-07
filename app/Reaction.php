@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Reaction extends Model
 {
+    protected $fillable = ['user_id', 'post_id', 'content'];
     protected $hidden = ['user_id'];
     public function post(): BelongsTo
     {
