@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import NumberFormat from 'react-number-format';
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 export default function ShopCart(props) {

@@ -8,6 +8,7 @@ import ShopCarousel from "./ShopCarousel";
 import ShopProduct from "./ShopProduct";
 import ShopRecomendation from "./ShopRecomendation";
 import ShopTopRecomendation from "./ShopTopRecomendation";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 export default class Shop extends React.Component {
     constructor(props) {
         super(props);
@@ -23,54 +24,129 @@ export default class Shop extends React.Component {
 
             username: null,
             money: null,
-            points: null,
-            totalCarts: null,
-            cart: []
+            points: null
         };
     }
     componentDidMount() {
-        fetchItems().then(res => {
-            const currentPage = res.data.current_page;
-            const nextPage = res.data.next_page_url;
-            const lastPage = res.data.last_page_url;
-            const totalPages = res.data.last_page;
-            const total = parseInt(res.data.total);
-            const perpage = res.data.per_page;
-            const products = res.data.data;
-            this.setState({ products });
-            this.setState({ currentPage });
-            this.setState({ nextPage });
-            this.setState({ lastPage });
-            this.setState({ totalPages });
-            this.setState({ total });
-            this.setState({ perpage });
+        const client = new ApolloClient({
+            uri: "/graphql",
+            cache: new InMemoryCache()
         });
+
+        client
+            .query({
+                query: gql`
+                    query {
+                        items {
+                            data {
+                                id
+                                item_name
+                                description
+                                type
+                                minecraft_item_shorthand
+                                price
+                                counter
+                                author {
+                                    username
+                                }
+                            }
+                            paginatorInfo {
+                                count
+                                currentPage
+                                firstItem
+                                hasMorePages
+                                lastItem
+                                lastPage
+                                perPage
+                                total
+                            }
+                        }
+                    }
+                `
+            })
+            .then(res => {
+                const response = res.data.items;
+                const page = response.paginatorInfo;
+                const products = response.data;
+                this.setState({ products });
+
+                const currentPage = page.currentPage;
+                const nextPage = page.currentPage + 1;
+                const lastPage = page.lastPage;
+                const totalPages = page.lastPage;
+                const total = page.total;
+                const perpage = page.perPage;
+                const hasMore = page.hasMorePages;
+                this.setState({ hasMore });
+                this.setState({ currentPage });
+                this.setState({ nextPage });
+                this.setState({ lastPage });
+                this.setState({ totalPages });
+                this.setState({ total });
+                this.setState({ perpage });
+            });
         Cart().then(response => {
             const username = response.data.username;
             const money = response.data.balance;
             const points = response.data.points;
             const totalCarts = response.data.cart.length;
-            const cart = response.data.cart;
+
             this.setState({ username });
             this.setState({ money });
             this.setState({ points });
             this.setState({ totalCarts });
-            this.setState({ cart });
         });
     }
     fetchMoreData() {
-        axios.get(this.state.nextPage).then(res => {
-            const currentPage = res.data.current_page;
-            const products = this.state.products.concat(res.data.data);
-            const nextPage = res.data.next_page_url;
-            this.setState({ nextPage });
-            this.setState({ currentPage });
-            this.setState({ products });
-            if (this.state.totalPages <= this.state.currentPage) {
-                const hasMore = false;
-                this.setState({ hasMore });
-            }
+        const client = new ApolloClient({
+            uri: "/graphql",
+            cache: new InMemoryCache()
         });
+
+        client
+            .query({
+                query: gql`
+                    query {
+                        items(page: ${this.state.nextPage}) {
+                            data {
+                                id
+                                item_name
+                                description
+                                type
+                                minecraft_item_shorthand
+                                price
+                                counter
+                                author{
+                                    username
+                                }
+                            }
+                            paginatorInfo {
+                                count
+                                currentPage
+                                firstItem
+                                hasMorePages
+                                lastItem
+                                lastPage
+                                perPage
+                                total
+                            }
+                        }
+                    }
+                `
+            })
+            .then(res => {
+                const products = this.state.products.concat(
+                    res.data.items.data
+                );
+                const page = res.data.items.paginatorInfo;
+                const currentPage = page.currentPage;
+                const nextPage = this.state.currentPage + 1;
+                const hasMore = page.hasMorePages;
+                this.setState({ hasMore });
+                this.setState({ nextPage });
+                this.setState({ currentPage });
+                this.setState({ products });
+            });
     }
     render() {
         const {

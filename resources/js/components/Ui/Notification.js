@@ -1,40 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ToastContainer,toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Echo from "laravel-echo";
-import socketio from 'socket.io-client'
-import { AiOutlineNotification } from 'react-icons/ai';
+import socketio from "socket.io-client";
 /**  Using Echo listen for events then show it using react toastify */
-class Notification extends React.Component{
+class Notification extends React.Component {
     constructor(props) {
-        super (props);
+        super(props);
         /** Init Echo  */
-        const echo = new Echo(
-            {
-                broadcaster: 'socket.io',
-                host: window.location.hostname + ':6001', // this is laravel-echo-server host
-                client: socketio,
-            }
-        )
+        const echo = new Echo({
+            broadcaster: "socket.io",
+            host: window.location.hostname + ":6001", // this is laravel-echo-server host
+            client: socketio
+        });
         /** React Toastify + Laravel Echos */
-        echo.channel('GlobalNotifications')
-        .listen('GlobalNotifications', e => {
-            toast.info( '🔔 ' +  e.data , {
+        echo.channel("GlobalNotifications").listen("GlobalNotifications", e => {
+            toast.info("🔔 " + e.data, {
                 position: "bottom-left",
                 autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
-                progress: undefined,
-                })
+                progress: undefined
+            });
         });
     }
     render() {
         return (
             <div>
-            <ToastContainer />
+                <ToastContainer />
             </div>
         );
     }

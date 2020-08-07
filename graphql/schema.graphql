@@ -9,8 +9,10 @@ type Query {
     users: [User!]! @paginate(defaultCount: 10)
     user(id: ID @eq): User @find
 
-    posts: [Post!]! @paginate
+    posts: [Post!]! @paginate(defaultCount: 10)
     post(id: Int! @eq): Post @find
+
+    items: [Item!]! @paginate(defaultCount: 10)
 }
 
 type User {
@@ -41,4 +43,16 @@ type Reaction{
     author: User! @belongsTo
     post: Post! @belongsTo
     content: String!
+}
+
+type Item{
+    id: ID!
+    item_name: String
+    description: String
+    type: String
+    minecraft_item_id: String
+    minecraft_item_shorthand: String
+    price: Int
+    counter: Int
+    author: User! @belongsTo
 }

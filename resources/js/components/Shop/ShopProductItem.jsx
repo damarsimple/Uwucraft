@@ -47,7 +47,7 @@ export default class ShopProductItem extends React.Component {
                             {this.props.data.item_name}
                         </h4>
                         <h6 className="card-subtitle mb-2 text-muted">
-                            Seller: {this.props.data.user.username}
+                            Seller: {this.props.data.author.username}
                         </h6>
                         {/* <p className="card-text">
                             { this.props.data.description }
