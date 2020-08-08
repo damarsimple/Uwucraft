@@ -53,6 +53,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/chat', function () {
     return view('chat');
 });
+use App\Item;
 Route::group(['middleware' => 'auth', 'prefix' => '/ajax'], function () {
     Route::post('/shop', 'ShopController@addCart');
     Route::get('/shop', 'ShopController@getCart');
@@ -64,6 +65,11 @@ Route::group(['middleware' => 'auth', 'prefix' => '/ajax'], function () {
     Route::get('/friend', function () {
         $b = Friend::where('user_id', Auth::user()->id);
         return $b->with('friend')->get();
+    });
+
+    Route::get('/test', function () {
+       
+        return Item::with('author')->get();
     });
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', 'PostController@index');

@@ -6,13 +6,15 @@ scalar DateTime
     @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
 type Query {
-    users: [User!]! @paginate(defaultCount: 10)
-    user(id: ID @eq): User @find
+    users: [User!]! @paginate(defaultCount: 10) @cache
+    user(id: ID @eq): User @find @cache
 
-    posts: [Post!]! @paginate(defaultCount: 10)
-    post(id: Int! @eq): Post @find
+    posts: [Post!]! @paginate(defaultCount: 10) @cache
+    post(id: Int! @eq): Post @find @cache
 
-    items: [Item!]! @paginate(defaultCount: 10)
+    items: [Item!]! @paginate(defaultCount: 10) @cache
+
+    me: User @auth
 }
 
 type User {
@@ -22,6 +24,16 @@ type User {
     created_at: DateTime!
     updated_at: DateTime!
     posts: [Post!]! @hasMany
+    usercart: [Usercart!]! @hasMany
+}
+
+type Usercart {
+    id: ID!
+    user_id: ID!
+    item_id: ID!
+    amount: Int!
+    created_at: DateTime!
+    updated_at: DateTime!
 }
 
 type Post {
@@ -30,22 +42,24 @@ type Post {
     content: String!
     comments: [Comment!]! @hasMany
     reactions: [Reaction!]! @hasMany
+    commentsCount: Int! @count(relation: "comments")
+    reactionsCount: Int! @count(relation: "reactions")
 }
 
-type Comment{
+type Comment {
     id: ID!
     author: User! @belongsTo
     post: Post! @belongsTo
     content: String!
 }
-type Reaction{
+type Reaction {
     id: ID!
     author: User! @belongsTo
     post: Post! @belongsTo
     content: String!
 }
 
-type Item{
+type Item {
     id: ID!
     item_name: String
     description: String

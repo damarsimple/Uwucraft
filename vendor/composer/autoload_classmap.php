@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Content' => $baseDir . '/app/Content.php',
     'App\\Events\\GlobalNotifications' => $baseDir . '/app/Events/GlobalNotifications.php',
     'App\\Events\\PostEvent' => $baseDir . '/app/Events/PostEvent.php',
     'App\\Events\\TestEvent' => $baseDir . '/app/Events/TestEvent.php',

@@ -1,12 +1,12 @@
 import React from "react";
 import "./Dashboard.css";
 import ShopProfile from "../Shop/ShopProfile";
-import PostCard from "./PostCard";
+import PostCard from "./PostCard.tsx";
 import Echo from "laravel-echo";
 import socketio from "socket.io-client";
 import InfiniteScroll from "react-infinite-scroll-component";
 import PropagateLoader from "react-spinners/ScaleLoader";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { ApolloClient, InMemoryCache, gql, createHttpLink } from "@apollo/client";
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
@@ -24,11 +24,27 @@ class Dashboard extends React.Component {
         };
     }
     componentDidMount() {
+        const link = createHttpLink({
+            uri: "/graphql",
+            credentials: 'same-origin'
+        });
         const client = new ApolloClient({
             uri: "/graphql",
-            cache: new InMemoryCache()
+            cache: new InMemoryCache(),
+            link
         });
-
+        client
+            .query({
+                query: gql`
+                    {
+                        me {
+                            username
+                            email
+                        }
+                    }
+                `
+            })
+            .then(e => console.log(e));
         client
             .query({
                 query: gql`
@@ -37,6 +53,8 @@ class Dashboard extends React.Component {
                             data {
                                 id
                                 content
+                                commentsCount
+                                reactionsCount
                                 author {
                                     username
                                 }
@@ -110,6 +128,7 @@ class Dashboard extends React.Component {
                 //Assign new data to object
                 let comments = Object.assign({}, posts[index]);
                 comments.comments = result;
+                comments.commentsCount = posts[index].commentsCount + 1;
                 //assign new object to posts
                 posts[index] = comments;
                 this.setState({ posts: posts });
@@ -121,14 +140,17 @@ class Dashboard extends React.Component {
                 //Assign new data to object
                 let reactions = Object.assign({}, posts[index]);
                 reactions.reactions = result;
+                reactions.reactionsCount = posts[index].reactionsCount + 1;
                 //assign new object to posts
                 posts[index] = reactions;
                 this.setState({ posts: posts });
             }
             if (e.data.type == "post") {
                 // TODO: find a way to push to first index instead of last
+                let post = [e.data];
+                console.log(post.concat(this.state.posts));
                 this.setState({
-                    posts: this.state.posts.concat(e.data)
+                    posts: this.state.posts.concat(e.data) //post.concat(this.state.posts)// //TODO: FIX THIS STUPID WAY
                 });
             }
         });
