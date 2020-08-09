@@ -16,7 +16,7 @@ class ItemSeed extends Seeder
         for ($i = 0; $i < count($table); $i++) {
             $faker = Faker\Factory::create();
             DB::table('items')->insert([
-                'user_id' => 1,
+                'author_id' => 1,
                 'item_name' => $table[$i]['displayName'],
                 'description' => $faker->sentence(6,  true),
                 'type' => 'misc',
@@ -27,6 +27,7 @@ class ItemSeed extends Seeder
                 'updated_at' => Carbon::now()->toDateTimeString(),
                 'created_at' => Carbon::now()->toDateTimeString(),
             ]);
+            echo "seed $i";
         }
     }
 }

@@ -110,7 +110,7 @@ class Dashboard extends React.Component {
         //Listen post did load
         const echo = new Echo({
             broadcaster: "socket.io",
-            host: window.location.hostname + ":6001",
+            host: window.location.hostname,
             client: socketio
         });
         // TODO  PERSONAL FEED FOR MORE EFFICIENT TRANSFER//
