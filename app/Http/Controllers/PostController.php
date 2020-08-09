@@ -44,13 +44,13 @@ class PostController extends Controller
         switch ($type) {
             case 'post':
                 $data = [
-                    'user_id' => Auth::user()->id,
+                    'author_id' => Auth::user()->id,
                     'content' => $request->input('content'),
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now()
                 ];
                 $post = Post::create($data);
-                unset($data['user_id']);
+                unset($data['author_id']);
                 $data['id'] = $post->id;
                 $data['type'] = $type;
                 $data['author'] = $post->author;
@@ -61,7 +61,7 @@ class PostController extends Controller
                 break;
             case 'comment':
                 $data =            [
-                    'user_id' => Auth::user()->id,
+                    'author_id' => Auth::user()->id,
                     'post_id' => $request->input('id'),
                     'content' => $request->input('content'),
                     'created_at' => Carbon::now(),
@@ -75,7 +75,7 @@ class PostController extends Controller
                 break;
             case 'reaction':
                 $data =            [
-                    'user_id' => Auth::user()->id,
+                    'author_id' => Auth::user()->id,
                     'post_id' => $request->input('id'),
                     'content' => $request->input('content'),
                     'created_at' => Carbon::now(),

@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
-    protected $fillable = ['user_id', 'content'];
-    protected $hidden = ['user_id'];
+    protected $fillable = ['author_id', 'content'];
+    protected $hidden = ['author_id'];
     public function author(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
     public function comments(): HasMany
     {

@@ -13,7 +13,7 @@ class Reactionseed extends Seeder
     {
         for ($i = 0; $i < 20; $i++) {
             DB::table('reactions')->insert([
-                'user_id' => 1,
+                'author_id' => 1,
                 'post_id' => rand(1,10),
                 'content' => rand(1,3),
                 'updated_at' => Carbon::now()->toDateTimeString(),
