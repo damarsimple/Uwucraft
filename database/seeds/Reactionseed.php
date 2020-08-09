@@ -13,9 +13,9 @@ class Reactionseed extends Seeder
     {
         for ($i = 0; $i < 20; $i++) {
             DB::table('reactions')->insert([
-                'author_id' => 1,
-                'post_id' => rand(1,10),
-                'content' => rand(1,3),
+                'author_id' => mt_rand(5,20),
+                'post_id' => mt_rand(1,10),
+                'content' => mt_rand(1,3),
                 'updated_at' => Carbon::now()->toDateTimeString(),
                 'created_at' => Carbon::now()->toDateTimeString(),
             ]);

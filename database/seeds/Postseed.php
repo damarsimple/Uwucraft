@@ -14,7 +14,7 @@ class Postseed extends Seeder
         for ($i = 0; $i < 20; $i++) {
             $faker = Faker\Factory::create();
             DB::table('posts')->insert([
-                'author_id' => 1,
+                'author_id' => mt_rand(5,20),
                 'content' => 'https://source.unsplash.com/random',
                 'caption' => $faker->sentence(200, true),
                 'updated_at' => Carbon::now()->toDateTimeString(),

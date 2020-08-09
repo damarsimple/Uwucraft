@@ -16,13 +16,13 @@ class ItemSeed extends Seeder
         for ($i = 0; $i < count($table); $i++) {
             $faker = Faker\Factory::create();
             DB::table('items')->insert([
-                'author_id' => 1,
+                'author_id' => mt_rand(1,20),
                 'item_name' => $table[$i]['displayName'],
                 'description' => $faker->sentence(6,  true),
                 'type' => 'misc',
                 'minecraft_item_id' => 'minecraft:' . $table[$i]['name'],
                 'minecraft_item_shorthand' => $table[$i]['name'],
-                'price' => rand(0, 1000),
+                'price' => mt_rand(0, 1000),
                 'counter' => 0,
                 'updated_at' => Carbon::now()->toDateTimeString(),
                 'created_at' => Carbon::now()->toDateTimeString(),

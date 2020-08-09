@@ -17,6 +17,14 @@ type Query {
     me: User @auth
 }
 
+type Mutation {
+    createUser(
+        username: String @rules(apply: ["required", "string", "max:255"])
+        email: String @rules(apply: ["required", "string", "email", "max:255", "unique:users"])
+        password: String @rules(apply: ["required", "string", "min:8"])
+    ): User @create 
+}
+
 type User {
     id: ID!
     username: String!
