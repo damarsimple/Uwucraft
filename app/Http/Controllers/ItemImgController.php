@@ -11,13 +11,9 @@ class ItemImgController extends Controller
 
     public function get_img($name)
     {
-        $path = storage_path("image/item/$name.png");
-        if (!file_exists($path)) {
-            $path = storage_path("image/item/stone.png");
-            $img = \Image::make($path)->resize(300, 300);
-            return $img->response('jpg');
+        if (!file_exists(public_path("img/item/$name.png"))) {
+            return redirect("/img/item/stone.png");
         }
-        $img = \Image::make($path)->resize(300, 300);
-        return $img->response('jpg');
+        return redirect("/img/item/$name.png");
     }
 }

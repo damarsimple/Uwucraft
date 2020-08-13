@@ -64,7 +64,12 @@ Route::delete('items/{$id}', function ($id) {
 
 /** Game Notifications */
 Route::get('game/{data}', function ($data) {
-    
+
     event(new \App\Events\GlobalNotifications($data));
     return 'adding' . $data;
+});
+
+Route::post('game/event', function (Request $request) {
+    event(new \App\Events\GlobalNotifications($request->all()));
+    return  $request->all();
 });

@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.5",
         "laravel/framework": "^7.0",
         "laravel/passport": "^9.2",
         "laravel/telescope": "^3.5",
@@ -20,7 +21,6 @@
         "mll-lab/laravel-graphql-playground": "^2.3",
         "nuwave/lighthouse": "^4.16",
         "predis/predis": "^1.1",
-        "tcg/voyager": "^1.4",
         "xpaw/php-minecraft-query": "^4.0"
     },
     "require-dev": {

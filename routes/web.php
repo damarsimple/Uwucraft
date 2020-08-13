@@ -2,6 +2,7 @@
 
 use App\Friend;
 use App\User;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,24 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 //Route::get('/{username}', 'ProfileController@userPage');
-Route::get('/test', function () {
-    $img = Image::make(storage_path('image/item/acacia_boat.png'))->resize(300, 200);
-    return $img->response('jpg');
+Route::post('/test', function(Request $request){
+    dd($request);
 });
-// Route::get('/test', function () {
-//     $data =      [
-//         'id'=> 11,
-//         'user_id' => 1,
-//         'post_id' => 40,
-//         'content' => 'bruh moment',
-//         'created_at' => Carbon::now(),
-//         'updated_at' => Carbon::now(),
-//         'user' => User::find(1),
-//     ];
-//     broadcast(new \App\Events\PostEvent($data));
-//     return $data;
-// });
-
 Route::get('/fire', function () {
     event(new \App\Events\TestEvent());
     return 'ok';

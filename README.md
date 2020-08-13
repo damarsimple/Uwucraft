@@ -22,7 +22,7 @@ you need Docker and Git for this installation available on both windows and linu
 find PHP_WORKER_INSTALL_REDIS on .env file
 change from PHP_WORKER_INSTALL_REDIS=false to PHP_WORKER_INSTALL_REDIS=true
 
-- docker-compose up -d redis mysql redis php-fpm phpmyadmin redis-webui workspace laravel-echo-server nginx php-worker
+- docker-compose up -d redis mysql redis php-fpm phpmyadmin laravel-echo-server nginx php-worker elasticsearch workspace
 
 then you need to run migration and done !
 

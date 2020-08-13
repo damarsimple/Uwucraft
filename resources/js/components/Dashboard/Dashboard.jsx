@@ -2,11 +2,15 @@ import React from "react";
 import "./Dashboard.css";
 import ShopProfile from "../Shop/ShopProfile";
 import PostCard from "./PostCard.tsx";
-import Echo from "laravel-echo";
-import socketio from "socket.io-client";
+import echo from "../Echo";
 import InfiniteScroll from "react-infinite-scroll-component";
 import PropagateLoader from "react-spinners/ScaleLoader";
-import { ApolloClient, InMemoryCache, gql, createHttpLink } from "@apollo/client";
+import {
+    ApolloClient,
+    InMemoryCache,
+    gql,
+    createHttpLink
+} from "@apollo/client";
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
@@ -26,7 +30,7 @@ class Dashboard extends React.Component {
     componentDidMount() {
         const link = createHttpLink({
             uri: "/graphql",
-            credentials: 'same-origin'
+            credentials: "same-origin"
         });
         const client = new ApolloClient({
             uri: "/graphql",
@@ -106,13 +110,6 @@ class Dashboard extends React.Component {
                 this.setState({ total });
                 this.setState({ perpage });
             });
-
-        //Listen post did load
-        const echo = new Echo({
-            broadcaster: "socket.io",
-            host: window.location.hostname,
-            client: socketio
-        });
         // TODO  PERSONAL FEED FOR MORE EFFICIENT TRANSFER//
         //listen for events
         echo.channel("posts").listen("PostEvent", e => {
