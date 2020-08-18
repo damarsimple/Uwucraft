@@ -1,8 +1,7 @@
 <?php
 
 use App\Friend;
-use App\User;
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,48 +16,18 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/{path?}', function () {
+    return view('layouts/app');
+})->where('path', '.*');
 //Route::get('/{username}', 'ProfileController@userPage');
-Route::post('/test', function(Request $request){
+Route::post('/test', function (Request $request) {
     dd($request);
 });
 Route::get('/fire', function () {
     event(new \App\Events\TestEvent());
     return 'ok';
 });
-
 Route::get('/shop', function () {
     return view('shop');
 })->middleware('auth');
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-Route::get('/chat', function () {
-    return view('chat');
-});
-use App\Item;
-Route::group(['middleware' => 'auth', 'prefix' => '/ajax'], function () {
-    Route::post('/shop', 'ShopController@addCart');
-    Route::get('/shop', 'ShopController@getCart');
-    Route::put('/shop', 'ShopController@changeAmountCart');
-    Route::delete('/shop', 'ShopController@deleteItemCart');
-
-    Route::post('/dashboard', 'PostController@');
-
-    Route::get('/friend', function () {
-        $b = Friend::where('user_id', Auth::user()->id);
-        return $b->with('friend')->get();
-    });
-
-    Route::get('/test', function () {
-       
-        return Item::with('author')->get();
-    });
-    Route::group(['prefix' => 'posts'], function () {
-        Route::get('/', 'PostController@index');
-        Route::post('/', 'PostController@store');
-    });
-});

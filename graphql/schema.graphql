@@ -14,15 +14,27 @@ type Query {
 
     items: [Item!]! @paginate(defaultCount: 10) @cache
 
+    advancement(id: Int! @eq): Post @find
+    advancements: [Advancement!]! @paginate(defaultCount: 10)
+
     me: User @auth
 }
 
 type Mutation {
     createUser(
         username: String @rules(apply: ["required", "string", "max:255"])
-        email: String @rules(apply: ["required", "string", "email", "max:255", "unique:users"])
+        email: String
+            @rules(
+                apply: [
+                    "required"
+                    "string"
+                    "email"
+                    "max:255"
+                    "unique:users"
+                ]
+            )
         password: String @rules(apply: ["required", "string", "min:8"])
-    ): User @create 
+    ): User @create
 }
 
 type User {
@@ -33,12 +45,15 @@ type User {
     updated_at: DateTime!
     posts: [Post!]! @hasMany
     usercart: [Usercart!]! @hasMany
+    useradvancement: [Useradvancement!]! @hasMany
+    userdata: Userdata @belongsTo
 }
 
 type Usercart {
     id: ID!
     user_id: ID!
     item_id: ID!
+    item: Item! @belongsTo
     amount: Int!
     created_at: DateTime!
     updated_at: DateTime!
@@ -48,10 +63,13 @@ type Post {
     id: ID!
     author: User! @belongsTo
     content: String!
+    caption: String!
     comments: [Comment!]! @hasMany
     reactions: [Reaction!]! @hasMany
     commentsCount: Int! @count(relation: "comments")
     reactionsCount: Int! @count(relation: "reactions")
+    created_at: DateTime!
+    updated_at: DateTime!
 }
 
 type Comment {
@@ -77,4 +95,38 @@ type Item {
     price: Int
     counter: Int
     author: User! @belongsTo
+}
+type Advancement {
+    id: ID!
+    icon: String
+    name: String
+    description: String
+    parent: String
+    requirements: String
+    namespace: String
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+type Useradvancement {
+    id: ID!
+    owner: User! @belongsTo
+    Advancement: Advancement! @belongsTo
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+type Userdata {
+    id: ID!
+    owner: User! @belongsTo
+    UUID: String
+    health: Int
+    hunger: Int
+    exp: Int
+    level: Int
+    exhaustion: Int
+    saturation: Int
+    air: Int
+    gamemode: String
+    money: Int
+    created_at: DateTime!
+    updated_at: DateTime!
 }
