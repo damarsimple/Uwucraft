@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Itemreview from "./Itemreview";
+import { Box } from "@material-ui/core";
 
 function TabPanel(props) {
     return (
@@ -18,7 +19,10 @@ function TabPanel(props) {
     );
 }
 
-export default () => {
+interface Description {
+    description: string;
+}
+export default (props: Description) => {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
@@ -47,29 +51,15 @@ export default () => {
             </AppBar>
             <SwipeableViews index={value} onChangeIndex={handleChangeIndex}>
                 <TabPanel value={value} index={0}>
-                    <div>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Corrupti adipisci velit aliquam praesentium
-                        explicabo nobis voluptatum alias, deleniti, cupiditate
-                        quae expedita, autem unde non tenetur id quasi ratione
-                        eos ad sunt neque. Ipsum magni quam quo? Dolorum
-                        laudantium nisi expedita eligendi vero iusto eaque
-                        commodi incidunt ullam sed delectus aut, quas quis
-                        officia quaerat optio consectetur earum consequatur fuga
-                        soluta sit beatae! Quis incidunt ipsa enim, commodi
-                        officiis veritatis maiores impedit explicabo nihil
-                        iusto. Reprehenderit dolores, quia tempore in vero
-                        itaque corporis voluptate atque incidunt blanditiis
-                        perferendis illo provident amet! Optio vero omnis
-                        deserunt commodi fuga accusantium, facilis tempora
-                        consectetur!
-                    </div>
+                    <Box p={5}>{props.description}</Box>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <Itemreview />
+                    <Box p={5}>
+                        <Itemreview />
+                    </Box>
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    <div>44</div>
+                    <Box p={5}>44</Box>
                 </TabPanel>
             </SwipeableViews>
         </>

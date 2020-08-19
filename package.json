@@ -36,6 +36,7 @@
         "laravel-echo": "^1.8.0",
         "laravel-mix-react-typescript-extension": "^1.0.3",
         "material-auto-rotating-carousel": "^3.0.2",
+        "material-ui-image": "^3.2.3",
         "rc-input-number": "^5.1.1",
         "react-icons": "^3.10.0",
         "react-infinite-scroll-component": "^5.0.5",

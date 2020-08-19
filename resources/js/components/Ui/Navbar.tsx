@@ -82,7 +82,11 @@ export default () => {
                             Home
                         </Go>
                     </Button>
-
+                    <Button>
+                        <Go className={classes.anchor} to="/status">
+                            Status
+                        </Go>
+                    </Button>
                     <Button color="inherit">
                         <Go className={classes.anchor} to="/shop">
                             Shop

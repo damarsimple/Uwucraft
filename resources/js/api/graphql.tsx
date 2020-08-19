@@ -12,11 +12,13 @@ const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
 });
 
 export interface Item {
+    id: number;
     author: Author;
     item_name: string;
     description: string;
     price: number;
     type: string;
+    counter: number;
     minecraft_item_shorthand: string;
 }
 
@@ -65,10 +67,12 @@ export async function items(page?: number): Promise<ApolloQueryResult<any>> {
                         author {
                             username
                         }
+                        id
                         item_name
                         description
                         price
                         type
+                        counter
                         minecraft_item_shorthand
                     }
                     paginatorInfo {
@@ -81,6 +85,24 @@ export async function items(page?: number): Promise<ApolloQueryResult<any>> {
                         perPage
                         firstItem
                     }
+                }
+            }
+        `
+    });
+}
+export async function item(id: number): Promise<ApolloQueryResult<any>> {
+    return client.query({
+        query: gql`
+            query {
+                item(id: ${id}) {
+                    author {
+                        username
+                    }
+                    item_name
+                    description
+                    price
+                    type
+                    minecraft_item_shorthand
                 }
             }
         `

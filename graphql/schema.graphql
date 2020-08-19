@@ -13,6 +13,7 @@ type Query {
     post(id: Int! @eq): Post @find @cache
 
     items: [Item!]! @paginate(defaultCount: 10) @cache
+    item(id: ID @eq): Item @find @cache
 
     advancement(id: Int! @eq): Post @find
     advancements: [Advancement!]! @paginate(defaultCount: 10)

@@ -11,7 +11,7 @@ export default class App extends React.Component {
             <>
                 <Router>
                     <Navbar />
-                    <Box mt={5}>
+                    <Box mt={10}>
                         <Switch>
                             <Route path="/home">
                                 <Home />
@@ -26,7 +26,7 @@ export default class App extends React.Component {
                                             exact
                                         />
                                         <Route
-                                            path={`${url}/tests`}
+                                            path={`${url}/item/:itemid`}
                                             component={Itemlookup}
                                         />
                                     </>

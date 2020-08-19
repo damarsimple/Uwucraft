@@ -12,7 +12,7 @@ export default props => {
                         <Grid key={index} item xs={6} sm={3}>
                             <Link
                                 style={{ textDecoration: "none" }}
-                                to={"/shop/item/" + item.item_name}
+                                to={"/shop/item/" + item.id}
                             >
                                 <Itemcard item={item} />
                             </Link>
