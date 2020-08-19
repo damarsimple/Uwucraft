@@ -77,28 +77,24 @@ export default () => {
                             inputProps={{ "aria-label": "search" }}
                         />
                     </div>
-                    <Button>
-                        <Go className={classes.anchor} to="/home">
-                            Home
-                        </Go>
-                    </Button>
-                    <Button>
-                        <Go className={classes.anchor} to="/status">
-                            Status
-                        </Go>
-                    </Button>
-                    <Button color="inherit">
-                        <Go className={classes.anchor} to="/shop">
-                            Shop
-                        </Go>
-                    </Button>
-                    <Button color="inherit">
-                        <Go className={classes.anchor} to="/store">
-                            Store
-                        </Go>
-                    </Button>
-                    <Button color="inherit">Register</Button>
-                    <Button color="inherit">Login</Button>
+                    <Go className={classes.anchor} to="/home">
+                        <Button>Home</Button>
+                    </Go>
+                    <Go className={classes.anchor} to="/status">
+                        <Button>Status</Button>
+                    </Go>
+                    <Go className={classes.anchor} to="/shop">
+                        <Button color="inherit">Shop</Button>
+                    </Go>
+                    <Go className={classes.anchor} to="/store">
+                        <Button color="inherit">Store</Button>
+                    </Go>
+                    <Go className={classes.anchor} to="/register">
+                        <Button color="inherit">Register</Button>
+                    </Go>
+                    <Go className={classes.anchor} to="/login">
+                        <Button color="inherit">Login</Button>
+                    </Go>
                 </Toolbar>
             </AppBar>
         </div>
