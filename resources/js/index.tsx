@@ -4,20 +4,34 @@ import Box from "@material-ui/core/Box";
 import Shop from "./components/Shop/Shop";
 import Navbar from "./components/ui/Navbar";
 import Home from "./components/Home/Home";
+import Itemlookup from "./components/Shop/Itemlookup";
 export default class App extends React.Component {
     render() {
         return (
             <>
                 <Router>
                     <Navbar />
-                    <Box m={3} mt={15}>
+                    <Box mt={5}>
                         <Switch>
                             <Route path="/home">
                                 <Home />
                             </Route>
-                            <Route path="/shop">
-                                <Shop />
-                            </Route>
+                            <Route
+                                path="/shop"
+                                render={({ match: { url } }) => (
+                                    <>
+                                        <Route
+                                            path={`${url}/`}
+                                            component={Shop}
+                                            exact
+                                        />
+                                        <Route
+                                            path={`${url}/tests`}
+                                            component={Itemlookup}
+                                        />
+                                    </>
+                                )}
+                            />
                         </Switch>
                     </Box>
                 </Router>

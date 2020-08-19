@@ -1,25 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
+
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+
 import Typography from "@material-ui/core/Typography";
 
-import Collapse from "@material-ui/core/Collapse";
 const useStyles = makeStyles({
     media: {
-        height: 250
+        height: 200
+    },
+    card: {
+        maxHeight: 350,
+        overflow: "hidden"
     }
 });
 export default props => {
     const classes = useStyles();
-    const [expanded, setExpanded] = useState(false);
     const item = props.item;
     return (
-        <Card>
+        <Card className={classes.card}>
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
@@ -38,26 +40,6 @@ export default props => {
                     Seller : {item.author.username}
                 </Typography>
             </CardContent>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                    <Typography paragraph>{item.description}</Typography>
-                </CardContent>
-            </Collapse>
-            <CardActions>
-                <Button
-                    onClick={() => {
-                        setExpanded(!expanded);
-                    }}
-                    variant="contained"
-                    color="primary"
-                    size="small"
-                >
-                    Description
-                </Button>
-                <Button variant="contained" color="primary" size="small">
-                    ADD TO CART
-                </Button>
-            </CardActions>
         </Card>
     );
 };
