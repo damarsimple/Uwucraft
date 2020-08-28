@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Usercart extends Model
 {
-    //
-
-    public function item(): BelongsTo{
+    public $fillable = ['user_id', 'item_id', 'amount'];
+    public function item(): BelongsTo
+    {
         return $this->belongsTo(Item::class);
     }
 }
