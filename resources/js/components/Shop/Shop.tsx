@@ -1,16 +1,15 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
-import Sidebar from "./Sidebar";
-import Carousel from "./Carousel";
 import Itemlist from "./Itemlist";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { items, Items, PaginatorInfo } from "../../api/graphql";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Items, PaginatorInfo } from "../../type/type";
+import { items } from "../../api/graphql";
+import { Container } from "@material-ui/core";
 
 interface ShopData {
     items?: Items;
     paginator?: PaginatorInfo;
 }
+
 export default class Shop extends React.Component<ShopData> {
     state: ShopData;
     constructor(props) {
@@ -39,25 +38,16 @@ export default class Shop extends React.Component<ShopData> {
     render() {
         return (
             <>
-                <Grid container spacing={6}>
-                    <Grid item xs={false} sm={2}>
-                        <Sidebar />
-                    </Grid>
-                    <Grid item xs={12} sm={8}>
-                   
-                        <InfiniteScroll
-                            dataLength={this.state.items.length}
-                            next={this.fetchMoreData.bind(this)}
-                            hasMore={this.state.paginator.hasMorePages}
-                            loader={<h4>Loading...</h4>}
-                        >
-                            <Itemlist data={this.state.items} />
-                        </InfiniteScroll>
-                    </Grid>
-                    <Grid item xs={false} sm={2}>
-                        <Sidebar />
-                    </Grid>
-                </Grid>
+                <Container maxWidth="lg">
+                    <InfiniteScroll
+                        dataLength={this.state.items.length}
+                        next={this.fetchMoreData.bind(this)}
+                        hasMore={this.state.paginator.hasMorePages}
+                        loader={<h4>Loading...</h4>}
+                    >
+                        <Itemlist data={this.state.items} />
+                    </InfiniteScroll>
+                </Container>
             </>
         );
     }

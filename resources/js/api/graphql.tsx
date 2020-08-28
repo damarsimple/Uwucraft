@@ -3,61 +3,29 @@ import {
     InMemoryCache,
     gql,
     NormalizedCacheObject,
-    ApolloQueryResult
+    ApolloQueryResult,
+    createHttpLink
 } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
+const httpLink = createHttpLink({
+    uri: "/graphql"
+});
+
+const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem("token");
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : ""
+        }
+    };
+});
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
-    uri: "http://localhost/graphql",
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache()
 });
 
-export interface Item {
-    id: number;
-    author: Author;
-    item_name: string;
-    description: string;
-    price: number;
-    type: string;
-    counter: number;
-    minecraft_item_shorthand: string;
-}
-
-export interface Author {
-    username: string;
-}
-export type Posts = Post[];
-export type Items = Item[];
-export interface PaginatorInfo {
-    count?: number;
-    currentPage?: number;
-    firstItem?: number;
-    hasMorePages?: boolean;
-    lastItem?: number;
-    lastPage?: number;
-    perPage?: number;
-    total?: number;
-}
-export interface Post {
-    author: Author;
-    caption: string;
-    content: string;
-    comments: Array<Comment>;
-    reactions: Array<Reaction>;
-    commentsCount: number;
-    reactionsCount: number;
-    created_at: string;
-    updated_at: string;
-}
-export interface Comment {
-    author: Author;
-    post: Post;
-    content: string;
-}
-export interface Reaction {
-    author: Author;
-    post: Post;
-    content: string;
-}
 export async function items(page?: number): Promise<ApolloQueryResult<any>> {
     return client.query({
         query: gql`
@@ -73,6 +41,7 @@ export async function items(page?: number): Promise<ApolloQueryResult<any>> {
                         price
                         type
                         counter
+                        view
                         minecraft_item_shorthand
                     }
                     paginatorInfo {
@@ -98,10 +67,13 @@ export async function item(id: number): Promise<ApolloQueryResult<any>> {
                     author {
                         username
                     }
+                    id
                     item_name
                     description
                     price
                     type
+                    counter
+                    view
                     minecraft_item_shorthand
                 }
             }
@@ -138,4 +110,69 @@ export async function posts(): Promise<ApolloQueryResult<any>> {
             }
         `
     });
+}
+
+export async function systemstatus(): Promise<ApolloQueryResult<any>> {
+    return client.query({
+        query: gql`
+            query {
+                SPIGOTStatus {
+                    ping
+                    online
+                    exception
+                    updated_at
+                }
+                MYSQLStatus {
+                    ping
+                    online
+                    exception
+                    updated_at
+                }
+                REDISStatus {
+                    ping
+                    online
+                    exception
+                    updated_at
+                }
+            }
+        `
+    });
+}
+
+export async function addUserCart(
+    user_id: number,
+    amount: number,
+    item_id: number
+) {
+    return client.mutate({
+        mutation: gql`
+            mutation {
+                addUserCart(user_id: ${user_id}, amount: ${amount}, item_id: ${item_id}) {
+                created_at
+                updated_at
+                }
+            }
+        `
+    });
+}
+export async function me() {
+    return client.query({
+        query: gql`
+            query {
+                me {
+                    id
+                }
+            }
+        `
+    });
+    // return client.mutate({
+    // //     mutation: gql`
+    // //         mutation {
+    // //             addUserCart(input: {user_id: ${user_id}, amount: ${amount}, item_id: ${item_id}}) {
+    // //                 created_at
+    // //                 updated_at
+    // //             }
+    // //         }
+    // //     `
+    // // });
 }

@@ -78,10 +78,13 @@ export default () => {
                         />
                     </div>
                     <Go className={classes.anchor} to="/home">
-                        <Button>Home</Button>
+                        <Button color="inherit">Home</Button>
                     </Go>
                     <Go className={classes.anchor} to="/status">
-                        <Button>Status</Button>
+                        <Button color="inherit">Status</Button>
+                    </Go>
+                    <Go className={classes.anchor} to="/dashboard">
+                        <Button color="inherit">Dashboard</Button>
                     </Go>
                     <Go className={classes.anchor} to="/shop">
                         <Button color="inherit">Shop</Button>

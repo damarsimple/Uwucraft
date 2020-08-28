@@ -655,9 +655,11 @@ class ComposerStaticInitcf528b434209aae1b1a66e73d89414b8
     );
 
     public static $classMap = array (
+        'App\\Advancement' => __DIR__ . '/../..' . '/app/Advancement.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Content' => __DIR__ . '/../..' . '/app/Content.php',
+        'App\\Event' => __DIR__ . '/../..' . '/app/Event.php',
         'App\\Events\\GlobalNotifications' => __DIR__ . '/../..' . '/app/Events/GlobalNotifications.php',
         'App\\Events\\PostEvent' => __DIR__ . '/../..' . '/app/Events/PostEvent.php',
         'App\\Events\\TestEvent' => __DIR__ . '/../..' . '/app/Events/TestEvent.php',
@@ -693,8 +695,9 @@ class ComposerStaticInitcf528b434209aae1b1a66e73d89414b8
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Item' => __DIR__ . '/../..' . '/app/Item.php',
+        'App\\Jobs\\IncreaseItemCounterCount' => __DIR__ . '/../..' . '/app/Jobs/IncreaseItemCounterCount.php',
+        'App\\Jobs\\IncreaseItemViewCount' => __DIR__ . '/../..' . '/app/Jobs/IncreaseItemViewCount.php',
         'App\\Library\\WebsenderAPI' => __DIR__ . '/../..' . '/app/Library/WebsenderAPI.php',
-        'App\\PlayerData' => __DIR__ . '/../..' . '/app/PlayerData.php',
         'App\\Post' => __DIR__ . '/../..' . '/app/Post.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -705,7 +708,10 @@ class ComposerStaticInitcf528b434209aae1b1a66e73d89414b8
         'App\\Reaction' => __DIR__ . '/../..' . '/app/Reaction.php',
         'App\\UUID' => __DIR__ . '/../..' . '/app/UUID.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\Useradvancement' => __DIR__ . '/../..' . '/app/Useradvancement.php',
         'App\\Usercart' => __DIR__ . '/../..' . '/app/Usercart.php',
+        'App\\Userdata' => __DIR__ . '/../..' . '/app/Userdata.php',
+        'App\\Userinventory' => __DIR__ . '/../..' . '/app/Userinventory.php',
         'App\\Usertransactionhistory' => __DIR__ . '/../..' . '/app/Usertransactionhistory.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',

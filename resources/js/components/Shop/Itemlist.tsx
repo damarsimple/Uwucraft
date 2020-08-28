@@ -6,20 +6,18 @@ import { Link } from "react-router-dom";
 export default props => {
     return (
         <>
-            <Box p={5} m={2}>
-                <Grid container spacing={3}>
-                    {props.data.map((item, index) => (
-                        <Grid key={index} item xs={6} sm={3}>
-                            <Link
-                                style={{ textDecoration: "none" }}
-                                to={"/shop/item/" + item.id}
-                            >
-                                <Itemcard item={item} />
-                            </Link>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
+            <Grid container spacing={1}>
+                {props.data.map((item, index) => (
+                    <Grid key={index} item xs={6} sm={2}>
+                        <Link
+                            style={{ textDecoration: "none" }}
+                            to={"/shop/item/" + item.id}
+                        >
+                            <Itemcard item={item} />
+                        </Link>
+                    </Grid>
+                ))}
+            </Grid>
         </>
     );
 };

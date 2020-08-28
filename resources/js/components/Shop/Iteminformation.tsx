@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Grid,
     Typography,
@@ -13,16 +13,26 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Image from "material-ui-image";
-import { Author } from "../../api/graphql";
-
-interface Information {
+import { Item } from "../../type/type";
+import { addUserCart } from "../../api/graphql";
+interface Information extends Item {
     imgSrc: string;
-    item_name: string;
-    price: number;
-    counter: number;
-    author: Author;
 }
 const Iteminformation = (props: Information) => {
+    fetch("/api/register").then(res =>
+        res.json().then(res => console.log(res))
+    );
+
+    const [amount, setAmount] = useState<number>(1);
+    const handleClick = () => {
+        addUserCart(2, amount != 0 ? amount : 1, props.id).then(res => {
+            console.log(res);
+        });
+    };
+    const handleChange = (event: any) => {
+        setAmount(event.target.value as number);
+    };
+
     return (
         <>
             <Grid container spacing={3}>
@@ -55,35 +65,25 @@ const Iteminformation = (props: Information) => {
                             </Typography>
                         </Paper>
                         <hr />
-                        <Grid container spacing={3}>
-                            <Grid item>
-                                <TextField
-                                    id="standard-number"
-                                    label="Number"
-                                    type="number"
-                                    InputLabelProps={{
-                                        shrink: true
-                                    }}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <Button variant="contained" color="primary">
-                                    buy now
-                                </Button>
-                            </Grid>
-                            <Grid item>
-                                <Button variant="contained" color="primary">
-                                    add to cart
-                                </Button>
-                            </Grid>
+                        <Grid item>
+                            <TextField
+                                value={amount}
+                                onChange={handleChange}
+                                id="standard-number"
+                                label="Number"
+                                type="number"
+                                InputLabelProps={{
+                                    shrink: true
+                                }}
+                            />
                         </Grid>
                         <hr />
                         <Grid container alignItems="center" spacing={3}>
                             <Grid item>
-                                <VisibilityIcon /> {props.counter}
+                                <VisibilityIcon /> {props.view}
                             </Grid>
                             <Grid item>
-                                <ShoppingCartIcon /> 100
+                                <ShoppingCartIcon /> {props.counter}
                             </Grid>
                             <Grid item>
                                 <FavoriteIcon /> 100
@@ -137,9 +137,26 @@ const Iteminformation = (props: Information) => {
                             </Grid>
                         </Grid>
                         <hr />
+                        <Grid item container spacing={3}>
+                            <Grid item>
+                                <Button variant="contained" color="primary">
+                                    buy now
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={handleClick}
+                                >
+                                    add to cart
+                                </Button>
+                            </Grid>
+                        </Grid>
                     </Box>
                 </Grid>
             </Grid>
+
             <hr />
         </>
     );
