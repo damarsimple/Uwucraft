@@ -6,21 +6,20 @@ scalar DateTime
     @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
 type Query {
-    users: [User!]! @paginate(defaultCount: 10) @cache
-    user(id: ID @eq): User @find @cache
-
-    posts: [Post!]! @paginate(defaultCount: 10) @cache
-    post(id: Int! @eq): Post @find @cache
-
-    items: [Item!]! @paginate(defaultCount: 10) @cache
-    item(id: ID @eq): Item @find @cache
-
+    users: [User!]! @paginate(defaultCount: 10) # @cache
+    user(id: ID @eq): User @find # @cache
+    posts: [Post!]! @paginate(defaultCount: 10) # @cache
+    post(id: Int! @eq): Post @find # @cache
+    items: [Item!]! @paginate(defaultCount: 18) # @cache
+    #had  to disable it for real time updates?
+    item(id: ID @eq): Item @find #@cache
     advancement(id: Int! @eq): Post @find
     advancements: [Advancement!]! @paginate(defaultCount: 10)
-
+    MYSQLStatus: MYSQLStatus!
+    REDISStatus: REDISStatus!
+    SPIGOTStatus: SPIGOTStatus!
     me: User @auth
 }
-
 type Mutation {
     createUser(
         username: String @rules(apply: ["required", "string", "max:255"])
@@ -36,6 +35,29 @@ type Mutation {
             )
         password: String @rules(apply: ["required", "string", "min:8"])
     ): User @create
+    addUserCart(
+        user_id: Int @rules(apply: ["required", "numeric"])
+        item_id: Int @rules(apply: ["required", "numeric"])
+        amount: Int @rules(apply: ["required", "numeric"])
+    ): Usercart @create
+}
+type REDISStatus {
+    online: Boolean!
+    ping: Float
+    exception: String
+    updated_at: DateTime
+}
+type MYSQLStatus {
+    online: Boolean!
+    ping: Float
+    exception: String
+    updated_at: DateTime
+}
+type SPIGOTStatus {
+    online: Boolean!
+    ping: Float
+    exception: String
+    updated_at: DateTime
 }
 
 type User {
@@ -54,10 +76,10 @@ type Usercart {
     id: ID!
     user_id: ID!
     item_id: ID!
-    item: Item! @belongsTo
+    item: Item @belongsTo
     amount: Int!
-    created_at: DateTime!
-    updated_at: DateTime!
+    created_at: DateTime
+    updated_at: DateTime
 }
 
 type Post {
@@ -95,6 +117,7 @@ type Item {
     minecraft_item_shorthand: String
     price: Int
     counter: Int
+    view: Int
     author: User! @belongsTo
 }
 type Advancement {
