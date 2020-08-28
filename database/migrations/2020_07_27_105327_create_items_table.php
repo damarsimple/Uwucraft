@@ -23,7 +23,8 @@ class CreateItemsTable extends Migration
             $table->string('minecraft_item_id');
             $table->string('minecraft_item_shorthand');
             $table->integer('price');
-            $table->integer('counter');
+            $table->integer('counter')->default(0);
+            $table->integer('view')->default(0);
             $table->timestamps();
         });
     }

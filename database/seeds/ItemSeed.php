@@ -24,6 +24,7 @@ class ItemSeed extends Seeder
                 'minecraft_item_shorthand' => $table[$i]['name'],
                 'price' => mt_rand(0, 1000),
                 'counter' => 0,
+                'view' => 0,
                 'updated_at' => Carbon::now()->toDateTimeString(),
                 'created_at' => Carbon::now()->toDateTimeString(),
             ]);
