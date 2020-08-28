@@ -1,7 +1,5 @@
 <?php
 
-use App\Friend;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,15 +17,3 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/{path?}', function () {
     return view('layouts/app');
 })->where('path', '.*');
-//Route::get('/{username}', 'ProfileController@userPage');
-Route::post('/test', function (Request $request) {
-    dd($request);
-});
-Route::get('/fire', function () {
-    event(new \App\Events\TestEvent());
-    return 'ok';
-});
-Route::get('/shop', function () {
-    return view('shop');
-})->middleware('auth');
-Auth::routes();

@@ -3,11 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Itemsdata;
-use App\PlayerData;
-
 use App\Item;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,55 +16,18 @@ use App\Item;
 |
 */
 
-
 /** API LOGIN ROUTES */
-Route::post('/login', 'Api\LoginController@login');
+Route::post('register', 'Api\AuthController@register');
+Route::post('login', 'Api\AuthController@login');
+Route::post('me', function () {
+    return Auth::user();
+})->middleware('auth:api');
 /** Image Item API */
 Route::get('image/item/{itemname}', 'ItemImgController@get_img');
 /** Player API  */
-Route::get('player', function () {
-    return PlayerData::all();
-});
-Route::get('player/{username}', function ($username) {
-    return PlayerData::find($username);
-});
-/** END OF LINE */
-// Items API //
-Route::get('items/all', function () {
-    return Item::all();
-});
-Route::get('items/', function () {
-    //Example Cache Implementation
-    return Cache::remember('items', 30, function () {
-        return Item::with('author')->paginate(10);
-    });
-});
-Route::get('items/id/{id}', function ($id) {
-    return Item::find($id);
-});
-Route::post('items', function (Request $request) {
-    return Item::create($request->all());
-});
-Route::put('items/{$id}', function (Request $request, $id) {
-    $itemsdata = Itemsdata::findOrFail($id);
-    $itemsdata->update($request->all());
-    return $itemsdata;
-});
-Route::delete('items/{$id}', function ($id) {
-    Itemsdata::find($id)->delete();
-    return 204;
+Route::post('/item/increaseview', function (Request $request) {
+    // dispatch(new App\Jobs\IncreaseItemViewCount(Item::find($request->id)));
+    dispatch(new App\Jobs\IncreaseItemViewCount(Item::find(1)));
+    return $request;
 });
 // END OF LINE //
-
-
-/** Game Notifications */
-Route::get('game/{data}', function ($data) {
-
-    event(new \App\Events\GlobalNotifications($data));
-    return 'adding' . $data;
-});
-
-Route::post('game/event', function (Request $request) {
-    event(new \App\Events\GlobalNotifications($request->all()));
-    return  $request->all();
-});
