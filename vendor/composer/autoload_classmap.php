@@ -6,9 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Advancement' => $baseDir . '/app/Advancement.php',
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Content' => $baseDir . '/app/Content.php',
+    'App\\Event' => $baseDir . '/app/Event.php',
     'App\\Events\\GlobalNotifications' => $baseDir . '/app/Events/GlobalNotifications.php',
     'App\\Events\\PostEvent' => $baseDir . '/app/Events/PostEvent.php',
     'App\\Events\\TestEvent' => $baseDir . '/app/Events/TestEvent.php',
@@ -44,8 +46,9 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Item' => $baseDir . '/app/Item.php',
+    'App\\Jobs\\IncreaseItemCounterCount' => $baseDir . '/app/Jobs/IncreaseItemCounterCount.php',
+    'App\\Jobs\\IncreaseItemViewCount' => $baseDir . '/app/Jobs/IncreaseItemViewCount.php',
     'App\\Library\\WebsenderAPI' => $baseDir . '/app/Library/WebsenderAPI.php',
-    'App\\PlayerData' => $baseDir . '/app/PlayerData.php',
     'App\\Post' => $baseDir . '/app/Post.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
@@ -56,7 +59,10 @@ return array(
     'App\\Reaction' => $baseDir . '/app/Reaction.php',
     'App\\UUID' => $baseDir . '/app/UUID.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'App\\Useradvancement' => $baseDir . '/app/Useradvancement.php',
     'App\\Usercart' => $baseDir . '/app/Usercart.php',
+    'App\\Userdata' => $baseDir . '/app/Userdata.php',
+    'App\\Userinventory' => $baseDir . '/app/Userinventory.php',
     'App\\Usertransactionhistory' => $baseDir . '/app/Usertransactionhistory.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/CorsService.php',
