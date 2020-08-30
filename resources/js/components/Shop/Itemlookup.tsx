@@ -37,6 +37,11 @@ export default props => {
                             item_name={data.item_name}
                             price={data.price}
                             view={data.view}
+                            description={data.description}
+                            minecraft_item_shorthand={
+                                data.minecraft_item_shorthand
+                            }
+                            type={data.type}
                         />
                     ) : null}
                     {data ? (

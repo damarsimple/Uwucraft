@@ -10,7 +10,7 @@ type Query {
     user(id: ID @eq): User @find # @cache
     posts: [Post!]! @paginate(defaultCount: 10) # @cache
     post(id: Int! @eq): Post @find # @cache
-    items: [Item!]! @paginate(defaultCount: 18) # @cache
+    items: [Item!]! @paginate(defaultCount: 18) @cache
     #had  to disable it for real time updates?
     item(id: ID @eq): Item @find #@cache
     advancement(id: Int! @eq): Post @find
@@ -42,18 +42,21 @@ type Mutation {
     ): Usercart @create
 }
 type REDISStatus {
+    type: String
     online: Boolean!
     ping: Float
     exception: String
     updated_at: DateTime
 }
 type MYSQLStatus {
+    type: String
     online: Boolean!
     ping: Float
     exception: String
     updated_at: DateTime
 }
 type SPIGOTStatus {
+    type: String
     online: Boolean!
     ping: Float
     exception: String
