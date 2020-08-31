@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
     createStyles,
     makeStyles,
@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import SearchIcon from "@material-ui/icons/Search";
 import { Link as Go } from "react-router-dom";
-
+import UserContext from "../../context/UserContext";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         anchor: { color: "white", textDecoration: "none" },
@@ -58,6 +58,9 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default () => {
     const classes = useStyles();
+    const { session, setSession, destroySession } = useContext(UserContext);
+
+    console.log(useContext(UserContext));
 
     return (
         <div>
@@ -92,14 +95,30 @@ export default () => {
                     <Go className={classes.anchor} to="/store">
                         <Button color="inherit">Store</Button>
                     </Go>
-                    <Go className={classes.anchor} to="/register">
-                        <Button color="inherit">Register</Button>
-                    </Go>
-                    <Go className={classes.anchor} to="/login">
-                        <Button color="inherit">Login</Button>
-                    </Go>
+                    { //This Code So bad that my prettier cant format it
+                        session.isLogged ? (
+                            <button
+                                onClick={() => {
+                                    destroySession ? destroySession() : console.log("bruh");
+                                }}
+                            >
+                                Hello {session?.session?.username}
+                            </button>
+                        ) : (
+                                (
+                                    <Go className={classes.anchor} to="/register">
+                                        <Button color="inherit">Register</Button>
+                                    </Go>
+                                ) && (
+                                    <Go className={classes.anchor} to="/login">
+                                        <Button color="inherit">Login</Button>
+                                    </Go>
+                                )
+                            )
+                    }
+
                 </Toolbar>
             </AppBar>
-        </div>
+        </div >
     );
 };

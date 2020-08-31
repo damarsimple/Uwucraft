@@ -15,19 +15,16 @@ function SystemActivity() {
     const [redis, setRedis] = useState<REDISStatus>({
         ping: 0,
         online: false,
-        exception: "",
         updated_at: ""
     });
-    const [mysql, setMysql] = useState({
+    const [mysql, setMysql] = useState<MYSQLStatus>({
         ping: 0,
         online: false,
-        exception: "",
         updated_at: ""
     });
-    const [spigot, setSpigot] = useState({
+    const [spigot, setSpigot] = useState<SPIGOTStatus>({
         ping: 0,
         online: false,
-        exception: "",
         updated_at: ""
     });
     systemstatus().then(res => {
@@ -56,8 +53,8 @@ function SystemActivity() {
                                     redis.online ? (
                                         <SentimentVerySatisfiedIcon />
                                     ) : (
-                                        <SentimentVerySatisfiedIcon />
-                                    )
+                                            <SentimentVerySatisfiedIcon />
+                                        )
                                 }
                                 title={"REDIS"}
                                 subheader="September 14, 2016"
@@ -80,8 +77,8 @@ function SystemActivity() {
                                     mysql.online ? (
                                         <SentimentVerySatisfiedIcon />
                                     ) : (
-                                        <SentimentVerySatisfiedIcon />
-                                    )
+                                            <SentimentVerySatisfiedIcon />
+                                        )
                                 }
                                 title="MYSQL"
                                 subheader="September 14, 2016"
@@ -104,8 +101,8 @@ function SystemActivity() {
                                     spigot.online ? (
                                         <SentimentVerySatisfiedIcon />
                                     ) : (
-                                        <SentimentVerySatisfiedIcon />
-                                    )
+                                            <SentimentVerySatisfiedIcon />
+                                        )
                                 }
                                 title="SPIGOT"
                                 subheader="September 14, 2016"

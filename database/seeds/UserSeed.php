@@ -15,10 +15,12 @@ class UserSeed extends Seeder
             $faker = Faker\Factory::create();
             DB::table('users')->insert([
                 'username' => $faker->userName,
-                'password' => $faker->password(),
+                'password' => password_hash($faker->password(), PASSWORD_DEFAULT),
                 'email' => $faker->email,
                 'ip' => $faker->ipv4,
                 'UUID' => $faker->uuid,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ]);
         }
     }

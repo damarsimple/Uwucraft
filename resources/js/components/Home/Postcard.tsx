@@ -16,7 +16,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-import { Post } from "../../api/graphql";
+import { Post } from "../../type/type";
 import Postcomment from "./Postcomment";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

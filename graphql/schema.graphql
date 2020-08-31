@@ -22,8 +22,8 @@ type Query {
 }
 type Mutation {
     createUser(
-        username: String @rules(apply: ["required", "string", "max:255"])
-        email: String
+        username: String! @rules(apply: ["required", "string", "max:255","unique:users"])
+        email: String!
             @rules(
                 apply: [
                     "required"
@@ -33,7 +33,7 @@ type Mutation {
                     "unique:users"
                 ]
             )
-        password: String @rules(apply: ["required", "string", "min:8"])
+        password: String! @rules(apply: ["required", "string", "min:8"]) @hash
     ): User @create
     addUserCart(
         user_id: Int @rules(apply: ["required", "numeric"])
@@ -67,8 +67,8 @@ type User {
     id: ID!
     username: String!
     email: String!
-    created_at: DateTime!
-    updated_at: DateTime!
+    created_at: DateTime
+    updated_at: DateTime
     posts: [Post!]! @hasMany
     usercart: [Usercart!]! @hasMany
     useradvancement: [Useradvancement!]! @hasMany

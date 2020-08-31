@@ -18,6 +18,7 @@ class CreateSystemActivityLogsTable extends Migration
             $table->string('type');
             $table->boolean('online');
             $table->float('ping');
+            $table->longText('data')->nullable();
             $table->longText('exception')->nullable();
             $table->timestamps();
         });

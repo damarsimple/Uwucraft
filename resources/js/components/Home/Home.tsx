@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Post from "./Postcard";
-import { posts, Comment, Reaction, Posts } from "../../api/graphql";
+import { posts } from "../../api/graphql";
+import { Posts } from "../../type/type";
 export default () => {
     const [postslist, setPost] = useState<Posts>([]);
     posts().then(result => setPost(result.data.posts.data));

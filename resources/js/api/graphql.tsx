@@ -8,13 +8,11 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { Item } from "../type/type";
-
+const token = localStorage.getItem("token");
 const httpLink = createHttpLink({
     uri: "/graphql"
 });
-
 const authLink = setContext((_, { headers }) => {
-    const token = localStorage.getItem("token");
     return {
         headers: {
             ...headers,
@@ -22,12 +20,14 @@ const authLink = setContext((_, { headers }) => {
         }
     };
 });
-const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
-    // link: authLink.concat(httpLink),
+const client: ApolloClient<NormalizedCacheObject> = token ? new ApolloClient({
+    link: authLink.concat(httpLink),
+    uri: "/graphql",
+    cache: new InMemoryCache()
+}) : new ApolloClient({
     uri: "/graphql",
     cache: new InMemoryCache()
 });
-
 export async function items(page?: number): Promise<ApolloQueryResult<any>> {
     return client.query({
         query: gql`
@@ -163,6 +163,10 @@ export async function me() {
             query {
                 me {
                     id
+                    username
+                    email
+                    created_at
+                    updated_at
                 }
             }
         `

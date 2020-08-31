@@ -14,7 +14,7 @@
     @yield('content')
     <!-- Notification Components -->
     <div id="root"></div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/index.js') }}"></script>
     <!-- Scripts Here -->
     @yield('scripts')
 </body>

@@ -6,8 +6,8 @@ import { items } from "../../api/graphql";
 import { Container } from "@material-ui/core";
 
 interface ShopData {
-    items?: Items;
-    paginator?: PaginatorInfo;
+    items: Items;
+    paginator: PaginatorInfo;
 }
 
 export default class Shop extends React.Component<ShopData> {
@@ -16,7 +16,7 @@ export default class Shop extends React.Component<ShopData> {
         super(props);
         this.state = {
             items: [],
-            paginator: { total: 100 }
+            paginator: { total: 100, currentPage: 1, hasMorePages: false }
         };
     }
     componentDidMount() {
