@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -15,7 +15,11 @@ import Alert from "@material-ui/lab/Alert";
 import { login } from "../api/auth";
 import { me } from "../api/graphql";
 import { Collapse } from "@material-ui/core";
+import UserContext from "../context/UserContext";
 const useStyles = makeStyles(theme => ({
+    container: {
+        minHeight: "85vh"
+    },
     paper: {
         marginTop: theme.spacing(8),
         display: "flex",
@@ -36,9 +40,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Login() {
-    me().then(r => {
-        console.log(r);
-    });
+    const { setSession } = useContext(UserContext);
     const classes = useStyles();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -47,7 +49,7 @@ export default function Login() {
     const handleClick = () => {
         login({ username: username, password: password }).then(r => {
             r.data.status
-                ? window.location.replace("/home")
+                ? (me().then((data) => { setSession ? setSession({ isLogged: true, session: data.data.me }) : null; (window.location.replace("/home")) }))
                 : (setMessage(r.data.message), setStatus(true));
         });
     };
@@ -58,7 +60,7 @@ export default function Login() {
             direction="column"
             alignItems="center"
             justify="center"
-            style={{ minHeight: "85vh" }}
+            className={classes.container}
         >
             <Grid item xs={3}>
                 <Container component="main" maxWidth="xs">

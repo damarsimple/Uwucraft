@@ -16,31 +16,33 @@ import Players from "./components/Dashboard/Players";
 import Reports from "./components/Dashboard/Reports";
 import Integrations from "./components/Dashboard/Integrations";
 import UserContext from "./context/UserContext";
-import { IUserContext, User } from "./type/type";
+import { IUserContext, User, Usercart } from "./type/type";
 import { me } from "./api/graphql";
 interface IApp {
     session: IUserContext;
 }
 
 const App = () => {
-
     const [session, setSession] = useState<IUserContext>({ isLogged: false });
-
+    const [carts, setCarts] = useState<Array<Usercart | null>>([]);
     const destroySession = () => {
         setSession({ isLogged: false });
-    }
+        localStorage.removeItem("token");
+    };
     useEffect(() => {
         const setData = async () => {
             const data = await me();
-            if (data.data.me != null && localStorage.getItem('token')) {
-                console.log(data);
+            if (data.data.me != null && localStorage.getItem("token")) {
                 setSession({ isLogged: true, session: data.data.me as User });
                 return;
             }
-        }
+        };
         setData();
     }, []);
-    const value = useMemo(() => ({ session, setSession, destroySession }), [session, setSession, destroySession]);
+    const value = useMemo(
+        () => ({ session, carts, setCarts, setSession, destroySession }),
+        [session, carts, setSession, setCarts, destroySession]
+    );
     return (
         <>
             <Router>
@@ -103,9 +105,7 @@ const App = () => {
                     </ThemeProvider>
                 </UserContext.Provider>
             </Router>
-
         </>
     );
-
-}
+};
 export default App;

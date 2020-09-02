@@ -14,7 +14,7 @@ export async function login(credentials: Login): Promise<any> {
     const token = await Axios.post("/api/login", credentials);
     console.log(token);
     localStorage.removeItem("token");
-    token.data.status
+    token.data.success
         ? localStorage.setItem("token", token.data.access_token)
         : null;
     console.log(localStorage.getItem("token"));
@@ -22,7 +22,13 @@ export async function login(credentials: Login): Promise<any> {
     return token;
 }
 export async function register(user: Register): Promise<AxiosResponse<any>> {
-    return Axios.post("/api/register", user);
+    const token = await Axios.post("/api/register", user);
+    console.log(token);
+    localStorage.removeItem("token");
+    token.data.success
+        ? localStorage.setItem("token", token.data.access_token)
+        : console.log("bruh");
+    return token;
 }
 export async function me(): Promise<AxiosResponse<any>> {
     axiosInstance.defaults.headers.common[

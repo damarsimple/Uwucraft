@@ -28,10 +28,11 @@ class AuthController extends Controller
 
         $accessToken = Auth::user()->createToken('authToken')->accessToken;
 
-        return response(['status' => $status, 'user' => Auth::user(), 'access_token' => $accessToken]);
+        return response(['success' => $status, 'user' => Auth::user(), 'access_token' => $accessToken]);
     }
     public function register(Request $request)
     {
+        $status = true;
         $validator = Validator::make($request->all(), [
             'username' => 'required|unique:users|string',
             'password' => 'required|string',
@@ -46,6 +47,6 @@ class AuthController extends Controller
         $data['ip'] = $request->ip();
         $data['UUID'] = '2d5294ec-fce7-422e-9250-cc27a237875f';
         $user = User::create($data);
-        return response(['id' => $user->id, 'authToken' => $user->createToken('authToken')->accessToken]);
+        return response(['success' => $status, 'user' => $user, 'access_token' => $user->createToken('authToken')->accessToken]);
     }
 }
