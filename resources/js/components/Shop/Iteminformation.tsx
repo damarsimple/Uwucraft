@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
     Grid,
     Typography,
@@ -14,7 +14,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Image from "material-ui-image";
 import { Item } from "../../type/type";
-import { addUserCart } from "../../api/graphql";
+import { addUserCart, meCart } from "../../api/graphql";
+import UserContext from "../../context/UserContext";
 interface Information extends Item {
     imgSrc: string;
 }
@@ -22,11 +23,15 @@ const Iteminformation = (props: Information) => {
     fetch("/api/register").then(res =>
         res.json().then(res => console.log(res))
     );
-
+    const { setCarts } = useContext(UserContext);
     const [amount, setAmount] = useState<number>(1);
     const handleClick = () => {
-        addUserCart(2, amount != 0 ? amount : 1, props.id).then(res => {
-            console.log(res);
+        addUserCart(amount != 0 ? amount : 1, props.id).then(() => {
+            const setCartsData = async () => {
+                const data = await meCart(true);
+                setCarts ? setCarts(data.data.me.usercart) : null;
+            };
+            setCartsData();
         });
     };
     const handleChange = (event: any) => {

@@ -1,12 +1,17 @@
-
-
-
 export interface User {
-    id: string;
+    id: number;
     username: string;
     email: string;
+    usercart: Usercart[];
     created_at: string;
     updated_at: string;
+}
+export interface Usercart {
+    amount: number;
+    item?: Item;
+    item_id: string;
+    updated_at: string;
+    created_at: string;
 }
 export interface IUserContext {
     session?: User;
@@ -69,10 +74,9 @@ export interface SystemStatus {
     exception?: string | null;
     updated_at: string;
 }
-export interface SPIGOTStatus extends SystemStatus { }
-export interface MYSQLStatus extends SystemStatus { }
-export interface REDISStatus extends SystemStatus { }
-
+export interface SPIGOTStatus extends SystemStatus {}
+export interface MYSQLStatus extends SystemStatus {}
+export interface REDISStatus extends SystemStatus {}
 
 export interface ISimpleLineCharts {
     labels: string[];

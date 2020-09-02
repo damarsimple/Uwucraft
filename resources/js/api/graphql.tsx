@@ -4,11 +4,22 @@ import {
     gql,
     NormalizedCacheObject,
     ApolloQueryResult,
-    createHttpLink
+    createHttpLink,
+    DefaultOptions
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { Item } from "../type/type";
 const token = localStorage.getItem("token");
+const defaultOptions: DefaultOptions = {
+    watchQuery: {
+        fetchPolicy: "no-cache",
+        errorPolicy: "ignore"
+    },
+    query: {
+        fetchPolicy: "no-cache",
+        errorPolicy: "all"
+    }
+};
 const httpLink = createHttpLink({
     uri: "/graphql"
 });
@@ -20,14 +31,18 @@ const authLink = setContext((_, { headers }) => {
         }
     };
 });
-const client: ApolloClient<NormalizedCacheObject> = token ? new ApolloClient({
-    link: authLink.concat(httpLink),
-    uri: "/graphql",
-    cache: new InMemoryCache()
-}) : new ApolloClient({
-    uri: "/graphql",
-    cache: new InMemoryCache()
-});
+const client: ApolloClient<NormalizedCacheObject> = token
+    ? new ApolloClient({
+          link: authLink.concat(httpLink),
+          uri: "/graphql",
+          defaultOptions: defaultOptions,
+          cache: new InMemoryCache()
+      })
+    : new ApolloClient({
+          uri: "/graphql",
+          defaultOptions: defaultOptions,
+          cache: new InMemoryCache()
+      });
 export async function items(page?: number): Promise<ApolloQueryResult<any>> {
     return client.query({
         query: gql`
@@ -141,15 +156,13 @@ export async function systemstatus(): Promise<ApolloQueryResult<any>> {
     });
 }
 
-export async function addUserCart(
-    user_id: number,
-    amount: number,
-    item_id: number
-) {
+export async function addUserCart(amount: number, item_id: number) {
     return client.mutate({
         mutation: gql`
             mutation {
-                addUserCart(user_id: ${user_id}, amount: ${amount}, item_id: ${item_id}) {
+                addUserCart( amount: ${amount}, item_id: ${item_id}) {
+                item_id
+                amount
                 created_at
                 updated_at
                 }
@@ -171,14 +184,40 @@ export async function me() {
             }
         `
     });
-    // return client.mutate({
-    // //     mutation: gql`
-    // //         mutation {
-    // //             addUserCart(input: {user_id: ${user_id}, amount: ${amount}, item_id: ${item_id}}) {
-    // //                 created_at
-    // //                 updated_at
-    // //             }
-    // //         }
-    // //     `
-    // // });
+}
+export async function meCart(getItemProperty?: boolean) {
+    return getItemProperty
+        ? client.query({
+              query: gql`
+                  query {
+                      me {
+                          usercart {
+                              amount
+                              item {
+                                  item_name
+                                  price
+                                  minecraft_item_shorthand
+                              }
+                              item_id
+                              created_at
+                              updated_at
+                          }
+                      }
+                  }
+              `
+          })
+        : client.query({
+              query: gql`
+                  query {
+                      me {
+                          usercart {
+                              amount
+                              item_id
+                              created_at
+                              updated_at
+                          }
+                      }
+                  }
+              `
+          });
 }

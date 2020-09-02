@@ -15,6 +15,9 @@ const useStyles = makeStyles({
     card: {
         maxHeight: 340,
         overflow: "hidden"
+    },
+    title: {
+        maxHeight: 30
     }
 });
 export default props => {
@@ -30,8 +33,14 @@ export default props => {
                 />
             </CardActionArea>
             <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {item.item_name.substring(0, 11)}
+                <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="h2"
+                    className={classes.title}
+                    noWrap
+                >
+                    {item.item_name}
                 </Typography>
                 <Typography gutterBottom variant="h5" component="h3">
                     ${item.price}

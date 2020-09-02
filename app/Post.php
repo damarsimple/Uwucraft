@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
-    protected $fillable = ['author_id', 'content'];
+    protected $fillable = ['author_id', 'content', 'caption'];
     protected $hidden = ['author_id'];
     public function author(): BelongsTo
     {
