@@ -1,10 +1,12 @@
 import React from "react";
 import SwipeableViews from "react-swipeable-views";
+import { Paper, makeStyles } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Itemreview from "./Itemreview";
 import { Box } from "@material-ui/core";
+import { Review } from "../../type/type";
 
 function TabPanel(props) {
     return (
@@ -21,8 +23,17 @@ function TabPanel(props) {
 
 interface Description {
     description: string;
+    review?: Array<Review>;
 }
+const useStyles = makeStyles({
+    container: {
+        height: 1000,
+        overflow: "scroll",
+        overflowX: "hidden"
+    }
+});
 export default (props: Description) => {
+    const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
@@ -49,19 +60,21 @@ export default (props: Description) => {
                     <Tab label="Discussion" />
                 </Tabs>
             </AppBar>
-            <SwipeableViews index={value} onChangeIndex={handleChangeIndex}>
-                <TabPanel value={value} index={0}>
-                    <Box p={5}>{props.description}</Box>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                    <Box p={5}>
-                        <Itemreview />
-                    </Box>
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    <Box p={5}>44</Box>
-                </TabPanel>
-            </SwipeableViews>
+            <Paper className={classes.container}>
+                <SwipeableViews index={value} onChangeIndex={handleChangeIndex}>
+                    <TabPanel value={value} index={0}>
+                        <Box p={5}>{props.description}</Box>
+                    </TabPanel>
+                    <TabPanel value={value} index={1}>
+                        <Box p={5}>
+                            <Itemreview data={props.review} />
+                        </Box>
+                    </TabPanel>
+                    <TabPanel value={value} index={2}>
+                        <Box p={5}>44</Box>
+                    </TabPanel>
+                </SwipeableViews>
+            </Paper>
         </>
     );
 };

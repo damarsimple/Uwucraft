@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Advancement' => $baseDir . '/app/Advancement.php',
     'App\\Comment' => $baseDir . '/app/Comment.php',
+    'App\\Console\\Commands\\LogSystem' => $baseDir . '/app/Console/Commands/LogSystem.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Content' => $baseDir . '/app/Content.php',
     'App\\Event' => $baseDir . '/app/Event.php',
@@ -66,6 +67,7 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Providers\\TelescopeServiceProvider' => $baseDir . '/app/Providers/TelescopeServiceProvider.php',
     'App\\Reaction' => $baseDir . '/app/Reaction.php',
+    'App\\Review' => $baseDir . '/app/Review.php',
     'App\\SystemActivityLog' => $baseDir . '/app/SystemActivityLog.php',
     'App\\UUID' => $baseDir . '/app/UUID.php',
     'App\\User' => $baseDir . '/app/User.php',
@@ -4819,6 +4821,7 @@ return array(
     'Ramsey\\Uuid\\Validator\\GenericValidator' => $vendorDir . '/ramsey/uuid/src/Validator/GenericValidator.php',
     'Ramsey\\Uuid\\Validator\\ValidatorInterface' => $vendorDir . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
     'Reactionseed' => $baseDir . '/database/seeds/Reactionseed.php',
+    'Reviewseed' => $baseDir . '/database/seeds/Reviewseed.php',
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',

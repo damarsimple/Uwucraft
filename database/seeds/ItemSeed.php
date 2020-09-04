@@ -6001,12 +6001,11 @@ class ItemSeed extends Seeder
                 'minecraft_item_id' => 'minecraft:' . $table[$i]['name'],
                 'minecraft_item_shorthand' => $table[$i]['name'],
                 'price' => mt_rand(0, 1000),
-                'counter' => 0,
-                'view' => 0,
+                'counter' => mt_rand(1,100),
+                'view' => mt_rand(1,100),
                 'updated_at' => Carbon::now()->toDateTimeString(),
                 'created_at' => Carbon::now()->toDateTimeString(),
             ]);
-            var_dump($table[$i]);
         }
     }
 }

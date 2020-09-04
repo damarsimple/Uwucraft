@@ -92,6 +92,16 @@ export async function item(id: number): Promise<ApolloQueryResult<any>> {
                     counter
                     view
                     minecraft_item_shorthand
+                    review{
+                            author{
+                                username
+                            }
+                            score
+                            content
+                            caption
+                            created_at
+                            updated_at
+                        }
                 }
             }
         `

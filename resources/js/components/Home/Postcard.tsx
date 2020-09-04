@@ -56,7 +56,7 @@ export default props => {
             <CardHeader
                 avatar={
                     <Avatar aria-label="recipe" className={classes.avatar}>
-                        {post.author.username.charAt(0)}
+                        {post.author.username.charAt(0).toUpperCase}
                     </Avatar>
                 }
                 action={

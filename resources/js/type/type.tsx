@@ -29,11 +29,19 @@ export interface Item {
     counter: number;
     view: number;
     minecraft_item_shorthand: string;
+    review?: Array<Review>;
 }
-
-export interface Author {
-    username: string;
+export interface Review {
+    id: number;
+    author: Author;
+    item: Item;
+    score: number;
+    content?: string;
+    caption: string;
+    updated_at: string;
+    created_at: string;
 }
+export interface Author extends User {}
 export type Posts = Post[];
 export type Items = Item[];
 export interface PaginatorInfo {

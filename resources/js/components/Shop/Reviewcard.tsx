@@ -6,32 +6,36 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "@material-ui/core";
 import StarIcon from "@material-ui/icons/Star";
-
-export default () => {
+import { Review } from "../../type/type";
+const Reviewcard = (props: Review) => {
     return (
         <Box m={1}>
             <Card>
                 <CardHeader
-                    avatar={<Avatar aria-label="recipe">R</Avatar>}
-                    title="Shrimp and Chorizo Paella"
-                    subheader="September 14, 2016"
+                    avatar={
+                        <Avatar
+                            aria-label="avatar"
+                            alt={props.author.username.toUpperCase()}
+                        />
+                    }
+                    title={props.author.username}
+                    subheader={props.created_at}
                 />
                 <CardContent>
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
+                    {[...Array(props.score)].map((e, i) => (
+                        <StarIcon key={i}/>
+                    ))}
+
                     <Typography
                         variant="body2"
                         color="textSecondary"
                         component="p"
                     >
-                        This impressive paella is a perfect party dish and a fun
-                        meal to cook together with your guests. Add 1 cup of
-                        frozen peas along with the mussels, if you like.
+                        {props.caption}
                     </Typography>
                 </CardContent>
             </Card>
         </Box>
     );
 };
+export default Reviewcard;

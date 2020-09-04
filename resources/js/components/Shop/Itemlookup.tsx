@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Container } from "@material-ui/core";
 import Iteminformation from "./Iteminformation";
 import Itemdescription from "./Itemdescription";
 import { item } from "../../api/graphql";
@@ -10,6 +10,7 @@ export default props => {
     useEffect(() => {
         item(props.match.params.itemid)
             .then(result => {
+                console.log(result.data.item);
                 setData(result.data.item);
             })
             .catch(err => {
@@ -18,38 +19,30 @@ export default props => {
         //Why this triggering Twice?
         //FIXME
         increaseViewCount(props.match.params.itemid).then();
-    });
+    }, []);
 
     return (
-        <Grid>
-            <Grid container spacing={6}>
-                <Grid item xs={false} sm={2}></Grid>
-                <Grid item xs={12} sm={8}>
-                    {data ? (
-                        <Iteminformation
-                            id={data.id}
-                            author={data.author}
-                            counter={data.counter}
-                            imgSrc={
-                                "/api/image/item/" +
-                                data.minecraft_item_shorthand
-                            }
-                            item_name={data.item_name}
-                            price={data.price}
-                            view={data.view}
-                            description={data.description}
-                            minecraft_item_shorthand={
-                                data.minecraft_item_shorthand
-                            }
-                            type={data.type}
-                        />
-                    ) : null}
-                    {data ? (
-                        <Itemdescription description={data.description} />
-                    ) : null}
-                </Grid>
-                <Grid item xs={false} sm={2}></Grid>
-            </Grid>
-        </Grid>
+        <Container maxWidth="lg">
+            {data ? (
+                <Iteminformation
+                    id={data.id}
+                    author={data.author}
+                    counter={data.counter}
+                    imgSrc={"/api/image/item/" + data.minecraft_item_shorthand}
+                    item_name={data.item_name}
+                    price={data.price}
+                    view={data.view}
+                    description={data.description}
+                    minecraft_item_shorthand={data.minecraft_item_shorthand}
+                    type={data.type}
+                />
+            ) : null}
+            {data ? (
+                <Itemdescription
+                    description={data.description}
+                    review={data.review}
+                />
+            ) : null}
+        </Container>
     );
 };

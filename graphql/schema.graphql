@@ -114,7 +114,16 @@ type Reaction {
     post: Post! @belongsTo
     content: String!
 }
-
+type Review {
+    id: ID
+    author: User! @belongsTo
+    item: Item @belongsTo
+    score: Int
+    content: String
+    caption: String
+    created_at: DateTime
+    updated_at: DateTime
+}
 type Item {
     id: ID!
     item_name: String
@@ -126,6 +135,7 @@ type Item {
     counter: Int
     view: Int
     author: User! @belongsTo
+    review: [Review!]! @hasMany
 }
 type Advancement {
     id: ID!
