@@ -9,8 +9,10 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
-import { register } from "../api/auth";
+import { register } from "../api/graphql";
 import UserContext from "../context/UserContext";
+import { Collapse } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
 const useStyles = makeStyles(theme => ({
     paper: {
         marginTop: theme.spacing(8),
@@ -33,23 +35,26 @@ const useStyles = makeStyles(theme => ({
 
 export default function Register() {
     const classes = useStyles();
+    const [status, setStatus] = useState<boolean>(false);
+    const [message, setMessage] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { setSession } = useContext(UserContext);
     const handleSubmit = () => {
-        register({ username: username, password: password, email: email }).then(
-            res => {
-                {
-                    setSession
-                        ? setSession({ isLogged: true, session: res.data.user })
-                        : null;
-                    window.location.replace("/home");
-                }
-                console.log(res.data.user);
+        register(username, password, email).then(r => {
+            {
+                r.data.register.success
+                    ? (setSession!({
+                          isLogged: true,
+                          session: r.data.register.user
+                      }),
+                      localStorage.removeItem("token"),
+                      localStorage.setItem("token", r.data.register.token),
+                      window.location.replace("/home"))
+                    : (setMessage(r.data.register.exception), setStatus(true));
             }
-        );
-        console.log(username + password);
+        });
     };
     return (
         <Grid
@@ -70,7 +75,11 @@ export default function Register() {
                         <Typography component="h1" variant="h5">
                             Sign up
                         </Typography>
-
+                        <Collapse in={status}>
+                            <Alert severity="warning">
+                                Failed to register reason : {message}
+                            </Alert>
+                        </Collapse>
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
                                 <TextField

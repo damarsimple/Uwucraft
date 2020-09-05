@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 import Alert from "@material-ui/lab/Alert";
-import { login } from "../api/auth";
+import { login } from "../api/graphql";
 import { me } from "../api/graphql";
 import { Collapse } from "@material-ui/core";
 import UserContext from "../context/UserContext";
@@ -42,15 +42,21 @@ const useStyles = makeStyles(theme => ({
 export default function Login() {
     const { setSession } = useContext(UserContext);
     const classes = useStyles();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [status, setStatus] = useState(false);
-    const [message, setMessage] = useState("");
+    const [username, setUsername] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [status, setStatus] = useState<boolean>(false);
+    const [message, setMessage] = useState<string>("");
     const handleClick = () => {
         login({ username: username, password: password }).then(r => {
-            r.data.status
-                ? (me().then((data) => { setSession ? setSession({ isLogged: true, session: data.data.me }) : null; (window.location.replace("/home")) }))
-                : (setMessage(r.data.message), setStatus(true));
+            r.data.login.success
+                ? (setSession!({
+                      isLogged: true,
+                      session: r.data.login.user
+                  }),
+                  localStorage.removeItem("token"),
+                  localStorage.setItem("token", r.data.login.token),
+                  window.location.replace("/home"))
+                : (setMessage(r.data.login.exception), setStatus(true));
         });
     };
     return (

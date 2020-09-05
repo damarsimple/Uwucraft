@@ -8,7 +8,6 @@ import {
     DefaultOptions
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import { Item } from "../type/type";
 const token = localStorage.getItem("token");
 const defaultOptions: DefaultOptions = {
     watchQuery: {
@@ -230,4 +229,70 @@ export async function meCart(getItemProperty?: boolean) {
                   }
               `
           });
+}
+interface Login {
+    username: string;
+    password: string;
+}
+export async function login(credentials: Login) {
+    console.log(` login(
+        input: (username: "${credentials.username}"   password: "${credentials.password})"   ) {
+        success
+        exception
+        token
+        user {
+            id
+            username
+            email
+            created_at
+            updated_at
+        }
+    }`);
+
+    return client.mutate({
+        mutation: gql`
+            mutation {
+                login(username: "${credentials.username}"   password: "${credentials.password}") {
+                    success
+                    exception
+                    token
+                    user {
+                        id
+                        username
+                        email
+                        created_at
+                        updated_at
+                    }
+                }
+            }
+        `
+    });
+}
+export async function register(
+    username: string,
+    password: string,
+    email: string
+) {
+    return client.mutate({
+        mutation: gql`
+            mutation {
+                register(
+                    username: "${username}"
+                    password: "${password}"
+                    email: "${email}"
+                ) {
+                    success
+                    exception
+                    token
+                    user {
+                        id
+                        username
+                        email
+                        created_at
+                        updated_at
+                    }
+                }
+            }
+        `
+    });
 }

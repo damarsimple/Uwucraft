@@ -44,6 +44,14 @@ type Mutation {
         @guard
         @create
         @inject(context: "user.id", name: "author_id")
+    login(username: String password: String) : Auth
+    register(username: String password: String email: String) : Auth
+}
+type Auth {
+    token: String
+    success: Boolean!
+    user: User
+    exception: String
 }
 type REDISStatus {
     type: String
