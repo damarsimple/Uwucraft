@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     Typography,
     Divider,
@@ -27,12 +27,14 @@ function SystemActivity() {
         online: false,
         updated_at: ""
     });
-    systemstatus().then(res => {
-        setRedis(res.data.REDISStatus);
-        setMysql(res.data.MYSQLStatus);
-        setSpigot(res.data.SPIGOTStatus);
-        console.log(res.data);
-    });
+    useEffect(() => {
+        systemstatus().then(res => {
+            setRedis(res.data.REDISStatus);
+            setMysql(res.data.MYSQLStatus);
+            setSpigot(res.data.SPIGOTStatus);
+            console.log(res.data);
+        });
+    }, []);
     return (
         <>
             <Typography
@@ -53,8 +55,8 @@ function SystemActivity() {
                                     redis.online ? (
                                         <SentimentVerySatisfiedIcon />
                                     ) : (
-                                            <SentimentVerySatisfiedIcon />
-                                        )
+                                        <SentimentVerySatisfiedIcon />
+                                    )
                                 }
                                 title={"REDIS"}
                                 subheader="September 14, 2016"
@@ -77,8 +79,8 @@ function SystemActivity() {
                                     mysql.online ? (
                                         <SentimentVerySatisfiedIcon />
                                     ) : (
-                                            <SentimentVerySatisfiedIcon />
-                                        )
+                                        <SentimentVerySatisfiedIcon />
+                                    )
                                 }
                                 title="MYSQL"
                                 subheader="September 14, 2016"
@@ -101,8 +103,8 @@ function SystemActivity() {
                                     spigot.online ? (
                                         <SentimentVerySatisfiedIcon />
                                     ) : (
-                                            <SentimentVerySatisfiedIcon />
-                                        )
+                                        <SentimentVerySatisfiedIcon />
+                                    )
                                 }
                                 title="SPIGOT"
                                 subheader="September 14, 2016"
