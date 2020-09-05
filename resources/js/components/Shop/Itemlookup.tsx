@@ -8,6 +8,8 @@ import { increaseViewCount } from "../../api/rest";
 export default props => {
     const [data, setData] = useState<Item>();
     useEffect(() => {
+        console.log("I just mounted!" + props.match.params.itemid);
+
         item(props.match.params.itemid)
             .then(result => {
                 console.log(result.data.item);
@@ -19,7 +21,10 @@ export default props => {
         //Why this triggering Twice?
         //FIXME
         increaseViewCount(props.match.params.itemid).then();
-    }, []);
+        return () => {
+            console.log("I am unmounting " + props.match.params.itemid);
+        };
+    }, [props.match.params.itemid]);
 
     return (
         <Container maxWidth="lg">

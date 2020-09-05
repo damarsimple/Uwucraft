@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Post from "./Postcard";
 import { posts } from "../../api/graphql";
 import { Posts } from "../../type/type";
 export default () => {
     const [postslist, setPost] = useState<Posts>([]);
-    posts().then(result => setPost(result.data.posts.data));
+    useEffect(() => {
+        posts().then(result => setPost(result.data.posts.data));
+    }, []);
     return (
         <>
             <Grid container spacing={3}>

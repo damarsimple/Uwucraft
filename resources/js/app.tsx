@@ -18,9 +18,7 @@ import Integrations from "./components/Dashboard/Integrations";
 import UserContext from "./context/UserContext";
 import { IUserContext, User, Usercart } from "./type/type";
 import { me } from "./api/graphql";
-interface IApp {
-    session: IUserContext;
-}
+import Cart from "./components/Shop/Cart";
 
 const App = () => {
     const [session, setSession] = useState<IUserContext>({ isLogged: false });
@@ -46,11 +44,11 @@ const App = () => {
     return (
         <>
             <Router>
-                <UserContext.Provider value={value}>
-                    <ThemeProvider theme={Theme}>
-                        <Navbar />
-                        <Box mt={10}>
-                            <Switch>
+                <Switch>
+                    <UserContext.Provider value={value}>
+                        <ThemeProvider theme={Theme}>
+                            <Navbar />
+                            <Box mt={10}>
                                 <Route path="/home" component={Home} />
                                 <Route path="/login" component={Login} />
                                 <Route path="/register" component={Register} />
@@ -66,6 +64,10 @@ const App = () => {
                                             <Route
                                                 path={`${url}/item/:itemid`}
                                                 component={Itemlookup}
+                                            />
+                                            <Route
+                                                path={`${url}/cart`}
+                                                component={Cart}
                                             />
                                         </>
                                     )}
@@ -100,10 +102,10 @@ const App = () => {
                                         </div>
                                     )}
                                 />
-                            </Switch>
-                        </Box>
-                    </ThemeProvider>
-                </UserContext.Provider>
+                            </Box>
+                        </ThemeProvider>
+                    </UserContext.Provider>
+                </Switch>
             </Router>
         </>
     );

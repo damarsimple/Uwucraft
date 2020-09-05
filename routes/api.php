@@ -30,4 +30,9 @@ Route::post('/item/increaseview', function (Request $request) {
     dispatch(new App\Jobs\IncreaseItemViewCount(Item::find(1)));
     return $request;
 });
+Route::get('test', function () {
+    $str = 'Test Uwu';
+    event(new App\Events\GlobalNotifications($str));
+    return $str;
+});
 // END OF LINE //

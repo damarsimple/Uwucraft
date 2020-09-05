@@ -20,7 +20,8 @@ import {
     Box,
     ListItemIcon,
     ListItemText,
-    ListItemSecondaryAction
+    ListItemSecondaryAction,
+    Typography
 } from "@material-ui/core";
 import { Link as Go } from "react-router-dom";
 import UserContext from "../../context/UserContext";
@@ -84,6 +85,13 @@ const useStyles = makeStyles((theme: Theme) =>
             "&:hover": {
                 color: "black"
             }
+        },
+        anchorCart: {
+            color: "black",
+            textDecoration: "none",
+            "&:hover": {
+                color: "grey"
+            }
         }
     })
 );
@@ -122,14 +130,12 @@ export default function Navbar() {
             const data = await meCart();
             if (localStorage.getItem("token")) {
                 setCarts ? setCarts(data.data.me.usercart) : null;
-                console.log(data.data.me);
             }
         };
         setCartsData();
     }, []);
     const handleEvent = async () => {
         const data = await meCart(true);
-        console.log(carts);
         setCarts ? setCarts(data.data.me.usercart) : null;
     };
 
@@ -216,6 +222,28 @@ export default function Navbar() {
                                                             color: "black"
                                                         }}
                                                     >
+                                                        <AppBar position="static">
+                                                            <Toolbar>
+                                                                <Typography variant="h6">
+                                                                    Shopping
+                                                                    Cart (
+                                                                    {
+                                                                        carts.length
+                                                                    }
+                                                                    )
+                                                                </Typography>
+                                                                <Go
+                                                                    className={
+                                                                        classes.anchor
+                                                                    }
+                                                                    to="/shop/cart"
+                                                                >
+                                                                    <Button color="inherit">
+                                                                        Look Now
+                                                                    </Button>
+                                                                </Go>
+                                                            </Toolbar>
+                                                        </AppBar>
                                                         <List>
                                                             {carts.map(
                                                                 (
@@ -223,14 +251,24 @@ export default function Navbar() {
                                                                     index
                                                                 ) => {
                                                                     return (
-                                                                        <ItemList
+                                                                        <Go
                                                                             key={
                                                                                 index
                                                                             }
-                                                                            data={
-                                                                                data
+                                                                            className={
+                                                                                classes.anchorCart
                                                                             }
-                                                                        />
+                                                                            to={
+                                                                                "/shop/item/" +
+                                                                                data?.item_id
+                                                                            }
+                                                                        >
+                                                                            <ItemList
+                                                                                data={
+                                                                                    data
+                                                                                }
+                                                                            />
+                                                                        </Go>
                                                                     );
                                                                 }
                                                             )}
