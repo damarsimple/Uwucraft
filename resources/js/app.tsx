@@ -19,7 +19,9 @@ import UserContext from "./context/UserContext";
 import { IUserContext, User, Usercart } from "./type/type";
 import { me } from "./api/graphql";
 import Cart from "./components/Shop/Cart";
-
+import Chat from "./components/Chat";
+import EchoInstance from "./components/Echo";
+import EchoContext from "./context/EchoContext";
 const App = () => {
     const [session, setSession] = useState<IUserContext>({ isLogged: false });
     const [carts, setCarts] = useState<Array<Usercart | null>>([]);
@@ -28,6 +30,12 @@ const App = () => {
         localStorage.removeItem("token");
     };
     useEffect(() => {
+        EchoInstance.channel("GlobalNotifications").listen(
+            "GlobalNotifications",
+            data => {
+                console.log(data);
+            }
+        );
         const setData = async () => {
             const data = await me();
             if (data.data.me != null && localStorage.getItem("token")) {
@@ -37,73 +45,81 @@ const App = () => {
         };
         setData();
     }, []);
-    const value = useMemo(
+    const sessionData = useMemo(
         () => ({ session, carts, setCarts, setSession, destroySession }),
         [session, carts, setSession, setCarts, destroySession]
     );
+    const EchoClient = EchoInstance;
+    const echoClient = useMemo(() => ({ EchoClient }), [EchoClient]);
     return (
         <>
             <Router>
                 <Switch>
-                    <UserContext.Provider value={value}>
-                        <ThemeProvider theme={Theme}>
-                            <Navbar />
-                            <Box mt={10}>
-                                <Route path="/home" component={Home} />
-                                <Route path="/login" component={Login} />
-                                <Route path="/register" component={Register} />
-                                <Route
-                                    path="/shop"
-                                    render={({ match: { url } }) => (
-                                        <>
-                                            <Route
-                                                path={`${url}/`}
-                                                component={Shop}
-                                                exact
-                                            />
-                                            <Route
-                                                path={`${url}/item/:itemid`}
-                                                component={Itemlookup}
-                                            />
-                                            <Route
-                                                path={`${url}/cart`}
-                                                component={Cart}
-                                            />
-                                        </>
-                                    )}
-                                />
-                                <Route
-                                    path="/dashboard"
-                                    render={({ match: { url } }) => (
-                                        <div style={{ display: "flex" }}>
-                                            <Sidebar />
-                                            <Route
-                                                path={`${url}/`}
-                                                component={Dashboard}
-                                                exact
-                                            />
-                                            <Route
-                                                path={`${url}/transaction`}
-                                                component={Transaction}
-                                                exact
-                                            />
-                                            <Route
-                                                path={`${url}/users`}
-                                                component={Players}
-                                            />
-                                            <Route
-                                                path={`${url}/reports`}
-                                                component={Reports}
-                                            />
-                                            <Route
-                                                path={`${url}/system`}
-                                                component={Integrations}
-                                            />
-                                        </div>
-                                    )}
-                                />
-                            </Box>
-                        </ThemeProvider>
+                    <UserContext.Provider value={sessionData}>
+                        <EchoContext.Provider value={echoClient}>
+                            <ThemeProvider theme={Theme}>
+                                <Navbar />
+                                <Chat />
+                                <Box mt={10}>
+                                    <Route path="/home" component={Home} />
+                                    <Route path="/login" component={Login} />
+                                    <Route
+                                        path="/register"
+                                        component={Register}
+                                    />
+                                    <Route
+                                        path="/shop"
+                                        render={({ match: { url } }) => (
+                                            <>
+                                                <Route
+                                                    path={`${url}/`}
+                                                    component={Shop}
+                                                    exact
+                                                />
+                                                <Route
+                                                    path={`${url}/item/:itemid`}
+                                                    component={Itemlookup}
+                                                />
+                                                <Route
+                                                    path={`${url}/cart`}
+                                                    component={Cart}
+                                                />
+                                            </>
+                                        )}
+                                    />
+                                    <Route
+                                        path="/dashboard"
+                                        render={({ match: { url } }) => (
+                                            <div style={{ display: "flex" }}>
+                                                <Sidebar />
+                                                <Route
+                                                    path={`${url}/`}
+                                                    component={Dashboard}
+                                                    exact
+                                                />
+                                                <Route
+                                                    path={`${url}/transaction`}
+                                                    component={Transaction}
+                                                    exact
+                                                />
+                                                <Route
+                                                    path={`${url}/users`}
+                                                    component={Players}
+                                                />
+                                                <Route
+                                                    path={`${url}/reports`}
+                                                    component={Reports}
+                                                />
+                                                <Route
+                                                    path={`${url}/system`}
+                                                    component={Integrations}
+                                                />
+                                            </div>
+                                        )}
+                                    />
+                                </Box>
+                            </ThemeProvider>
+                        </EchoContext.Provider>
                     </UserContext.Provider>
                 </Switch>
             </Router>
