@@ -7,7 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 
 import Typography from "@material-ui/core/Typography";
-
+import Image from "material-ui-image";
 const useStyles = makeStyles({
     media: {
         height: 200
@@ -26,10 +26,14 @@ export default props => {
     return (
         <Card className={classes.card}>
             <CardActionArea>
-                <CardMedia
+                {/* <CardMedia
                     className={classes.media}
                     image={"/api/image/item/" + item.minecraft_item_shorthand}
-                    title="Contemplative Reptile"
+                    title={item.item_name}
+                /> */}
+                <Image
+                    className={classes.media}
+                    src={"/api/image/item/" + item.minecraft_item_shorthand}
                 />
             </CardActionArea>
             <CardContent>
