@@ -3,4 +3,7 @@ if you already click add carts once you cant update parent state for some reason
 found out the reason is Apollo Client Query Cache interfere with my reupdate Query
 have to find some way around it
 
+[CHAT]
+BUGGY AS HELL
+
 TODO instead of refetching cart data from query i need append data Directly from usercart feedback // Re enable cache
