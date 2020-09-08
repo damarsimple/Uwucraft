@@ -3,9 +3,6 @@
 namespace App\GraphQL\Queries;
 
 use App\Libraries\CheckSpigot;
-use xPaw\MinecraftPing;
-use xPaw\MinecraftPingException;
-use Carbon\Carbon;
 
 class SPIGOTStatus
 {
