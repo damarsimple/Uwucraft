@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * App\Friend
@@ -28,12 +29,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Friend extends Model
 {
-    public function user()
+    protected $fillable = ['user_id', 'friends_id', 'is_friend'];
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
-    public function friend()
+    public function friend(): BelongsTo
     {
-        return $this->belongsTo('App\User', 'friend_with', 'id');
+        return $this->belongsTo(User::class, 'friends_id');
     }
 }

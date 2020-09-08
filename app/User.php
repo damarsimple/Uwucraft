@@ -113,7 +113,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function friend(): HasMany
+    public function friends(): HasMany
     {
         return $this->hasMany(Friend::class);
     }
