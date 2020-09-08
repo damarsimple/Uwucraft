@@ -19,6 +19,7 @@ type Query {
     REDISStatus: REDISStatus!
     SPIGOTStatus: SPIGOTStatus!
     me: User @auth
+    chatquery(from: ID!, to: ID!): [ChatMessage!]!
 }
 type Mutation {
     createUser(
@@ -44,8 +45,21 @@ type Mutation {
         @guard
         @create
         @inject(context: "user.id", name: "author_id")
-    login(username: String password: String) : Auth
-    register(username: String password: String email: String) : Auth
+    createChatMessage(
+        to_id: Int @rules(apply: ["required", "numeric"])
+        message: String
+    ): ChatMessage 
+        @guard 
+        @create 
+        @inject(context: "user.id", name: "from_id")
+    login(username: String, password: String): Auth
+    register(username: String, password: String, email: String): Auth
+}
+type ChatMessage {
+    id: ID!
+    from: User! @belongsTo
+    to: User! @belongsTo
+    message: String
 }
 type Auth {
     token: String
@@ -85,8 +99,13 @@ type User {
     usercart: [Usercart!]! @hasMany
     useradvancement: [Useradvancement!]! @hasMany
     userdata: Userdata @belongsTo
+    friends: [Friend!]! @hasMany
 }
-
+type Friend {
+    user: User @belongsTo
+    friend: User @belongsTo
+    is_friend: Boolean
+}
 type Usercart {
     id: ID!
     user_id: ID!
