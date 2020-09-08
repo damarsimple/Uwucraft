@@ -3,6 +3,13 @@ export interface User {
     username: string;
     email: string;
     usercart: Usercart[];
+    friends: Friend[];
+    created_at: string;
+    updated_at: string;
+}
+export interface Friend {
+    user: User;
+    friend: User;
     created_at: string;
     updated_at: string;
 }
@@ -111,4 +118,11 @@ export interface Dataset {
     pointRadius: number;
     pointHitRadius: number;
     data: number[];
+}
+
+export interface ChatMessage {
+    id: number;
+    from: User;
+    to: User;
+    message: String;
 }

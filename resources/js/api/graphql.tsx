@@ -179,6 +179,17 @@ export async function addUserCart(amount: number, item_id: number) {
         `
     });
 }
+export async function sendMessage(to_id: number, message: string) {
+    return client.mutate({
+        mutation: gql`
+            mutation {
+                createChatMessage( to_id: ${to_id}, message: "${message}") {
+                    id
+                }
+            }
+        `
+    });
+}
 export async function me() {
     return client.query({
         query: gql`
@@ -187,6 +198,12 @@ export async function me() {
                     id
                     username
                     email
+                    friends {
+                        friend {
+                            id
+                            username
+                        }
+                    }
                     created_at
                     updated_at
                 }
@@ -235,20 +252,6 @@ interface Login {
     password: string;
 }
 export async function login(credentials: Login) {
-    console.log(` login(
-        input: (username: "${credentials.username}"   password: "${credentials.password})"   ) {
-        success
-        exception
-        token
-        user {
-            id
-            username
-            email
-            created_at
-            updated_at
-        }
-    }`);
-
     return client.mutate({
         mutation: gql`
             mutation {
@@ -291,6 +294,23 @@ export async function register(
                         created_at
                         updated_at
                     }
+                }
+            }
+        `
+    });
+}
+export async function chatquery(from: number, to: number) {
+    return client.query({
+        query: gql`
+            query {
+                chatquery(from: ${from}, to: ${to}) {
+                    to {
+                        username
+                    }
+                    from {
+                        username
+                    }
+                    message
                 }
             }
         `
