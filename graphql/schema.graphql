@@ -40,7 +40,7 @@ type Mutation {
     addUserCart(
         item_id: Int @rules(apply: ["required", "numeric"])
         amount: Int @rules(apply: ["required", "numeric"])
-    ): Usercart @guard @create @inject(context: "user.id", name: "user_id")
+    ): UserCart @guard @create @inject(context: "user.id", name: "user_id")
     createPost(caption: String!, content: String!): Post
         @guard
         @create
@@ -48,10 +48,7 @@ type Mutation {
     createChatMessage(
         to_id: Int @rules(apply: ["required", "numeric"])
         message: String
-    ): ChatMessage 
-        @guard 
-        @create 
-        @inject(context: "user.id", name: "from_id")
+    ): ChatMessage @guard @create @inject(context: "user.id", name: "from_id")
     login(username: String, password: String): Auth
     register(username: String, password: String, email: String): Auth
 }
@@ -96,17 +93,17 @@ type User {
     created_at: DateTime
     updated_at: DateTime
     posts: [Post!]! @hasMany
-    usercart: [Usercart!]! @hasMany
+    usercart: [UserCart!]! @hasMany
     useradvancement: [Useradvancement!]! @hasMany
     userdata: Userdata @belongsTo
-    friends: [Friend!]! @hasMany
+    friends: [Friend!]!
 }
 type Friend {
     user: User @belongsTo
     friend: User @belongsTo
     is_friend: Boolean
 }
-type Usercart {
+type UserCart {
     id: ID!
     user_id: ID!
     item_id: ID!
