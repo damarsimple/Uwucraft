@@ -32,7 +32,6 @@ class CreateUsersTable extends Migration
             $table->smallInteger('isLogged')->default(0);
             $table->smallInteger('hasSession')->default(0);
             $table->string('totp', 16)->nullable();
-            $table->string('UUID', 36)->nullable();
             $table->rememberToken();
             $table->boolean('is_admin')->default(false);
             $table->timestamps();
