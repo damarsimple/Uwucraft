@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
+use App\Review;
+
 class Reviewseed extends Seeder
 {
     /**
@@ -11,16 +12,8 @@ class Reviewseed extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
-        for ($i = 0; $i < 1000; $i++) {
-            DB::table('reviews')->insert([
-                'author_id' => mt_rand(1, 20),
-                'item_id' => mt_rand(1, 500),
-                'score' => mt_rand(1, 5),
-                'caption' => $faker->sentence(6),
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
-        }
+      
+        factory(Review::class, 40)->create();
+ 
     }
 }

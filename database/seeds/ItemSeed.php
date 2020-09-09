@@ -5994,7 +5994,7 @@ class ItemSeed extends Seeder
         for ($i = 0; $i < count($table); $i++) {
             $faker = Faker\Factory::create();
             DB::table('items')->insert([
-                'author_id' => mt_rand(1, 20),
+                'author_id' => 1,
                 'item_name' => $table[$i]['displayName'],
                 'description' => $faker->sentence(6,  true),
                 'type' => 'misc',

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
+use App\Friend;
 
 class Friendseed extends Seeder
 {
@@ -12,15 +12,15 @@ class Friendseed extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 40; $i++) {
-
+        
+        factory(Friend::class, 40)->create();
+        for ($i = 1; $i < 20; $i++) {
             DB::table('friends')->insert([
-                'user_id' => mt_rand(1, 20),
-                'friends_id' => mt_rand(1, 20),
+                'user_id' => 21,
+                'friends_id' => $i,
                 'is_friend' => true,
-                'updated_at' => Carbon::now()->toDateTimeString(),
-                'created_at' => Carbon::now()->toDateTimeString(),
             ]);
         }
+    
     }
 }
