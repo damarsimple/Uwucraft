@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -112,26 +113,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function friends(): HasMany
-    {
-        return $this->hasMany(Friend::class);
-    }
     public function usercart(): HasMany
     {
-        return $this->hasMany(Usercart::class);
+        return $this->hasMany(UserCart::class);
     }
     public function useradvancement(): HasMany
     {
-        return $this->hasMany(Useradvancement::class);
+        return $this->hasMany(UserAdvancement::class);
     }
     public function userdata(): HasOne
     {
-        return $this->HasOne(Userdata::class);
+        return $this->HasOne(UserData::class);
     }
     public function usertransactionhistory(): HasMany
     {
-        return $this->hasMany(Usertransactionhistory::class);
+        return $this->hasMany(UserTransactionHistory::class);
     }
     public function posts(): HasMany
     {
@@ -140,5 +136,9 @@ class User extends Authenticatable
     public function comment(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+    public function friends(): HasMany
+    {
+        return $this->hasMany(Friend::class)->orWhere('user_id', $this->id);
     }
 }
