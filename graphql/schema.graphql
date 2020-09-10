@@ -8,9 +8,9 @@ scalar DateTime
 type Query {
     users: [User!]! @paginate(defaultCount: 10) # @cache
     user(id: ID @eq): User @find # @cache
-    posts: [Post!]! @paginate(defaultCount: 10) # @cache
+    posts: [Post!]! @paginate(type: "connection") # @cache
     post(id: Int! @eq): Post @find # @cache
-    items: [Item!]! @paginate(defaultCount: 18) @cache
+    items: [Item!]! @paginate(type: "connection") @cache
     #had  to disable it for real time updates?
     item(id: ID @eq): Item @find #@cache
     advancement(id: Int! @eq): Post @find
