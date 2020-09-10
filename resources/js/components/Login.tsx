@@ -13,7 +13,7 @@ import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 import Alert from "@material-ui/lab/Alert";
 import { login } from "../api/graphql";
-import { me } from "../api/graphql";
+import { GET_ME } from "../api/graphql";
 import { Collapse } from "@material-ui/core";
 import UserContext from "../context/UserContext";
 const useStyles = makeStyles(theme => ({

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
     Typography,
     Divider,
@@ -7,34 +7,17 @@ import {
     Grid,
     CardHeader
 } from "@material-ui/core";
-import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
-import { systemstatus } from "../../api/graphql";
+import { GET_SYSTEMSTATUS } from "../../api/graphql";
+import { useQuery } from "@apollo/client";
 import { SPIGOTStatus, MYSQLStatus, REDISStatus } from "../../type/type";
 import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
 function SystemActivity() {
-    const [redis, setRedis] = useState<REDISStatus>({
-        ping: 0,
-        online: false,
-        updated_at: ""
-    });
-    const [mysql, setMysql] = useState<MYSQLStatus>({
-        ping: 0,
-        online: false,
-        updated_at: ""
-    });
-    const [spigot, setSpigot] = useState<SPIGOTStatus>({
-        ping: 0,
-        online: false,
-        updated_at: ""
-    });
-    useEffect(() => {
-        systemstatus().then(res => {
-            setRedis(res.data.REDISStatus);
-            setMysql(res.data.MYSQLStatus);
-            setSpigot(res.data.SPIGOTStatus);
-            console.log(res.data);
-        });
-    }, []);
+    const { loading, data, error } = useQuery(GET_SYSTEMSTATUS);
+    if (loading) return <h1>Loading</h1>;
+    if (error) return <h1>{`Error! ${error.message}`}</h1>;
+    const redis: REDISStatus = data.REDISStatus;
+    const mysql: MYSQLStatus = data.MYSQLStatus;
+    const spigot: SPIGOTStatus = data.SPIGOTStatus;
     return (
         <>
             <Typography

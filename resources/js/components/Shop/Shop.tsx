@@ -1,54 +1,49 @@
 import React from "react";
-import Itemlist from "./Itemlist";
+import Itemlist from "./ItemList";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Items, PaginatorInfo } from "../../type/type";
-import { items } from "../../api/graphql";
+import { GET_ITEMS } from "../../api/graphql";
 import { Container } from "@material-ui/core";
+import { useQuery } from "@apollo/client";
 
-interface ShopData {
-    items: Items;
-    paginator: PaginatorInfo;
-}
+const Shop = () => {
+    const { data, loading, error, fetchMore } = useQuery(GET_ITEMS, {
+        variables: {
+            first: 24,
+            after: null
+        }
+    });
+    if (loading) return <h1>Loading</h1>;
+    if (error) return <h1>Error Loading</h1>;
+    console.log(data);
 
-export default class Shop extends React.Component<ShopData> {
-    state: ShopData;
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: [],
-            paginator: { total: 100, currentPage: 1, hasMorePages: false }
-        };
-    }
-    componentDidMount() {
-        items().then(result => {
-            this.setState({
-                items: result.data.items.data,
-                paginator: result.data.items.paginatorInfo
-            });
-        });
-    }
-    fetchMoreData = () => {
-        items(this.state.paginator.currentPage + 1).then(result => {
-            this.setState({
-                items: this.state.items.concat(result.data.items.data),
-                paginator: result.data.items.paginatorInfo
-            });
+    const items = data.items;
+    const fetchMoreData = () => {
+        const { endCursor } = items.pageInfo;
+        fetchMore({
+            variables: { after: endCursor },
+            updateQuery: (prev: any, { fetchMoreResult }) => {
+                fetchMoreResult.items.edges = [
+                    ...prev.items.edges,
+                    ...fetchMoreResult.items.edges
+                ];
+                return fetchMoreResult;
+            }
         });
     };
-    render() {
-        return (
-            <>
-                <Container maxWidth="lg">
-                    <InfiniteScroll
-                        dataLength={this.state.items.length}
-                        next={this.fetchMoreData.bind(this)}
-                        hasMore={this.state.paginator.hasMorePages}
-                        loader={<h4>Loading...</h4>}
-                    >
-                        <Itemlist data={this.state.items} />
-                    </InfiniteScroll>
-                </Container>
-            </>
-        );
-    }
-}
+    return (
+        <>
+            <Container maxWidth="lg">
+                <InfiniteScroll
+                    dataLength={items.edges.length}
+                    next={fetchMoreData}
+                    hasMore={items.pageInfo.hasNextPage}
+                    loader={<h4>Loading...</h4>}
+                >
+                    <Itemlist data={items.edges} />
+                </InfiniteScroll>
+            </Container>
+        </>
+    );
+};
+export default Shop;

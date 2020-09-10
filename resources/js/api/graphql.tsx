@@ -8,17 +8,22 @@ import {
     DefaultOptions
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+
 const token = localStorage.getItem("token");
-const defaultOptions: DefaultOptions = {
-    watchQuery: {
-        fetchPolicy: "no-cache",
-        errorPolicy: "ignore"
-    },
-    query: {
-        fetchPolicy: "no-cache",
-        errorPolicy: "all"
+
+const cache = new InMemoryCache({
+    typePolicies: {
+        Agenda: {
+            fields: {
+                tasks: {
+                    merge(existing = [], incoming: any[]) {
+                        return [...existing, ...incoming];
+                    }
+                }
+            }
+        }
     }
-};
+});
 const httpLink = createHttpLink({
     uri: "/graphql"
 });
@@ -30,56 +35,26 @@ const authLink = setContext((_, { headers }) => {
         }
     };
 });
-const client: ApolloClient<NormalizedCacheObject> = token
+export const client: ApolloClient<NormalizedCacheObject> = token
     ? new ApolloClient({
           link: authLink.concat(httpLink),
           uri: "/graphql",
-          defaultOptions: defaultOptions,
-          cache: new InMemoryCache()
+          cache: cache
       })
     : new ApolloClient({
           uri: "/graphql",
-          defaultOptions: defaultOptions,
-          cache: new InMemoryCache()
+          cache: cache
       });
-export async function items(page?: number): Promise<ApolloQueryResult<any>> {
-    return client.query({
-        query: gql`
-            query {
-                items(page: ${page ? page : 1}) {
-                    data {
-                        author {
-                            username
-                        }
-                        id
-                        item_name
-                        description
-                        price
-                        type
-                        counter
-                        view
-                        minecraft_item_shorthand
-                    }
-                    paginatorInfo {
-                        count
-                        total
-                        currentPage
-                        hasMorePages
-                        lastItem
-                        lastPage
-                        perPage
-                        firstItem
-                    }
-                }
+export const GET_ITEMS = gql`
+    query Items($after: String, $first: Int = ${20}) {
+        items(first: $first, after: $after) {
+            pageInfo {
+                startCursor
+                endCursor
+                hasNextPage
             }
-        `
-    });
-}
-export async function item(id: number): Promise<ApolloQueryResult<any>> {
-    return client.query({
-        query: gql`
-            query {
-                item(id: ${id}) {
+            edges {
+                node {
                     author {
                         username
                     }
@@ -91,79 +66,92 @@ export async function item(id: number): Promise<ApolloQueryResult<any>> {
                     counter
                     view
                     minecraft_item_shorthand
-                    review{
-                            author{
-                                username
-                            }
-                            score
-                            content
-                            caption
-                            created_at
-                            updated_at
-                        }
                 }
             }
-        `
-    });
-}
-export async function posts(): Promise<ApolloQueryResult<any>> {
-    return client.query({
-        query: gql`
-            query {
-                posts {
-                    data {
+        }
+    }
+`;
+export const GET_ITEM = gql`
+    query Item($item_id: ID) {
+        item(id: $item_id) {
+            author {
+                username
+            }
+            id
+            item_name
+            description
+            price
+            type
+            counter
+            view
+            minecraft_item_shorthand
+            review {
+                author {
+                    username
+                }
+                score
+                content
+                caption
+                created_at
+                updated_at
+            }
+        }
+    }
+`;
+export const GET_POSTS = gql`
+    query Posts($after: String) {
+        posts(first: 10, after: $after) {
+            pageInfo {
+                startCursor
+                endCursor
+                hasNextPage
+            }
+            edges {
+                node {
+                    id
+                    author {
+                        username
+                    }
+                    content
+                    caption
+                    comments {
                         author {
                             username
                         }
                         content
-                        caption
-                        comments {
-                            author {
-                                username
-                            }
-                            content
-                        }
-                        reactions {
-                            author {
-                                username
-                            }
-                            content
-                        }
-                        created_at
-                        updated_at
                     }
+                    commentsCount
+                    created_at
+                    updated_at
                 }
             }
-        `
-    });
-}
+            __typename
+        }
+    }
+`;
 
-export async function systemstatus(): Promise<ApolloQueryResult<any>> {
-    return client.query({
-        query: gql`
-            query {
-                SPIGOTStatus {
-                    ping
-                    online
-                    exception
-                    updated_at
-                }
-                MYSQLStatus {
-                    ping
-                    online
-                    exception
-                    updated_at
-                }
-                REDISStatus {
-                    ping
-                    online
-                    exception
-                    updated_at
-                }
-            }
-        `
-    });
-}
+export const GET_SYSTEMSTATUS = gql`
+    query {
+        SPIGOTStatus {
+            ping
+            online
+            exception
+            updated_at
+        }
+        MYSQLStatus {
+            ping
+            online
+            exception
+            updated_at
+        }
+        REDISStatus {
+            ping
+            online
+            exception
+            updated_at
+        }
+    }
+`;
 
 export async function addUserCart(amount: number, item_id: number) {
     return client.mutate({
@@ -190,27 +178,23 @@ export async function sendMessage(to_id: number, message: string) {
         `
     });
 }
-export async function me() {
-    return client.query({
-        query: gql`
-            query {
-                me {
+export const GET_ME = gql`
+    query {
+        me {
+            id
+            username
+            email
+            friends {
+                friend {
                     id
                     username
-                    email
-                    friends {
-                        friend {
-                            id
-                            username
-                        }
-                    }
-                    created_at
-                    updated_at
                 }
             }
-        `
-    });
-}
+            created_at
+            updated_at
+        }
+    }
+`;
 export async function meCart(getItemProperty?: boolean) {
     return getItemProperty
         ? client.query({
