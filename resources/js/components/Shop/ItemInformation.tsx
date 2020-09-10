@@ -16,10 +16,8 @@ import Image from "material-ui-image";
 import { Item } from "../../type/type";
 import { addUserCart, meCart } from "../../api/graphql";
 import UserContext from "../../context/UserContext";
-interface Information extends Item {
-    imgSrc: string;
-}
-const Iteminformation = (props: Information) => {
+
+const ItemInformation = (props: Item) => {
     fetch("/api/register").then(res =>
         res.json().then(res => console.log(res))
     );
@@ -48,7 +46,9 @@ const Iteminformation = (props: Information) => {
                             height: 400,
                             marginTop: "5rem"
                         }}
-                        src={props.imgSrc}
+                        src={
+                            "/api/image/item/" + props.minecraft_item_shorthand
+                        }
                     />
                 </Grid>
                 <Grid item xs={false} sm={8}>
@@ -167,4 +167,4 @@ const Iteminformation = (props: Information) => {
     );
 };
 
-export default Iteminformation;
+export default ItemInformation;

@@ -1,16 +1,14 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
+import Rating from "@material-ui/lab/Rating";
 import StarIcon from "@material-ui/icons/Star";
-import Reviewcard from "./Reviewcard";
+import Reviewcard from "./ReviewCard";
 import { Review } from "../../type/type";
-const Itemreview = (props: { data?: Array<Review> }) => {
+const ItemReview = (props: { data?: Array<Review> }) => {
     // IS this too complicated?
     let average = array => array.reduce((a, b) => a + b) / array.length;
     const data = props.data ?? [];
     let arr: number[] = [];
-    // for (let i = 0; i < data.length; i++) {
-    //     arr.push(data[i].score);
-    // }
     let i = 0;
     while (i < data.length) {
         arr.push(data[i].score);
@@ -26,9 +24,12 @@ const Itemreview = (props: { data?: Array<Review> }) => {
                     </Typography>
                 </Grid>
                 <Grid item container justify="center">
-                    {[...Array(Math.round(AvgStar))].map((e, i) => (
-                        <StarIcon key={i} />
-                    ))}
+                    <Rating
+                        name="read-only"
+                        value={AvgStar}
+                        readOnly
+                        size="large"
+                    />
                 </Grid>
             </Grid>
             <Grid item xs={8} sm={8}>
@@ -39,4 +40,4 @@ const Itemreview = (props: { data?: Array<Review> }) => {
         </Grid>
     );
 };
-export default Itemreview;
+export default ItemReview;

@@ -1,9 +1,9 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid/";
 import Box from "@material-ui/core/Box/";
-import Itemcard from "./Itemcard";
+import Itemcard from "./ItemCard";
 import { Link } from "react-router-dom";
-export default props => {
+const ItemList = props => {
     return (
         <>
             <Grid container spacing={1}>
@@ -11,9 +11,9 @@ export default props => {
                     <Grid key={index} item xs={6} sm={2}>
                         <Link
                             style={{ textDecoration: "none" }}
-                            to={"/shop/item/" + item.id}
+                            to={"/shop/item/" + item.node.id}
                         >
-                            <Itemcard item={item} />
+                            <Itemcard item={item.node} />
                         </Link>
                     </Grid>
                 ))}
@@ -21,3 +21,4 @@ export default props => {
         </>
     );
 };
+export default ItemList;

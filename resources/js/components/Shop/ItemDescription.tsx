@@ -4,7 +4,7 @@ import { Paper, makeStyles } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import Itemreview from "./Itemreview";
+import ItemReview from "./ItemReview";
 import { Box } from "@material-ui/core";
 import { Review } from "../../type/type";
 
@@ -32,7 +32,7 @@ const useStyles = makeStyles({
         overflowX: "hidden"
     }
 });
-export default (props: Description) => {
+const ItemDescription = (props: Description) => {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -67,7 +67,7 @@ export default (props: Description) => {
                     </TabPanel>
                     <TabPanel value={value} index={1}>
                         <Box p={5}>
-                            <Itemreview data={props.review} />
+                            <ItemReview data={props.review} />
                         </Box>
                     </TabPanel>
                     <TabPanel value={value} index={2}>
@@ -78,3 +78,4 @@ export default (props: Description) => {
         </>
     );
 };
+export default ItemDescription;

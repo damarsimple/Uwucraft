@@ -5,9 +5,9 @@ import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "@material-ui/core";
-import StarIcon from "@material-ui/icons/Star";
+import Rating from "@material-ui/lab/Rating";
 import { Review } from "../../type/type";
-const Reviewcard = (props: Review) => {
+const ReviewCard = (props: Review) => {
     return (
         <Box m={1}>
             <Card>
@@ -22,10 +22,7 @@ const Reviewcard = (props: Review) => {
                     subheader={props.created_at}
                 />
                 <CardContent>
-                    {[...Array(props.score)].map((e, i) => (
-                        <StarIcon key={i}/>
-                    ))}
-
+                    <Rating name="disabled" value={props.score} disabled />
                     <Typography
                         variant="body2"
                         color="textSecondary"
@@ -38,4 +35,4 @@ const Reviewcard = (props: Review) => {
         </Box>
     );
 };
-export default Reviewcard;
+export default ReviewCard;

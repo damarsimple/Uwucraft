@@ -20,7 +20,7 @@ const useStyles = makeStyles({
         maxHeight: 30
     }
 });
-export default props => {
+const ItemCard = props => {
     const classes = useStyles();
     const item = props.item;
     return (
@@ -56,3 +56,4 @@ export default props => {
         </Card>
     );
 };
+export default ItemCard;

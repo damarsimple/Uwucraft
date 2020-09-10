@@ -17,7 +17,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import { Post } from "../../type/type";
-import Postcomment from "./Postcomment";
+import Postcomment from "./PostComment";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -67,15 +67,14 @@ export default props => {
                 title={post.author.username}
                 subheader={post.created_at}
             />
-            <CardContent>
-                <Typography component="p">{post.caption}</Typography>
-            </CardContent>
             <CardMedia
                 className={classes.media}
                 image={post.content}
                 title="Paella dish"
             />
-
+            <CardContent>
+                <Typography component="p">{post.caption}</Typography>
+            </CardContent>
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">
                     <FavoriteIcon />
