@@ -3,6 +3,7 @@ if you already click add carts once you cant update parent state for some reason
 found out the reason is Apollo Client Query Cache interfere with my reupdate Query
 have to find some way around it
 
+CART DOES NOT UPDATE WHEN ADD TO CART FIRED
 [CHAT]
 BUGGY AS HELL
 
