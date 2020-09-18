@@ -1,5 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
     "compile-hero.disable-compile-files-on-did-save-code": true,
-    "god.tsconfig": "./tsconfig.json"
+    "god.tsconfig": "./tsconfig.json",
+    "python.pythonPath": "/bin/python3"
 }
