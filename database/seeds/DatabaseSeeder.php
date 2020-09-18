@@ -1,5 +1,6 @@
 <?php
 
+use App\Advancement;
 use App\ChatMessage;
 use App\Friend;
 use Illuminate\Database\Seeder;
@@ -21,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Reviewseed::class);
         $this->call(ChatMessageseed::class);
         $this->call(Friendseed::class);
+        $this->call(AdvancementSeed::class);
     }
 }

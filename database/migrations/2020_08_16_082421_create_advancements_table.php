@@ -16,12 +16,13 @@ class CreateAdvancementsTable extends Migration
         //REF https://minecraft.gamepedia.com/Advancement
         Schema::create('advancements', function (Blueprint $table) {
             $table->id();
-            $table->string('icon');
+            $table->string('icon')->nullable();
             $table->string('name');
             $table->longText('description');
             $table->string('parent')->nullable();
             $table->longText('requirements');
             $table->string('namespace');
+            $table->string('rewards')->nullable()->default('-');
             $table->timestamps();
         });
     }
