@@ -18,8 +18,10 @@ type Query {
     MYSQLStatus: MYSQLStatus!
     REDISStatus: REDISStatus!
     SPIGOTStatus: SPIGOTStatus!
+    systemactivitylogs: [SystemActivityLog!]! @paginate(type: "connection") 
     me: User @auth
     chatquery(from: ID!, to: ID!): [ChatMessage!]!
+    search(search: String!): [Item!]!
 }
 type Mutation {
     createUser(
@@ -51,6 +53,18 @@ type Mutation {
     ): ChatMessage @guard @create @inject(context: "user.id", name: "from_id")
     login(username: String, password: String): Auth
     register(username: String, password: String, email: String): Auth
+}
+type Search {
+    type: String!
+    data: String
+}
+type SystemActivityLog {
+    type: String
+    online: Boolean!
+    ping: Float
+    data: Float
+    exception: String
+    updated_at: DateTime
 }
 type ChatMessage {
     id: ID!

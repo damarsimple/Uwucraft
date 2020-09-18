@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Laravel\Scout\Searchable;
 
 /**
  * App\User
@@ -85,7 +86,7 @@ use Laravel\Passport\HasApiTokens;
  */
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens;
+    use Notifiable, HasApiTokens, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -102,7 +103,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'email', 'x', 'y', 'z', 'world', 'regdate', 'updated_at', 'lastlogin', 'realname', 'ip', 'regip', 'totp', 'yaw', 'pitch',
+        'password', 'remember_token', 'x', 'y', 'z', 'world', 'regdate', 'updated_at', 'lastlogin', 'realname', 'ip', 'regip', 'totp', 'yaw', 'pitch',
     ];
 
     /**
@@ -140,5 +141,13 @@ class User extends Authenticatable
     public function friends(): HasMany
     {
         return $this->hasMany(Friend::class)->orWhere('user_id', $this->id);
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'username' => $this->username,
+            'email' => $this->email,
+        ];
     }
 }
