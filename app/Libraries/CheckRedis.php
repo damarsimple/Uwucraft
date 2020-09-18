@@ -20,6 +20,7 @@ class CheckRedis
                 'type' => 'redis',
                 'online' => $status,
                 'ping' => $time,
+                'data' => sys_getloadavg()[0],
                 'updated_at' => Carbon::now()
             ];
         } catch (Exception $e) {
@@ -27,6 +28,7 @@ class CheckRedis
                 'type' => 'redis',
                 'online' => $status,
                 'ping' => $time,
+                'data' => sys_getloadavg()[0],
                 'exception' => $e->getMessage(),
                 'updated_at' => Carbon::now()
             ];

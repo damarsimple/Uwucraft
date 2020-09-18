@@ -19,6 +19,7 @@ class CheckMysql
                 'type' => 'mysql',
                 'online' => $status,
                 'ping' => $time,
+                'data' => sys_getloadavg()[0],
                 'updated_at' => Carbon::now()
             ];
         } catch (\Exception $e) {
@@ -27,6 +28,7 @@ class CheckMysql
                 'type' => 'mysql',
                 'online' => $status,
                 'ping' => $time,
+                'data' => sys_getloadavg()[0],
                 'exception' => $e,
                 'updated_at' => Carbon::now()
             ];
