@@ -14,7 +14,7 @@ import React, { useContext, useEffect, useState } from "react";
 import UserContext from "../../context/UserContext";
 import CartList from "./CartList";
 import { meCart } from "../../api/graphql";
-
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: { margin: "2rem", padding: "2rem" },
@@ -84,13 +84,15 @@ const Cart = () => {
                                         </Grid>
                                     </Grid>
                                 </Box>
-                                <Button
-                                    color="primary"
-                                    fullWidth
-                                    variant="contained"
-                                >
-                                    Buy
-                                </Button>
+                                <Link to="/shop/checkout">
+                                    <Button
+                                        color="primary"
+                                        fullWidth
+                                        variant="contained"
+                                    >
+                                        Buy
+                                    </Button>
+                                </Link>
                             </Box>
                         </Paper>
                     </Grid>

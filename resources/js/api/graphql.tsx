@@ -152,7 +152,31 @@ export const GET_SYSTEMSTATUS = gql`
         }
     }
 `;
-
+export const GET_SEARCH = gql`
+    query Search($search: String!) {
+        search(search: $search) {
+            id
+            item_name
+            minecraft_item_shorthand
+        }
+    }
+`;
+export const GET_SYSTEMACTIVITYLOGS = gql`
+    query {
+        systemactivitylogs(first: 10) {
+            edges {
+                node {
+                    type
+                    online
+                    ping
+                    data
+                    exception
+                    updated_at
+                }
+            }
+        }
+    }
+`;
 export async function addUserCart(amount: number, item_id: number) {
     return client.mutate({
         mutation: gql`

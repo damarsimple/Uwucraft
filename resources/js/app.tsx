@@ -24,6 +24,7 @@ import EchoInstance from "./components/Echo";
 import EchoContext from "./context/EchoContext";
 import { ApolloProvider } from "@apollo/client";
 import { useQuery } from "@apollo/client";
+import Checkout from "./components/Shop/Checkout";
 const App = () => {
     const [session, setSession] = useState<IUserContext>({ isLogged: false });
     const [carts, setCarts] = useState<Array<Usercart | null>>([]);
@@ -89,6 +90,10 @@ const App = () => {
                                                     <Route
                                                         path={`${url}/cart`}
                                                         component={Cart}
+                                                    />
+                                                      <Route
+                                                        path={`${url}/checkout`}
+                                                        component={Checkout}
                                                     />
                                                 </>
                                             )}

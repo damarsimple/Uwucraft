@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
     createStyles,
     makeStyles,
@@ -14,25 +14,28 @@ import TextField from "@material-ui/core/TextField";
 import {
     Badge,
     Grid,
-    InputBase,
     List,
     ListItem,
-    Divider,
     Box,
     ListItemIcon,
     ListItemText,
     ListItemSecondaryAction,
-    Typography
+    Typography,
+    Avatar,
+    ListItemAvatar
 } from "@material-ui/core";
 import { Link as Go } from "react-router-dom";
 import UserContext from "../../context/UserContext";
-import { meCart } from "../../api/graphql";
+import { meCart, GET_SEARCH } from "../../api/graphql";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Tippy from "@tippyjs/react";
 import "tippy.js/themes/translucent.css";
 import Image from "material-ui-image";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-
+import { useLazyQuery, useQuery } from "@apollo/client";
+import FolderIcon from "@material-ui/icons/Folder";
+import { Item, User } from "../../type/type";
+import CircularProgress from "@material-ui/core/CircularProgress";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -123,7 +126,6 @@ const ItemList = props => {
 };
 export default function Navbar() {
     const classes = useStyles();
-    //const { cartsData, setCartsData } = useState<Array>([]);
     const { session, destroySession, carts, setCarts } = useContext(
         UserContext
     );
@@ -140,6 +142,21 @@ export default function Navbar() {
         const data = await meCart(true);
         setCarts ? setCarts(data.data.me.usercart) : null;
     };
+    const [open, setOpen] = React.useState(false);
+    const [options, setOptions] = React.useState<Item[]>([]);
+    const [search, setSearch] = React.useState<String>("");
+    const { loading, error, data } = useQuery(GET_SEARCH, {
+        variables: { search: search }
+    });
+
+    const handleChange = e => {
+        setSearch(e.target.value);
+    };
+    useEffect(() => {
+        if (data && data.search) {
+            setOptions(data.search);
+        }
+    }, [data]);
 
     return (
         <div className={classes.root}>
@@ -187,31 +204,74 @@ export default function Navbar() {
                         </Grid>
                         <Grid item xs={10} sm={4}>
                             <Autocomplete
-                                id="combo-box-demo"
-                                options={top100Films}
+                                fullWidth
                                 freeSolo
-                                getOptionLabel={option => option.title}
-                                renderInput={params => (
-                                    <div className={classes.search}>
-                                        <div className={classes.searchIcon}>
-                                            <SearchIcon />
-                                        </div>
-                                        <TextField
-                                            {...params}
-                                            variant="standard"
+                                open={open}
+                                onOpen={() => {
+                                    setOpen(true);
+                                }}
+                                onClose={() => {
+                                    setOpen(false);
+                                }}
+                                getOptionSelected={(option, value) =>
+                                    option.item_name === value.item_name
+                                }
+                                getOptionLabel={option => option.item_name}
+                                options={options}
+                                loading={loading}
+                                renderOption={option => (
+                                    <ListItem
+                                        button
+                                        onClick={() => {
+                                            window.location.href =
+                                                "/shop/item/" + option.id;
+                                        }}
+                                    >
+                                        <ListItemAvatar>
+                                            <img
+                                                width={35}
+                                                height={35}
+                                                src={
+                                                    "/api/image/item/" +
+                                                    option.minecraft_item_shorthand
+                                                }
+                                            />
+                                        </ListItemAvatar>
+
+                                        <ListItemText
+                                            primary={option.item_name}
+                                            secondary={"Item"}
                                         />
-                                        {/* <InputBase
-                                            {...params}
-                                            placeholder="Search…"
-                                            classes={{
-                                                root: classes.inputRoot,
-                                                input: classes.inputInput
-                                            }}
-                                            inputProps={{
-                                                "aria-label": "search"
-                                            }}
-                                        /> */}
-                                    </div>
+                                    </ListItem>
+                                )}
+                                renderInput={params => (
+                                    <TextField
+                                        {...params}
+                                        value={search}
+                                        onChange={handleChange}
+                                        label="Search Something"
+                                        variant="filled"
+                                        InputProps={{
+                                            ...params.InputProps,
+                                            endAdornment: (
+                                                <React.Fragment>
+                                                    {loading ? (
+                                                        <CircularProgress
+                                                            color="inherit"
+                                                            size={20}
+                                                        />
+                                                    ) : (
+                                                        <SearchIcon />
+                                                    )}
+
+                                                    {
+                                                        params.InputProps
+                                                            .endAdornment
+                                                    }
+                                                </React.Fragment>
+                                            )
+                                        }}
+                                    />
                                 )}
                             />
                         </Grid>
@@ -343,186 +403,4 @@ export default function Navbar() {
             </AppBar>
         </div>
     );
-}
-const top100Films = [
-    { title: "The Shawshank Redemption", year: 1994 },
-    { title: "The Godfather", year: 1972 },
-    { title: "The Godfather: Part II", year: 1974 },
-    { title: "The Dark Knight", year: 2008 },
-    { title: "12 Angry Men", year: 1957 },
-    { title: "Schindler's List", year: 1993 },
-    { title: "Pulp Fiction", year: 1994 },
-    { title: "The Lord of the Rings: The Return of the King", year: 2003 },
-    { title: "The Good, the Bad and the Ugly", year: 1966 },
-    { title: "Fight Club", year: 1999 },
-    { title: "The Lord of the Rings: The Fellowship of the Ring", year: 2001 },
-    { title: "Star Wars: Episode V - The Empire Strikes Back", year: 1980 },
-    { title: "Forrest Gump", year: 1994 },
-    { title: "Inception", year: 2010 },
-    { title: "The Lord of the Rings: The Two Towers", year: 2002 },
-    { title: "One Flew Over the Cuckoo's Nest", year: 1975 },
-    { title: "Goodfellas", year: 1990 },
-    { title: "The Matrix", year: 1999 },
-    { title: "Seven Samurai", year: 1954 },
-    { title: "Star Wars: Episode IV - A New Hope", year: 1977 },
-    { title: "City of God", year: 2002 },
-    { title: "Se7en", year: 1995 },
-    { title: "The Silence of the Lambs", year: 1991 },
-    { title: "It's a Wonderful Life", year: 1946 },
-    { title: "Life Is Beautiful", year: 1997 },
-    { title: "The Usual Suspects", year: 1995 },
-    { title: "Léon: The Professional", year: 1994 },
-    { title: "Spirited Away", year: 2001 },
-    { title: "Saving Private Ryan", year: 1998 },
-    { title: "Once Upon a Time in the West", year: 1968 },
-    { title: "American History X", year: 1998 },
-    { title: "Interstellar", year: 2014 },
-    { title: "Casablanca", year: 1942 },
-    { title: "City Lights", year: 1931 },
-    { title: "Psycho", year: 1960 },
-    { title: "The Green Mile", year: 1999 },
-    { title: "The Intouchables", year: 2011 },
-    { title: "Modern Times", year: 1936 },
-    { title: "Raiders of the Lost Ark", year: 1981 },
-    { title: "Rear Window", year: 1954 },
-    { title: "The Pianist", year: 2002 },
-    { title: "The Departed", year: 2006 },
-    { title: "Terminator 2: Judgment Day", year: 1991 },
-    { title: "Back to the Future", year: 1985 },
-    { title: "Whiplash", year: 2014 },
-    { title: "Gladiator", year: 2000 },
-    { title: "Memento", year: 2000 },
-    { title: "The Prestige", year: 2006 },
-    { title: "The Lion King", year: 1994 },
-    { title: "Apocalypse Now", year: 1979 },
-    { title: "Alien", year: 1979 },
-    { title: "Sunset Boulevard", year: 1950 },
-    {
-        title:
-            "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
-        year: 1964
-    },
-    { title: "The Great Dictator", year: 1940 },
-    { title: "Cinema Paradiso", year: 1988 },
-    { title: "The Lives of Others", year: 2006 },
-    { title: "Grave of the Fireflies", year: 1988 },
-    { title: "Paths of Glory", year: 1957 },
-    { title: "Django Unchained", year: 2012 },
-    { title: "The Shining", year: 1980 },
-    { title: "WALL·E", year: 2008 },
-    { title: "American Beauty", year: 1999 },
-    { title: "The Dark Knight Rises", year: 2012 },
-    { title: "Princess Mononoke", year: 1997 },
-    { title: "Aliens", year: 1986 },
-    { title: "Oldboy", year: 2003 },
-    { title: "Once Upon a Time in America", year: 1984 },
-    { title: "Witness for the Prosecution", year: 1957 },
-    { title: "Das Boot", year: 1981 },
-    { title: "Citizen Kane", year: 1941 },
-    { title: "North by Northwest", year: 1959 },
-    { title: "Vertigo", year: 1958 },
-    { title: "Star Wars: Episode VI - Return of the Jedi", year: 1983 },
-    { title: "Reservoir Dogs", year: 1992 },
-    { title: "Braveheart", year: 1995 },
-    { title: "M", year: 1931 },
-    { title: "Requiem for a Dream", year: 2000 },
-    { title: "Amélie", year: 2001 },
-    { title: "A Clockwork Orange", year: 1971 },
-    { title: "Like Stars on Earth", year: 2007 },
-    { title: "Taxi Driver", year: 1976 },
-    { title: "Lawrence of Arabia", year: 1962 },
-    { title: "Double Indemnity", year: 1944 },
-    { title: "Eternal Sunshine of the Spotless Mind", year: 2004 },
-    { title: "Amadeus", year: 1984 },
-    { title: "To Kill a Mockingbird", year: 1962 },
-    { title: "Toy Story 3", year: 2010 },
-    { title: "Logan", year: 2017 },
-    { title: "Full Metal Jacket", year: 1987 },
-    { title: "Dangal", year: 2016 },
-    { title: "The Sting", year: 1973 },
-    { title: "2001: A Space Odyssey", year: 1968 },
-    { title: "Singin' in the Rain", year: 1952 },
-    { title: "Toy Story", year: 1995 },
-    { title: "Bicycle Thieves", year: 1948 },
-    { title: "The Kid", year: 1921 },
-    { title: "Inglourious Basterds", year: 2009 },
-    { title: "Snatch", year: 2000 },
-    { title: "3 Idiots", year: 2009 },
-    { title: "Monty Python and the Holy Grail", year: 1975 }
-];
-// const { session, setSession, destroySession } = useContext(UserContext);
-// const [carts, setCarts] = useState<Array<Usercart | null>>([]);
-// useEffect(() => {
-//     const setCartsData = async () => {
-//         const data = await meCart();
-//         if (data.data.me.usercart != null) {
-//             setCarts(data.data.me.usercart);
-//         }
-//     };
-//     setCartsData();
-// }, []);
-//  anchor: { color: "white", textDecoration: "none" },
-{
-    /* <Grid item>
-<Box>
-    <Go className={classes.anchor} to="/home">
-        <Button color="inherit">Home</Button>
-    </Go>
-    <Go className={classes.anchor} to="/status">
-        <Button color="inherit">Status</Button>
-    </Go>
-    <Go className={classes.anchor} to="/dashboard">
-        <Button color="inherit">Dashboard</Button>
-    </Go>
-    <Go className={classes.anchor} to="/shop">
-        <Button color="inherit">Shop</Button>
-    </Go>
-    <Go className={classes.anchor} to="/store">
-        <Button color="inherit">Store</Button>
-    </Go>
-    {//Turns out i forget to install prettier on vscode server lmao
-    session.isLogged ? (
-        <>
-            <Button
-                onClick={() => {
-                    destroySession
-                        ? destroySession()
-                        : console.log("bruh");
-                }}
-                color="inherit"
-            >
-                logout
-            </Button>
-            <IconButton>
-                <Badge
-                    badgeContent={carts.length}
-                    color="error"
-                >
-                    <ShoppingCartIcon />
-                </Badge>
-            </IconButton>
-        </>
-    ) : (
-        (
-            <Go
-                className={classes.anchor}
-                to="/register"
-            >
-                <Button color="inherit">
-                    Register
-                </Button>
-            </Go>
-        ) && (
-            <Go
-                className={classes.anchor}
-                to="/login"
-            >
-                <Button color="inherit">
-                    Login
-                </Button>
-            </Go>
-        )
-    )}
-</Box>
-</Grid> */
 }

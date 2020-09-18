@@ -11,18 +11,14 @@ import {
     ListItemText,
     Slide,
     Grid,
-    Box,
-    Button
+    Box
 } from "@material-ui/core";
-import { Formik, Field, Form, FormikHelpers } from "formik";
-import SendIcon from "@material-ui/icons/Send";
-import CloseIcon from "@material-ui/icons/Close";
+
 import React, { useState, useContext, useEffect } from "react";
 import UserContext from "../context/UserContext";
-import { ChatMessage, Friend } from "../type/type";
-import { chatquery, sendMessage } from "../api/graphql";
+import { Friend, User } from "../type/type";
 
-import ChatBox from "./Chat/ChatBox";
+import ChatContainer from "./Chat/ChatContainer";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
@@ -31,25 +27,12 @@ const useStyles = makeStyles((theme: Theme) =>
             right: 20,
             display: "flex",
             zIndex: 1000
-        },
-        header: {
-            maxHeight: 50
-        },
-        chatContainer: {
-            height: 450,
-            maxHeight: 450,
-            overflow: "scroll",
-            overflowX: "hidden"
         }
     })
 );
 interface ActiveFriend extends Friend {
-    isActive?: boolean;
-    chats?: ChatMessage[];
-}
-
-interface ChatBoxInput {
-    message: any;
+    isActive: boolean;
+    friend: User;
 }
 
 const Chat = () => {
@@ -58,9 +41,6 @@ const Chat = () => {
     const classes = useStyles();
     const { session } = useContext(UserContext);
 
-    useEffect(() => {
-        activeChat.map((chat, index) => {});
-    }, [activeChat]);
     const addActiveFriend = (friend: Friend) => {
         //limit active chat window to 4
         if (activeChat.length >= 4) {
@@ -73,17 +53,9 @@ const Chat = () => {
                 return;
             }
         }
-        chatquery(
-            session.session?.id as number,
-            friend.friend?.id as number
-        ).then(data => {
-            const obj = Object.assign(
-                { isActive: true, chats: data.data.chatquery },
-                friend
-            );
-            const obj2 = activeChat.concat(obj);
-            setActiveChat(obj2);
-        });
+        const obj = Object.assign({ isActive: true }, friend);
+        const obj2 = activeChat.concat(obj);
+        setActiveChat(obj2);
     };
     const setActiveFriendTab = (index: number) => {
         const output: ActiveFriend[] = [];
@@ -107,9 +79,6 @@ const Chat = () => {
         }
         setActiveChat(output);
     };
-    const handleSubmit = (to_id: number, message: string) => {
-        sendMessage(to_id, message);
-    };
     return (
         <>
             <Grid
@@ -123,85 +92,13 @@ const Chat = () => {
                 {activeChat.map((friend, index) => {
                     return (
                         <Grid item xs={2} key={index}>
-                            <Paper
-                                square
-                                className={classes.header}
-                                elevation={3}
-                            >
-                                <Box padding={1} position="relative">
-                                    <Typography
-                                        align="center"
-                                        variant="h6"
-                                        color="initial"
-                                        onClick={() =>
-                                            setActiveFriendTab(index)
-                                        }
-                                    >
-                                        {friend.friend.username}
-                                    </Typography>
-                                    <Button
-                                        onClick={() =>
-                                            removeActiveFriend(index)
-                                        }
-                                        style={{
-                                            position: "absolute",
-                                            top: "10%",
-                                            right: "0%"
-                                        }}
-                                    >
-                                        <CloseIcon />
-                                    </Button>
-                                </Box>
-                            </Paper>
-                            {friend.isActive ? (
-                                <>
-                                    <ChatBox friend_id={friend.friend.id} />
-                                    <Paper square elevation={3}>
-                                        <Formik
-                                            initialValues={{
-                                                message: ""
-                                            }}
-                                            onSubmit={(
-                                                values: ChatBoxInput,
-                                                {
-                                                    setSubmitting,
-                                                    resetForm
-                                                }: FormikHelpers<ChatBoxInput>
-                                            ) => {
-                                                sendMessage(
-                                                    friend.friend.id,
-                                                    values.message
-                                                );
-                                                setSubmitting(false);
-                                                //@ts-ignore
-                                                resetForm({ message: "" });
-                                            }}
-                                        >
-                                            <Form>
-                                                <Grid
-                                                    container
-                                                    justify="center"
-                                                    alignItems="center"
-                                                    spacing={1}
-                                                >
-                                                    <Grid item xs={9}>
-                                                        <Field
-                                                            id="message"
-                                                            name="message"
-                                                            placeholder="John"
-                                                        />
-                                                    </Grid>
-                                                    <Grid item xs={3}>
-                                                        <Button type="submit">
-                                                            <SendIcon />
-                                                        </Button>
-                                                    </Grid>
-                                                </Grid>
-                                            </Form>
-                                        </Formik>
-                                    </Paper>
-                                </>
-                            ) : null}
+                            <ChatContainer
+                                friend={friend.friend}
+                                index={index}
+                                isActive={friend.isActive}
+                                removeActiveFriend={removeActiveFriend}
+                                setActiveFriendTab={setActiveFriendTab}
+                            />
                         </Grid>
                     );
                 })}
@@ -230,7 +127,10 @@ const Chat = () => {
                             mountOnEnter
                             unmountOnExit
                         >
-                            <List disablePadding>
+                            <List
+                                disablePadding
+                                style={{ height: 500, overflow: "auto" }}
+                            >
                                 {Array.isArray(session.session?.friends)
                                     ? session.session?.friends.map(
                                           (friend, index) => {

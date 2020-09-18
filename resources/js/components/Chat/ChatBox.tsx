@@ -11,24 +11,23 @@ import { chatquery } from "../../api/graphql";
 import EchoContext from "../../context/EchoContext";
 import UserContext from "../../context/UserContext";
 import { ChatMessage } from "../../type/type";
-
+import ScrollToBottom from "react-scroll-to-bottom";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        container: {
-            position: "fixed",
-            bottom: 0,
-            right: 20,
-            display: "flex",
-            zIndex: 1000
-        },
-        header: {
-            maxHeight: 50
-        },
         chatContainer: {
-            height: 450,
-            maxHeight: 450,
-            overflow: "scroll",
-            overflowX: "hidden"
+            height: 400
+        },
+        chatBubbleRight: {
+            backgroundColor: "#FFFFF0",
+            paddingTop: "10px",
+            marginTop: "15px",
+            paddingBottom: "10px"
+        },
+        chatBubbleLeft: {
+            backgroundColor: "#fffafa",
+            paddingTop: "10px",
+            marginTop: "15px",
+            paddingBottom: "10px"
         }
     })
 );
@@ -50,25 +49,23 @@ function ChatBox(props: ChatBoxData) {
         };
         ChatsData();
     }, []);
-    const arr = [props.friend_id as number, session.session?.id as number];
-    arr.sort((a, b) => a - b);
-    EchoClient.channel(`chatmessage${arr.toString()}`).listen(
+    const sort = [props.friend_id as number, session.session?.id as number];
+    sort.sort((a, b) => a - b);
+    EchoClient.channel(`chatmessage${sort.toString()}`).listen(
         "ChatSendEvent",
         data => {
             const obj = chats.concat(data.data);
             setChats(obj);
-            console.log(chats);
         }
     );
     return (
-        <>
-            <Paper square className={classes.chatContainer}>
+        <Paper square elevation={3}>
+            <ScrollToBottom className={classes.chatContainer}>
                 <Grid
                     container
                     direction="column"
                     justify="flex-start"
                     alignItems="stretch"
-                    spacing={2}
                 >
                     {chats.length != 0
                         ? chats.map((chat, index) => {
@@ -78,9 +75,9 @@ function ChatBox(props: ChatBoxData) {
                                       <Grid item xs={3} />
                                       <Grid item xs={9}>
                                           <Paper
-                                              style={{
-                                                  backgroundColor: "#fffafa"
-                                              }}
+                                              className={
+                                                  classes.chatBubbleRight
+                                              }
                                           >
                                               <Typography
                                                   variant="subtitle1"
@@ -95,9 +92,7 @@ function ChatBox(props: ChatBoxData) {
                                   <Grid item key={index} xs={12} container>
                                       <Grid item xs={9}>
                                           <Paper
-                                              style={{
-                                                  backgroundColor: "#FFFFF0"
-                                              }}
+                                              className={classes.chatBubbleLeft}
                                           >
                                               <Typography
                                                   variant="subtitle1"
@@ -113,8 +108,8 @@ function ChatBox(props: ChatBoxData) {
                           })
                         : null}
                 </Grid>
-            </Paper>
-        </>
+            </ScrollToBottom>
+        </Paper>
     );
 }
 
