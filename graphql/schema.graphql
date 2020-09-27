@@ -18,10 +18,17 @@ type Query {
     MYSQLStatus: MYSQLStatus!
     REDISStatus: REDISStatus!
     SPIGOTStatus: SPIGOTStatus!
-    systemactivitylogs: [SystemActivityLog!]! @paginate(type: "connection") 
+    systemactivitylogs: [SystemActivityLog!]! @paginate(type: "connection")
     me: User @auth
     chatquery(from: ID!, to: ID!): [ChatMessage!]!
-    search(search: String!): [Item!]!
+    search(search: String!): [SearchResult!]!
+}
+type SearchResult {
+    name: String
+    action: String
+    img: String
+    type: String
+    data: String
 }
 type Mutation {
     createUser(

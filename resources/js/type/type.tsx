@@ -7,6 +7,13 @@ export interface User {
     created_at: string;
     updated_at: string;
 }
+export interface Search {
+    name: string;
+    action: string;
+    img: string;
+    data: string;
+    type: string;
+}
 export interface Friend {
     user: User;
     friend: User;

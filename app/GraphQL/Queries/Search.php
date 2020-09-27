@@ -13,18 +13,29 @@ class Search
      */
     public function __invoke($_, array $args)
     {
-        // $user = User::search($args['search'])->get();
-        // $userData = json_encode($user->toArray());
-        // $resultUser = [
-        //     'type' => 'User',
-        //     'data' =>  $userData,
-        // ];
-        $item = Item::search($args['search'])->get();
-        // $itemData = json_encode($item->toArray());
-        // $resultItem = [
-        //     'type' => 'Item',
-        //     'data' =>  $itemData,
-        // ];
-        return $item;
+        $data = array();
+        $item = Item::search($args['search'])->get()->toArray();
+        $user = User::search($args['search'])->get()->toArray();
+        foreach ($user as $val) {
+            $de = [
+                'name' => $val['username'],
+                'action' => $val['id'],
+                'img' => $val['username'],
+                'type' => 'User',
+                'data' => json_encode($val),
+            ];
+            array_push($data, $de);
+        }
+        foreach ($item as $val) {
+            $de = [
+                'name' => $val['item_name'],
+                'action' => $val['id'],
+                'img' => $val['minecraft_item_shorthand'],
+                'type' => 'Item',
+                'data' => json_encode($val),
+            ];
+            array_push($data, $de);
+        }
+        return  $data;
     }
 }
