@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Activity;
 use App\Events\GlobalNotifications;
 use App\User;
 
@@ -16,6 +17,7 @@ class UserObserver
     public function created(User $user)
     {
         broadcast(new GlobalNotifications("$user->username Registered !"));
+        Activity::create(["type" => "User", "data" => $user->toJson()]);
     }
 
     /**

@@ -31,6 +31,5 @@ class IncreaseItemViewCount implements ShouldQueue
     public function handle()
     {
         $this->item->increment('view', 1);
-
     }
 }
