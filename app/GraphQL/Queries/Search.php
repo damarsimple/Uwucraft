@@ -2,8 +2,8 @@
 
 namespace App\GraphQL\Queries;
 
-use App\User;
 use App\Item;
+use App\UserData;
 
 class Search
 {
@@ -15,12 +15,12 @@ class Search
     {
         $data = array();
         $item = Item::search($args['search'])->get()->toArray();
-        $user = User::search($args['search'])->get()->toArray();
+        $user = UserData::search($args['search'])->get()->toArray();
         foreach ($user as $val) {
             $de = [
-                'name' => $val['username'],
-                'action' => $val['id'],
-                'img' => $val['username'],
+                'name' => $val['user_id'],
+                'action' => $val['user_id'],
+                'img' => $val['user_id'],
                 'type' => 'User',
                 'data' => json_encode($val),
             ];

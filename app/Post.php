@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Laravel\Scout\Searchable;
 
 /**
  * App\Post
@@ -33,6 +34,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Post extends Model
 {
+    use Searchable;
     protected $fillable = ['author_id', 'content', 'caption'];
     protected $hidden = ['author_id'];
     public function author(): BelongsTo
