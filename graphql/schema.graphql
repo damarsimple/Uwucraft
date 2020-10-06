@@ -3,216 +3,222 @@ scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
 
 "A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
 scalar DateTime
-    @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+  @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
 type Query {
-    users: [User!]! @paginate(defaultCount: 10) # @cache
-    user(id: ID @eq): User @find # @cache
-    posts: [Post!]! @paginate(type: "connection") # @cache
-    post(id: Int! @eq): Post @find # @cache
-    items: [Item!]! @paginate(type: "connection") @cache
-    #had  to disable it for real time updates?
-    item(id: ID @eq): Item @find #@cache
-    advancement(id: Int! @eq): Post @find
-    advancements: [Advancement!]! @paginate(defaultCount: 10)
-    MYSQLStatus: MYSQLStatus!
-    REDISStatus: REDISStatus!
-    SPIGOTStatus: SPIGOTStatus!
-    systemactivitylogs: [SystemActivityLog!]! @paginate(type: "connection")
-    me: User @auth
-    chatquery(from: ID!, to: ID!): [ChatMessage!]!
-    search(search: String!): [SearchResult!]!
+  activities: [Activity!]! @paginate(type: "connection")
+  users: [User!]! @paginate(defaultCount: 10) # @cache
+  user(id: ID @eq): User @find # @cache
+  posts: [Post!]! @paginate(type: "connection") # @cache
+  post(id: Int! @eq): Post @find # @cache
+  items: [Item!]! @paginate(type: "connection") @cache
+  #had  to disable it for real time updates?
+  item(id: ID @eq): Item @find #@cache
+  advancement(id: Int! @eq): Post @find
+  advancements: [Advancement!]! @paginate(defaultCount: 10)
+  MYSQLStatus: MYSQLStatus!
+  REDISStatus: REDISStatus!
+  SPIGOTStatus: SPIGOTStatus!
+  systemactivitylogs: [SystemActivityLog!]! @paginate(type: "connection")
+  me: User @auth
+  chatquery(from: ID!, to: ID!): [ChatMessage!]!
+  search(search: String!): [SearchResult!]!
 }
 type SearchResult {
-    name: String
-    action: String
-    img: String
-    type: String
-    data: String
+  name: String
+  action: String
+  img: String
+  type: String
+  data: String
 }
 type Mutation {
-    createUser(
-        username: String!
-            @rules(apply: ["required", "string", "max:255", "unique:users"])
-        email: String!
-            @rules(
-                apply: [
-                    "required"
-                    "string"
-                    "email"
-                    "max:255"
-                    "unique:users"
-                ]
-            )
-        password: String! @rules(apply: ["required", "string", "min:8"]) @hash
-    ): User @create
-    addUserCart(
-        item_id: Int @rules(apply: ["required", "numeric"])
-        amount: Int @rules(apply: ["required", "numeric"])
-    ): UserCart @guard @create @inject(context: "user.id", name: "user_id")
-    createPost(caption: String!, content: String!): Post
-        @guard
-        @create
-        @inject(context: "user.id", name: "author_id")
-    createChatMessage(
-        to_id: Int @rules(apply: ["required", "numeric"])
-        message: String
-    ): ChatMessage @guard @create @inject(context: "user.id", name: "from_id")
-    login(username: String, password: String): Auth
-    register(username: String, password: String, email: String): Auth
+  createUser(
+    username: String!
+      @rules(apply: ["required", "string", "max:255", "unique:users"])
+    email: String!
+      @rules(apply: ["required", "string", "email", "max:255", "unique:users"])
+    password: String! @rules(apply: ["required", "string", "min:8"]) @hash
+  ): User @create
+  addUserCart(
+    item_id: Int @rules(apply: ["required", "numeric"])
+    amount: Int @rules(apply: ["required", "numeric"])
+  ): UserCart @guard @create @inject(context: "user.id", name: "user_id")
+  createPost(caption: String!, content: String!): Post
+    @guard
+    @create
+    @inject(context: "user.id", name: "author_id")
+  createChatMessage(
+    to_id: Int @rules(apply: ["required", "numeric"])
+    message: String
+  ): ChatMessage @guard @create @inject(context: "user.id", name: "from_id")
+  login(username: String, password: String): Auth
+  register(username: String, password: String, email: String): Auth
 }
 type Search {
-    type: String!
-    data: String
+  type: String!
+  data: String
 }
 type SystemActivityLog {
-    type: String
-    online: Boolean!
-    ping: Float
-    data: Float
-    exception: String
-    updated_at: DateTime
+  type: String
+  online: Boolean!
+  ping: Float
+  data: Float
+  exception: String
+  updated_at: DateTime
 }
 type ChatMessage {
-    id: ID!
-    from: User! @belongsTo
-    to: User! @belongsTo
-    message: String
+  id: ID!
+  from: User! @belongsTo
+  to: User! @belongsTo
+  message: String
 }
 type Auth {
-    token: String
-    success: Boolean!
-    user: User
-    exception: String
+  token: String
+  success: Boolean!
+  user: User
+  exception: String
+}
+type Auth {
+  token: String
+  success: Boolean!
+  user: User
+  exception: String
+}
+type Activity {
+  id: ID!
+  type: String!
+  data: String!
+  created_at: DateTime
+  updated_at: DateTime
 }
 type REDISStatus {
-    type: String
-    online: Boolean!
-    ping: Float
-    exception: String
-    updated_at: DateTime
+  type: String
+  online: Boolean!
+  ping: Float
+  exception: String
+  updated_at: DateTime
 }
 type MYSQLStatus {
-    type: String
-    online: Boolean!
-    ping: Float
-    exception: String
-    updated_at: DateTime
+  type: String
+  online: Boolean!
+  ping: Float
+  exception: String
+  updated_at: DateTime
 }
 type SPIGOTStatus {
-    type: String
-    online: Boolean!
-    ping: Float
-    exception: String
-    updated_at: DateTime
+  type: String
+  online: Boolean!
+  ping: Float
+  exception: String
+  updated_at: DateTime
 }
 
 type User {
-    id: ID!
-    username: String!
-    email: String!
-    created_at: DateTime
-    updated_at: DateTime
-    posts: [Post!]! @hasMany
-    usercart: [UserCart!]! @hasMany
-    useradvancement: [Useradvancement!]! @hasMany
-    userdata: Userdata @belongsTo
-    friends: [Friend!]!
+  id: ID!
+  username: String!
+  email: String!
+  created_at: DateTime
+  updated_at: DateTime
+  posts: [Post!]! @hasMany
+  usercart: [UserCart!]! @hasMany
+  useradvancement: [Useradvancement!]! @hasMany
+  userdata: Userdata @belongsTo
+  friends: [Friend!]!
 }
 type Friend {
-    user: User @belongsTo
-    friend: User @belongsTo
-    is_friend: Boolean
+  user: User @belongsTo
+  friend: User @belongsTo
+  is_friend: Boolean
 }
 type UserCart {
-    id: ID!
-    user_id: ID!
-    item_id: ID!
-    item: Item @belongsTo
-    amount: Int!
-    created_at: DateTime
-    updated_at: DateTime
+  id: ID!
+  user_id: ID!
+  item_id: ID!
+  item: Item @belongsTo
+  amount: Int!
+  created_at: DateTime
+  updated_at: DateTime
 }
 
 type Post {
-    id: ID!
-    author: User! @belongsTo
-    content: String!
-    caption: String!
-    comments: [Comment!]! @hasMany
-    reactions: [Reaction!]! @hasMany
-    commentsCount: Int! @count(relation: "comments")
-    reactionsCount: Int! @count(relation: "reactions")
-    created_at: DateTime!
-    updated_at: DateTime!
+  id: ID!
+  author: User! @belongsTo
+  content: String!
+  caption: String!
+  comments: [Comment!]! @hasMany
+  reactions: [Reaction!]! @hasMany
+  commentsCount: Int! @count(relation: "comments")
+  reactionsCount: Int! @count(relation: "reactions")
+  created_at: DateTime!
+  updated_at: DateTime!
 }
 
 type Comment {
-    id: ID!
-    author: User! @belongsTo
-    post: Post! @belongsTo
-    content: String!
+  id: ID!
+  author: User! @belongsTo
+  post: Post! @belongsTo
+  content: String!
 }
 type Reaction {
-    id: ID!
-    author: User! @belongsTo
-    post: Post! @belongsTo
-    content: String!
+  id: ID!
+  author: User! @belongsTo
+  post: Post! @belongsTo
+  content: String!
 }
 type Review {
-    id: ID
-    author: User! @belongsTo
-    item: Item @belongsTo
-    score: Int
-    content: String
-    caption: String
-    created_at: DateTime
-    updated_at: DateTime
+  id: ID
+  author: User! @belongsTo
+  item: Item @belongsTo
+  score: Int
+  content: String
+  caption: String
+  created_at: DateTime
+  updated_at: DateTime
 }
 type Item {
-    id: ID!
-    item_name: String
-    description: String
-    type: String
-    minecraft_item_id: String
-    minecraft_item_shorthand: String
-    price: Int
-    counter: Int
-    view: Int
-    author: User! @belongsTo
-    review: [Review!]! @hasMany
+  id: ID!
+  item_name: String
+  description: String
+  type: String
+  minecraft_item_id: String
+  minecraft_item_shorthand: String
+  price: Int
+  counter: Int
+  view: Int
+  author: User! @belongsTo
+  review: [Review!]! @hasMany
 }
 type Advancement {
-    id: ID!
-    icon: String
-    name: String
-    description: String
-    parent: String
-    requirements: String
-    namespace: String
-    created_at: DateTime!
-    updated_at: DateTime!
+  id: ID!
+  icon: String
+  name: String
+  description: String
+  parent: String
+  requirements: String
+  namespace: String
+  created_at: DateTime!
+  updated_at: DateTime!
 }
 type Useradvancement {
-    id: ID!
-    owner: User! @belongsTo
-    Advancement: Advancement! @belongsTo
-    created_at: DateTime!
-    updated_at: DateTime!
+  id: ID!
+  owner: User! @belongsTo
+  Advancement: Advancement! @belongsTo
+  created_at: DateTime!
+  updated_at: DateTime!
 }
 type Userdata {
-    id: ID!
-    owner: User! @belongsTo
-    UUID: String
-    health: Int
-    hunger: Int
-    exp: Int
-    level: Int
-    exhaustion: Int
-    saturation: Int
-    air: Int
-    gamemode: String
-    money: Int
-    created_at: DateTime!
-    updated_at: DateTime!
+  id: ID!
+  owner: User! @belongsTo
+  UUID: String
+  health: Int
+  hunger: Int
+  exp: Int
+  level: Int
+  exhaustion: Int
+  saturation: Int
+  air: Int
+  gamemode: String
+  money: Int
+  created_at: DateTime!
+  updated_at: DateTime!
 }
