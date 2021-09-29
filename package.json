@@ -37,7 +37,7 @@
         "formik-material-ui": "^3.0.0-alpha.0",
         "fs": "0.0.1-security",
         "graphql": "^15.3.0",
-        "i": "^0.3.6",
+        "i": "^0.3.7",
         "laravel-echo": "^1.8.0",
         "laravel-mix-react-typescript-extension": "^1.0.3",
         "material-auto-rotating-carousel": "^3.0.2",
